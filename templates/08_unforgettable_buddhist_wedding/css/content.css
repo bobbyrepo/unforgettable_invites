@@ -1,0 +1,106 @@
+/* ==========================================================================
+   CONTENT STYLING (MODULAR COMPONENT)
+   Use this file if you wish to adjust typography, colors, or text styles.
+   All rules below are commented by default so that existing layouts remain
+   100% pixel-perfect and untouched. Uncomment any rule to customize.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   SECTION 1: HERO & MAIN INVITATION HEADER
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Hero Title — Maya"] p,
+[data-framer-name="Hero Title — Siddharth"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Hero Title — and"] p {
+    font-style: italic !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 2: FAMILY INVITATION & BLESSINGS
+   ------------------------------------------------------------------------- */
+
+/* Entire Family Invitation Section Wrapper (Move up/down, change margins) */
+[data-framer-name="Invitation Details"] {
+    /* 1. Shift the entire family section up or down (Recommended):
+       Use a negative value (e.g. -20px, -40px) to pull it UP closer to the walkway.
+       Use a positive value (e.g. 20px, 40px) to push it DOWN. */
+    /* transform: translateY(-20px) !important; */
+
+    /* 2. Margin controls for the entire family section: */
+    /* margin-top: 0px !important; */
+    /* margin-bottom: 0px !important; */
+}
+
+/* Spacing between individual text lines inside the family section */
+/*
+[data-framer-name="Invitation Details"] [data-framer-component-type="RichTextContainer"] {
+    margin-bottom: 6px !important;
+}
+*/
+
+/* Text Colors */
+[data-framer-name="Groom Parents"] p,
+[data-framer-name="Bride Parents"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Invitation Line"] p {
+    color: rgb(95, 37, 15) !important;
+}
+
+
+/* -------------------------------------------------------------------------
+   SECTION 3: WEDDING TIMELINE / CEREMONIES SCHEDULE
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Timeline Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Timeline Subtext"] p {
+    color: rgb(95, 37, 15) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 4: MEET THE COUPLE / STORY
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Meet the Couple Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 5: THINGS TO KNOW (LOGISTICS CARDS)
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Things to Know Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Hashtag Title"] p,
+[data-framer-name="Weather Title"] p,
+[data-framer-name="Staff Title"] p,
+[data-framer-name="Parking Title"] p {
+    color: rgb(171, 86, 38) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 6: COUNTDOWN & RSVP
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Countdown Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="RSVP Form"] button,
+[data-framer-name="RSVP Form"] a {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+}
+*/

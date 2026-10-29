@@ -1,0 +1,20 @@
+# Dependencies & System Logs
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# Heavy Adobe Working Files & Scratch Directories
+*.aep
+*.aepx
+*.psd
+*.ai
+**/Adobe After Effects Auto-Save/
+**/to use/
+**/*_backup*
+**/*.tmp
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.production

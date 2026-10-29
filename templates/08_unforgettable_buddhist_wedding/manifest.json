@@ -1,0 +1,873 @@
+{
+  "templateId": "07_Unforgettable Invites_rammandir",
+  "templateName": "Unforgettable Invites Ram Mandir Full Masterpiece",
+  "sourceUrl": "https://rammandir.framer.website/",
+  "archivedAt": "2026-10-26T23:29:33.556Z",
+  "summary": {
+    "imagesCount": 61,
+    "audioCount": 0,
+    "videoCount": 1,
+    "fontsCount": 47,
+    "totalSizeBytes": 5725041
+  },
+  "images": [
+    {
+      "filename": "ECYGxlUfN1A1OmbaiTl8iogMeVk.png",
+      "url": "./images/ECYGxlUfN1A1OmbaiTl8iogMeVk.png",
+      "sizeBytes": 672810,
+      "sizeKb": "657.0",
+      "dimensions": "1515x1646",
+      "width": 1515,
+      "height": 1646,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "lKVzZvE9zjHal1zLmfO4koCjo.png",
+      "url": "./images/lKVzZvE9zjHal1zLmfO4koCjo.png",
+      "sizeBytes": 479764,
+      "sizeKb": "468.5",
+      "dimensions": "1515x3526",
+      "width": 1515,
+      "height": 3526,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "HRENeallVVOHG1sTSUCePuUH4.png",
+      "url": "./images/HRENeallVVOHG1sTSUCePuUH4.png",
+      "sizeBytes": 478702,
+      "sizeKb": "467.5",
+      "dimensions": "1515x9148",
+      "width": 1515,
+      "height": 9148,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "IxbRblgZX2YiN0xuANY2jX4Excg.png",
+      "url": "./images/IxbRblgZX2YiN0xuANY2jX4Excg.png",
+      "sizeBytes": 399016,
+      "sizeKb": "389.7",
+      "dimensions": "1515x3552",
+      "width": 1515,
+      "height": 3552,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "LDGCqdzKnQ5ErPPOpHZbdl96s.png",
+      "url": "./images/LDGCqdzKnQ5ErPPOpHZbdl96s.png",
+      "sizeBytes": 310286,
+      "sizeKb": "303.0",
+      "dimensions": "862x1067",
+      "width": 862,
+      "height": 1067,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "VSWKtKY9anp40BO4QazdQK473tQ.png",
+      "url": "./images/VSWKtKY9anp40BO4QazdQK473tQ.png",
+      "sizeBytes": 287408,
+      "sizeKb": "280.7",
+      "dimensions": "1515x1058",
+      "width": 1515,
+      "height": 1058,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "t5YjrBj4yNnfsBy5cNe71S4kVGjWArpa2eipnr2H.png",
+      "url": "./images/t5YjrBj4yNnfsBy5cNe71S4kVGjWArpa2eipnr2H.png",
+      "sizeBytes": 285586,
+      "sizeKb": "278.9",
+      "dimensions": "601x600",
+      "width": 601,
+      "height": 600,
+      "format": "PNG"
+    },
+    {
+      "filename": "fXdVaVM1Iocp7HSsFNQd7A9zHrw.png",
+      "url": "./images/fXdVaVM1Iocp7HSsFNQd7A9zHrw.png",
+      "sizeBytes": 223448,
+      "sizeKb": "218.2",
+      "dimensions": "1515x1010",
+      "width": 1515,
+      "height": 1010,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "Vmh2DwpF7PAgb69W6NahdCwGidA.png",
+      "url": "./images/Vmh2DwpF7PAgb69W6NahdCwGidA.png",
+      "sizeBytes": 214292,
+      "sizeKb": "209.3",
+      "dimensions": "876x3156",
+      "width": 876,
+      "height": 3156,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "ctlwo5LpuBk9eskYOT9Z2MD8wso.png",
+      "url": "./images/ctlwo5LpuBk9eskYOT9Z2MD8wso.png",
+      "sizeBytes": 192104,
+      "sizeKb": "187.6",
+      "dimensions": "868x4326",
+      "width": 868,
+      "height": 4326,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "WAxILXJh5vxiTnOtbAVwuxo0PsQ.png",
+      "url": "./images/WAxILXJh5vxiTnOtbAVwuxo0PsQ.png",
+      "sizeBytes": 184740,
+      "sizeKb": "180.4",
+      "dimensions": "1200x1189",
+      "width": 1200,
+      "height": 1189,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "q34vGrlWel2dWqX5zDNWJQDl9k.png",
+      "url": "./images/q34vGrlWel2dWqX5zDNWJQDl9k.png",
+      "sizeBytes": 165992,
+      "sizeKb": "162.1",
+      "dimensions": "1515x5593",
+      "width": 1515,
+      "height": 5593,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "jv9Y5c65dupWuUvOrLUvDm6o.png",
+      "url": "./images/jv9Y5c65dupWuUvOrLUvDm6o.png",
+      "sizeBytes": 162040,
+      "sizeKb": "158.2",
+      "dimensions": "1200x1189",
+      "width": 1200,
+      "height": 1189,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "vo85LJWiG7KY5sTcDsBhG1aEc.png",
+      "url": "./images/vo85LJWiG7KY5sTcDsBhG1aEc.png",
+      "sizeBytes": 158490,
+      "sizeKb": "154.8",
+      "dimensions": "869x948",
+      "width": 869,
+      "height": 948,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "hUKMKAtrpqFCDTXl35Y5yuIjRw.png",
+      "url": "./images/hUKMKAtrpqFCDTXl35Y5yuIjRw.png",
+      "sizeBytes": 141048,
+      "sizeKb": "137.7",
+      "dimensions": "866x3244",
+      "width": 866,
+      "height": 3244,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "qTlCAkdnbuZVEx4RAWSlgsGHX0.png",
+      "url": "./images/qTlCAkdnbuZVEx4RAWSlgsGHX0.png",
+      "sizeBytes": 133142,
+      "sizeKb": "130.0",
+      "dimensions": "1200x968",
+      "width": 1200,
+      "height": 968,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "w2VucNwOfPZvxA8ibgdnaWF7T4.png",
+      "url": "./images/w2VucNwOfPZvxA8ibgdnaWF7T4.png",
+      "sizeBytes": 130026,
+      "sizeKb": "127.0",
+      "dimensions": "1200x968",
+      "width": 1200,
+      "height": 968,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "3JekLBRwVWegsCm3gX3wOcYeM.png",
+      "url": "./images/3JekLBRwVWegsCm3gX3wOcYeM.png",
+      "sizeBytes": 120164,
+      "sizeKb": "117.3",
+      "dimensions": "1200x630",
+      "width": 1200,
+      "height": 630,
+      "format": "WebP (VP8)"
+    },
+    {
+      "filename": "TUkRvFIUDwblbb4eewkBlJzZwJw.png",
+      "url": "./images/TUkRvFIUDwblbb4eewkBlJzZwJw.png",
+      "sizeBytes": 106868,
+      "sizeKb": "104.4",
+      "dimensions": "1515x2342",
+      "width": 1515,
+      "height": 2342,
+      "format": "PNG"
+    },
+    {
+      "filename": "cuJqbfW35i2RRVw2Q3Vaix9WO8I.png",
+      "url": "./images/cuJqbfW35i2RRVw2Q3Vaix9WO8I.png",
+      "sizeBytes": 97846,
+      "sizeKb": "95.6",
+      "dimensions": "862x575",
+      "width": 862,
+      "height": 575,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "Zrnq96rxcNCLdk4Yaz94Dup5Q.png",
+      "url": "./images/Zrnq96rxcNCLdk4Yaz94Dup5Q.png",
+      "sizeBytes": 77382,
+      "sizeKb": "75.6",
+      "dimensions": "886x464",
+      "width": 886,
+      "height": 464,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "svYNfrgA0JSnowyYTfnNW2qkvHY.png",
+      "url": "./images/svYNfrgA0JSnowyYTfnNW2qkvHY.png",
+      "sizeBytes": 76280,
+      "sizeKb": "74.5",
+      "dimensions": "456x2385",
+      "width": 456,
+      "height": 2385,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "XEME29GdiyV3RDHfslzLVTpFP1g.png",
+      "url": "./images/XEME29GdiyV3RDHfslzLVTpFP1g.png",
+      "sizeBytes": 69690,
+      "sizeKb": "68.1",
+      "dimensions": "1515x478",
+      "width": 1515,
+      "height": 478,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "CAJYZSTyHrLw4D8Gxv3UGjFaMg.png",
+      "url": "./images/CAJYZSTyHrLw4D8Gxv3UGjFaMg.png",
+      "sizeBytes": 64980,
+      "sizeKb": "63.5",
+      "dimensions": "400x339",
+      "width": 400,
+      "height": 339,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "dh5fZvEiBieci19vHLxfPJc5QAI.png",
+      "url": "./images/dh5fZvEiBieci19vHLxfPJc5QAI.png",
+      "sizeBytes": 61566,
+      "sizeKb": "60.1",
+      "dimensions": "726x616",
+      "width": 726,
+      "height": 616,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "bV5rTKtXbSKvnQpg3vwzhWFRfzs.png",
+      "url": "./images/bV5rTKtXbSKvnQpg3vwzhWFRfzs.png",
+      "sizeBytes": 61420,
+      "sizeKb": "60.0",
+      "dimensions": "1515x1865",
+      "width": 1515,
+      "height": 1865,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "nGPy0RPGbGwAd8w8op4XKveKWM.png",
+      "url": "./images/nGPy0RPGbGwAd8w8op4XKveKWM.png",
+      "sizeBytes": 38256,
+      "sizeKb": "37.4",
+      "dimensions": "674x830",
+      "width": 674,
+      "height": 830,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "k4akBbaSTVmqriBl2MhXD6MXOyg.png",
+      "url": "./images/k4akBbaSTVmqriBl2MhXD6MXOyg.png",
+      "sizeBytes": 24686,
+      "sizeKb": "24.1",
+      "dimensions": "296x458",
+      "width": 296,
+      "height": 458,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "4cA2HUMDhUokZACwYXNtj8gs8Os.png",
+      "url": "./images/4cA2HUMDhUokZACwYXNtj8gs8Os.png",
+      "sizeBytes": 22830,
+      "sizeKb": "22.3",
+      "dimensions": "642x130",
+      "width": 642,
+      "height": 130,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "Ta8VvaJo4SZuTcgz4N8iLLSsLE.png",
+      "url": "./images/Ta8VvaJo4SZuTcgz4N8iLLSsLE.png",
+      "sizeBytes": 19746,
+      "sizeKb": "19.3",
+      "dimensions": "864x5217",
+      "width": 864,
+      "height": 5217,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "BYAsD8Youh2KSQp1YWLBPEg8U.png",
+      "url": "./images/BYAsD8Youh2KSQp1YWLBPEg8U.png",
+      "sizeBytes": 17844,
+      "sizeKb": "17.4",
+      "dimensions": "1200x968",
+      "width": 1200,
+      "height": 968,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "ELVgHUKqtqAl9gf1nwbYhSeTg.png",
+      "url": "./images/ELVgHUKqtqAl9gf1nwbYhSeTg.png",
+      "sizeBytes": 17344,
+      "sizeKb": "16.9",
+      "dimensions": "1200x968",
+      "width": 1200,
+      "height": 968,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "DRFRG6BredDwQiJY7bR0l7zYMs.png",
+      "url": "./images/DRFRG6BredDwQiJY7bR0l7zYMs.png",
+      "sizeBytes": 16898,
+      "sizeKb": "16.5",
+      "dimensions": "538x109",
+      "width": 538,
+      "height": 109,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "dRCMDT9ufGWEZehulDCNdJpwaLs.png",
+      "url": "./images/dRCMDT9ufGWEZehulDCNdJpwaLs.png",
+      "sizeBytes": 14134,
+      "sizeKb": "13.8",
+      "dimensions": "390x79",
+      "width": 390,
+      "height": 79,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "KrRp2Koc5I3NO7nOduBFAoCVlQ.png",
+      "url": "./images/KrRp2Koc5I3NO7nOduBFAoCVlQ.png",
+      "sizeBytes": 14096,
+      "sizeKb": "13.8",
+      "dimensions": "200x200",
+      "width": 200,
+      "height": 200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "EUPxZZrFKaWt9CBkczGVfDOj1c.png",
+      "url": "./images/EUPxZZrFKaWt9CBkczGVfDOj1c.png",
+      "sizeBytes": 14076,
+      "sizeKb": "13.7",
+      "dimensions": "200x200",
+      "width": 200,
+      "height": 200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "hjcRmZcFhVMnmuu2IHPnk7pOudQ.png",
+      "url": "./images/hjcRmZcFhVMnmuu2IHPnk7pOudQ.png",
+      "sizeBytes": 12404,
+      "sizeKb": "12.1",
+      "dimensions": "200x200",
+      "width": 200,
+      "height": 200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "plRMuObVZgXFVWzrOuY2xNVRHHs.png",
+      "url": "./images/plRMuObVZgXFVWzrOuY2xNVRHHs.png",
+      "sizeBytes": 11730,
+      "sizeKb": "11.5",
+      "dimensions": "116x607",
+      "width": 116,
+      "height": 607,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "DIljN6CZ5Ok94fYAeNVQ4nSQOEo.png",
+      "url": "./images/DIljN6CZ5Ok94fYAeNVQ4nSQOEo.png",
+      "sizeBytes": 11604,
+      "sizeKb": "11.3",
+      "dimensions": "1220x200",
+      "width": 1220,
+      "height": 200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "UmHP4DGOVhAoz2Wx4tcMvgZoBc.png",
+      "url": "./images/UmHP4DGOVhAoz2Wx4tcMvgZoBc.png",
+      "sizeBytes": 11450,
+      "sizeKb": "11.2",
+      "dimensions": "586x586",
+      "width": 586,
+      "height": 586,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "qTQEkBOwp9swndaRzxYt0TOx8U.png",
+      "url": "./images/qTQEkBOwp9swndaRzxYt0TOx8U.png",
+      "sizeBytes": 11090,
+      "sizeKb": "10.8",
+      "dimensions": "166x229",
+      "width": 166,
+      "height": 229,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "7Jr9KCHDFL5pwPFZFeisN44Yzi4.png",
+      "url": "./images/7Jr9KCHDFL5pwPFZFeisN44Yzi4.png",
+      "sizeBytes": 11016,
+      "sizeKb": "10.8",
+      "dimensions": "684x112",
+      "width": 684,
+      "height": 112,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "5uWzJVw11PDVfozRAkpivVBUPw.png",
+      "url": "./images/5uWzJVw11PDVfozRAkpivVBUPw.png",
+      "sizeBytes": 10860,
+      "sizeKb": "10.6",
+      "dimensions": "200x200",
+      "width": 200,
+      "height": 200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "default-touch-icon.v3.png",
+      "url": "./images/default-touch-icon.v3.png",
+      "sizeBytes": 8598,
+      "sizeKb": "8.4",
+      "dimensions": "180x180",
+      "width": 180,
+      "height": 180,
+      "format": "PNG"
+    },
+    {
+      "filename": "lsI4FJ0BeiT9e8FhL5WYmPRlnyY.png",
+      "url": "./images/lsI4FJ0BeiT9e8FhL5WYmPRlnyY.png",
+      "sizeBytes": 8540,
+      "sizeKb": "8.3",
+      "dimensions": "143x206",
+      "width": 143,
+      "height": 206,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "dU6QWYOyKfqMfHH3mCT84Z3dAJE.png",
+      "url": "./images/dU6QWYOyKfqMfHH3mCT84Z3dAJE.png",
+      "sizeBytes": 8288,
+      "sizeKb": "8.1",
+      "dimensions": "142x205",
+      "width": 142,
+      "height": 205,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "gt4WrIeOxcZz1kQLQ9ovWBkpc.png",
+      "url": "./images/gt4WrIeOxcZz1kQLQ9ovWBkpc.png",
+      "sizeBytes": 8110,
+      "sizeKb": "7.9",
+      "dimensions": "140x202",
+      "width": 140,
+      "height": 202,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "5FVM3OmFePuLZFoKyYpESSXgaE.png",
+      "url": "./images/5FVM3OmFePuLZFoKyYpESSXgaE.png",
+      "sizeBytes": 6352,
+      "sizeKb": "6.2",
+      "dimensions": "94x130",
+      "width": 94,
+      "height": 130,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "Faqdd7FNeFyJ6ps5vdLeS54Co.png",
+      "url": "./images/Faqdd7FNeFyJ6ps5vdLeS54Co.png",
+      "sizeBytes": 6076,
+      "sizeKb": "5.9",
+      "dimensions": "488x192",
+      "width": 488,
+      "height": 192,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "plyr.svg",
+      "url": "./images/plyr.svg",
+      "sizeBytes": 5785,
+      "sizeKb": "5.6",
+      "dimensions": "18x18",
+      "width": 18,
+      "height": 18,
+      "format": "SVG"
+    },
+    {
+      "filename": "BETBi0AtFY20asJ3PfAMAFe8g.png",
+      "url": "./images/BETBi0AtFY20asJ3PfAMAFe8g.png",
+      "sizeBytes": 5661,
+      "sizeKb": "5.5",
+      "dimensions": "41x293",
+      "width": 41,
+      "height": 293,
+      "format": "PNG"
+    },
+    {
+      "filename": "ciPCtoLf1PEnCNBnsx6boOBPU.png",
+      "url": "./images/ciPCtoLf1PEnCNBnsx6boOBPU.png",
+      "sizeBytes": 5648,
+      "sizeKb": "5.5",
+      "dimensions": "280x280",
+      "width": 280,
+      "height": 280,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "pyLtbhSLIRf4NHAy72amY2aW58.png",
+      "url": "./images/pyLtbhSLIRf4NHAy72amY2aW58.png",
+      "sizeBytes": 5096,
+      "sizeKb": "5.0",
+      "dimensions": "330x130",
+      "width": 330,
+      "height": 130,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "E3n3YL5RKanyoBxca5PLxMtx3rk.png",
+      "url": "./images/E3n3YL5RKanyoBxca5PLxMtx3rk.png",
+      "sizeBytes": 4990,
+      "sizeKb": "4.9",
+      "dimensions": "248x248",
+      "width": 248,
+      "height": 248,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "kJ6ukGxpOPVxnwLybHzfIL3VtkM.png",
+      "url": "./images/kJ6ukGxpOPVxnwLybHzfIL3VtkM.png",
+      "sizeBytes": 4856,
+      "sizeKb": "4.7",
+      "dimensions": "168x52",
+      "width": 168,
+      "height": 52,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "XegR81dMLWk0YMirVBF6rsfAs3Y.png",
+      "url": "./images/XegR81dMLWk0YMirVBF6rsfAs3Y.png",
+      "sizeBytes": 3420,
+      "sizeKb": "3.3",
+      "dimensions": "41x293",
+      "width": 41,
+      "height": 293,
+      "format": "PNG"
+    },
+    {
+      "filename": "fh6rhHrxI1397e5fR1HuT0QU.png",
+      "url": "./images/fh6rhHrxI1397e5fR1HuT0QU.png",
+      "sizeBytes": 2746,
+      "sizeKb": "2.7",
+      "dimensions": "1515x85",
+      "width": 1515,
+      "height": 85,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "default28.svg",
+      "url": "https://msstorage.bestfreecdn.com/storage/uploadcare/images/default28.svg",
+      "sizeBytes": 1820,
+      "sizeKb": "1.8",
+      "dimensions": "150x150",
+      "width": 150,
+      "height": 150,
+      "format": "SVG"
+    },
+    {
+      "filename": "T7c0PLf2sfUhiq0SlGf4frlVQMA.png",
+      "url": "./images/T7c0PLf2sfUhiq0SlGf4frlVQMA.png",
+      "sizeBytes": 1674,
+      "sizeKb": "1.6",
+      "dimensions": "428x24",
+      "width": 428,
+      "height": 24,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "default-favicon-dark.v1.png",
+      "url": "./images/default-favicon-dark.v1.png",
+      "sizeBytes": 227,
+      "sizeKb": "0.2",
+      "dimensions": "64x64",
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    },
+    {
+      "filename": "default-favicon-light.v1.png",
+      "url": "./images/default-favicon-light.v1.png",
+      "sizeBytes": 223,
+      "sizeKb": "0.2",
+      "dimensions": "64x64",
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    }
+  ],
+  "audio": [],
+  "videos": [
+    {
+      "filename": "blank.mp4",
+      "url": "https://cdn.plyr.io/static/blank.mp4",
+      "sizeBytes": 1777,
+      "sizeKb": "1.7"
+    }
+  ],
+  "fonts": [
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49qqjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49qqjgSE.woff2",
+      "sizeBytes": 11544
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4_6qjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4_6qjgSE.woff2",
+      "sizeBytes": 12944
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI496qjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI496qjgSE.woff2",
+      "sizeBytes": 7360
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-KqjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-KqjgSE.woff2",
+      "sizeBytes": 8568
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49KqjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49KqjgSE.woff2",
+      "sizeBytes": 6972
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49aqjgSE.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49aqjgSE.woff2",
+      "sizeBytes": 21612
+    },
+    {
+      "filename": "4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-6qj.woff2",
+      "url": "https://fonts.gstatic.com/s/alegreya/v41/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-6qj.woff2",
+      "sizeBytes": 24352
+    },
+    {
+      "filename": "3qTrojWunjGQtEBlIcwMbSoI7jgwbS7F.woff2",
+      "url": "https://fonts.gstatic.com/s/alikeangular/v27/3qTrojWunjGQtEBlIcwMbSoI7jgwbS7F.woff2",
+      "sizeBytes": 15584
+    },
+    {
+      "filename": "3qTrojWunjGQtEBlIcwMbSoI7iowbS7F.woff2",
+      "url": "https://fonts.gstatic.com/s/alikeangular/v27/3qTrojWunjGQtEBlIcwMbSoI7iowbS7F.woff2",
+      "sizeBytes": 11168
+    },
+    {
+      "filename": "3qTrojWunjGQtEBlIcwMbSoI7kowbS7F.woff2",
+      "url": "https://fonts.gstatic.com/s/alikeangular/v27/3qTrojWunjGQtEBlIcwMbSoI7kowbS7F.woff2",
+      "sizeBytes": 10760
+    },
+    {
+      "filename": "3qTrojWunjGQtEBlIcwMbSoI7kQwbQ.woff2",
+      "url": "https://fonts.gstatic.com/s/alikeangular/v27/3qTrojWunjGQtEBlIcwMbSoI7kQwbQ.woff2",
+      "sizeBytes": 21396
+    },
+    {
+      "filename": "4y04scLej0VIDnfiTUaHmR9kJ8.woff2",
+      "url": "./images/4y04scLej0VIDnfiTUaHmR9kJ8.woff2",
+      "sizeBytes": 31316
+    },
+    {
+      "filename": "tDHgE1HIlQZDKKTmmqw6GznA8AA.woff2",
+      "url": "./images/tDHgE1HIlQZDKKTmmqw6GznA8AA.woff2",
+      "sizeBytes": 30452
+    },
+    {
+      "filename": "4Jgqn7NsDO77QsxaQyfnM0ICLY4.woff2",
+      "url": "./images/4Jgqn7NsDO77QsxaQyfnM0ICLY4.woff2",
+      "sizeBytes": 60764
+    },
+    {
+      "filename": "VBd98BPo7gIkQI9U4PQ8dyWGdw.woff2",
+      "url": "./images/VBd98BPo7gIkQI9U4PQ8dyWGdw.woff2",
+      "sizeBytes": 57884
+    },
+    {
+      "filename": "BMjg1YByjbhOVDynKUorFYRCk.woff2",
+      "url": "./images/BMjg1YByjbhOVDynKUorFYRCk.woff2",
+      "sizeBytes": 18572
+    },
+    {
+      "filename": "WWjETWwBUpECorvxciFxrUEZg.woff2",
+      "url": "./images/WWjETWwBUpECorvxciFxrUEZg.woff2",
+      "sizeBytes": 35348
+    },
+    {
+      "filename": "s9K7gd62GoiEFlvMdmFDczcSwA.woff2",
+      "url": "./images/s9K7gd62GoiEFlvMdmFDczcSwA.woff2",
+      "sizeBytes": 31252
+    },
+    {
+      "filename": "SEQP8hnAhgJcZlHjxip9s3uuKg.woff2",
+      "url": "./images/SEQP8hnAhgJcZlHjxip9s3uuKg.woff2",
+      "sizeBytes": 60460
+    },
+    {
+      "filename": "5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+      "url": "./images/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+      "sizeBytes": 8896
+    },
+    {
+      "filename": "EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+      "url": "./images/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+      "sizeBytes": 7116
+    },
+    {
+      "filename": "Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+      "url": "./images/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+      "sizeBytes": 4504
+    },
+    {
+      "filename": "OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+      "url": "./images/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+      "sizeBytes": 6652
+    },
+    {
+      "filename": "JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+      "url": "./images/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+      "sizeBytes": 25348
+    },
+    {
+      "filename": "GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+      "url": "./images/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+      "sizeBytes": 27380
+    },
+    {
+      "filename": "b6Y37FthZeALduNqHicBT6FutY.woff2",
+      "url": "./images/b6Y37FthZeALduNqHicBT6FutY.woff2",
+      "sizeBytes": 4168
+    },
+    {
+      "filename": "DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+      "url": "./images/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+      "sizeBytes": 8892
+    },
+    {
+      "filename": "4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+      "url": "./images/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+      "sizeBytes": 7080
+    },
+    {
+      "filename": "1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+      "url": "./images/1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+      "sizeBytes": 4628
+    },
+    {
+      "filename": "tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+      "url": "./images/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+      "sizeBytes": 6672
+    },
+    {
+      "filename": "VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+      "url": "./images/VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+      "sizeBytes": 26076
+    },
+    {
+      "filename": "syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+      "url": "./images/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+      "sizeBytes": 27900
+    },
+    {
+      "filename": "GIryZETIX4IFypco5pYZONKhJIo.woff2",
+      "url": "./images/GIryZETIX4IFypco5pYZONKhJIo.woff2",
+      "sizeBytes": 4268
+    },
+    {
+      "filename": "H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+      "url": "./images/H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+      "sizeBytes": 9564
+    },
+    {
+      "filename": "u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+      "url": "./images/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+      "sizeBytes": 7556
+    },
+    {
+      "filename": "43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+      "url": "./images/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+      "sizeBytes": 4960
+    },
+    {
+      "filename": "wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+      "url": "./images/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+      "sizeBytes": 7360
+    },
+    {
+      "filename": "WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+      "url": "./images/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+      "sizeBytes": 27736
+    },
+    {
+      "filename": "ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+      "url": "./images/ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+      "sizeBytes": 30368
+    },
+    {
+      "filename": "2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+      "url": "./images/2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+      "sizeBytes": 4236
+    },
+    {
+      "filename": "CfMzU8w2e7tHgF4T4rATMPuWosA.woff2",
+      "url": "./images/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2",
+      "sizeBytes": 9500
+    },
+    {
+      "filename": "867QObYax8ANsfX4TGEVU9YiCM.woff2",
+      "url": "./images/867QObYax8ANsfX4TGEVU9YiCM.woff2",
+      "sizeBytes": 7408
+    },
+    {
+      "filename": "Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2",
+      "url": "./images/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2",
+      "sizeBytes": 4756
+    },
+    {
+      "filename": "cdAe8hgZ1cMyLu9g005pAW3xMo.woff2",
+      "url": "./images/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2",
+      "sizeBytes": 7228
+    },
+    {
+      "filename": "DOfvtmE1UplCq161m6Hj8CSQYg.woff2",
+      "url": "./images/DOfvtmE1UplCq161m6Hj8CSQYg.woff2",
+      "sizeBytes": 26696
+    },
+    {
+      "filename": "pKRFNWFoZl77qYCAIp84lN1h944.woff2",
+      "url": "./images/pKRFNWFoZl77qYCAIp84lN1h944.woff2",
+      "sizeBytes": 29380
+    },
+    {
+      "filename": "tKtBcDnBMevsEEJKdNGhhkLzYo.woff2",
+      "url": "./images/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2",
+      "sizeBytes": 4052
+    }
+  ],
+  "name": "Mahabodhi Buddhist Wedding | Siddharth & Maya",
+  "short_name": "Buddhist Wedding"
+}

@@ -1,0 +1,791 @@
+{
+  "templateId": "02_artful_radha_krishna",
+  "templateName": "Radha Krishna Divine Theme",
+  "sourceUrl": "https://demo3artfulinvites.framer.website/",
+  "archivedAt": "2026-10-26T23:28:18.059Z",
+  "summary": {
+    "imagesCount": 32,
+    "audioCount": 1,
+    "videoCount": 0,
+    "fontsCount": 89,
+    "totalSizeBytes": 18410461
+  },
+  "images": [
+    {
+      "filename": "jsLG9oDACMxED6MHxxxqjxxtNQ.jpg",
+      "url": "https://framerusercontent.com/images/jsLG9oDACMxED6MHxxxqjxxtNQ.jpg",
+      "sizeBytes": 5787024,
+      "sizeKb": "5651.4",
+      "dimensions": "6554x8192",
+      "width": 6554,
+      "height": 8192,
+      "format": "JPEG"
+    },
+    {
+      "filename": "1Zg49ggjH1NeMsuurkKzD6m20vo.webp",
+      "url": "https://framerusercontent.com/images/1Zg49ggjH1NeMsuurkKzD6m20vo.webp",
+      "sizeBytes": 2859590,
+      "sizeKb": "2792.6",
+      "dimensions": "4092x6148",
+      "width": 4092,
+      "height": 6148,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "nMi6QUEDQLWoopKcsbxHe7tv3w.webp",
+      "url": "https://framerusercontent.com/images/nMi6QUEDQLWoopKcsbxHe7tv3w.webp",
+      "sizeBytes": 965916,
+      "sizeKb": "943.3",
+      "dimensions": "1872x2607",
+      "width": 1872,
+      "height": 2607,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "B5f8HoBhbFrJjeGqkq0pmPmd2BE.webp",
+      "url": "https://framerusercontent.com/images/B5f8HoBhbFrJjeGqkq0pmPmd2BE.webp",
+      "sizeBytes": 838046,
+      "sizeKb": "818.4",
+      "dimensions": "1840x3392",
+      "width": 1840,
+      "height": 3392,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "7Jc7F5U6LjAzdX4ypVkjja74nO8.webp",
+      "url": "https://framerusercontent.com/images/7Jc7F5U6LjAzdX4ypVkjja74nO8.webp",
+      "sizeBytes": 786950,
+      "sizeKb": "768.5",
+      "dimensions": "2500x2500",
+      "width": 2500,
+      "height": 2500,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "vQg4boZ9HQXfZOfpCDWS9lFQE.webp",
+      "url": "https://framerusercontent.com/images/vQg4boZ9HQXfZOfpCDWS9lFQE.webp",
+      "sizeBytes": 647092,
+      "sizeKb": "631.9",
+      "dimensions": "4092x6148",
+      "width": 4092,
+      "height": 6148,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "m6r8eopxGbzyLR1bYUq6zvkRnw.webp",
+      "url": "https://framerusercontent.com/images/m6r8eopxGbzyLR1bYUq6zvkRnw.webp",
+      "sizeBytes": 625008,
+      "sizeKb": "610.4",
+      "dimensions": "4092x6148",
+      "width": 4092,
+      "height": 6148,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "bh8PHnz8c5jv6tyZFXIIzJ6Fs.webp",
+      "url": "https://framerusercontent.com/images/bh8PHnz8c5jv6tyZFXIIzJ6Fs.webp",
+      "sizeBytes": 578346,
+      "sizeKb": "564.8",
+      "dimensions": "1872x3344",
+      "width": 1872,
+      "height": 3344,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "xGJ7yIwTGEHcDFNWMGoLHiHkQ.webp",
+      "url": "https://framerusercontent.com/images/xGJ7yIwTGEHcDFNWMGoLHiHkQ.webp",
+      "sizeBytes": 470870,
+      "sizeKb": "459.8",
+      "dimensions": "1872x3344",
+      "width": 1872,
+      "height": 3344,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "ELOlTg3x5fKABGtAydCmkvEWw.webp",
+      "url": "https://framerusercontent.com/images/ELOlTg3x5fKABGtAydCmkvEWw.webp",
+      "sizeBytes": 453324,
+      "sizeKb": "442.7",
+      "dimensions": "3072x5504",
+      "width": 3072,
+      "height": 5504,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "jGRd16GMX7Bfl8UxNG1dL4EH0U.webp",
+      "url": "https://framerusercontent.com/images/jGRd16GMX7Bfl8UxNG1dL4EH0U.webp",
+      "sizeBytes": 357303,
+      "sizeKb": "348.9",
+      "dimensions": "1086x642",
+      "width": 1086,
+      "height": 642,
+      "format": "PNG"
+    },
+    {
+      "filename": "PWKoRE4Df4zZJLisykUKiwZnlRE.webp",
+      "url": "https://framerusercontent.com/images/PWKoRE4Df4zZJLisykUKiwZnlRE.webp",
+      "sizeBytes": 319470,
+      "sizeKb": "312.0",
+      "dimensions": "3452x6385",
+      "width": 3452,
+      "height": 6385,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "7zuZ0FhlmRAIbtHSZLZ5aiTTWg.webp",
+      "url": "https://framerusercontent.com/images/7zuZ0FhlmRAIbtHSZLZ5aiTTWg.webp",
+      "sizeBytes": 202524,
+      "sizeKb": "197.8",
+      "dimensions": "4092x6148",
+      "width": 4092,
+      "height": 6148,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "704nAPXndZuu4f9Y58HGiZKFCM.jpeg",
+      "url": "https://framerusercontent.com/images/704nAPXndZuu4f9Y58HGiZKFCM.jpeg",
+      "sizeBytes": 200344,
+      "sizeKb": "195.6",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "JPEG"
+    },
+    {
+      "filename": "n1sFMTrwVER1fJuLVUCmes4cE.webp",
+      "url": "https://framerusercontent.com/images/n1sFMTrwVER1fJuLVUCmes4cE.webp",
+      "sizeBytes": 160892,
+      "sizeKb": "157.1",
+      "dimensions": "1792x2400",
+      "width": 1792,
+      "height": 2400,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "0IJJIgu6Wx8qN5wGM26QzcUWTNg.webp",
+      "url": "https://framerusercontent.com/images/0IJJIgu6Wx8qN5wGM26QzcUWTNg.webp",
+      "sizeBytes": 124784,
+      "sizeKb": "121.9",
+      "dimensions": "1536x1024",
+      "width": 1536,
+      "height": 1024,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "RVhpkNjLTUrNV4qDdt8xE7a0Ps.webp",
+      "url": "https://framerusercontent.com/images/RVhpkNjLTUrNV4qDdt8xE7a0Ps.webp",
+      "sizeBytes": 111608,
+      "sizeKb": "109.0",
+      "dimensions": "1536x1024",
+      "width": 1536,
+      "height": 1024,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "zGWp5UP4NXxBVD059Ha4jDG8lIE.webp",
+      "url": "https://framerusercontent.com/images/zGWp5UP4NXxBVD059Ha4jDG8lIE.webp",
+      "sizeBytes": 110822,
+      "sizeKb": "108.2",
+      "dimensions": "1536x1024",
+      "width": 1536,
+      "height": 1024,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "kGh2LMFf7XBJZZRjfNGVfaBs92I.webp",
+      "url": "https://framerusercontent.com/images/kGh2LMFf7XBJZZRjfNGVfaBs92I.webp",
+      "sizeBytes": 97248,
+      "sizeKb": "95.0",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "qCM6RcOZsA8So2CKCNItnUCqIWU.webp",
+      "url": "https://framerusercontent.com/images/qCM6RcOZsA8So2CKCNItnUCqIWU.webp",
+      "sizeBytes": 91064,
+      "sizeKb": "88.9",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "MG9f4rzXDX8WcEBWoCYNl1HII.webp",
+      "url": "https://framerusercontent.com/images/MG9f4rzXDX8WcEBWoCYNl1HII.webp",
+      "sizeBytes": 86366,
+      "sizeKb": "84.3",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "bttkOhkl2iF7Wli5UcIYvgJBZE.webp",
+      "url": "https://framerusercontent.com/images/bttkOhkl2iF7Wli5UcIYvgJBZE.webp",
+      "sizeBytes": 74908,
+      "sizeKb": "73.2",
+      "dimensions": "768x1376",
+      "width": 768,
+      "height": 1376,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "eu5Oa67YLVrRA9TMUKhdnkkSQ.webp",
+      "url": "https://framerusercontent.com/images/eu5Oa67YLVrRA9TMUKhdnkkSQ.webp",
+      "sizeBytes": 67090,
+      "sizeKb": "65.5",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "F2ADq8uKnJWgYF9TX50Ef0rL0U.webp",
+      "url": "https://framerusercontent.com/images/F2ADq8uKnJWgYF9TX50Ef0rL0U.webp",
+      "sizeBytes": 67016,
+      "sizeKb": "65.4",
+      "dimensions": "1086x1448",
+      "width": 1086,
+      "height": 1448,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "noBfuRFj2oaIDBCDRqJuH3s1sRQ.webp",
+      "url": "https://framerusercontent.com/images/noBfuRFj2oaIDBCDRqJuH3s1sRQ.webp",
+      "sizeBytes": 66278,
+      "sizeKb": "64.7",
+      "dimensions": "768x1376",
+      "width": 768,
+      "height": 1376,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "VZfUrktlQoRdjs172kEJGi5zEs.webp",
+      "url": "https://framerusercontent.com/images/VZfUrktlQoRdjs172kEJGi5zEs.webp",
+      "sizeBytes": 66228,
+      "sizeKb": "64.7",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "6UfHWOJov8U1gmEA94Hh9kSKMqg.webp",
+      "url": "https://framerusercontent.com/images/6UfHWOJov8U1gmEA94Hh9kSKMqg.webp",
+      "sizeBytes": 60942,
+      "sizeKb": "59.5",
+      "dimensions": "896x1200",
+      "width": 896,
+      "height": 1200,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "CZscgvlYOVQHkdN9UbKXk28.webp",
+      "url": "https://framerusercontent.com/images/CZscgvlYOVQHkdN9UbKXk28.webp",
+      "sizeBytes": 60524,
+      "sizeKb": "59.1",
+      "dimensions": "3458x1697",
+      "width": 3458,
+      "height": 1697,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "UeasMBu07jHUk5ch5onj5OD9f4.webp",
+      "url": "https://framerusercontent.com/images/UeasMBu07jHUk5ch5onj5OD9f4.webp",
+      "sizeBytes": 53734,
+      "sizeKb": "52.5",
+      "dimensions": "2884x1739",
+      "width": 2884,
+      "height": 1739,
+      "format": "WebP (VP8X)"
+    },
+    {
+      "filename": "default-touch-icon.v3.png",
+      "url": "https://framerusercontent.com/sites/icons/default-touch-icon.v3.png",
+      "sizeBytes": 8598,
+      "sizeKb": "8.4",
+      "dimensions": "180x180",
+      "width": 180,
+      "height": 180,
+      "format": "PNG"
+    },
+    {
+      "filename": "default-favicon-dark.v1.png",
+      "url": "https://framerusercontent.com/sites/icons/default-favicon-dark.v1.png",
+      "sizeBytes": 227,
+      "sizeKb": "0.2",
+      "dimensions": "64x64",
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    },
+    {
+      "filename": "default-favicon-light.v1.png",
+      "url": "https://framerusercontent.com/sites/icons/default-favicon-light.v1.png",
+      "sizeBytes": 223,
+      "sizeKb": "0.2",
+      "dimensions": "64x64",
+      "width": 64,
+      "height": 64,
+      "format": "PNG"
+    }
+  ],
+  "audio": [
+    {
+      "filename": "mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "url": "https://framerusercontent.com/assets/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "sizeBytes": 2010102,
+      "sizeKb": "1963.0"
+    }
+  ],
+  "videos": [],
+  "fonts": [
+    {
+      "filename": "e3tmeuGtX-Co5MNzeAOqinEQYUnXkvc.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3tmeuGtX-Co5MNzeAOqinEQYUnXkvc.woff2",
+      "sizeBytes": 86272
+    },
+    {
+      "filename": "e3tmeuGtX-Co5MNzeAOqinEQcknXkvc.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3tmeuGtX-Co5MNzeAOqinEQcknXkvc.woff2",
+      "sizeBytes": 11196
+    },
+    {
+      "filename": "e3tmeuGtX-Co5MNzeAOqinEQfEnX.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3tmeuGtX-Co5MNzeAOqinEQfEnX.woff2",
+      "sizeBytes": 21232
+    },
+    {
+      "filename": "e3t5euGtX-Co5MNzeAOqinEYx2zCsNZJ2oY.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3t5euGtX-Co5MNzeAOqinEYx2zCsNZJ2oY.woff2",
+      "sizeBytes": 88408
+    },
+    {
+      "filename": "e3t5euGtX-Co5MNzeAOqinEYx2zCo9ZJ2oY.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3t5euGtX-Co5MNzeAOqinEYx2zCo9ZJ2oY.woff2",
+      "sizeBytes": 11240
+    },
+    {
+      "filename": "e3t5euGtX-Co5MNzeAOqinEYx2zCrdZJ.woff2",
+      "url": "https://fonts.gstatic.com/s/abhayalibre/v18/e3t5euGtX-Co5MNzeAOqinEYx2zCrdZJ.woff2",
+      "sizeBytes": 21564
+    },
+    {
+      "filename": "rnCu-xZa_krGokauCeNq1wWyWfqFXUIJ.woff2",
+      "url": "https://fonts.gstatic.com/s/dmseriftext/v13/rnCu-xZa_krGokauCeNq1wWyWfqFXUIJ.woff2",
+      "sizeBytes": 11000
+    },
+    {
+      "filename": "rnCu-xZa_krGokauCeNq1wWyWfSFXQ.woff2",
+      "url": "https://fonts.gstatic.com/s/dmseriftext/v13/rnCu-xZa_krGokauCeNq1wWyWfSFXQ.woff2",
+      "sizeBytes": 24512
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR4SDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR4SDktYw.woff2",
+      "sizeBytes": 33948
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GRxSDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GRxSDktYw.woff2",
+      "sizeBytes": 26024
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR5SDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR5SDktYw.woff2",
+      "sizeBytes": 11484
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR2SDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR2SDktYw.woff2",
+      "sizeBytes": 19868
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR6SDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR6SDktYw.woff2",
+      "sizeBytes": 10952
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR7SDktYw.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR7SDktYw.woff2",
+      "sizeBytes": 113928
+    },
+    {
+      "filename": "SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2",
+      "url": "https://fonts.gstatic.com/s/ebgaramond/v33/SlGUmQSNjdsmc35JDF1K5GR1SDk.woff2",
+      "sizeBytes": 44336
+    },
+    {
+      "filename": "92zatBhPNqw73oDd4iYl.woff2",
+      "url": "https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oDd4iYl.woff2",
+      "sizeBytes": 10140
+    },
+    {
+      "filename": "92zatBhPNqw73ord4iYl.woff2",
+      "url": "https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73ord4iYl.woff2",
+      "sizeBytes": 17104
+    },
+    {
+      "filename": "92zatBhPNqw73oTd4g.woff2",
+      "url": "https://fonts.gstatic.com/s/jost/v20/92zatBhPNqw73oTd4g.woff2",
+      "sizeBytes": 26576
+    },
+    {
+      "filename": "FeVRS0Fbvbc14VxhB7l15bU.woff2",
+      "url": "https://fonts.gstatic.com/s/judson/v20/FeVRS0Fbvbc14VxhB7l15bU.woff2",
+      "sizeBytes": 11876
+    },
+    {
+      "filename": "FeVRS0Fbvbc14VxhBrl15bU.woff2",
+      "url": "https://fonts.gstatic.com/s/judson/v20/FeVRS0Fbvbc14VxhBrl15bU.woff2",
+      "sizeBytes": 38876
+    },
+    {
+      "filename": "FeVRS0Fbvbc14VxhCLl1.woff2",
+      "url": "https://fonts.gstatic.com/s/judson/v20/FeVRS0Fbvbc14VxhCLl1.woff2",
+      "sizeBytes": 20752
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4taVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4taVIGxA.woff2",
+      "sizeBytes": 18008
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4kaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4kaVIGxA.woff2",
+      "sizeBytes": 11100
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4saVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4saVIGxA.woff2",
+      "sizeBytes": 3748
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4jaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4jaVIGxA.woff2",
+      "sizeBytes": 9460
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4iaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4iaVIGxA.woff2",
+      "sizeBytes": 8032
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x5caVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x5caVIGxA.woff2",
+      "sizeBytes": 19632
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x5OaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x5OaVIGxA.woff2",
+      "sizeBytes": 10676
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4vaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4vaVIGxA.woff2",
+      "sizeBytes": 8676
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVIGxA.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVIGxA.woff2",
+      "sizeBytes": 15280
+    },
+    {
+      "filename": "memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVI.woff2",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVI.woff2",
+      "sizeBytes": 18620
+    },
+    {
+      "filename": "vEFI2_5QCwIS4_Dhez5jcWjValgW8tenXg.woff2",
+      "url": "https://fonts.gstatic.com/s/philosopher/v21/vEFI2_5QCwIS4_Dhez5jcWjValgW8tenXg.woff2",
+      "sizeBytes": 10888
+    },
+    {
+      "filename": "vEFI2_5QCwIS4_Dhez5jcWjValgf8tenXg.woff2",
+      "url": "https://fonts.gstatic.com/s/philosopher/v21/vEFI2_5QCwIS4_Dhez5jcWjValgf8tenXg.woff2",
+      "sizeBytes": 13104
+    },
+    {
+      "filename": "vEFI2_5QCwIS4_Dhez5jcWjValgU8tenXg.woff2",
+      "url": "https://fonts.gstatic.com/s/philosopher/v21/vEFI2_5QCwIS4_Dhez5jcWjValgU8tenXg.woff2",
+      "sizeBytes": 6652
+    },
+    {
+      "filename": "vEFI2_5QCwIS4_Dhez5jcWjValgV8tenXg.woff2",
+      "url": "https://fonts.gstatic.com/s/philosopher/v21/vEFI2_5QCwIS4_Dhez5jcWjValgV8tenXg.woff2",
+      "sizeBytes": 7308
+    },
+    {
+      "filename": "vEFI2_5QCwIS4_Dhez5jcWjValgb8tc.woff2",
+      "url": "https://fonts.gstatic.com/s/philosopher/v21/vEFI2_5QCwIS4_Dhez5jcWjValgb8tc.woff2",
+      "sizeBytes": 22264
+    },
+    {
+      "filename": "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA-W2r.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtXA-W2r.woff2",
+      "sizeBytes": 12664
+    },
+    {
+      "filename": "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A-W2r.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt7A-W2r.woff2",
+      "sizeBytes": 5800
+    },
+    {
+      "filename": "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A-W2r.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXt_A-W2r.woff2",
+      "sizeBytes": 13668
+    },
+    {
+      "filename": "nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-Q.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFRD-vYSZviVYUb_rj3ij__anPXDTnCjmHKM4nYO7KN_qiTXtHA-Q.woff2",
+      "sizeBytes": 21884
+    },
+    {
+      "filename": "nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTjYgFE_.woff2",
+      "sizeBytes": 21152
+    },
+    {
+      "filename": "nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTPYgFE_.woff2",
+      "sizeBytes": 9112
+    },
+    {
+      "filename": "nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2",
+      "sizeBytes": 21140
+    },
+    {
+      "filename": "nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+      "url": "https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgA.woff2",
+      "sizeBytes": 38404
+    },
+    {
+      "filename": "SZc83FzrJKuqFbwMKk6EhUrz7QtO.woff2",
+      "url": "https://fonts.gstatic.com/s/alexbrush/v23/SZc83FzrJKuqFbwMKk6EhUrz7QtO.woff2",
+      "sizeBytes": 9748
+    },
+    {
+      "filename": "SZc83FzrJKuqFbwMKk6EhUvz7QtO.woff2",
+      "url": "https://fonts.gstatic.com/s/alexbrush/v23/SZc83FzrJKuqFbwMKk6EhUvz7QtO.woff2",
+      "sizeBytes": 27328
+    },
+    {
+      "filename": "SZc83FzrJKuqFbwMKk6EhUXz7Q.woff2",
+      "url": "https://fonts.gstatic.com/s/alexbrush/v23/SZc83FzrJKuqFbwMKk6EhUXz7Q.woff2",
+      "sizeBytes": 33288
+    },
+    {
+      "filename": "DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+      "url": "https://framerusercontent.com/assets/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+      "sizeBytes": 8892
+    },
+    {
+      "filename": "4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+      "url": "https://framerusercontent.com/assets/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+      "sizeBytes": 7080
+    },
+    {
+      "filename": "1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+      "url": "https://framerusercontent.com/assets/1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+      "sizeBytes": 4628
+    },
+    {
+      "filename": "tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+      "url": "https://framerusercontent.com/assets/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+      "sizeBytes": 6672
+    },
+    {
+      "filename": "VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+      "url": "https://framerusercontent.com/assets/VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+      "sizeBytes": 26076
+    },
+    {
+      "filename": "syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+      "url": "https://framerusercontent.com/assets/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+      "sizeBytes": 27900
+    },
+    {
+      "filename": "GIryZETIX4IFypco5pYZONKhJIo.woff2",
+      "url": "https://framerusercontent.com/assets/GIryZETIX4IFypco5pYZONKhJIo.woff2",
+      "sizeBytes": 4268
+    },
+    {
+      "filename": "5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+      "url": "https://framerusercontent.com/assets/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+      "sizeBytes": 8896
+    },
+    {
+      "filename": "EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+      "url": "https://framerusercontent.com/assets/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+      "sizeBytes": 7116
+    },
+    {
+      "filename": "Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+      "url": "https://framerusercontent.com/assets/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+      "sizeBytes": 4504
+    },
+    {
+      "filename": "OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+      "url": "https://framerusercontent.com/assets/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+      "sizeBytes": 6652
+    },
+    {
+      "filename": "JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+      "url": "https://framerusercontent.com/assets/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+      "sizeBytes": 25348
+    },
+    {
+      "filename": "GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+      "url": "https://framerusercontent.com/assets/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+      "sizeBytes": 27380
+    },
+    {
+      "filename": "b6Y37FthZeALduNqHicBT6FutY.woff2",
+      "url": "https://framerusercontent.com/assets/b6Y37FthZeALduNqHicBT6FutY.woff2",
+      "sizeBytes": 4168
+    },
+    {
+      "filename": "hyOgCu0Xnghbimh0pE8QTvtt2AU.woff2",
+      "url": "https://framerusercontent.com/assets/hyOgCu0Xnghbimh0pE8QTvtt2AU.woff2",
+      "sizeBytes": 8908
+    },
+    {
+      "filename": "NeGmSOXrPBfEFIy5YZeHq17LEDA.woff2",
+      "url": "https://framerusercontent.com/assets/NeGmSOXrPBfEFIy5YZeHq17LEDA.woff2",
+      "sizeBytes": 7152
+    },
+    {
+      "filename": "oYaAX5himiTPYuN8vLWnqBbfD2s.woff2",
+      "url": "https://framerusercontent.com/assets/oYaAX5himiTPYuN8vLWnqBbfD2s.woff2",
+      "sizeBytes": 4660
+    },
+    {
+      "filename": "lEJLP4R0yuCaMCjSXYHtJw72M.woff2",
+      "url": "https://framerusercontent.com/assets/lEJLP4R0yuCaMCjSXYHtJw72M.woff2",
+      "sizeBytes": 6668
+    },
+    {
+      "filename": "cRJyLNuTJR5jbyKzGi33wU9cqIQ.woff2",
+      "url": "https://framerusercontent.com/assets/cRJyLNuTJR5jbyKzGi33wU9cqIQ.woff2",
+      "sizeBytes": 26280
+    },
+    {
+      "filename": "yDtI2UI8XcEg1W2je9XPN3Noo.woff2",
+      "url": "https://framerusercontent.com/assets/yDtI2UI8XcEg1W2je9XPN3Noo.woff2",
+      "sizeBytes": 28088
+    },
+    {
+      "filename": "A0Wcc7NgXMjUuFdquHDrIZpzZw0.woff2",
+      "url": "https://framerusercontent.com/assets/A0Wcc7NgXMjUuFdquHDrIZpzZw0.woff2",
+      "sizeBytes": 4316
+    },
+    {
+      "filename": "5A3Ce6C9YYmCjpQx9M4inSaKU.woff2",
+      "url": "https://framerusercontent.com/assets/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2",
+      "sizeBytes": 8956
+    },
+    {
+      "filename": "Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2",
+      "url": "https://framerusercontent.com/assets/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2",
+      "sizeBytes": 7176
+    },
+    {
+      "filename": "6mJuEAguuIuMog10gGvH5d3cl8.woff2",
+      "url": "https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2",
+      "sizeBytes": 4644
+    },
+    {
+      "filename": "xYYWaj7wCU5zSQH0eXvSaS19wo.woff2",
+      "url": "https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2",
+      "sizeBytes": 6676
+    },
+    {
+      "filename": "otTaNuNpVK4RbdlT7zDDdKvQBA.woff2",
+      "url": "https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2",
+      "sizeBytes": 26264
+    },
+    {
+      "filename": "UjlFhCnUjxhNfep4oYBPqnEssyo.woff2",
+      "url": "https://framerusercontent.com/assets/UjlFhCnUjxhNfep4oYBPqnEssyo.woff2",
+      "sizeBytes": 27996
+    },
+    {
+      "filename": "DolVirEGb34pEXEp8t8FQBSK4.woff2",
+      "url": "https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2",
+      "sizeBytes": 4288
+    },
+    {
+      "filename": "H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+      "url": "https://framerusercontent.com/assets/H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+      "sizeBytes": 9564
+    },
+    {
+      "filename": "u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+      "url": "https://framerusercontent.com/assets/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+      "sizeBytes": 7556
+    },
+    {
+      "filename": "43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+      "url": "https://framerusercontent.com/assets/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+      "sizeBytes": 4960
+    },
+    {
+      "filename": "wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+      "url": "https://framerusercontent.com/assets/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+      "sizeBytes": 7360
+    },
+    {
+      "filename": "WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+      "url": "https://framerusercontent.com/assets/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+      "sizeBytes": 27736
+    },
+    {
+      "filename": "ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+      "url": "https://framerusercontent.com/assets/ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+      "sizeBytes": 30368
+    },
+    {
+      "filename": "2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+      "url": "https://framerusercontent.com/assets/2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+      "sizeBytes": 4236
+    },
+    {
+      "filename": "khkJkwSL66WFg8SX6Wa726c.woff2",
+      "url": "https://framerusercontent.com/assets/khkJkwSL66WFg8SX6Wa726c.woff2",
+      "sizeBytes": 9600
+    },
+    {
+      "filename": "0E7IMbDzcGABpBwwqNEt60wU0w.woff2",
+      "url": "https://framerusercontent.com/assets/0E7IMbDzcGABpBwwqNEt60wU0w.woff2",
+      "sizeBytes": 7540
+    },
+    {
+      "filename": "NTJ0nQgIF0gcDelS14zQ9NR9Q.woff2",
+      "url": "https://framerusercontent.com/assets/NTJ0nQgIF0gcDelS14zQ9NR9Q.woff2",
+      "sizeBytes": 4932
+    },
+    {
+      "filename": "QrcNhgEPfRl0LS8qz5Ln8olanl8.woff2",
+      "url": "https://framerusercontent.com/assets/QrcNhgEPfRl0LS8qz5Ln8olanl8.woff2",
+      "sizeBytes": 7332
+    },
+    {
+      "filename": "JEXmejW8mXOYMtt0hyRg811kHac.woff2",
+      "url": "https://framerusercontent.com/assets/JEXmejW8mXOYMtt0hyRg811kHac.woff2",
+      "sizeBytes": 27812
+    },
+    {
+      "filename": "Bo5CNzBv77CafbxOtKIkpw9egw.woff2",
+      "url": "https://framerusercontent.com/assets/Bo5CNzBv77CafbxOtKIkpw9egw.woff2",
+      "sizeBytes": 30244
+    },
+    {
+      "filename": "uy9s0iWuxiNnVt8EpTI3gzohpwo.woff2",
+      "url": "https://framerusercontent.com/assets/uy9s0iWuxiNnVt8EpTI3gzohpwo.woff2",
+      "sizeBytes": 4220
+    }
+  ]
+}

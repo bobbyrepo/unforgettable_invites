@@ -1,0 +1,479 @@
+/* 1. Hide Framer Official Brand Badges & Editor Bars */
+#__framer-badge-container,
+#__framer-badge,
+.framer-badge,
+#__framer-editorbar,
+#__framer-editorbar-container,
+div[data-framer-name*="Badge" i],
+
+/* 2. Hide Artful Invites Watermark Overlays & Tiled Patterns */
+[data-framer-name*="Watermark" i],
+[data-framer-name*="watermark" i],
+[name*="Watermark" i],
+[name*="watermark" i],
+.framer-drjap9-container,
+.framer-1bbdmlz,
+.framer-1gcmhtz,
+.framer-fVbkv,
+[data-framer-name="The Artful Invites Watermark Overlay"],
+[data-framer-name="Diagonal Pattern"],
+[data-framer-name="Diagonal Repeating Watermark Pattern"],
+[data-framer-name="Watermark Tile"],
+[data-framer-name="Watermark Row"],
+[data-framer-name="Watermark Row Offset"],
+
+/* 3. Hide Missing Piece Watermark Overlays */
+.framer-facrej,
+.framer-dmgyni,
+.framer-17sr7rc,
+.framer-g3m3gs,
+.framer-1n0n3bs,
+.framer-1charvo,
+.framer-1gvvbdf {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -999999 !important;
+    clip-path: inset(100%) !important;
+}
+
+/* 3.1 Disable Background Mountains Layer */
+[data-framer-name="Mountain"],
+.framer-cddieh,
+.framer-1jwo8cz,
+.framer-1hs2qp3 {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+
+
+
+/* 8. Trees Styling & Parallax (Behind Temple, In Front of Clouds) */
+:root {
+    --flag-saturation: 0.82;
+    --flag-brightness-filter: 0.96;
+    --flag-contrast-filter: 0.98;
+
+    /* =====================================================================
+       RIGHT WALKWAY FLAGS (R1, R2, R3, R4 - Exact Saved Coordinates)
+       ===================================================================== */
+    --flag-r1-x: 92.6%;
+    --flag-r1-y: 890px;
+    --flag-r1-scale: 0.31;
+    --flag-r1-rotate: 0deg;
+    --flag-r1-zindex: 4;
+    --flag-r1-opacity: 1;
+    --flag-r1-folds: 1;
+    --flag-r1-speed: .6;
+    --flag-r1-shading: 0.35;
+    --flag-r1-sheen: 0.0;
+    --flag-r1-brightness: 1.0;
+
+    --flag-r2-x: 88.3%;
+    --flag-r2-y: 945px;
+    --flag-r2-scale: 0.26;
+    --flag-r2-rotate: 0deg;
+    --flag-r2-zindex: 3;
+    --flag-r2-opacity: 1;
+    --flag-r2-folds: 1;
+    --flag-r2-speed: .58;
+    --flag-r2-shading: 0.35;
+    --flag-r2-sheen: 0.0;
+    --flag-r2-brightness: 1.0;
+
+    --flag-r3-x: 85.3%;
+    --flag-r3-y: 990px;
+    --flag-r3-scale: 0.20;
+    --flag-r3-rotate: 0deg;
+    --flag-r3-zindex: 2;
+    --flag-r3-opacity: 1;
+    --flag-r3-folds: 1;
+    --flag-r3-speed: .56;
+    --flag-r3-shading: 0.35;
+    --flag-r3-sheen: 0.0;
+    --flag-r3-brightness: 1.0;
+
+    --flag-r4-x: 83.1%;
+    --flag-r4-y: 1015px;
+    --flag-r4-scale: 0.17;
+    --flag-r4-rotate: 0deg;
+    --flag-r4-zindex: 1;
+    --flag-r4-opacity: 1;
+    --flag-r4-folds: 1;
+    --flag-r4-speed: .54;
+    --flag-r4-shading: 0.35;
+    --flag-r4-sheen: 0.0;
+    --flag-r4-brightness: 1.0;
+
+    /* =====================================================================
+       LEFT WALKWAY FLAGS (L1, L2, L3, L4 - Perspective Symmetrical)
+       ===================================================================== */
+    --flag-l1-x: 23.9%;
+    --flag-l1-y: 890px;
+    --flag-l1-scale: 0.31;
+    --flag-l1-rotate: 0deg;
+    --flag-l1-zindex: 4;
+    --flag-l1-opacity: 1;
+    --flag-l1-folds: 1;
+    --flag-l1-speed: .6;
+    --flag-l1-shading: 0.35;
+    --flag-l1-sheen: 0.0;
+    --flag-l1-brightness: 1.0;
+
+    --flag-l2-x: 29.1%;
+    --flag-l2-y: 940px;
+    --flag-l2-scale: 0.26;
+    --flag-l2-rotate: 0deg;
+    --flag-l2-zindex: 3;
+    --flag-l2-opacity: 1;
+    --flag-l2-folds: 1;
+    --flag-l2-speed: .58;
+    --flag-l2-shading: 0.35;
+    --flag-l2-sheen: 0.0;
+    --flag-l2-brightness: 1.0;
+
+    --flag-l3-x: 33.7%;
+    --flag-l3-y: 990px;
+    --flag-l3-scale: 0.20;
+    --flag-l3-rotate: 0deg;
+    --flag-l3-zindex: 2;
+    --flag-l3-opacity: 1;
+    --flag-l3-folds: 1;
+    --flag-l3-speed: .56;
+    --flag-l3-shading: 0.35;
+    --flag-l3-sheen: 0.0;
+    --flag-l3-brightness: 1.0;
+
+    --flag-l4-x: 36.5%;
+    --flag-l4-y: 1015px;
+    --flag-l4-scale: 0.17;
+    --flag-l4-rotate: 0deg;
+    --flag-l4-zindex: 1;
+    --flag-l4-opacity: 1;
+    --flag-l4-folds: 1;
+    --flag-l4-speed: .54;
+    --flag-l4-shading: 0.35;
+    --flag-l4-sheen: 0.0;
+    --flag-l4-brightness: 1.0;
+
+    --trees-parallax-speed: 0.42; /* Upward speed: Higher (e.g. 0.6) = scrolls up faster, Lower (e.g. 0.25) = scrolls up slower */
+}
+.framer-trees,
+[data-framer-name="Trees"] {
+    aspect-ratio: 1.23967;
+    z-index: 7 !important; /* Behind Temple (9), in front of Clouds (6) */
+    flex: none;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 600px !important;
+    left: 0;
+    right: 0;
+    overflow: visible;
+    pointer-events: none;
+    transform-origin: center bottom;
+    will-change: transform;
+}
+
+/* 7. Cloud Styling: Position and Scale for Clouds across all viewports */
+[data-framer-name="Cloud"],
+.framer-SNM3S .framer-1atv6cy,
+.framer-SNM3S .framer-6ca8d0,
+.framer-SNM3S .framer-fd898j {
+    /* Adjust top or margin-top if needed */
+    margin-top: -200px !important;
+}
+
+/* 6. Temple Elevation: Move the Temple Image across Desktop, Tablet & Mobile */
+[data-framer-name="Temple"],
+.framer-SNM3S .framer-hmdytf,
+.framer-SNM3S .framer-13lghix,
+.framer-SNM3S .framer-1sm6may {
+    top: 360px !important;
+}
+
+/* 5. Eradicate Flagpole / Flag Pillar across all viewports */
+.framer-1ue5gl8,
+.framer-han26s,
+.framer-z4cae1,
+[data-framer-name="Corner Decoration"],
+[name="Corner Decoration"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -999999 !important;
+    clip-path: inset(100%) !important;
+    transform: scale(0) !important;
+}
+
+/* 4. Eradicate Jai Shri Ram Waving Flag on Mobile & Desktop */
+.framer-r25czy-container,
+.framer-icwjlw-container,
+.framer-1b2mwsy-container,
+[data-framer-name="Waving Flag"],
+[name="Waving Flag"],
+[data-framer-name*="Waving Flag" i],
+[name*="Waving Flag" i],
+.framer-r25czy,
+.framer-icwjlw,
+.framer-1b2mwsy {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    max-height: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    z-index: -999999 !important;
+    clip-path: inset(100%) !important;
+    transform: scale(0) !important;
+}
+
+/* 9. Buddhist Pillar Flags — Dynamic Position, Scale & 3D Cloth Physics */
+:root {
+    /* =====================================================================
+       RIGHT PILLAR FLAG 1 CONTROLS
+       ===================================================================== */
+    --flag-r1-x: 92.6%;           /* <-- Paste your horizontal position here */
+    --flag-r1-y: 890px;         /* <-- Paste your vertical position here */
+    --flag-r1-scale: 0.31;      /* <-- Your scale */
+    --flag-r1-rotate: 0deg;
+    --flag-r1-zindex: 4;        /* Behind temple (temple artwork is at 5) */
+    --flag-r1-opacity: 1;
+    --flag-r1-folds: 1;
+    --flag-r1-speed: .6;
+    --flag-r1-shading: 0.35;
+    --flag-r1-sheen: 0.0;
+    --flag-r1-brightness: 1.0;
+    /* =====================================================================
+       RIGHT PILLAR FLAG 2 CONTROLS (Second Pillar from Right)
+       ===================================================================== */
+    --flag-r2-x: 88.3%;           /* Adjust to align with 2nd pillar from right */
+    --flag-r2-y: 945px;         /* Adjust height on pillar */
+    --flag-r2-scale: 0.26;      /* Adjust scale for perspective */
+    --flag-r2-rotate: 0deg;
+    --flag-r2-zindex: 3;        /* Behind temple */
+    --flag-r2-opacity: 1;
+    --flag-r2-folds: 1;
+    --flag-r2-speed: .58;
+    --flag-r2-shading: 0.35;
+    --flag-r2-sheen: 0.0;
+    --flag-r2-brightness: 1.0;
+
+    /* =====================================================================
+       RIGHT PILLAR FLAG 3 CONTROLS (Third Pillar from Right)
+       ===================================================================== */
+    --flag-r3-x: 85.3%;
+    --flag-r3-y: 990px;
+    --flag-r3-scale: 0.20;
+    --flag-r3-rotate: 0deg;
+    --flag-r3-zindex: 2;
+    --flag-r3-opacity: 1;
+    --flag-r3-folds: 1;
+    --flag-r3-speed: .56;
+    --flag-r3-shading: 0.35;
+    --flag-r3-sheen: 0.0;
+    --flag-r3-brightness: 1.0;
+
+    /* =====================================================================
+       RIGHT PILLAR FLAG 4 CONTROLS (Fourth Pillar from Right)
+       ===================================================================== */
+    --flag-r4-x: 83.1%;
+    --flag-r4-y: 1015px;
+    --flag-r4-scale: 0.17;
+    --flag-r4-rotate: 0deg;
+    --flag-r4-zindex: 1;
+    --flag-r4-opacity: 1;
+    --flag-r4-folds: 1;
+    --flag-r4-speed: .54;
+    --flag-r4-shading: 0.35;
+    --flag-r4-sheen: 0.0;
+    --flag-r4-brightness: 1.0;
+
+    /* =====================================================================
+       LEFT PILLAR FLAGS 1 to 4 CONTROLS (Pillars from Left to Center)
+       ===================================================================== */
+    --flag-l1-x: 23.9%;
+    --flag-l1-y: 890px;
+    --flag-l1-scale: 0.31;
+    --flag-l1-rotate: 0deg;
+    --flag-l1-zindex: 4;
+    --flag-l1-opacity: 1;
+    --flag-l1-folds: 1;
+    --flag-l1-speed: .6;
+    --flag-l1-shading: 0.35;
+    --flag-l1-sheen: 0.0;
+    --flag-l1-brightness: 1.0;
+
+    --flag-l2-x: 29.1%;
+    --flag-l2-y: 940px;
+    --flag-l2-scale: 0.26;
+    --flag-l2-rotate: 0deg;
+    --flag-l2-zindex: 3;
+    --flag-l2-opacity: 1;
+    --flag-l2-folds: 1;
+    --flag-l2-speed: .58;
+    --flag-l2-shading: 0.35;
+    --flag-l2-sheen: 0.0;
+    --flag-l2-brightness: 1.0;
+
+    --flag-l3-x: 33.7%;
+    --flag-l3-y: 990px;
+    --flag-l3-scale: 0.20;
+    --flag-l3-rotate: 0deg;
+    --flag-l3-zindex: 2;
+    --flag-l3-opacity: 1;
+    --flag-l3-folds: 1;
+    --flag-l3-speed: .56;
+    --flag-l3-shading: 0.35;
+    --flag-l3-sheen: 0.0;
+    --flag-l3-brightness: 1.0;
+
+    --flag-l4-x: 36.5%;
+    --flag-l4-y: 1015px;
+    --flag-l4-scale: 0.17;
+    --flag-l4-rotate: 0deg;
+    --flag-l4-zindex: 1;
+    --flag-l4-opacity: 1;
+    --flag-l4-folds: 1;
+    --flag-l4-speed: .54;
+    --flag-l4-shading: 0.35;
+    --flag-l4-sheen: 0.0;
+    --flag-l4-brightness: 1.0;
+
+}
+
+@media (max-width: 810px) {
+    :root {
+        --flag-r1-x: 92.6%;
+        --flag-r1-y: 890px;
+        --flag-r1-scale: 0.31;
+
+        --flag-r2-x: 88.3%;
+        --flag-r2-y: 945px;
+        --flag-r2-scale: 0.26;
+    }
+}
+
+/* Ensure Temple artwork layer sits in front of flags with z-index < 5 */
+[data-framer-name="Temple"] > [data-framer-background-image-wrapper="true"] {
+    z-index: 5 !important;
+    position: absolute !important;
+}
+
+
+
+/* =========================================================================
+   HIGH-PERFORMANCE 60FPS CSS 3D FLAG WAVE & RIPPLE ANIMATIONS
+   100% GPU Compositor Acceleration (Zero CPU Filter Overhead)
+   ========================================================================= */
+@keyframes flagWaveRight {
+    0% {
+        transform: perspective(900px) rotateY(0deg) skewY(0deg) scaleX(1);
+    }
+    20% {
+        transform: perspective(900px) rotateY(-8deg) skewY(1.4deg) scaleX(0.97) translateZ(4px);
+    }
+    45% {
+        transform: perspective(900px) rotateY(6deg) skewY(-1deg) scaleX(0.99) translateZ(-2px);
+    }
+    70% {
+        transform: perspective(900px) rotateY(-5deg) skewY(0.9deg) scaleX(0.98) translateZ(3px);
+    }
+    100% {
+        transform: perspective(900px) rotateY(0deg) skewY(0deg) scaleX(1);
+    }
+}
+
+@keyframes flagWaveLeft {
+    0% {
+        transform: perspective(900px) rotateY(0deg) skewY(0deg) scaleX(1);
+    }
+    20% {
+        transform: perspective(900px) rotateY(8deg) skewY(-1.4deg) scaleX(0.97) translateZ(4px);
+    }
+    45% {
+        transform: perspective(900px) rotateY(-6deg) skewY(1deg) scaleX(0.99) translateZ(-2px);
+    }
+    70% {
+        transform: perspective(900px) rotateY(5deg) skewY(-0.9deg) scaleX(0.98) translateZ(3px);
+    }
+    100% {
+        transform: perspective(900px) rotateY(0deg) skewY(0deg) scaleX(1);
+    }
+}
+
+/* Traveling Silk Shimmer / Wave Ripple Sheen */
+@keyframes silkSheenMove {
+    0% {
+        opacity: 0.15;
+        transform: translateY(-8%) scaleY(1);
+    }
+    50% {
+        opacity: 0.40;
+        transform: translateY(6%) scaleY(1.05);
+    }
+    100% {
+        opacity: 0.18;
+        transform: translateY(-8%) scaleY(1);
+    }
+}
+
+.buddhist-flag-wave-right {
+    transform-origin: 0% 12% !important;
+    animation: flagWaveRight 4.4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite !important;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.buddhist-flag-wave-left {
+    transform-origin: 100% 12% !important;
+    animation: flagWaveLeft 4.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite !important;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Organic Silk Ripple Light Sheen Overlay */
+.buddhist-flag-sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 250, 220, 0.35) 25%,
+        rgba(100, 70, 20, 0.25) 50%,
+        rgba(255, 245, 200, 0.4) 75%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 100% 200%;
+    mix-blend-mode: soft-light;
+    animation: silkSheenMove 4.6s ease-in-out infinite alternate;
+    will-change: opacity, transform;
+}
