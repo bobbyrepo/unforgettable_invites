@@ -233,13 +233,12 @@ async function persistInvites(invites: WeddingInviteData[]) {
     fs.writeFileSync(TMP_CONFIG_PATH, jsonStr, 'utf8');
   } catch (e) {}
 
-  // 3. Local working directory (Writable in local dev; catch EROFS silently on Vercel)
-  try {
-    fs.writeFileSync(CONFIG_PATH, jsonStr, 'utf8');
-  } catch (e: any) {
-    // EROFS: read-only file system on Vercel Lambda is normal and expected
-    if (e.code !== 'EROFS') {
-      console.warn('Could not write to local config:', e.message);
+  // 3. Local working directory (Only write locally, never on Vercel/serverless)
+  if (!process.env.VERCEL) {
+    try {
+      fs.writeFileSync(CONFIG_PATH, jsonStr, 'utf8');
+    } catch (e: any) {
+      // Ignore local write errors
     }
   }
 }
