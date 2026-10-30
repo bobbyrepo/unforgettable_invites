@@ -19,12 +19,14 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
 
   let html = fs.readFileSync(templatePath, 'utf8');
 
-  // 1. Inject base tag for asset resolution (stream from Cloudflare R2 CDN or local fallback)
+  // 1. Inject base tag for asset resolution & suppress benign hydration notices
   const r2Base = process.env.NEXT_PUBLIC_R2_URL;
   const assetBase = r2Base
     ? `${r2Base.replace(/\/$/, '')}/templates/${templateId}/`
     : `/templates/${templateId}/`;
-  html = html.replace('<head>', `<head>\n\t<base href="${assetBase}">`);
+
+  const headInject = `<head>\n\t<base href="${assetBase}">\n\t<script>(function(){const h=(m)=>typeof m==='string'&&(m.includes('recoverable error')||m.includes('Minified React error #418')||m.includes('Minified React error #422')||m.includes('Minified React error #425')||m.includes('Framer On-Page Editing'));const e=console.error,w=console.warn;console.error=function(...a){if(a.some(h))return;e.apply(console,a);};console.warn=function(...a){if(a.some(h))return;w.apply(console,a);};})();</script>`;
+  html = html.replace('<head>', headInject);
 
   // 2. Dynamic couple name replacements
   if (templateId === '08_unforgettable_buddhist_wedding') {
