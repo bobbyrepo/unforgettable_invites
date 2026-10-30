@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "dev:mobile": "next dev -H 0.0.0.0 -p 3000",
     "build:css": "tailwindcss -i ./src/app/globals.css -o ./public/app.css",
     "watch:css": "tailwindcss -i ./src/app/globals.css -o ./public/app.css --watch",
     "cdn:sync": "node tools/sync_r2.js",
     "cdn:watch": "node tools/sync_r2.js --watch",
+    "tunnel": "tools\\cloudflared.exe tunnel --url http://localhost:3000",
     "build": "npm run build:css && next build",
     "start": "next start",
     "lint": "next lint"
