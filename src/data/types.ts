@@ -53,6 +53,7 @@ export interface LogisticsConfig {
 }
 
 export interface FeatureToggles {
+  enableRSVP?: boolean;
   enableMusic?: boolean;
   enableDressCode?: boolean;
   enableValet?: boolean;

@@ -2,15 +2,26 @@ import fs from 'fs';
 import path from 'path';
 import { WeddingInviteData } from '@/data/types';
 import { MASTER_TEMPLATES } from '@/config/templates';
+import { TEMPLATE_SCHEMAS } from '@/config/template-schemas';
 
 export function renderTemplateHTML(invite: WeddingInviteData): string | null {
-  const templateId = invite.templateId || '08_unforgettable_buddhist_wedding';
-  const templateConfig = MASTER_TEMPLATES.find((t) => t.id === templateId);
+  const templateId = invite.templateId || '07_unforgettable_ram_mandir';
+  const schema = TEMPLATE_SCHEMAS[templateId] || TEMPLATE_SCHEMAS['07_unforgettable_ram_mandir'];
 
-  const groom = invite.couple?.groom?.name || 'Aarav';
-  const bride = invite.couple?.bride?.name || 'Saisha';
-  const groomParents = invite.couple?.groom?.parents || '';
-  const primaryCity = invite.events[0]?.venueAddress || 'Pune, Maharashtra';
+  const groom = invite.couple?.groom?.name || schema.defaultCouple.groom;
+  const bride = invite.couple?.bride?.name || schema.defaultCouple.bride;
+  const groomParents = invite.couple?.groom?.parents || schema.defaultCouple.groomParents;
+  const brideParents = invite.couple?.bride?.parents || schema.defaultCouple.brideParents;
+  
+  const primaryEvent = invite.events?.[0];
+  const primaryCity = primaryEvent?.venueAddress || schema.defaultCouple.city;
+  const primaryVenue = primaryEvent?.venueName || primaryEvent?.title || 'The Grand Palace';
+  const primaryDate = primaryEvent?.date || '20th Nov 2026';
+
+  const hashtag = invite.couple?.hashtag || schema.defaultCouple.hashtag;
+  const weather = invite.logistics?.weather || schema.defaultLogistics.weather;
+  const valet = invite.logistics?.valetParking || schema.defaultLogistics.valetParking;
+  const heroImg = invite.thumbnailUrl || schema.imageSlots[0]?.defaultUrl;
 
   const templatePath = path.join(process.cwd(), 'templates', templateId, 'index.html');
   if (!fs.existsSync(templatePath)) {
@@ -19,19 +30,54 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
 
   let html = fs.readFileSync(templatePath, 'utf8');
 
-  // 1. Inject base tag for asset resolution & suppress benign hydration notices
+  // 1. Inject base tag for asset resolution & OpenGraph meta tags
   const r2Base = process.env.NEXT_PUBLIC_R2_URL;
   const assetBase = r2Base
     ? `${r2Base.replace(/\/$/, '')}/templates/${templateId}/`
     : `/templates/${templateId}/`;
 
-  const headInject = `<head>\n\t<base href="${assetBase}">\n\t<script>(function(){const h=(m)=>typeof m==='string'&&(m.includes('recoverable error')||m.includes('Minified React error #418')||m.includes('Minified React error #422')||m.includes('Minified React error #425')||m.includes('Framer On-Page Editing'));const e=console.error,w=console.warn;console.error=function(...a){if(a.some(h))return;e.apply(console,a);};console.warn=function(...a){if(a.some(h))return;w.apply(console,a);};})();</script>`;
+  const ogTags = `
+\t<meta property="og:title" content="${groom} &amp; ${bride} | Wedding Invitation" />
+\t<meta property="og:description" content="Together with their families, cordially invite you to celebrate on ${primaryDate} in ${primaryCity}. Tap to view invitation." />
+\t<meta property="og:image" content="${heroImg.startsWith('http') ? heroImg : assetBase + heroImg.replace(/^\//, '')}" />
+\t<meta property="og:type" content="website" />
+\t<meta name="twitter:card" content="summary_large_image" />`;
+
+  const headInject = `<head>\n\t<base href="${assetBase}">${ogTags}\n\t<script>(function(){const h=(m)=>typeof m==='string'&&(m.includes('recoverable error')||m.includes('Minified React error #418')||m.includes('Minified React error #422')||m.includes('Minified React error #425')||m.includes('Framer On-Page Editing'));const e=console.error,w=console.warn;console.error=function(...a){if(a.some(h))return;e.apply(console,a);};console.warn=function(...a){if(a.some(h))return;w.apply(console,a);};})();</script>`;
   html = html.replace('<head>', headInject);
 
-  // 2. Dynamic couple name replacements
-  if (templateId === '08_unforgettable_buddhist_wedding') {
+  // 2. Dynamic couple name & family replacements across master themes
+  if (templateId === '07_unforgettable_ram_mandir') {
+    html = html.replaceAll('Akash', groom);
+    html = html.replaceAll('AKASH', groom.toUpperCase());
+    html = html.replaceAll('Drashti', bride);
+    html = html.replaceAll('DRASHTI', bride.toUpperCase());
+    
+    // Parents
+    if (groomParents) {
+      html = html.replaceAll('Smt. &amp; Shri Vikram Mehra', groomParents);
+      html = html.replaceAll('Smt. & Shri Vikram Mehra', groomParents);
+    }
+    if (brideParents) {
+      html = html.replaceAll('Smt. &amp; Shri Alok Verma', brideParents);
+      html = html.replaceAll('Smt. & Shri Alok Verma', brideParents);
+    }
+
+    // Hashtag & Logistics
+    if (hashtag) html = html.replaceAll('#AkashKiDrashti', hashtag);
+    if (weather) html = html.replaceAll('Crisp November Evening (18°C - 22°C)', weather);
+    if (valet) html = html.replaceAll('Complimentary valet parking available at Royal Porch Entrance Gate', valet);
+
+    if (primaryCity && primaryCity !== 'Jaipur, Rajasthan') {
+      html = html.replaceAll('Jaipur, Rajasthan', primaryCity);
+      html = html.replaceAll('Pune, Maharashtra', primaryCity);
+    }
+  } else if (templateId === '08_unforgettable_buddhist_wedding') {
     html = html.replaceAll('Siddharth', groom);
+    html = html.replaceAll('SIDDHARTH', groom.toUpperCase());
     html = html.replaceAll('Maya', bride);
+    html = html.replaceAll('MAYA', bride.toUpperCase());
+
     if (primaryCity && primaryCity !== 'Bodh Gaya, Bihar') {
       html = html.replaceAll('Bodh Gaya, Bihar', primaryCity);
     }
@@ -39,12 +85,7 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
       html = html.replaceAll('Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan', groomParents);
       html = html.replaceAll('Shri. Hemant Vardhan & Smt. Sunita Vardhan', groomParents);
     }
-  } else if (templateId === '07_unforgettable_ram_mandir') {
-    html = html.replaceAll('Akash', groom);
-    html = html.replaceAll('Drashti', bride);
-    if (primaryCity && primaryCity !== 'Pune, Maharashtra') {
-      html = html.replaceAll('Pune, Maharashtra', primaryCity);
-    }
+    if (hashtag) html = html.replaceAll('#MayaFoundHerSiddharth', hashtag);
   } else if (templateId === '01_unforgettable_temple_grace') {
     html = html.replaceAll('Rahul', groom);
     html = html.replaceAll('RAHUL', groom.toUpperCase());
@@ -71,16 +112,22 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
     html = html.replaceAll('Kavya', bride);
     html = html.replaceAll('KAVYA', bride.toUpperCase());
   } else {
-    html = html.replaceAll('Siddharth', groom);
-    html = html.replaceAll('Maya', bride);
     html = html.replaceAll('Akash', groom);
     html = html.replaceAll('Drashti', bride);
+    html = html.replaceAll('Siddharth', groom);
+    html = html.replaceAll('Maya', bride);
   }
 
   // 3. Document Title
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${groom} & ${bride} | Wedding Invitation</title>`);
 
-  // 4. Hide legacy switcher
+  // 4. RSVP Form Visibility Guard (Disabled by default)
+  const isRsvpEnabled = invite.toggles?.enableRSVP ?? false;
+  if (!isRsvpEnabled) {
+    html = html.replace(/<\/head>/i, '<style>[id*="rsvp"], [class*="rsvp-section"], [data-section="rsvp"] { display: none !important; }</style></head>');
+  }
+
+  // 5. Hide legacy switcher
   html = html.replace(/id="unified-template-switcher"[\s\S]*?style="[^"]*"/i, 'id="unified-template-switcher" style="display:none !important;"');
 
   return html;
