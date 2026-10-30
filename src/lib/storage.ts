@@ -25,10 +25,10 @@ const s3 = hasR2
 const BUCKET_NAME = process.env.R2_BUCKET_NAME || 'unforgettable-invites-assets';
 const R2_CONFIG_KEY = 'data/invites.config.json';
 
-// In-memory cache for ultra-fast serverless execution (5-second TTL)
+// In-memory cache for ultra-fast serverless execution (1-second TTL to avoid staleness)
 let inMemoryCache: WeddingInviteData[] | null = null;
 let lastCacheFetchTime = 0;
-const CACHE_TTL_MS = 5000;
+const CACHE_TTL_MS = 1000;
 
 export function normalizeEvent(e: any, index: number): WeddingEvent {
   return {
@@ -127,12 +127,12 @@ export function normalizeInvite(v: any): WeddingInviteData {
 }
 
 /**
- * Fetch all invites with multi-tier storage fallback:
+ * Fetch all invites with strict persistence hierarchy:
  * 1. In-memory cache (within TTL)
- * 2. Cloudflare R2 bucket (cloud-wide persistence)
- * 3. /tmp/invites.config.json (serverless temporary file)
+ * 2. Cloudflare R2 bucket (authoritative cloud store - even if empty [])
+ * 3. /tmp/invites.config.json
  * 4. ./invites.config.json (local file)
- * 5. INITIAL_INVITES (hardcoded fallback)
+ * 5. INITIAL_INVITES (ONLY if brand new system with zero files created)
  */
 export async function getAllInvites(): Promise<WeddingInviteData[]> {
   const now = Date.now();
@@ -140,7 +140,7 @@ export async function getAllInvites(): Promise<WeddingInviteData[]> {
     return inMemoryCache;
   }
 
-  // Tier 1: Try reading from Cloudflare R2
+  // Tier 1: Authoritative Cloudflare R2 Store
   if (s3) {
     try {
       const res = await s3.send(
@@ -150,9 +150,10 @@ export async function getAllInvites(): Promise<WeddingInviteData[]> {
         })
       );
       const str = await res.Body?.transformToString();
-      if (str) {
+      if (str !== undefined && str !== null) {
         const parsed = JSON.parse(str);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        if (Array.isArray(parsed)) {
+          // Authoritative! Even if user deleted all invites and parsed is [], respect it!
           const list = parsed.map(normalizeInvite);
           inMemoryCache = list;
           lastCacheFetchTime = now;
@@ -160,15 +161,15 @@ export async function getAllInvites(): Promise<WeddingInviteData[]> {
         }
       }
     } catch (e: any) {
-      // If object doesn't exist yet or network error, fall through to local
+      // 404 / NoSuchKey means file hasn't been initialized yet in R2
     }
   }
 
-  // Tier 2: Try reading from /tmp/invites.config.json
+  // Tier 2: /tmp/invites.config.json
   if (fs.existsSync(TMP_CONFIG_PATH)) {
     try {
       const data = JSON.parse(fs.readFileSync(TMP_CONFIG_PATH, 'utf8'));
-      if (Array.isArray(data) && data.length > 0) {
+      if (Array.isArray(data)) {
         const list = data.map(normalizeInvite);
         inMemoryCache = list;
         lastCacheFetchTime = now;
@@ -177,11 +178,11 @@ export async function getAllInvites(): Promise<WeddingInviteData[]> {
     } catch (e) {}
   }
 
-  // Tier 3: Try reading from local project root invites.config.json
+  // Tier 3: Local project root invites.config.json
   if (fs.existsSync(CONFIG_PATH)) {
     try {
       const data = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
-      if (Array.isArray(data) && data.length > 0) {
+      if (Array.isArray(data)) {
         const list = data.map(normalizeInvite);
         inMemoryCache = list;
         lastCacheFetchTime = now;
@@ -192,6 +193,7 @@ export async function getAllInvites(): Promise<WeddingInviteData[]> {
     }
   }
 
+  // Tier 4: First-time seed fallback
   inMemoryCache = [...INITIAL_INVITES];
   lastCacheFetchTime = now;
   return inMemoryCache;
@@ -211,7 +213,7 @@ async function persistInvites(invites: WeddingInviteData[]) {
   inMemoryCache = invites;
   lastCacheFetchTime = Date.now();
 
-  // 1. Cloudflare R2 (Global persistence across all Vercel serverless containers)
+  // 1. Cloudflare R2 (Global authoritative store)
   if (s3) {
     try {
       await s3.send(
@@ -228,18 +230,16 @@ async function persistInvites(invites: WeddingInviteData[]) {
     }
   }
 
-  // 2. /tmp directory (Writable on Vercel AWS Lambda)
+  // 2. /tmp directory (Writable in serverless container)
   try {
     fs.writeFileSync(TMP_CONFIG_PATH, jsonStr, 'utf8');
   } catch (e) {}
 
-  // 3. Local working directory (Only write locally, never on Vercel/serverless)
+  // 3. Local working directory (Only write locally, never on Vercel)
   if (!process.env.VERCEL) {
     try {
       fs.writeFileSync(CONFIG_PATH, jsonStr, 'utf8');
-    } catch (e: any) {
-      // Ignore local write errors
-    }
+    } catch (e: any) {}
   }
 }
 
@@ -295,13 +295,19 @@ export async function saveInvite(rawInvite: Partial<WeddingInviteData>): Promise
   }
 }
 
-export async function deleteInvite(identifier: string): Promise<{ success: boolean; remaining?: number; error?: string }> {
+export async function deleteInvite(identifier: string, slug?: string): Promise<{ success: boolean; remaining?: number; error?: string }> {
   try {
     let invites = await getAllInvites();
     const initialLen = invites.length;
-    const clean = cleanSlug(identifier);
+    const cleanId = (identifier || '').trim();
+    const cleanSlugVal = slug ? cleanSlug(slug) : (cleanId ? cleanSlug(cleanId) : '');
 
-    invites = invites.filter((inv) => inv.id !== identifier && inv.slug.toLowerCase() !== clean);
+    invites = invites.filter((inv) => {
+      const matchId = cleanId && inv.id === cleanId;
+      const matchSlug = cleanSlugVal && inv.slug.toLowerCase() === cleanSlugVal;
+      // Delete if matches ID or slug
+      return !matchId && !matchSlug;
+    });
 
     if (invites.length === initialLen) {
       return { success: false, error: 'Invite not found.' };

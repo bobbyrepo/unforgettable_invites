@@ -33,13 +33,14 @@ export async function PUT(req: NextRequest) {
 export async function DELETE(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const identifier = searchParams.get('id') || searchParams.get('slug');
+    const id = searchParams.get('id') || '';
+    const slug = searchParams.get('slug') || '';
 
-    if (!identifier) {
+    if (!id && !slug) {
       return NextResponse.json({ error: 'Provide either id or slug to delete.' }, { status: 400 });
     }
 
-    const result = await deleteInvite(identifier);
+    const result = await deleteInvite(id, slug);
     if (!result.success) {
       return NextResponse.json({ error: result.error }, { status: 404 });
     }

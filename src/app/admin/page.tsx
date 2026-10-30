@@ -32,13 +32,13 @@ export default function AdminPage() {
       const res = await fetch('/api/invites', { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
-        setInvites(data);
+        setInvites(Array.isArray(data) ? data : []);
       } else {
-        setInvites(INITIAL_INVITES);
+        setInvites([]);
       }
     } catch (err) {
       console.error('Error fetching invites:', err);
-      setInvites(INITIAL_INVITES);
+      setInvites([]);
     } finally {
       setIsLoading(false);
     }
@@ -105,20 +105,28 @@ export default function AdminPage() {
   const handleConfirmDelete = async () => {
     if (!deleteTarget) return;
     try {
-      const res = await fetch(`/api/invites?id=${deleteTarget.id}&slug=${deleteTarget.slug}`, {
+      const targetId = deleteTarget.id;
+      const targetSlug = deleteTarget.slug;
+      
+      // Optimistic removal from UI
+      setInvites((prev) => prev.filter((i) => i.id !== targetId && i.slug !== targetSlug));
+      setDeleteTarget(null);
+
+      const res = await fetch(`/api/invites?id=${encodeURIComponent(targetId)}&slug=${encodeURIComponent(targetSlug)}`, {
         method: 'DELETE',
       });
       if (res.ok) {
+        showToast(`Deleted /${targetSlug}`);
         await fetchInvites();
-        showToast(`Deleted /${deleteTarget.slug}`);
-        setDeleteTarget(null);
       } else {
         const data = await res.json();
         alert(data.error || 'Failed to delete.');
+        await fetchInvites();
       }
     } catch (err) {
       console.error(err);
       alert('Network error.');
+      await fetchInvites();
     }
   };
 
