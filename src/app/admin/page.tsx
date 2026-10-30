@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Search, Plus, Loader2 } from 'lucide-react';
 import { WeddingInviteData } from '@/data/types';
 import { INITIAL_INVITES } from '@/data/invites';
@@ -9,11 +10,11 @@ import { useTheme } from '@/hooks/useTheme';
 import { AdminHeader } from '@/components/admin/AdminHeader';
 import { AdminStats } from '@/components/admin/AdminStats';
 import { AdminInviteCard } from '@/components/admin/AdminInviteCard';
-import { InviteModal } from '@/components/admin/InviteModal';
 import { DeleteConfirmModal } from '@/components/admin/DeleteConfirmModal';
 import { Toast } from '@/components/ui/Toast';
 
 export default function AdminPage() {
+  const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const [invites, setInvites] = useState<WeddingInviteData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +23,6 @@ export default function AdminPage() {
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Modals
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editingInvite, setEditingInvite] = useState<WeddingInviteData | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<WeddingInviteData | null>(null);
 
   const fetchInvites = async () => {
@@ -72,34 +71,11 @@ export default function AdminPage() {
   };
 
   const handleOpenCreate = () => {
-    setEditingInvite(null);
-    setIsModalOpen(true);
+    router.push('/admin/editor');
   };
 
   const handleOpenEdit = (inv: WeddingInviteData) => {
-    setEditingInvite(inv);
-    setIsModalOpen(true);
-  };
-
-  const handleSaveInvite = async (payload: any): Promise<{ success: boolean; error?: string }> => {
-    try {
-      const res = await fetch('/api/invites', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const data = await res.json();
-
-      if (!res.ok) {
-        return { success: false, error: data.error || 'Failed to save.' };
-      }
-
-      await fetchInvites();
-      showToast(editingInvite ? 'Wedding invitation updated!' : `Invitation /${payload.slug} created live!`);
-      return { success: true };
-    } catch (err: any) {
-      return { success: false, error: err.message || 'Network error.' };
-    }
+    router.push(`/admin/editor?id=${encodeURIComponent(inv.id)}`);
   };
 
   const handleConfirmDelete = async () => {
@@ -200,13 +176,6 @@ export default function AdminPage() {
           )}
         </div>
       </main>
-
-      <InviteModal
-        isOpen={isModalOpen}
-        editingInvite={editingInvite}
-        onClose={() => setIsModalOpen(false)}
-        onSave={handleSaveInvite}
-      />
 
       <DeleteConfirmModal
         invite={deleteTarget}
