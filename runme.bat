@@ -27,18 +27,18 @@ echo   * Admin Studio    : http://localhost:3000/admin
 echo   * Mobile Phone    : http://%LOCAL_IP%:3000
 echo   * Mobile Preview  : http://%LOCAL_IP%:3000/templates/08_unforgettable_buddhist_wedding
 echo   ------------------------------------------------------------------
-echo   (Connect your phone or tablet to the same Wi-Fi network)
+echo   Note: Connect your phone or tablet to the same Wi-Fi network.
 echo.
 
 :: Check if cloudflared.exe exists for remote mobile public HTTPS tunnel
 if exist "tools\cloudflared.exe" (
-    echo [3/3] Starting Mobile Public HTTPS Tunnel (Zero-config Remote Testing)...
+    echo [3/3] Starting Mobile Public HTTPS Tunnel for remote phone testing...
     start "Unforgettable Invites - Mobile Public Tunnel" cmd /k "cd /d \"%~dp0\" && tools\cloudflared.exe tunnel --url http://localhost:3000"
     echo   * Public HTTPS Tunnel launched in a separate window!
     echo.
 )
 
-echo Starting Web Application Server (Next.js)...
+echo Starting Web Application Server - Next.js...
 echo.
 npm run dev -- -H 0.0.0.0 -p 3000
 
