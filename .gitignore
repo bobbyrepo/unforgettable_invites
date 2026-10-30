@@ -22,7 +22,8 @@ Thumbs.db
 
 # Scratch & Temporary Testing Folders
 scratch/
-tools/
+tools/.sync-cache.json
+tools/*.exe
 *.exe
 debug_template.js
 

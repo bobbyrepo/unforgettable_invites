@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build:css": "tailwindcss -i ./src/app/globals.css -o ./public/app.css",
     "watch:css": "tailwindcss -i ./src/app/globals.css -o ./public/app.css --watch",
+    "cdn:sync": "node tools/sync_r2.js",
+    "cdn:watch": "node tools/sync_r2.js --watch",
     "build": "npm run build:css && next build",
     "start": "next start",
     "lint": "next lint"
