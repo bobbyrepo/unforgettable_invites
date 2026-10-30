@@ -856,6 +856,20 @@ a[href*="missingpiece"] {
         <option value="/templates/07_unforgettable_ram_mandir/" >🏛️ Ram Mandir (Unforgettable Invites)</option><option value="/templates/02_unforgettable_radha_krishna/" >🦚 Radha Krishna Vrindavan</option><option value="/templates/01_unforgettable_temple_grace/" >🛕 Temple Grace Gopuram</option><option value="/templates/04_unforgettable_ayodhya_heritage/" >🏹 Ayodhya Vedic Mandir</option><option value="/templates/05_unforgettable_meenakshi_royal/" >🌺 Meenakshi Royal Sanctuary</option><option value="/templates/06_unforgettable_udaipur_palace/" selected>👑 Udaipur Lake Palace</option><option value="/templates/03_unforgettable_pastel_elegance/" >✨ Royal Pastel Luxury</option>
     </select>
 </div>
+<script id="unified-template-switcher-script">
+(function(){
+  try {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('client') || p.get('demo') === '0' || window.__IS_CLIENT_PROD__) {
+      const el = document.getElementById('unified-template-switcher');
+      if (el) el.style.setProperty('display', 'none', 'important');
+    }
+  } catch(e) {}
+})();
+</script>
 
+
+<!-- Universal Client & Section Toggle Manager -->
+<script src="/scripts/universal-content-manager.js"></script>
 </body>
 </html>

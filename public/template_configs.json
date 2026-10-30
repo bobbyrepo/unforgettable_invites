@@ -1,0 +1,648 @@
+{
+  "01_unforgettable_temple_grace": {
+    "name": "Temple Grace Gopuram",
+    "theme": "Traditional South Indian Gopuram & Gold Temple",
+    "logo": {
+      "name": "Monogram / Brand Logo",
+      "file": "7Jc7F5U6LjAzdX4ypVkjja74nO8.webp",
+      "width": 2500,
+      "height": 2500,
+      "ratio": "1:1 Square (e.g. 1000x1000 or 500x500)"
+    },
+    "photos": [
+      {
+        "id": "couple_cutout",
+        "label": "Couple Hero Cutout (Transparent PNG/WebP)",
+        "file": "QUYudzcydz5OmxfmIxgjPrFyb6I.png",
+        "ratio": "9:16 Portrait Cutout (1872x3344)"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner (Names & Date)",
+        "always": true
+      },
+      "family": {
+        "label": "Parents & Family Invitation",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Events & Ceremonies Timeline",
+        "always": true
+      },
+      "coupleCutout": {
+        "label": "Couple Cutout Interlude",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 4"
+      },
+      "ourStory": {
+        "label": "Our Story / Meet the Couple",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 5"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 6"
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true,
+        "framerName": "COUNTING THE DAYS"
+      },
+      "music": {
+        "label": "Background Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "02_unforgettable_radha_krishna": {
+    "name": "Radha Krishna Vrindavan",
+    "theme": "Vrindavan Divine Love & Floral Sacred Mandap",
+    "logo": {
+      "name": "Couple Monogram Logo",
+      "file": "7Jc7F5U6LjAzdX4ypVkjja74nO8.webp",
+      "width": 2500,
+      "height": 2500,
+      "ratio": "1:1 Square"
+    },
+    "photos": [
+      {
+        "id": "couple_cutout",
+        "label": "Couple Portrait Cutout",
+        "file": "PWKoRE4Df4zZJLisykUKiwZnlRE.webp",
+        "ratio": "3:4 Portrait (1200x1600)"
+      },
+      {
+        "id": "gallery_1",
+        "label": "Gallery Photo Card 1",
+        "file": "6UfHWOJov8U1gmEA94Hh9kSKMqg.webp",
+        "ratio": "4:5 Portrait (1080x1350)"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true
+      },
+      "family": {
+        "label": "Family Invitation",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Wedding Events",
+        "always": true
+      },
+      "coupleCutout": {
+        "label": "Couple Cutout & Blessing",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 4"
+      },
+      "gallery": {
+        "label": "Photo Gallery Cards",
+        "toggleable": true,
+        "default": true,
+        "framerName": "page5"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true,
+        "framerName": "RSVP"
+      },
+      "music": {
+        "label": "Background Music (Flute)",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "03_unforgettable_pastel_elegance": {
+    "name": "Royal Pastel Luxury",
+    "theme": "Modern Soft Pastel Pink & Floral Gold Luxury",
+    "logo": {
+      "name": "Monogram Seal",
+      "file": "7Jc7F5U6LjAzdX4ypVkjja74nO8.webp",
+      "width": 2500,
+      "height": 2500,
+      "ratio": "1:1 Square"
+    },
+    "photos": [
+      {
+        "id": "couple_cutout",
+        "label": "Couple Hero Cutout",
+        "ratio": "9:16 Portrait"
+      },
+      {
+        "id": "gallery_slider",
+        "label": "Photo Slider Carousel (3 Photos)",
+        "ratio": "4:5 Portrait"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true
+      },
+      "family": {
+        "label": "Family Invitation",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Timeline / Ceremonies",
+        "always": true
+      },
+      "coupleCutout": {
+        "label": "Couple Cutout Banner",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 4"
+      },
+      "ourStory": {
+        "label": "Our Story",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 5"
+      },
+      "gallery": {
+        "label": "Photo Slider Gallery",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Frame Photo Slider"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 7"
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true,
+        "framerName": "PAGE 8"
+      },
+      "music": {
+        "label": "Background Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "04_unforgettable_ayodhya_heritage": {
+    "name": "Ayodhya Vedic Mandir",
+    "theme": "Grand Vedic Mandir Heritage & Saffron Bells",
+    "logo": {
+      "name": "Royal Seal / Monogram",
+      "ratio": "1:1 Square"
+    },
+    "photos": [],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Ceremonies Timeline",
+        "always": true
+      },
+      "mapLocation": {
+        "label": "Venue Location & Directions",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Section 3"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Section 4"
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true
+      },
+      "thingsToKnow": {
+        "label": "Things to Know Suite",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Things to know section"
+      },
+      "valetParking": {
+        "label": "Valet Parking Info",
+        "toggleable": true,
+        "default": true
+      },
+      "dressCode": {
+        "label": "Dress Code / Attire Theme",
+        "toggleable": true,
+        "default": true
+      },
+      "hashtag": {
+        "label": "Wedding Hashtag",
+        "toggleable": true,
+        "default": true
+      },
+      "staffAssistance": {
+        "label": "Staff & Helpdesk Contact",
+        "toggleable": true,
+        "default": true
+      },
+      "weather": {
+        "label": "Weather Forecast Card",
+        "toggleable": true,
+        "default": false
+      },
+      "music": {
+        "label": "Background Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "05_unforgettable_meenakshi_royal": {
+    "name": "Meenakshi Royal Sanctuary",
+    "theme": "Madurai Meenakshi Dravidian Grandeur",
+    "logo": {
+      "name": "Royal Seal / Monogram",
+      "ratio": "1:1 Square"
+    },
+    "photos": [],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Ceremonies Timeline",
+        "always": true
+      },
+      "mapLocation": {
+        "label": "Venue Location & Map",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Section 3"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true
+      },
+      "thingsToKnow": {
+        "label": "Things to Know Suite",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Things to know section"
+      },
+      "valetParking": {
+        "label": "Valet Parking",
+        "toggleable": true,
+        "default": true
+      },
+      "dressCode": {
+        "label": "Dress Code / Attire",
+        "toggleable": true,
+        "default": true
+      },
+      "hashtag": {
+        "label": "Wedding Hashtag",
+        "toggleable": true,
+        "default": true
+      },
+      "staffAssistance": {
+        "label": "Staff Assistance",
+        "toggleable": true,
+        "default": true
+      },
+      "weather": {
+        "label": "Weather Card",
+        "toggleable": true,
+        "default": false
+      },
+      "music": {
+        "label": "Background Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "06_unforgettable_udaipur_palace": {
+    "name": "Udaipur Lake Palace",
+    "theme": "Rajputana Royal Forts, Arches & Floating Pavilions",
+    "logo": {
+      "name": "Royal Monogram",
+      "ratio": "1:1 Square"
+    },
+    "photos": [
+      {
+        "id": "couple_portrait",
+        "label": "Royal Couple Portrait",
+        "ratio": "3:4 Portrait"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true
+      },
+      "family": {
+        "label": "Parents Invitation",
+        "always": true
+      },
+      "ceremonies": {
+        "label": "Royal Events Timeline",
+        "always": true
+      },
+      "mapLocation": {
+        "label": "Venue Location & Map",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Section 3"
+      },
+      "rsvp": {
+        "label": "RSVP Section",
+        "toggleable": true,
+        "default": true
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true
+      },
+      "thingsToKnow": {
+        "label": "Things to Know Suite",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Things to know section"
+      },
+      "valetParking": {
+        "label": "Valet Parking",
+        "toggleable": true,
+        "default": true
+      },
+      "dressCode": {
+        "label": "Dress Code",
+        "toggleable": true,
+        "default": true
+      },
+      "hashtag": {
+        "label": "Wedding Hashtag",
+        "toggleable": true,
+        "default": true
+      },
+      "staffAssistance": {
+        "label": "Staff & Concierge",
+        "toggleable": true,
+        "default": true
+      },
+      "weather": {
+        "label": "Weather Card",
+        "toggleable": true,
+        "default": false
+      },
+      "music": {
+        "label": "Background Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "07_unforgettable_ram_mandir": {
+    "name": "Ayodhya Ram Mandir",
+    "theme": "Nagari Shikhara, Golden Surya & Sacred Saffron Flags",
+    "logo": {
+      "name": "Mandir Monogram Emblem",
+      "ratio": "1:1 Square (600x600 or 1000x1000)"
+    },
+    "photos": [
+      {
+        "id": "gallery_1",
+        "label": "Couple Gallery Polaroid 1",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      },
+      {
+        "id": "gallery_2",
+        "label": "Couple Gallery Polaroid 2",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      },
+      {
+        "id": "gallery_3",
+        "label": "Couple Gallery Polaroid 3",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner (Names & Sacred Verse)",
+        "always": true,
+        "framerName": "1 — Hero & Invitation"
+      },
+      "family": {
+        "label": "Parents & Family Invitation",
+        "always": true,
+        "framerName": "Invitation Details"
+      },
+      "ceremonies": {
+        "label": "6 Sacred Ceremonies Timeline",
+        "always": true,
+        "framerName": "2 — Wedding Timeline"
+      },
+      "ourStory": {
+        "label": "Meet the Couple / Our Journey",
+        "toggleable": true,
+        "default": true,
+        "framerName": "3 — Meet the Couple"
+      },
+      "gallery": {
+        "label": "Photo Gallery / Memories",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Photo Gallery"
+      },
+      "rsvp": {
+        "label": "RSVP Section & WhatsApp",
+        "toggleable": true,
+        "default": true,
+        "framerName": "RSVP Form"
+      },
+      "countdown": {
+        "label": "Auspicious Countdown Clock",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Countdown"
+      },
+      "mapLocation": {
+        "label": "Interactive Venue Map",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Location Map"
+      },
+      "thingsToKnow": {
+        "label": "Things to Know (Hashtag, Parking, Dress Code, Staff)",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Things to Know"
+      },
+      "valetParking": {
+        "label": "Valet Parking Info",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Parking Item"
+      },
+      "dressCode": {
+        "label": "Dress Code / Attire Theme",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Staff Item"
+      },
+      "hashtag": {
+        "label": "Wedding Hashtag",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Hashtag Item"
+      },
+      "staffAssistance": {
+        "label": "Staff / Emergency Contact",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Staff Item"
+      },
+      "weather": {
+        "label": "Weather Forecast Card",
+        "toggleable": true,
+        "default": false,
+        "framerName": "Weather Item"
+      },
+      "music": {
+        "label": "Background Shehnai / Bhajan Music",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  },
+  "08_unforgettable_buddhist_wedding": {
+    "name": "Mahabodhi Buddhist Bodh Gaya",
+    "theme": "Bodh Gaya Lotus, Sacred Saffron Chants & Mahabodhi Stupa",
+    "logo": {
+      "name": "Dharma Wheel / Couple Monogram",
+      "ratio": "1:1 Square (600x600 or 1000x1000)"
+    },
+    "photos": [
+      {
+        "id": "gallery_1",
+        "label": "Couple Photo 1",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      },
+      {
+        "id": "gallery_2",
+        "label": "Couple Photo 2",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      },
+      {
+        "id": "gallery_3",
+        "label": "Couple Photo 3",
+        "ratio": "1:1 Square or 4:5 Portrait"
+      }
+    ],
+    "sections": {
+      "hero": {
+        "label": "Hero Banner",
+        "always": true,
+        "framerName": "1 — Hero & Invitation"
+      },
+      "family": {
+        "label": "Parents & Family Blessings",
+        "always": true,
+        "framerName": "Invitation Details"
+      },
+      "ceremonies": {
+        "label": "Ceremonies Pillars (1-6)",
+        "always": true,
+        "framerName": "2 — Wedding Timeline"
+      },
+      "ourStory": {
+        "label": "Meet the Couple Story",
+        "toggleable": true,
+        "default": true,
+        "framerName": "3 — Meet the Couple"
+      },
+      "gallery": {
+        "label": "Photo Gallery",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Photo Gallery"
+      },
+      "rsvp": {
+        "label": "RSVP Section & WhatsApp RSVP",
+        "toggleable": true,
+        "default": true,
+        "framerName": "RSVP Form"
+      },
+      "countdown": {
+        "label": "Countdown Timer",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Countdown"
+      },
+      "mapLocation": {
+        "label": "Google Map Venue Location",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Location Map"
+      },
+      "thingsToKnow": {
+        "label": "Things to Know Suite",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Things to Know"
+      },
+      "valetParking": {
+        "label": "Valet Parking Info",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Parking Item"
+      },
+      "dressCode": {
+        "label": "Dress Code / Attire Theme",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Staff Item"
+      },
+      "hashtag": {
+        "label": "Wedding Hashtag",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Hashtag Item"
+      },
+      "staffAssistance": {
+        "label": "Help / Staff Assistance",
+        "toggleable": true,
+        "default": true,
+        "framerName": "Staff Item"
+      },
+      "weather": {
+        "label": "Weather Forecast Card",
+        "toggleable": true,
+        "default": false,
+        "framerName": "Weather Item"
+      },
+      "music": {
+        "label": "Temple Flute & Bowls Audio Player",
+        "toggleable": true,
+        "default": true
+      }
+    }
+  }
+}

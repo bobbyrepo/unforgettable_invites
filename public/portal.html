@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unforgettable Tales | Luxury Digital Wedding Invitations Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root, [data-theme="light"] {
+            --bg-page: #f8f9fb;
+            --bg-card: #ffffff;
+            --bg-subtle: #f8fafc;
+            --bg-input: #f8fafc;
+            --border-light: #eceef2;
+            --border-hover: #cbd5e1;
+            --text-dark: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --text-subtle: #94a3b8;
+            --primary-action: #0f172a;
+            --primary-action-text: #ffffff;
+            --primary-hover: #1e293b;
+            --success: #10b981;
+            --radius-card: 16px;
+            --radius-btn: 10px;
+            --shadow-subtle: 0 1px 3px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        [data-theme="dark"] {
+            --bg-page: #090b10;
+            --bg-card: #12151f;
+            --bg-subtle: #191e2b;
+            --bg-input: #171c28;
+            --border-light: #202636;
+            --border-hover: #364157;
+            --text-dark: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #94a3b8;
+            --text-subtle: #64748b;
+            --primary-action: #f8fafc;
+            --primary-action-text: #090b10;
+            --primary-hover: #e2e8f0;
+            --success: #10b981;
+            --shadow-subtle: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.25);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg-page);
+            color: var(--text-body);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Top Header */
+        header.portal-header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-light);
+            padding: 0 32px;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .brand-logo-sq {
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            background: var(--primary-action);
+            color: var(--primary-action-text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 15px;
+        }
+        .brand-text-grp h1 {
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-dark);
+        }
+        .brand-text-grp p {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .portal-nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: var(--radius-btn);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-body);
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+        .nav-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--text-dark);
+        }
+        .nav-btn.primary {
+            background: var(--primary-action);
+            color: var(--primary-action-text);
+            border-color: var(--primary-action);
+        }
+        .nav-btn.primary:hover { opacity: 0.92; }
+
+        .theme-btn {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 8px 12px;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s;
+        }
+        .theme-btn:hover { border-color: var(--border-hover); }
+
+        /* Container */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 5px 14px;
+            border-radius: 999px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .hero-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .hero-sub {
+            font-size: 15px;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* Metric Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+        @media (max-width: 860px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-card);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .m-num {
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+        .m-lbl {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Template Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+        }
+        @media (max-width: 420px) {
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+
+        .tmpl-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .tmpl-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+        .card-icon-sq {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .card-title-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.2px;
+        }
+        .card-tag {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-family: monospace;
+        }
+
+        .card-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        .specs-strip {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+        }
+        .spec-item { display: flex; flex-direction: column; }
+        .spec-val { font-weight: 700; color: var(--text-dark); }
+        .spec-key { font-size: 10.5px; color: var(--text-subtle); text-transform: uppercase; }
+
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .btn-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 11px;
+            border-radius: var(--radius-btn);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+        .btn-card.primary {
+            background: var(--primary-action);
+            color: var(--primary-action-text);
+            border: 1px solid var(--primary-action);
+        }
+        .btn-card.primary:hover { opacity: 0.92; }
+        .btn-card.outline {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-body);
+        }
+        .btn-card.outline:hover {
+            background: var(--bg-subtle);
+            border-color: var(--border-hover);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="portal-header">
+        <a href="/" class="brand-link">
+            <div class="brand-logo-sq">U</div>
+            <div class="brand-text-grp">
+                <h1>UNFORGETTABLE TALES</h1>
+                <p>Luxury Digital Wedding Catalog</p>
+            </div>
+        </a>
+
+        <div class="portal-nav-actions">
+            <button class="theme-btn" id="theme-toggle-btn" onclick="toggleTheme()">
+                <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
+            </button>
+            <a href="/studio" class="nav-btn primary">
+                <span>✏️</span> Studio Builder
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <div class="hero-banner">
+            <div class="hero-badge">Curated Collection • 8 Master Themes</div>
+            <h2 class="hero-title">Bespoke Digital Wedding Invitations</h2>
+            <p class="hero-sub">Explore our 8 handcrafted interactive wedding experiences. Built with cinematic 3D effects, traditional sacred music, and seamless WhatsApp RSVPs.</p>
+        </div>
+
+        <!-- Metric Grid -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="m-num">8</div>
+                <div class="m-lbl">Master Themes</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-num">274</div>
+                <div class="m-lbl">Retina Assets</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-num">5</div>
+                <div class="m-lbl">Audio Tracks</div>
+            </div>
+            <div class="metric-card">
+                <div class="m-num">152 MB</div>
+                <div class="m-lbl">Lean Footprint</div>
+            </div>
+        </div>
+
+        <!-- Templates Cards Grid -->
+        <div class="cards-grid">
+
+            <!-- 08: Buddhist Serenity -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">☸️</div>
+                        <div>
+                            <div class="card-title-text">Buddhist Serenity</div>
+                            <div class="card-tag">08_buddhist_wedding</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Sacred Bodh Gaya Mahabodhi temple theme featuring calibrated 3D silk cloth physics, Bodhi tree parallax, and serene Buddhist flute music.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">WebGL 3D</span><span class="spec-key">Physics</span></div>
+                        <div class="spec-item"><span class="spec-val">24 FPS</span><span class="spec-key">Framerate</span></div>
+                        <div class="spec-item"><span class="spec-val">Flute & Chants</span><span class="spec-key">Audio</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/08_unforgettable_buddhist_wedding/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 07: Ram Mandir -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">🚩</div>
+                        <div>
+                            <div class="card-title-text">Ram Mandir Devotion</div>
+                            <div class="card-tag">07_ram_mandir</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Divine Ayodhya Ram Mandir royal architecture, ornate stone carvings, golden ceremonial motifs, and auspicious traditional shehnai hymns.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Devotional</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Shehnai</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Stone & Gold</span><span class="spec-key">Palette</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/07_unforgettable_ram_mandir/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 06: Udaipur Palace -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">👑</div>
+                        <div>
+                            <div class="card-title-text">Udaipur Palace Royalty</div>
+                            <div class="card-tag">06_udaipur_palace</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Regal Rajasthani lakeside heritage with Lake Pichola palace backdrops, royal elephant processions, and majestic ceremonial timelines.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Royal Lake</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Santoor</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Palace Grandeur</span><span class="spec-key">Vibe</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/06_unforgettable_udaipur_palace/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 05: Meenakshi Royal -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">🛕</div>
+                        <div>
+                            <div class="card-title-text">Meenakshi Temple Royal</div>
+                            <div class="card-tag">05_meenakshi_royal</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Dravidian temple architecture inspired by the Madurai gopurams, intricate lotus stone motifs, and auspicious Nadaswaram wedding music.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">South Heritage</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Nadaswaram</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Temple Gopuram</span><span class="spec-key">Art</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/05_unforgettable_meenakshi_royal/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 04: Ayodhya Heritage -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">🏹</div>
+                        <div>
+                            <div class="card-title-text">Ayodhya Heritage</div>
+                            <div class="card-tag">04_ayodhya_heritage</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Sacred Sarayu riverbank aesthetic, warm sandstone palace courtyards, divine blessings, and traditional Vedic ceremonial itineraries.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Sandstone</span><span class="spec-key">Palette</span></div>
+                        <div class="spec-item"><span class="spec-val">Flute & Bells</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Vedic Rituals</span><span class="spec-key">Focus</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/04_unforgettable_ayodhya_heritage/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 02: Radha Krishna -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">🦚</div>
+                        <div>
+                            <div class="card-title-text">Radha Krishna Romance</div>
+                            <div class="card-tag">02_radha_krishna</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Romantic Vrindavan garden aesthetic, peacock feather embellishments, sacred kadamba blossoms, and enchanting divine bansuri melodies.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Vrindavan</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Bansuri</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Peacock Garden</span><span class="spec-key">Art</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/02_unforgettable_radha_krishna/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 01: Temple Grace -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">✨</div>
+                        <div>
+                            <div class="card-title-text">Temple Grace Luxury</div>
+                            <div class="card-tag">01_temple_grace</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Minimalist sacred temple architecture with calm golden accents, spiritual serenity, and warm festive floral garlands.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Classic Grace</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Temple Bells</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Gold & Ivory</span><span class="spec-key">Palette</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/01_unforgettable_temple_grace/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+            <!-- 03: Pastel Elegance -->
+            <div class="tmpl-card">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon-sq">🌸</div>
+                        <div>
+                            <div class="card-title-text">Royal Pastel Elegance</div>
+                            <div class="card-tag">03_pastel_elegance</div>
+                        </div>
+                    </div>
+                    <p class="card-desc">Modern destination wedding aesthetic with soft blush pastels, botanical floral watercolors, and contemporary romance typography.</p>
+                    <div class="specs-strip">
+                        <div class="spec-item"><span class="spec-val">Modern Pastel</span><span class="spec-key">Style</span></div>
+                        <div class="spec-item"><span class="spec-val">Acoustic Shehnai</span><span class="spec-key">Audio</span></div>
+                        <div class="spec-item"><span class="spec-val">Blush & Rose</span><span class="spec-key">Palette</span></div>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <a href="/templates/03_unforgettable_pastel_elegance/" class="btn-card primary" target="_blank">Live Demo ↗</a>
+                    <a href="/studio" class="btn-card outline">Customize ✏️</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Theme Logic -->
+    <script>
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('unforgettable_theme', theme);
+            const icon = document.getElementById('theme-icon');
+            const label = document.getElementById('theme-label');
+            if (theme === 'dark') {
+                if (icon) icon.textContent = '☀️';
+                if (label) label.textContent = 'Light';
+            } else {
+                if (icon) icon.textContent = '🌙';
+                if (label) label.textContent = 'Dark';
+            }
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'light' ? 'dark' : 'light');
+        }
+
+        (function initTheme() {
+            const saved = localStorage.getItem('unforgettable_theme');
+            if (saved) {
+                applyTheme(saved);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light');
+            }
+        })();
+    </script>
+</body>
+</html>

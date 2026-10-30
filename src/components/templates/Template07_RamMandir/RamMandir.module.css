@@ -1,0 +1,766 @@
+/* ==========================================================================
+   TEMPLATE 07: RAM MANDIR VEDIC WEDDING INVITATION — PRESERVED CSS MODULE
+   Exact layout preservation from E:\Unforgettable_Invites\Web_Templates\templates\07_unforgettable_ram_mandir
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   1. FONT DEFINITIONS & @FONT-FACE PRESERVATION
+   ------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Alegreya';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/alegreya/v35/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-6qj.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Alike Angular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('https://fonts.gstatic.com/s/alikeangular/v20/3qTrojWunjGQtEBlIcwMbSoI7kQwbQ.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IvyOra Display Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/IvyOraDisplay-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IvyOra Display Medium';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/IvyOraDisplay-Medium.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'IvyOra Display Bold';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/IvyOraDisplay-Bold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Gotham Light';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/Gotham-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    font-style: normal;
+    font-weight: 325;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/Gotham-Book.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Brother Signature Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/templates/07_unforgettable_ram_mandir/fonts/BrotherSignature.woff2') format('woff2');
+}
+
+/* -------------------------------------------------------------------------
+   2. CORE CONTAINER & SCROLL CANVAS
+   ------------------------------------------------------------------------- */
+.templateRoot {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0d0f14;
+    color: #fdf6e3;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'IvyOra Display Regular', 'Cinzel', serif;
+}
+
+.canvasWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1515px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* -------------------------------------------------------------------------
+   3. HERO SECTION & TEMPLE GOPURAM BACKDROP LAYERS
+   ------------------------------------------------------------------------- */
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    overflow: hidden;
+}
+
+/* Layer 1: Sky Background (z-index: 1 / -1) */
+.skyBackground {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 802px;
+    z-index: 1;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* Layer 2: Sun (z-index: 2) */
+.sunLayer {
+    position: absolute;
+    top: 302px;
+    left: 43%;
+    transform: translate(-50%) translateY(688px) scale(1.5);
+    width: auto;
+    height: 149px;
+    aspect-ratio: 1.1799;
+    z-index: 2;
+    opacity: 1;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Layer 3: Mountain (z-index: 3) */
+.mountainLayer {
+    position: absolute;
+    top: 336px;
+    left: -39px;
+    right: -41px;
+    height: auto;
+    aspect-ratio: 1.01036;
+    z-index: 3;
+    opacity: 1;
+    transform: translateY(688px);
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Layer 4: Cloud (z-index: 4) */
+.cloudLayer {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: -1px;
+    height: auto;
+    aspect-ratio: 1.23967;
+    z-index: 4;
+    opacity: 1;
+    transform: translateY(864px);
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* Layer 5: Flocking Birds Canvas (z-index: 5) */
+.birdsLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Layer 6: Floating Waving Flag — EXACT TRANSFORM & COORDINATES */
+.flagContainerDesktop {
+    position: absolute;
+    top: 457px;
+    left: 53%;
+    transform: translate(-50%) translateY(313px);
+    width: 8%;
+    height: auto;
+    z-index: 9;
+    opacity: 0.2;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.flagContainerMobile {
+    position: absolute;
+    top: 317px;
+    left: 52%;
+    transform: translateX(-50%) translateY(608px) scale(0.7);
+    width: 13%;
+    height: auto;
+    z-index: 9;
+    opacity: 0.2;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.flagContainerTablet {
+    position: absolute;
+    top: 307px;
+    left: 54%;
+    transform: translateX(-50%) translateY(608px) scale(0.7);
+    width: 13%;
+    height: auto;
+    z-index: 9;
+    opacity: 0.2;
+    will-change: transform;
+    pointer-events: none;
+}
+
+.flagInnerCanvas {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-width: 48px;
+    min-height: 48px;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Layer 7: Temple Gopuram & Sanctum Walkway Layer (z-index: 10) */
+.templeLayer {
+    position: absolute;
+    top: 348px;
+    left: -1px;
+    right: -1px;
+    height: auto;
+    aspect-ratio: 0.274386;
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(375px);
+    overflow: visible;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.templeLayerDesktop {
+    position: absolute;
+    top: calc(47.7016% - 1787px);
+    right: 0;
+    width: 1515px;
+    height: 3574px;
+    z-index: 10;
+    opacity: 1;
+    transform: translateY(211px);
+    overflow: visible;
+    pointer-events: none;
+    will-change: transform;
+}
+
+/* -------------------------------------------------------------------------
+   4. SHLOKA & SACRED CALLIGRAPHY
+   ------------------------------------------------------------------------- */
+.shlokaContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+}
+
+.ganpatiIcon {
+    position: absolute;
+    top: 31px;
+    left: 50%;
+    transform: translate(-50%) translateY(24px);
+    width: 47px;
+    height: auto;
+    aspect-ratio: 0.725922;
+    z-index: 20;
+    opacity: 1;
+}
+
+.ganpatiName {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%) translateY(24px);
+    width: 172px;
+    height: auto;
+    z-index: 20;
+    opacity: 1;
+}
+
+.shriLine {
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    transform: translate(-50%) translateY(24px);
+    width: 232px;
+    height: auto;
+    z-index: 20;
+    opacity: 1;
+}
+
+/* -------------------------------------------------------------------------
+   5. COUPLE NAMES & INVITATION DETAILS
+   ------------------------------------------------------------------------- */
+.coupleHeroTitleGroom {
+    position: absolute;
+    top: 730px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'IvyOra Display Medium', 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #e0aa3e;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    white-space: nowrap;
+}
+
+.coupleHeroTitleConnector {
+    position: absolute;
+    top: 765px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'Brother Signature Regular', cursive;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: #c8a45c;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+.coupleHeroTitleBride {
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    transform: translate(-50%);
+    font-family: 'IvyOra Display Medium', 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #e0aa3e;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    z-index: 20;
+    white-space: nowrap;
+}
+
+.invitationDetailsWrapper {
+    position: absolute;
+    top: 880px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.invitationParents {
+    font-family: 'Alegreya', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f6c860;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.invitationLine {
+    font-family: 'Gotham Light', sans-serif;
+    font-size: 0.9rem;
+    color: #d4a373;
+    letter-spacing: 0.5px;
+    margin: 4px 0;
+}
+
+/* -------------------------------------------------------------------------
+   6. EVENT TIMELINE TILTING CARDS (Mehndi, Haldi, Sangeet, Shaadi)
+   Exact Alternating ±10deg Tilts & Centered Perspective Layout
+   ------------------------------------------------------------------------- */
+.timelineSection {
+    position: relative;
+    width: 100%;
+    min-height: 1800px;
+    padding-top: 120px;
+}
+
+.timelineHeading {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(32px);
+    font-family: 'IvyOra Display Bold', serif;
+    font-size: 2.4rem;
+    color: #f6c860;
+    text-align: center;
+    z-index: 10;
+}
+
+.timelineSubtext {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Gotham Light', sans-serif;
+    font-size: 0.95rem;
+    color: #d4a373;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Event Card Base */
+.eventCardBase {
+    position: absolute;
+    width: 148px;
+    height: auto;
+    aspect-ratio: 0.646883;
+    z-index: 5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card 1 (Odd: Left Column, -10deg Tilt) */
+.eventCard1 {
+    top: 1040px;
+    left: 26%;
+    transform: translateX(-50%) translateX(-60px) translateY(50px) rotate(-10deg);
+}
+
+/* Card 2 (Even: Right Column, +10deg Tilt) */
+.eventCard2 {
+    top: 1040px;
+    left: 74%;
+    transform: translateX(-50%) translateX(60px) translateY(50px) rotate(10deg);
+}
+
+/* Card 3 (Odd: Left Column, -10deg Tilt) */
+.eventCard3 {
+    top: 1300px;
+    left: 26%;
+    transform: translateX(-50%) translateX(-60px) translateY(50px) rotate(-10deg);
+}
+
+/* Card 4 (Even: Right Column, +10deg Tilt) */
+.eventCard4 {
+    top: 1300px;
+    left: 74%;
+    transform: translateX(-50%) translateX(60px) translateY(50px) rotate(10deg);
+}
+
+/* Card 5 (Odd: Left Column, -10deg Tilt) */
+.eventCard5 {
+    top: 1560px;
+    left: 26%;
+    transform: translateX(-50%) translateX(-60px) translateY(50px) rotate(-10deg);
+}
+
+/* Card 6 (Even: Right Column, +10deg Tilt) */
+.eventCard6 {
+    top: 1560px;
+    left: 74%;
+    transform: translateX(-50%) translateX(60px) translateY(50px) rotate(10deg);
+}
+
+.eventCardBase:hover {
+    transform: translateX(-50%) translateY(0px) scale(1.05) rotate(0deg) !important;
+    z-index: 15 !important;
+}
+
+/* Card Internal Typography */
+.eventDay {
+    font-family: 'Gotham Light', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #c8a45c;
+    letter-spacing: 1px;
+}
+
+.eventDate {
+    font-family: 'Alegreya', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fdf6e3;
+    margin: 2px 0;
+}
+
+.eventTitle {
+    font-family: 'IvyOra Display Medium', serif;
+    font-size: 1.1rem;
+    color: #f6c860;
+    margin: 6px 0;
+    text-align: center;
+}
+
+.eventLocation {
+    font-family: 'Gotham Light', sans-serif;
+    font-size: 0.7rem;
+    color: #d4a373;
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   7. VENUE MAP CARDS & RSVP
+   ------------------------------------------------------------------------- */
+.locationSection {
+    position: relative;
+    width: 100%;
+    min-height: 900px;
+    padding: 60px 20px;
+}
+
+.locationMapContainerDesktop {
+    position: absolute;
+    top: 1051px;
+    left: calc(49.703% - 548.5px);
+    width: 1097px;
+    height: 560px;
+    z-index: 5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.locationMapContainerMobile {
+    position: absolute;
+    top: 279px;
+    left: calc(49.8721% - 171.5px);
+    width: 343px;
+    height: 560px;
+    z-index: 5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mapActionButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #c8a45c 0%, #e0aa3e 100%);
+    color: #12141a;
+    font-family: 'Gotham Book', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(224, 170, 62, 0.3);
+    transition: all 0.25s ease;
+}
+
+.mapActionButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(224, 170, 62, 0.5);
+}
+
+.rsvpButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: #25d366;
+    color: #ffffff;
+    font-family: 'Gotham Book', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    transition: all 0.25s ease;
+}
+
+.rsvpButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+}
+
+/* -------------------------------------------------------------------------
+   8. RESPONSIVE BREAKPOINT MATRICES (1920px down to <=359.98px)
+   ------------------------------------------------------------------------- */
+@media (min-width: 1920px) {
+    .templeLayerDesktop {
+        height: 4500px;
+        width: 100%;
+        top: 566px;
+        left: 0;
+        right: 0;
+    }
+    .flagContainerDesktop {
+        width: 8%;
+        top: 489px;
+        left: 53%;
+    }
+    .locationMapContainerDesktop {
+        top: 1301px;
+        left: calc(49.7061% - 548.5px);
+    }
+}
+
+@media (min-width: 1728px) and (max-width: 1919.98px) {
+    .templeLayerDesktop {
+        height: 4500px;
+        width: 100%;
+        top: 376px;
+        left: 0;
+        right: 0;
+    }
+    .flagContainerDesktop {
+        width: 8%;
+        top: 502px;
+    }
+    .locationMapContainerDesktop {
+        width: 1274px;
+        height: 650px;
+        top: 1214px;
+        left: calc(49.6957% - 637px);
+    }
+}
+
+@media (min-width: 1559px) and (max-width: 1727.98px) {
+    .templeLayerDesktop {
+        height: 3630px;
+        width: 1583px;
+        top: 496px;
+        left: calc(50.0321% - 791.5px);
+        right: unset;
+    }
+    .flagContainerDesktop {
+        width: 8%;
+        top: 424px;
+        left: 53%;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1348.98px) {
+    .templeLayerDesktop {
+        width: 1282px;
+        top: calc(42.4781% - 1787px);
+        right: -1px;
+    }
+    .flagContainerDesktop {
+        width: 8%;
+        top: 464px;
+        left: 53%;
+    }
+    .locationMapContainerDesktop {
+        top: 895px;
+        left: calc(49.6514% - 548.5px);
+    }
+}
+
+@media (min-width: 430px) and (max-width: 767.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        top: 313px;
+        left: 54%;
+    }
+    .locationMapContainerMobile {
+        top: 349px;
+        left: calc(49.8851% - 171.5px);
+    }
+}
+
+@media (min-width: 412px) and (max-width: 429.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        top: 314px;
+        left: 54%;
+    }
+    .locationMapContainerMobile {
+        top: 339px;
+        left: calc(50% - 171.5px);
+    }
+}
+
+@media (min-width: 393px) and (max-width: 411.98px) {
+    .flagContainerMobile {
+        width: 13%;
+        top: 314px;
+        left: 54%;
+    }
+    .locationMapContainerMobile {
+        top: 348px;
+        left: calc(49.8741% - 171.5px);
+    }
+}
+
+@media (min-width: 390px) and (max-width: 392.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        top: 315px;
+        left: 54%;
+    }
+    .locationMapContainerMobile {
+        top: 339px;
+        left: calc(49.8734% - 171.5px);
+    }
+}
+
+@media (min-width: 375px) and (max-width: 389.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        left: 53%;
+    }
+    .locationMapContainerMobile {
+        width: 284px;
+        height: 573px;
+        top: 304px;
+        left: calc(50.1319% - 142px);
+    }
+    .eventCard1, .eventCard2 { top: 940px; }
+    .eventCard3, .eventCard4 { top: 1200px; }
+    .eventCard5, .eventCard6 { top: 1460px; }
+}
+
+@media (min-width: 360px) and (max-width: 374.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        left: 54%;
+    }
+    .locationMapContainerMobile {
+        width: 317px;
+        top: 314px;
+        left: calc(50% - 158.5px);
+    }
+    .eventCard1, .eventCard2 { top: 970px; }
+    .eventCard3, .eventCard4 { top: 1230px; }
+    .eventCard5, .eventCard6 { top: 1490px; }
+}
+
+@media (max-width: 359.98px) {
+    .flagContainerMobile {
+        width: 12%;
+        left: 53%;
+    }
+    .locationMapContainerMobile {
+        width: 284px;
+        height: 573px;
+        top: 284px;
+        left: calc(50.1538% - 142px);
+    }
+    .eventCard1, .eventCard2 { top: 880px; }
+    .eventCard3, .eventCard4 { top: 1140px; }
+    .eventCard5, .eventCard6 { top: 1400px; }
+}

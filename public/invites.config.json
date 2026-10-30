@@ -1,0 +1,102 @@
+{
+  "maya-siddharth": {
+    "template": "08_unforgettable_buddhist_wedding",
+    "slug": "maya-siddharth",
+    "couple": {
+      "bride": "Maya",
+      "groom": "Siddharth",
+      "connector": "weds",
+      "monogramInitials": "MS",
+      "hashtag": "#MayaFoundHerSiddharth"
+    },
+    "family": {
+      "groomParents": "Shri Hemant & Smt Sunita Vardhan",
+      "brideParents": "Shri Arvind & Smt Meena Sharma"
+    },
+    "weddingDate": "2026-08-29T18:00:00+05:30",
+    "weddingDateDisplay": "29th Aug 2026",
+    "venueCity": "Bodh Gaya, Bihar",
+    "events": [
+      {
+        "name": "Buddh Vandana & Ring Ceremony",
+        "date": "28 Aug 2026",
+        "time": "4:00 PM Onwards",
+        "venue": "Lotus Pavilion, Bodh Gaya"
+      },
+      {
+        "name": "Sacred Pheras & Triple Gem Blessings",
+        "date": "29 Aug 2026",
+        "time": "6:00 PM Onwards",
+        "venue": "Mahabodhi Grand Sanctuary"
+      }
+    ],
+    "locations": [
+      {
+        "name": "Mahabodhi Grand Sanctuary",
+        "address": "Bodh Gaya, Bihar 824231",
+        "mapsUrl": "https://maps.google.com/?q=24.6959,84.9913"
+      }
+    ],
+    "toggles": {
+      "enableRsvp": true,
+      "enableMusic": true,
+      "enableHashtag": true,
+      "enableDressCode": true,
+      "enableValetParking": true,
+      "enableWeather": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Elegant Attire",
+      "valetParking": "Complimentary valet parking available at the East Sanctuary Gate",
+      "weather": "Pleasant monsoon evening, ~28°C"
+    },
+    "whatsappRsvp": "919819200906",
+    "musicTrack": "sacred-temple-flute.mp3",
+    "createdAt": "2026-10-30T02:00:00.000Z"
+  },
+  "Client Slug": {
+    "slug": "Client Slug",
+    "template": "08_unforgettable_buddhist_wedding",
+    "couple": {
+      "bride": "Bride's Name",
+      "groom": "Groom's Name",
+      "connector": "Connector",
+      "monogramInitials": "BG",
+      "hashtag": "#Groom's NameFoundHisBri"
+    },
+    "family": {
+      "groomParents": "Groom's Parents",
+      "brideParents": "Bride's Parents"
+    },
+    "events": [
+      {
+        "name": "Buddh Vandana & Ring Ceremony",
+        "time": "28th Nov 2026 • 4:00 PM Onwards",
+        "venue": "Lotus Pavilion, Mahabodhi Sanctuary"
+      },
+      {
+        "name": "Sacred Pheras & Auspicious Blessings",
+        "time": "29th Nov 2026 • 6:00 PM Onwards",
+        "venue": "Mahabodhi Grand Sanctuary"
+      }
+    ],
+    "locations": [
+      {
+        "name": "Mahabodhi Grand Sanctuary, Bodh Gaya",
+        "mapsUrl": "https://maps.google.com/?q=24.6959,84.9913"
+      }
+    ],
+    "toggles": {
+      "rsvp": false,
+      "music": true,
+      "dressCode": true,
+      "valet": true,
+      "hashtag": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Indian Festive",
+      "whatsappRsvp": "919819200906"
+    },
+    "createdAt": "2026-10-29T21:31:42.998Z"
+  }
+}

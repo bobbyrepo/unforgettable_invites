@@ -1,0 +1,334 @@
+[
+  {
+    "id": "invite-001",
+    "slug": "a-w-s",
+    "templateId": "08_unforgettable_buddhist_wedding",
+    "lifecycleStatus": "UPCOMING",
+    "weddingDateISO": "2026-08-29T18:00:00Z",
+    "couple": {
+      "groom": {
+        "name": "Aarav Sharma",
+        "father": "Shri Rajesh Sharma",
+        "mother": "Smt. Vandana Sharma",
+        "parents": "Mr. & Mrs. Sharma"
+      },
+      "bride": {
+        "name": "Saisha Patel",
+        "father": "Shri Arvind Patel",
+        "mother": "Smt. Meena Patel",
+        "parents": "Mr. & Mrs. Patel"
+      },
+      "connector": "weds",
+      "monogram": "A & S",
+      "hashtag": "#AaravFoundHisSaisha",
+      "greetingNote": "Together with their families, invite you to celebrate the holy wedding ceremony"
+    },
+    "shloka": {
+      "verseSanskrit": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+      "verseEnglish": "Buddham Saranam Gacchami • Dhammam Saranam Gacchami • Sangham Saranam Gacchami",
+      "translation": "May this holy union be blessed with serenity, mindful love, and eternal peace.",
+      "deity": "Buddha"
+    },
+    "events": [
+      {
+        "id": "event-1",
+        "title": "Ring Ceremony & Sangeet",
+        "date": "28th Aug 2026",
+        "day": "Thursday",
+        "time": "5:00 PM Onwards",
+        "venueName": "Lotus Lotus Hall",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra",
+        "dressCode": "Indo-Western & Pastel Silk"
+      },
+      {
+        "id": "event-2",
+        "title": "Shaadi • Holy Vivah",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "6:00 PM Onwards",
+        "venueName": "The Grand Palace",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra",
+        "dressCode": "Royal Traditional Wedding Attire"
+      }
+    ],
+    "audio": {
+      "title": "Sacred Flute & Bells Meditation",
+      "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "autoUnlockOnFirstTouch": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Elegant Attire",
+      "valetParking": "Complimentary valet parking available at Main Gate",
+      "weather": "Pleasant evening (24°C - 28°C)",
+      "contactName": "Rohit Sharma",
+      "contactNumber": "+91 98200 12345",
+      "accommodation": "Accommodations reserved at venue"
+    },
+    "toggles": {
+      "enableMusic": true,
+      "enableDressCode": true,
+      "enableValet": true,
+      "enableWeather": true,
+      "enableShloka": true,
+      "enableMaps": true
+    },
+    "stats": {
+      "views": 1851,
+      "viewsToday": 9,
+      "activeDays": 116,
+      "boosted": true
+    },
+    "thumbnailUrl": "/templates/08_unforgettable_buddhist_wedding/images/Left Flag.webp"
+  },
+  {
+    "id": "invite-002",
+    "slug": "ram-mandir-divine",
+    "templateId": "07_unforgettable_ram_mandir",
+    "lifecycleStatus": "UPCOMING",
+    "weddingDateISO": "2026-11-20T18:00:00Z",
+    "couple": {
+      "groom": {
+        "name": "Karan Mehra",
+        "father": "Shri Vikram Mehra",
+        "mother": "Smt. Poonam Mehra",
+        "parents": "Smt. & Shri Mehra"
+      },
+      "bride": {
+        "name": "Ananya Verma",
+        "father": "Shri Alok Verma",
+        "mother": "Smt. Sunita Verma",
+        "parents": "Smt. & Shri Verma"
+      },
+      "connector": "weds",
+      "monogram": "K & A",
+      "hashtag": "#KaranKiAnanya",
+      "greetingNote": "With the blessings of Lord Rama and our elders, we invite you to share our joy"
+    },
+    "shloka": {
+      "verseSanskrit": "मंगलम् भगवान विष्णुः मंगलम् गरुड़ध्वजः मंगलम् पुण्डरीकाक्षः मंगलाय तनो हरिः॥",
+      "verseEnglish": "Mangalam Bhagwan Vishnuh, Mangalam Garudadhwajah, Mangalam Pundarikakshah, Mangalaya Tano Harih",
+      "translation": "May all auspiciousness and divine blessings be bestowed upon this sacred journey of two souls.",
+      "deity": "Ram Mandir / Vishnu"
+    },
+    "events": [
+      {
+        "id": "event-1",
+        "title": "Shubh Mehndi & Sangeet",
+        "date": "19th Nov 2026",
+        "day": "Thursday",
+        "time": "4:00 PM Onwards",
+        "venueName": "The Heritage Haveli",
+        "venueAddress": "Jaipur, Rajasthan",
+        "mapDeepLink": "https://maps.google.com/?q=Jaipur,Rajasthan",
+        "dressCode": "Bright Festive Lehengas & Kurtas"
+      },
+      {
+        "id": "event-2",
+        "title": "Vedic Vivah Sanskar",
+        "date": "20th Nov 2026",
+        "day": "Friday",
+        "time": "6:00 PM Onwards",
+        "venueName": "Rambagh Mandir Mandap",
+        "venueAddress": "Jaipur, Rajasthan",
+        "mapDeepLink": "https://maps.google.com/?q=Jaipur,Rajasthan",
+        "dressCode": "Regal Royal Indian Traditional"
+      }
+    ],
+    "audio": {
+      "title": "Deva Shree Ganesha Divine Flute",
+      "fileSrc": "/templates/07_unforgettable_ram_mandir/audio/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "autoUnlockOnFirstTouch": true
+    },
+    "logistics": {
+      "dressCode": "Regal Traditional / Heritage Attire",
+      "valetParking": "Valet parking available at Royal Porch Entrance",
+      "weather": "Crisp November Evening (18°C)",
+      "contactName": "Vikram Mehra",
+      "contactNumber": "+91 99110 54321",
+      "accommodation": "Accommodations reserved at venue"
+    },
+    "toggles": {
+      "enableMusic": true,
+      "enableDressCode": true,
+      "enableValet": true,
+      "enableWeather": true,
+      "enableShloka": true,
+      "enableMaps": true
+    },
+    "stats": {
+      "views": 1317,
+      "viewsToday": 31,
+      "activeDays": 101,
+      "boosted": false
+    },
+    "thumbnailUrl": "/templates/07_unforgettable_ram_mandir/images/3JekLBRwVWegsCm3gX3wOcYeM.webp"
+  },
+  {
+    "id": "inv-maya-siddharth",
+    "slug": "maya-siddharth",
+    "templateId": "08_unforgettable_buddhist_wedding",
+    "lifecycleStatus": "UPCOMING",
+    "weddingDateISO": "2026-08-29T18:00:00+05:30",
+    "couple": {
+      "groom": {
+        "name": "Siddharth",
+        "father": "Shri Hemant",
+        "mother": "Smt Sunita Vardhan",
+        "parents": "Shri Hemant & Smt Sunita Vardhan"
+      },
+      "bride": {
+        "name": "Maya",
+        "father": "Shri Arvind",
+        "mother": "Smt Meena Sharma",
+        "parents": "Shri Arvind & Smt Meena Sharma"
+      },
+      "connector": "weds",
+      "monogram": "MS",
+      "hashtag": "#MayaFoundHerSiddharth",
+      "greetingNote": "Together with their families, cordially invite you"
+    },
+    "shloka": {
+      "deity": "Buddha Triple Gem",
+      "verseSanskrit": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+      "verseEnglish": "Buddham Saranam Gacchami • Dhammam Saranam Gacchami • Sangham Saranam Gacchami",
+      "translation": "May wisdom, boundless compassions, and serenity bless their journey together."
+    },
+    "events": [
+      {
+        "id": "ev-0-1793349366323",
+        "title": "Buddh Vandana & Ring Ceremony",
+        "date": "28 Aug 2026",
+        "day": "Friday",
+        "time": "4:00 PM Onwards",
+        "venueName": "Lotus Pavilion, Bodh Gaya",
+        "venueAddress": "Pune, India",
+        "mapDeepLink": "https://maps.google.com",
+        "dressCode": "Royal Festive"
+      },
+      {
+        "id": "ev-1-1793349366323",
+        "title": "Sacred Pheras & Triple Gem Blessings",
+        "date": "29 Aug 2026",
+        "day": "Friday",
+        "time": "6:00 PM Onwards",
+        "venueName": "Mahabodhi Grand Sanctuary",
+        "venueAddress": "Pune, India",
+        "mapDeepLink": "https://maps.google.com",
+        "dressCode": "Royal Festive"
+      }
+    ],
+    "audio": {
+      "title": "Sacred Flute & Bells Meditation",
+      "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "autoUnlockOnFirstTouch": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Elegant Attire",
+      "valetParking": "Complimentary valet parking available at the East Sanctuary Gate",
+      "weather": "Pleasant monsoon evening, ~28°C",
+      "contactName": "Hospitality Desk",
+      "contactNumber": "+91 98200 12345",
+      "accommodation": "Accommodations reserved at venue"
+    },
+    "toggles": {
+      "enableMusic": true,
+      "enableDressCode": true,
+      "enableValet": true,
+      "enableWeather": true,
+      "enableShloka": true,
+      "enableMaps": true
+    },
+    "stats": {
+      "views": 1317,
+      "viewsToday": 31,
+      "activeDays": 101,
+      "boosted": true
+    },
+    "thumbnailUrl": "/templates/08_unforgettable_buddhist_wedding/images/Left Flag.webp"
+  },
+  {
+    "id": "inv-Client Slug",
+    "slug": "client-slug",
+    "templateId": "08_unforgettable_buddhist_wedding",
+    "lifecycleStatus": "UPCOMING",
+    "weddingDateISO": "2026-08-29T18:00:00Z",
+    "couple": {
+      "groom": {
+        "name": "Groom's Name",
+        "father": "Groom's Parents",
+        "mother": "",
+        "parents": "Groom's Parents"
+      },
+      "bride": {
+        "name": "Bride's Name",
+        "father": "Bride's Parents",
+        "mother": "",
+        "parents": "Bride's Parents"
+      },
+      "connector": "Connector",
+      "monogram": "BG",
+      "hashtag": "#Groom's NameFoundHisBri",
+      "greetingNote": "Together with their families, cordially invite you"
+    },
+    "shloka": {
+      "deity": "Buddha Triple Gem",
+      "verseSanskrit": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+      "verseEnglish": "Buddham Saranam Gacchami • Dhammam Saranam Gacchami • Sangham Saranam Gacchami",
+      "translation": "May wisdom, boundless compassions, and serenity bless their journey together."
+    },
+    "events": [
+      {
+        "id": "ev-0-1793349366323",
+        "title": "Buddh Vandana & Ring Ceremony",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "28th Nov 2026 • 4:00 PM Onwards",
+        "venueName": "Lotus Pavilion, Mahabodhi Sanctuary",
+        "venueAddress": "Pune, India",
+        "mapDeepLink": "https://maps.google.com",
+        "dressCode": "Royal Festive"
+      },
+      {
+        "id": "ev-1-1793349366323",
+        "title": "Sacred Pheras & Auspicious Blessings",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "29th Nov 2026 • 6:00 PM Onwards",
+        "venueName": "Mahabodhi Grand Sanctuary",
+        "venueAddress": "Pune, India",
+        "mapDeepLink": "https://maps.google.com",
+        "dressCode": "Royal Festive"
+      }
+    ],
+    "audio": {
+      "title": "Sacred Flute & Bells Meditation",
+      "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "autoUnlockOnFirstTouch": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Indian Festive",
+      "valetParking": "Complimentary valet parking available at Main Gate",
+      "weather": "Pleasant evening (22°C - 26°C)",
+      "contactName": "Hospitality Desk",
+      "contactNumber": "919819200906",
+      "accommodation": "Accommodations reserved at venue"
+    },
+    "toggles": {
+      "enableMusic": true,
+      "enableDressCode": true,
+      "enableValet": true,
+      "enableWeather": true,
+      "enableShloka": true,
+      "enableMaps": true
+    },
+    "stats": {
+      "views": 1317,
+      "viewsToday": 31,
+      "activeDays": 101,
+      "boosted": true
+    },
+    "thumbnailUrl": "/templates/08_unforgettable_buddhist_wedding/images/Left Flag.webp"
+  }
+]

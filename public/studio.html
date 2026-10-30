@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Studio Builder | Unforgettable Tales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #f8f9fb;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --bg-elevated: #ffffff;
+            --bg-input: #ffffff;
+            --border-light: #eceef2;
+            --border-focus: #111827;
+            --text-dark: #111827;
+            --text-body: #4b5563;
+            --text-muted: #9ca3af;
+            --brand-primary: #111827;
+            --brand-accent: #0284c7;
+            --brand-accent-bg: #e0f2fe;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --radius-card: 14px;
+            --radius-input: 8px;
+            --shadow-subtle: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+            --shadow-dropdown: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+            --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-page: #090b10;
+            --bg-sidebar: #10141d;
+            --bg-card: #121824;
+            --bg-elevated: #182030;
+            --bg-input: #182030;
+            --border-light: #202636;
+            --border-focus: #60a5fa;
+            --text-dark: #f8fafc;
+            --text-body: #cbd5e1;
+            --text-muted: #64748b;
+            --brand-primary: #f8fafc;
+            --brand-accent: #38bdf8;
+            --brand-accent-bg: rgba(56, 189, 248, 0.12);
+            --shadow-subtle: 0 1px 3px rgba(0,0,0,0.4);
+            --shadow-dropdown: 0 10px 25px -5px rgba(0,0,0,0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-page);
+            color: var(--text-body);
+            min-height: 100vh;
+            display: flex;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        /* SIDEBAR NAVIGATION */
+        .sidebar {
+            width: 250px;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            padding: 24px 18px;
+            flex-shrink: 0;
+            transition: background 0.25s ease, border-color 0.25s ease;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 8px 24px;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 20px;
+        }
+
+        .brand-logo-sq {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--brand-primary);
+            color: var(--bg-sidebar);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 17px;
+            font-family: var(--font-display);
+        }
+
+        .brand-text-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            color: var(--text-dark);
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.2px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-body);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .nav-item:hover {
+            background: var(--bg-page);
+            color: var(--text-dark);
+        }
+
+        .nav-item.active {
+            background: var(--brand-primary);
+            color: var(--bg-sidebar);
+        }
+
+        [data-theme="dark"] .nav-item.active {
+            color: #090b10;
+        }
+
+        .nav-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            background: var(--border-light);
+            color: var(--text-muted);
+        }
+
+        .nav-item.active .nav-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--bg-sidebar);
+        }
+
+        /* MAIN CONTENT AREA */
+        .main-content {
+            flex-grow: 1;
+            padding: 28px 36px;
+            overflow-y: auto;
+            max-width: 1400px;
+        }
+
+        /* TOP BAR */
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            flex-grow: 1;
+            max-width: 440px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-input);
+            padding: 10px 14px 10px 38px;
+            font-size: 13px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--border-focus);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-theme-toggle {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            padding: 9px 14px;
+            border-radius: var(--radius-input);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.15s ease;
+        }
+
+        .btn-theme-toggle:hover {
+            border-color: var(--border-focus);
+        }
+
+        /* METRICS STRIP */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1100px) {
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-card);
+            padding: 18px 20px;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .m-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .m-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .m-footer {
+            font-size: 12px;
+            color: var(--success);
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        /* WORKSPACE LAYOUT */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 24px;
+        }
+
+        @media (max-width: 1050px) {
+            .workspace-grid { grid-template-columns: 1fr; }
+        }
+
+        .card-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 14px;
+        }
+
+        .panel-title {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-dark);
+            letter-spacing: -0.3px;
+        }
+
+        .panel-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .badge-req {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        [data-theme="dark"] .badge-req {
+            background: rgba(245, 158, 11, 0.2);
+            color: #fbbf24;
+        }
+
+        /* TEMPLATE SELECTOR TILES */
+        .template-tiles {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .template-tiles { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .t-pill {
+            background: var(--bg-page);
+            border: 1.5px solid var(--border-light);
+            border-radius: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .t-pill:hover {
+            border-color: var(--border-focus);
+        }
+
+        .t-pill.selected {
+            background: var(--bg-card);
+            border-color: var(--brand-accent);
+            box-shadow: 0 0 0 2px var(--brand-accent);
+        }
+
+        .t-pill-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .t-pill-tag {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        /* ACTIVE TEMPLATE CAPABILITY BANNER */
+        .tmpl-cap-banner {
+            background: var(--brand-accent-bg);
+            border: 1px solid rgba(2, 132, 199, 0.25);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .tcb-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .tcb-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--brand-accent);
+        }
+
+        .tcb-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tcb-tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: var(--bg-card);
+            color: var(--text-dark);
+            border: 1px solid var(--border-light);
+        }
+
+        /* FORM INPUT FIELDS */
+        .field-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 650px) {
+            .field-grid { grid-template-columns: 1fr; }
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .field-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .field-input, .field-textarea {
+            background: var(--bg-input);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-input);
+            padding: 10px 12px;
+            font-size: 13px;
+            color: var(--text-dark);
+            outline: none;
+            transition: border-color 0.15s ease;
+            font-family: inherit;
+        }
+
+        .field-input:focus, .field-textarea:focus {
+            border-color: var(--border-focus);
+        }
+
+        /* ASPECT RATIO BADGES & PROMPT GENERATOR */
+        .ratio-badge {
+            font-size: 11px;
+            font-weight: 700;
+            background: var(--border-light);
+            color: var(--text-muted);
+            padding: 2px 7px;
+            border-radius: 6px;
+        }
+
+        .prompt-gen-box {
+            background: var(--bg-page);
+            border: 1px dashed var(--border-light);
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin-top: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .prompt-gen-text {
+            font-size: 12px;
+            color: var(--text-body);
+            line-height: 1.45;
+            user-select: all;
+            background: var(--bg-card);
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-light);
+            font-family: monospace;
+        }
+
+        .btn-prompt-copy {
+            align-self: flex-start;
+            background: var(--brand-primary);
+            color: var(--bg-sidebar);
+            border: none;
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* DROPZONES */
+        .dropzone-box {
+            border: 2px dashed var(--border-light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            background: var(--bg-page);
+            position: relative;
+        }
+
+        .dropzone-box:hover, .dropzone-box.dragover {
+            border-color: var(--brand-accent);
+            background: var(--brand-accent-bg);
+        }
+
+        .dropzone-box input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dz-text-main {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+
+        .dz-text-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .thumbs-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .thumb-item {
+            position: relative;
+            width: 72px;
+            height: 72px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: #fff;
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumb-size-tag {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #fff;
+            font-size: 9px;
+            padding: 1px 4px;
+            border-radius: 4px;
+        }
+
+        /* TOGGLE ROWS & SWITCHES */
+        .toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .toggle-row:last-child {
+            border-bottom: none;
+        }
+
+        .t-title-text {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .t-sub-text {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .ios-switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .ios-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .ios-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: var(--border-light);
+            transition: .2s;
+            border-radius: 9999px;
+        }
+
+        .ios-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #fff;
+            transition: .2s;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        input:checked + .ios-slider {
+            background-color: var(--success);
+        }
+
+        input:checked + .ios-slider:before {
+            transform: translateX(20px);
+        }
+
+        /* DYNAMIC ROWS */
+        .dynamic-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .row-item {
+            background: var(--bg-page);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 12px 14px;
+            position: relative;
+        }
+
+        .btn-delete-row {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .btn-delete-row:hover {
+            color: var(--danger);
+        }
+
+        .btn-add-row {
+            background: var(--bg-page);
+            border: 1px dashed var(--border-light);
+            color: var(--text-dark);
+            border-radius: var(--radius-input);
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            width: 100%;
+        }
+
+        .btn-add-row:hover {
+            border-color: var(--border-focus);
+        }
+
+        /* STICKY SUMMARY CARD */
+        .summary-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-card);
+            padding: 22px;
+            position: sticky;
+            top: 24px;
+            box-shadow: var(--shadow-subtle);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .sc-avatar-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .sc-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--brand-accent-bg);
+            color: var(--brand-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            border: 1px solid rgba(2, 132, 199, 0.2);
+            overflow: hidden;
+        }
+
+        .sc-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sc-names {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+
+        .sc-slug {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--brand-accent);
+        }
+
+        .sc-metric-line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .sc-metric-label {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .sc-metric-val {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .btn-save-main {
+            background: var(--brand-primary);
+            color: var(--bg-sidebar);
+            border: none;
+            border-radius: var(--radius-input);
+            padding: 12px 18px;
+            font-size: 14px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        [data-theme="dark"] .btn-save-main {
+            color: #090b10;
+        }
+
+        .btn-save-main:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        .btn-preview-link {
+            background: var(--bg-page);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            border-radius: var(--radius-input);
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            transition: all 0.15s ease;
+        }
+
+        .btn-preview-link:hover {
+            border-color: var(--border-focus);
+        }
+
+        /* CLIENT INVITATION DIRECTORY */
+        .client-entry-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-light);
+            transition: background 0.15s ease;
+        }
+
+        .client-entry-row:hover {
+            background: var(--bg-page);
+        }
+
+        .client-entry-row:last-child {
+            border-bottom: none;
+        }
+
+        .client-main-col {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .client-avatar-sq {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: var(--brand-accent-bg);
+            color: var(--brand-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .client-title-text {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .client-meta-sub {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .client-status-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 9999px;
+            background: #dcfce7;
+            color: #15803d;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        [data-theme="dark"] .client-status-badge {
+            background: rgba(16, 185, 129, 0.2);
+            color: #4ade80;
+        }
+
+        .client-actions-grp {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-sm-action {
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn-sm-action:hover {
+            border-color: var(--border-focus);
+        }
+
+        .btn-sm-action.danger:hover {
+            background: #fee2e2;
+            color: #b91c1c;
+            border-color: #f87171;
+        }
+
+        /* MOBILE APP-LIKE RESPONSIVE ENGINE (max-width: 768px) */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+                padding: 12px 14px;
+            }
+            .sidebar-brand {
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+            .nav-list {
+                flex-direction: row;
+                gap: 6px;
+                overflow-x: auto;
+                padding-bottom: 4px;
+            }
+            .nav-item {
+                padding: 7px 11px;
+                white-space: nowrap;
+                font-size: 12px;
+            }
+            .main-content {
+                padding: 14px 12px;
+            }
+            .topbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                margin-bottom: 14px;
+            }
+            .metric-card {
+                padding: 12px 14px;
+            }
+            .m-value {
+                font-size: 18px;
+            }
+            .template-tiles {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .t-pill {
+                padding: 10px 12px;
+            }
+            .t-pill-name {
+                font-size: 12px;
+            }
+            .workspace-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .card-panel {
+                padding: 16px 14px;
+                margin-bottom: 14px;
+            }
+            .summary-card {
+                position: static;
+                margin-top: 10px;
+            }
+            .field-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-sq">UT</div>
+            <div class="brand-text-wrap">
+                <span class="brand-title">Unforgettable</span>
+                <span class="brand-sub">Studio Builder v2.0</span>
+            </div>
+        </div>
+
+        <ul class="nav-list">
+            <li>
+                <a class="nav-item active" onclick="switchNav('builder')">
+                    <span>⚡ Invite Builder</span>
+                    <span class="nav-badge">Studio</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" onclick="switchNav('clients')">
+                    <span>👥 Client Invites</span>
+                    <span class="nav-badge" id="badge-client-count">2</span>
+                </a>
+            </li>
+            <li>
+                <a class="nav-item" href="/portal.html">
+                    <span>✨ Master Catalog</span>
+                    <span class="nav-badge">8 Demos</span>
+                </a>
+            </li>
+        </ul>
+
+        <div style="font-size: 11px; color: var(--text-muted); padding: 8px;">
+            Decoupled Studio Engine<br>Local & Vercel Free Deploy
+        </div>
+    </aside>
+
+    <!-- MAIN VIEWPORT -->
+    <main class="main-content">
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="search-bar" placeholder="Search templates, couples or features..." oninput="onSearchFilter(this.value)">
+            </div>
+            <div class="topbar-actions">
+                <button class="btn-theme-toggle" onclick="toggleTheme()">
+                    <span id="theme-icon">🌙</span>
+                    <span id="theme-label">Dark</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- METRICS STRIP -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div>
+                    <div class="m-title">Total Active Themes</div>
+                    <div class="m-value">8 Master</div>
+                </div>
+                <div class="m-footer">100% Mobile Ready</div>
+            </div>
+            <div class="metric-card">
+                <div>
+                    <div class="m-title">Active Client Slugs</div>
+                    <div class="m-value" id="card-stat-clients">2</div>
+                </div>
+                <div class="m-footer">Instant Multi-Tenant</div>
+            </div>
+            <div class="metric-card">
+                <div>
+                    <div class="m-title">WebP Compression</div>
+                    <div class="m-value">~150 KB</div>
+                </div>
+                <div class="m-footer">85% Faster Load</div>
+            </div>
+            <div class="metric-card">
+                <div>
+                    <div class="m-title">Deployment Engine</div>
+                    <div class="m-value">Zero-Cost</div>
+                </div>
+                <div class="m-footer">Vercel / GitHub Pages</div>
+            </div>
+        </div>
+
+        <!-- VIEW: BUILDER WORKSPACE -->
+        <div id="view-builder" class="workspace-grid">
+            
+            <!-- LEFT COLUMN: BUILDER PANELS -->
+            <div class="builder-panels">
+
+                <!-- 1. SELECT WEDDING TEMPLATE -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">1. Select Wedding Theme</h3>
+                            <p class="panel-subtitle">Pick the architectural archetype for your client</p>
+                        </div>
+                        <span class="badge-req">100% Required</span>
+                    </div>
+
+                    <div class="template-tiles" id="template-tiles-container">
+                        <!-- Rendered dynamically by JS -->
+                    </div>
+
+                    <!-- DYNAMIC CAPABILITY BANNER -->
+                    <div class="tmpl-cap-banner" id="tmpl-capability-banner">
+                        <div class="tcb-head">
+                            <span class="tcb-title" id="tcb-name">🪷 Mahabodhi Buddhist (Bodh Gaya)</span>
+                            <span class="ratio-badge" id="tcb-ratio">Logo: 1:1 Square</span>
+                        </div>
+                        <div class="tcb-tags" id="tcb-tags">
+                            <!-- Badges -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. COUPLE & FAMILY INFORMATION (100% Required) -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">2. Couple & Family Information</h3>
+                            <p class="panel-subtitle">Core names synchronized across all hero headers and invitations</p>
+                        </div>
+                        <span class="badge-req">100% Required</span>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Bride's Name *</label>
+                            <input type="text" class="field-input" id="f-bride" value="Saisha" placeholder="e.g. Saisha" oninput="onNamesChange()">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Groom's Name *</label>
+                            <input type="text" class="field-input" id="f-groom" value="Aarav" placeholder="e.g. Aarav" oninput="onNamesChange()">
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Connector Word</label>
+                            <input type="text" class="field-input" id="f-connector" value="weds" placeholder="weds / & / and" oninput="onNamesChange()">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Client URL Slug (Custom Link) *</label>
+                            <input type="text" class="field-input" id="f-slug" value="aarav-saisha" placeholder="e.g. aarav-saisha">
+                        </div>
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field-group">
+                            <label class="field-label">Groom's Parents *</label>
+                            <input type="text" class="field-input" id="f-gparents" value="Shri Rajesh & Smt Anita Vardhan" placeholder="e.g. Shri Rajesh & Smt Anita Vardhan">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Bride's Parents *</label>
+                            <input type="text" class="field-input" id="f-bparents" value="Shri Arvind & Smt Meena Sharma" placeholder="e.g. Shri Arvind & Smt Meena Sharma">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. LOGO & MEDIA SUITE -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">3. Couple Monogram & Media Suite</h3>
+                            <p class="panel-subtitle">Upload custom logo & photos matching this template's exact aspect ratio</p>
+                        </div>
+                    </div>
+
+                    <!-- LOGO BOX + AI PROMPT GENERATOR -->
+                    <div class="field-group" style="margin-bottom: 20px;">
+                        <div class="field-label">
+                            <span>Couple Logo / Monogram</span>
+                            <span class="ratio-badge" id="logo-ratio-badge">1:1 Square (600 × 600 px)</span>
+                        </div>
+
+                        <!-- CHATGPT PROMPT GENERATOR BOX -->
+                        <div class="prompt-gen-box">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <span style="font-size: 11px; font-weight: 700; color: var(--text-dark);">✨ ChatGPT / Midjourney Logo Prompt Helper</span>
+                                <button class="btn-prompt-copy" onclick="copyAiPrompt()">
+                                    <span id="copy-prompt-icon">📋</span>
+                                    <span id="copy-prompt-label">Copy Prompt</span>
+                                </button>
+                            </div>
+                            <div class="prompt-gen-text" id="ai-logo-prompt">Loading prompt...</div>
+                            <div style="font-size: 10px; color: var(--text-muted);">
+                                💡 Tip: Paste into ChatGPT or Midjourney, generate the 1:1 image, crop it, and drop it below!
+                            </div>
+                        </div>
+
+                        <!-- Dropzone for Logo -->
+                        <div class="dropzone-box" style="margin-top: 10px;" ondragover="onDragOver(event)" ondrop="onFileDrop(event, 'logo')">
+                            <div class="dz-text-main">Drop Custom Monogram (PNG / WebP / JPG)</div>
+                            <div class="dz-text-sub">Auto-cropped to 1:1 Square & converted to WebP</div>
+                            <input type="file" accept="image/*" onchange="onFileInput(event, 'logo')">
+                        </div>
+                        <div class="thumbs-strip" id="strip-logo"></div>
+                    </div>
+
+                    <!-- TEMPLATE-SPECIFIC PHOTO SLOTS -->
+                    <div id="template-photo-slots">
+                        <!-- Dynamically populated based on chosen template -->
+                    </div>
+                </div>
+
+                <!-- 4. CEREMONIES TIMELINE (100% Required) -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">4. Ceremony Schedule</h3>
+                            <p class="panel-subtitle">Events, dates, times and venue names</p>
+                        </div>
+                        <span class="badge-req">100% Required</span>
+                    </div>
+
+                    <div class="dynamic-list" id="events-list">
+                        <!-- Populated by JS -->
+                    </div>
+                    <button class="btn-add-row" onclick="addNewEvent()">+ Add Another Ceremony</button>
+                </div>
+
+                <!-- 5. VENUES & MAPS -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">5. Venues & Google Maps</h3>
+                            <p class="panel-subtitle">Addresses and 1-click Google Maps navigation links</p>
+                        </div>
+                    </div>
+
+                    <div class="dynamic-list" id="venues-list">
+                        <!-- Populated by JS -->
+                    </div>
+                    <button class="btn-add-row" onclick="addNewVenue()">+ Add Venue Location</button>
+                </div>
+
+                <!-- 6. LOGISTICS & FEATURE TOGGLES (Template-Aware) -->
+                <div class="card-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3 class="panel-title">6. Logistics & Feature Toggles</h3>
+                            <p class="panel-subtitle">Toggle sections on or off according to client requirements</p>
+                        </div>
+                    </div>
+
+                    <!-- 1. RSVP TOGGLE -->
+                    <div class="toggle-row">
+                        <div>
+                            <div class="t-title-text">RSVP Section & WhatsApp RSVP</div>
+                            <div class="t-sub-text">When toggled OFF, the entire RSVP section is completely disabled & hidden</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-rsvp" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;">
+                        <label class="field-label">RSVP WhatsApp Number (with country code)</label>
+                        <input type="text" class="field-input" id="f-phone" value="919819200906" placeholder="e.g. 919819200906">
+                    </div>
+
+                    <!-- 2. SACRED MUSIC TOGGLE -->
+                    <div class="toggle-row">
+                        <div>
+                            <div class="t-title-text">Sacred Background Music</div>
+                            <div class="t-sub-text">Plays auspicious flute / shehnai / bansuri on user tap</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-music" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- 3. VALET PARKING TOGGLE -->
+                    <div class="toggle-row" id="row-valet">
+                        <div>
+                            <div class="t-title-text">Valet Parking Info Card <span class="tcb-tag" id="badge-valet">Supported</span></div>
+                            <div class="t-sub-text">Displays valet gate and parking guidance card</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-valet" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-valet">
+                        <label class="field-label">Valet Parking Instructions</label>
+                        <input type="text" class="field-input" id="f-valet" value="Complimentary valet parking available at the East Gate">
+                    </div>
+
+                    <!-- 4. DRESS CODE / ATTIRE TOGGLE -->
+                    <div class="toggle-row" id="row-dress">
+                        <div>
+                            <div class="t-title-text">Dress Code / Attire Theme <span class="tcb-tag" id="badge-dress">Supported</span></div>
+                            <div class="t-sub-text">Guidance on ceremony attire & colors</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-dress" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-dress">
+                        <label class="field-label">Attire Suggestion</label>
+                        <input type="text" class="field-input" id="f-dress" value="Royal Pastels / Traditional Indian Festive">
+                    </div>
+
+                    <!-- 5. WEDDING HASHTAG TOGGLE -->
+                    <div class="toggle-row" id="row-hashtag">
+                        <div>
+                            <div class="t-title-text">Wedding Hashtag Card <span class="tcb-tag" id="badge-hashtag">Supported</span></div>
+                            <div class="t-sub-text">Displays official Instagram wedding hashtag</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-hashtag" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-hashtag">
+                        <label class="field-label">Official Hashtag</label>
+                        <input type="text" class="field-input" id="f-hashtag" value="#AaravFoundHisSai">
+                    </div>
+
+                    <!-- 6. STAFF & CONCIERGE TOGGLE -->
+                    <div class="toggle-row" id="row-staff">
+                        <div>
+                            <div class="t-title-text">Staff & Concierge Helpdesk <span class="tcb-tag" id="badge-staff">Supported</span></div>
+                            <div class="t-sub-text">Coordinator / guest assistance contact phone</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-staff" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-staff">
+                        <label class="field-label">Staff / Coordinator Note</label>
+                        <input type="text" class="field-input" id="f-staff" value="Guest Concierge Desk: +91 98192 00906">
+                    </div>
+
+                    <!-- 7. WEATHER CARD TOGGLE -->
+                    <div class="toggle-row" id="row-weather">
+                        <div>
+                            <div class="t-title-text">Weather Forecast Card <span class="tcb-tag" id="badge-weather">Supported</span></div>
+                            <div class="t-sub-text">Climate forecast for the celebration city</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-weather">
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-weather">
+                        <label class="field-label">Weather Description</label>
+                        <input type="text" class="field-input" id="f-weather" value="Pleasant evening breeze, 28°C">
+                    </div>
+
+                    <!-- 8. AUSPICIOUS COUNTDOWN TOGGLE -->
+                    <div class="toggle-row" id="row-countdown">
+                        <div>
+                            <div class="t-title-text">Auspicious Countdown Clock <span class="tcb-tag" id="badge-countdown">Supported</span></div>
+                            <div class="t-sub-text">Live countdown timer ticking towards the wedding moment</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-countdown" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- 9. MEET THE COUPLE / OUR STORY TOGGLE -->
+                    <div class="toggle-row" id="row-story">
+                        <div>
+                            <div class="t-title-text">Meet the Couple / Our Story <span class="tcb-tag" id="badge-story">Supported</span></div>
+                            <div class="t-sub-text">Narrative story section & wedding message</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-story" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+                    <div class="field-group" style="margin: 8px 0 16px;" id="grp-story">
+                        <label class="field-label">Our Story Text</label>
+                        <textarea class="field-textarea" id="f-story" rows="3">Two souls united by destiny, blessed by sacred elders, embarking on an eternal sacred journey together.</textarea>
+                    </div>
+
+                    <!-- 10. PHOTO GALLERY TOGGLE -->
+                    <div class="toggle-row" id="row-gallery">
+                        <div>
+                            <div class="t-title-text">Photo Gallery / Polaroids <span class="tcb-tag" id="badge-gallery">Supported</span></div>
+                            <div class="t-sub-text">Pre-wedding memories & candid moments strip</div>
+                        </div>
+                        <label class="ios-switch">
+                            <input type="checkbox" id="t-gallery" checked>
+                            <span class="ios-slider"></span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN: STICKY CLIENT SUMMARY -->
+            <div class="builder-sidebar">
+                <div class="summary-card">
+                    <div class="sc-avatar-wrap">
+                        <div class="sc-avatar" id="badge-monogram">AS</div>
+                        <div>
+                            <div class="sc-names" id="summary-names">Saisha & Aarav</div>
+                            <div class="sc-slug" id="summary-slug">/aarav-saisha</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="sc-metric-line">
+                            <span class="sc-metric-label">Active Template</span>
+                            <span class="sc-metric-val" id="summary-template">08 Mahabodhi</span>
+                        </div>
+                        <div class="sc-metric-line">
+                            <span class="sc-metric-label">Logo Ratio</span>
+                            <span class="sc-metric-val">1:1 Square</span>
+                        </div>
+                        <div class="sc-metric-line">
+                            <span class="sc-metric-label">RSVP Status</span>
+                            <span class="sc-metric-val" id="summary-rsvp" style="color: var(--success);">Enabled</span>
+                        </div>
+                        <div class="sc-metric-line">
+                            <span class="sc-metric-label">Demo Switcher</span>
+                            <span class="sc-metric-val" style="color: var(--brand-accent);">Auto-Hidden</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-save-main" onclick="saveClient()">
+                        <span>💾 Save Client Invite</span>
+                    </button>
+
+                    <a class="btn-preview-link" id="link-live-preview" href="/templates/08_unforgettable_buddhist_wedding/?client=aarav-saisha" target="_blank">
+                        Open Live Invite ↗
+                    </a>
+
+                    <div style="font-size: 11px; color: var(--text-muted); text-align: center; line-height: 1.4;">
+                        Saved to <code style="font-size: 10px;">invites.config.json</code>.<br>
+                        Ready for instant Vercel or local preview.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VIEW: CLIENT DIRECTORY -->
+        <div id="view-clients" style="display: none;">
+            <div class="card-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 class="panel-title">Active Client Invitations</h3>
+                        <p class="panel-subtitle">All customized wedding websites created on your platform</p>
+                    </div>
+                    <button class="btn-save-main" style="width: auto; padding: 8px 16px;" onclick="switchNav('builder')">+ Create New Invite</button>
+                </div>
+
+                <div id="clients-table-body">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT ENGINE -->
+    <script>
+        const TEMPLATE_META = {
+            "08_unforgettable_buddhist_wedding": {
+                name: "Mahabodhi Buddhist Bodh Gaya",
+                badge: "Serene & Sacred Lotus",
+                vibe: "Bodh Gaya Lotus, Sacred Saffron Chants & Mahabodhi Stupa",
+                logoTarget: "Dharma Wheel / Monogram",
+                logoPromptKeyword: "Buddhist lotus, Dharma wheel and sacred mandala filigree",
+                photos: [
+                    { id: "p1", label: "Polaroid Photo 1", ratio: "1:1 Square or 4:5 Portrait" },
+                    { id: "p2", label: "Polaroid Photo 2", ratio: "1:1 Square or 4:5 Portrait" },
+                    { id: "p3", label: "Polaroid Photo 3", ratio: "1:1 Square or 4:5 Portrait" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: true, dressCode: true,
+                    hashtag: true, staff: true, weather: true, countdown: true,
+                    story: true, gallery: true
+                }
+            },
+            "07_unforgettable_ram_mandir": {
+                name: "Ayodhya Ram Mandir",
+                badge: "Grand Nagari Architecture",
+                vibe: "Nagari Shikhara, Golden Surya & Sacred Saffron Flags",
+                logoTarget: "Mandir Monogram Emblem",
+                logoPromptKeyword: "golden Surya sunburst, intricate Nagari temple carvings and saffron flags",
+                photos: [
+                    { id: "p1", label: "Gallery Photo 1", ratio: "1:1 Square" },
+                    { id: "p2", label: "Gallery Photo 2", ratio: "1:1 Square" },
+                    { id: "p3", label: "Gallery Photo 3", ratio: "1:1 Square" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: true, dressCode: true,
+                    hashtag: true, staff: true, weather: true, countdown: true,
+                    story: true, gallery: true
+                }
+            },
+            "01_unforgettable_temple_grace": {
+                name: "Temple Grace Gopuram",
+                badge: "South Indian Divine",
+                vibe: "Traditional South Indian Gopuram & Gold Temple",
+                logoTarget: "Gopuram Gold Monogram",
+                logoPromptKeyword: "South Indian traditional gold temple gopuram and sacred oil lamps",
+                photos: [
+                    { id: "cutout", label: "Couple Hero Cutout", ratio: "9:16 Portrait Cutout (Transparent Background)" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: false, dressCode: false,
+                    hashtag: false, staff: false, weather: false, countdown: true,
+                    story: true, gallery: false
+                }
+            },
+            "02_unforgettable_radha_krishna": {
+                name: "Radha Krishna Vrindavan",
+                badge: "Vrindavan Divine Love",
+                vibe: "Vrindavan Divine Love & Floral Sacred Mandap",
+                logoTarget: "Peacock Crested Monogram",
+                logoPromptKeyword: "peacock feathers, Krishna flute notes and Vrindavan floral border",
+                photos: [
+                    { id: "cutout", label: "Couple Portrait Cutout", ratio: "3:4 Portrait" },
+                    { id: "p1", label: "Photo Card", ratio: "4:5 Portrait" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: false, dressCode: false,
+                    hashtag: false, staff: false, weather: false, countdown: false,
+                    story: false, gallery: true
+                }
+            },
+            "03_unforgettable_pastel_elegance": {
+                name: "Royal Pastel Luxury",
+                badge: "Modern Luxury Pastels",
+                vibe: "Modern Soft Pastel Pink & Floral Gold Luxury",
+                logoTarget: "Pastel Gold Luxury Crest",
+                logoPromptKeyword: "minimalist luxury gold foil, blush pink roses and elegant serif typography",
+                photos: [
+                    { id: "cutout", label: "Couple Hero Cutout", ratio: "9:16 Portrait Cutout" },
+                    { id: "p1", label: "Slider Photo 1", ratio: "4:5 Portrait" },
+                    { id: "p2", label: "Slider Photo 2", ratio: "4:5 Portrait" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: false, dressCode: false,
+                    hashtag: false, staff: false, weather: false, countdown: true,
+                    story: true, gallery: true
+                }
+            },
+            "04_unforgettable_ayodhya_heritage": {
+                name: "Ayodhya Vedic Mandir",
+                badge: "Vedic Saffron Heritage",
+                vibe: "Grand Vedic Mandir Heritage & Saffron Bells",
+                logoTarget: "Royal Vedic Crest",
+                logoPromptKeyword: "saffron gold Vedic crest with sacred bells and Sanskrit aesthetic",
+                photos: [],
+                supported: {
+                    rsvp: true, music: true, valet: true, dressCode: true,
+                    hashtag: true, staff: true, weather: true, countdown: true,
+                    story: false, gallery: false
+                }
+            },
+            "05_unforgettable_meenakshi_royal": {
+                name: "Meenakshi Royal Sanctuary",
+                badge: "Madurai Dravidian Grandeur",
+                vibe: "Madurai Meenakshi Dravidian Grandeur",
+                logoTarget: "Royal Dravidian Emblem",
+                logoPromptKeyword: "Madurai Meenakshi temple lotus pool and Dravidian gold filigree",
+                photos: [],
+                supported: {
+                    rsvp: true, music: true, valet: true, dressCode: true,
+                    hashtag: true, staff: true, weather: true, countdown: true,
+                    story: false, gallery: false
+                }
+            },
+            "06_unforgettable_udaipur_palace": {
+                name: "Udaipur Lake Palace",
+                badge: "Rajputana Royal Forts",
+                vibe: "Rajputana Royal Forts, Arches & Floating Pavilions",
+                logoTarget: "Rajputana Royal Monogram",
+                logoPromptKeyword: "Rajputana royal crown, palace jharokha window arches and Lake Pichola reflections",
+                photos: [
+                    { id: "portrait", label: "Royal Couple Portrait", ratio: "3:4 Portrait (1200 × 1600 px)" }
+                ],
+                supported: {
+                    rsvp: true, music: true, valet: true, dressCode: true,
+                    hashtag: true, staff: true, weather: true, countdown: true,
+                    story: false, gallery: false
+                }
+            }
+        };
+
+        let currentTemplate = '08_unforgettable_buddhist_wedding';
+        let logoData = null;
+        let photosData = [];
+
+        // Theme Toggle Engine
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('unforgettable_theme', theme);
+            const icon = document.getElementById('theme-icon');
+            const label = document.getElementById('theme-label');
+            if (theme === 'dark') {
+                if (icon) icon.textContent = '☀️';
+                if (label) label.textContent = 'Light';
+            } else {
+                if (icon) icon.textContent = '🌙';
+                if (label) label.textContent = 'Dark';
+            }
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'light' ? 'dark' : 'light');
+        }
+
+        (function initTheme() {
+            const saved = localStorage.getItem('unforgettable_theme');
+            if (saved) applyTheme(saved);
+            else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) applyTheme('dark');
+            else applyTheme('light');
+        })();
+
+        // Navigation
+        function switchNav(view) {
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            if (view === 'builder') {
+                document.querySelectorAll('.nav-item')[0].classList.add('active');
+                document.getElementById('view-builder').style.display = 'grid';
+                document.getElementById('view-clients').style.display = 'none';
+            } else {
+                document.querySelectorAll('.nav-item')[1].classList.add('active');
+                document.getElementById('view-builder').style.display = 'none';
+                document.getElementById('view-clients').style.display = 'block';
+                renderClientsList();
+            }
+        }
+
+        // Render Template Picker Tiles
+        function renderTemplateTiles() {
+            const container = document.getElementById('template-tiles-container');
+            container.innerHTML = '';
+            for (const key in TEMPLATE_META) {
+                const meta = TEMPLATE_META[key];
+                const isSelected = key === currentTemplate;
+                const pill = document.createElement('div');
+                pill.className = 't-pill' + (isSelected ? ' selected' : '');
+                pill.setAttribute('data-tmpl', key);
+                pill.onclick = () => selectTemplate(key);
+                pill.innerHTML = '<div class="t-pill-name">' + meta.name + '</div><div class="t-pill-tag">' + meta.badge + '</div>';
+                container.appendChild(pill);
+            }
+        }
+
+        // Handle Template Selection
+        function selectTemplate(tmplKey) {
+            currentTemplate = tmplKey;
+            document.querySelectorAll('.t-pill').forEach(p => {
+                p.classList.toggle('selected', p.getAttribute('data-tmpl') === tmplKey);
+            });
+
+            const meta = TEMPLATE_META[tmplKey];
+            if (!meta) return;
+
+            // 1. Update Capability Banner
+            document.getElementById('tcb-name').textContent = meta.name;
+            const parts = meta.name.split(' ');
+            document.getElementById('summary-template').textContent = parts[0] + ' ' + (parts[1] || '');
+            
+            const tags = document.getElementById('tcb-tags');
+            tags.innerHTML = '<span class="tcb-tag">100% Required: Bride, Groom, Parents, 1:1 Logo, Ceremonies</span><span class="tcb-tag">📐 Logo: 1:1 Square (600×600 px)</span>';
+
+            // 2. Update Feature Badges & Toggle Row Visibility
+            const toggles = [
+                { id: 'valet', label: 'Valet Parking', supported: meta.supported.valet },
+                { id: 'dress', label: 'Dress Code', supported: meta.supported.dressCode },
+                { id: 'hashtag', label: 'Hashtag', supported: meta.supported.hashtag },
+                { id: 'staff', label: 'Staff Contact', supported: meta.supported.staff },
+                { id: 'weather', label: 'Weather Card', supported: meta.supported.weather },
+                { id: 'countdown', label: 'Countdown Timer', supported: meta.supported.countdown },
+                { id: 'story', label: 'Our Story', supported: meta.supported.story },
+                { id: 'gallery', label: 'Photo Gallery', supported: meta.supported.gallery }
+            ];
+
+            toggles.forEach(t => {
+                const badge = document.getElementById('badge-' + t.id);
+                const row = document.getElementById('row-' + t.id);
+                const grp = document.getElementById('grp-' + t.id);
+
+                if (badge) {
+                    if (t.supported) {
+                        badge.textContent = 'Supported';
+                        badge.style.background = 'var(--bg-card)';
+                        badge.style.color = 'var(--text-dark)';
+                        if (row) row.style.opacity = '1';
+                        if (grp) grp.style.opacity = '1';
+                    } else {
+                        badge.textContent = 'Not in this template';
+                        badge.style.background = 'var(--border-light)';
+                        badge.style.color = 'var(--text-muted)';
+                        if (row) row.style.opacity = '0.45';
+                        if (grp) grp.style.opacity = '0.45';
+                    }
+                }
+            });
+
+            // 3. Update Dynamic Photo Slots
+            renderPhotoSlots(meta);
+
+            // 4. Update AI Logo Prompt
+            updateAiPrompt();
+
+            // 5. Update Live Link
+            updateLiveLink();
+        }
+
+        // Render Dynamic Photo Slots per Template
+        function renderPhotoSlots(meta) {
+            const container = document.getElementById('template-photo-slots');
+            container.innerHTML = '';
+
+            if (meta.photos.length === 0) {
+                container.innerHTML = '<div style="background: var(--bg-page); border: 1px dashed var(--border-light); border-radius: 8px; padding: 14px; text-align: center; font-size: 12px; color: var(--text-muted);">🏛️ Heritage Architectural Template: Focuses on sacred Vedic temple geometry and ceremonies without couple portraits.</div>';
+                return;
+            }
+
+            meta.photos.forEach((photo, idx) => {
+                const group = document.createElement('div');
+                group.className = 'field-group';
+                group.style.marginTop = '12px';
+                group.innerHTML = '<div class="field-label"><span>' + photo.label + '</span><span class="ratio-badge">' + photo.ratio + '</span></div>' +
+                    '<div class="dropzone-box" ondragover="onDragOver(event)" ondrop="onFileDrop(event, \'photo_' + idx + '\')">' +
+                    '<div class="dz-text-main">Drop ' + photo.label + ' (' + photo.ratio + ')</div>' +
+                    '<div class="dz-text-sub">Auto-cropped & converted to lean WebP</div>' +
+                    '<input type="file" accept="image/*" onchange="onFileInput(event, \'photo_' + idx + '\')">' +
+                    '</div>' +
+                    '<div class="thumbs-strip" id="strip-photo-' + idx + '"></div>';
+                container.appendChild(group);
+            });
+        }
+
+        // Update ChatGPT / AI Logo Prompt
+        function updateAiPrompt() {
+            const bride = document.getElementById('f-bride').value.trim() || 'Saisha';
+            const groom = document.getElementById('f-groom').value.trim() || 'Aarav';
+            const bInit = bride[0] || 'S';
+            const gInit = groom[0] || 'A';
+            const meta = TEMPLATE_META[currentTemplate] || TEMPLATE_META['08_unforgettable_buddhist_wedding'];
+
+            const prompt = "Luxury golden royal wedding monogram logo, circular emblem featuring intertwined initials '" + gInit + "' and '" + bInit + "' for " + groom + " & " + bride + ", elegant serif typography, intricate ornamental " + meta.logoPromptKeyword + ", golden foil effect, dark transparent background, vector style, 1:1 square ratio, 4k ultra-detailed";
+
+            const box = document.getElementById('ai-logo-prompt');
+            if (box) box.textContent = prompt;
+        }
+
+        function copyAiPrompt() {
+            const prompt = document.getElementById('ai-logo-prompt').textContent;
+            navigator.clipboard.writeText(prompt).then(() => {
+                const label = document.getElementById('copy-prompt-label');
+                const icon = document.getElementById('copy-prompt-icon');
+                label.textContent = 'Copied to Clipboard!';
+                icon.textContent = '✓';
+                setTimeout(() => {
+                    label.textContent = 'Copy Prompt';
+                    icon.textContent = '📋';
+                }, 2000);
+            });
+        }
+
+        // Fast HTML5 Canvas WebP Compressor & Auto-Square Cropper
+        function compressAndSquareImage(file, isSquare = true, targetDim = 800) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        const canvas = document.createElement('canvas');
+                        let w = img.width, h = img.height;
+                        let sx = 0, sy = 0, sWidth = w, sHeight = h;
+
+                        if (isSquare) {
+                            canvas.width = targetDim;
+                            canvas.height = targetDim;
+                            const minSide = Math.min(w, h);
+                            sx = (w - minSide) / 2;
+                            sy = (h - minSide) / 2;
+                            sWidth = minSide;
+                            sHeight = minSide;
+                        } else {
+                            if (w > 1600) {
+                                h = Math.round((h * 1600) / w);
+                                w = 1600;
+                            }
+                            canvas.width = w;
+                            canvas.height = h;
+                        }
+
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, canvas.width, canvas.height);
+
+                        canvas.toBlob((blob) => {
+                            resolve({
+                                dataUrl: canvas.toDataURL('image/webp', 0.85),
+                                origKB: (file.size / 1024).toFixed(0) + ' KB',
+                                newKB: (blob.size / 1024).toFixed(0) + ' KB'
+                            });
+                        }, 'image/webp', 0.85);
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Drag & Drop
+        function onDragOver(e) {
+            e.preventDefault();
+            e.currentTarget.classList.add('dragover');
+        }
+
+        async function onFileDrop(e, type) {
+            e.preventDefault();
+            e.currentTarget.classList.remove('dragover');
+            const files = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/'));
+            handleIncomingFiles(files, type);
+        }
+
+        function onFileInput(e, type) {
+            const files = Array.from(e.target.files).filter(f => f.type.startsWith('image/'));
+            handleIncomingFiles(files, type);
+        }
+
+        async function handleIncomingFiles(files, type) {
+            for (const file of files) {
+                if (type === 'logo') {
+                    const res = await compressAndSquareImage(file, true, 800);
+                    logoData = res.dataUrl;
+                    document.getElementById('strip-logo').innerHTML = '<div class="thumb-item"><img src="' + res.dataUrl + '"><span class="thumb-size-tag">' + res.newKB + '</span></div>';
+                    document.getElementById('badge-monogram').innerHTML = '<img src="' + res.dataUrl + '">';
+                } else if (type.startsWith('photo_')) {
+                    const idx = parseInt(type.replace('photo_', ''), 10);
+                    const res = await compressAndSquareImage(file, false);
+                    photosData[idx] = res.dataUrl;
+                    const strip = document.getElementById('strip-photo-' + idx);
+                    if (strip) {
+                        strip.innerHTML = '<div class="thumb-item"><img src="' + res.dataUrl + '"><span class="thumb-size-tag">' + res.newKB + '</span></div>';
+                    }
+                }
+            }
+        }
+
+        // Name Sync
+        function onNamesChange() {
+            const bride = document.getElementById('f-bride').value.trim() || 'Bride';
+            const groom = document.getElementById('f-groom').value.trim() || 'Groom';
+            document.getElementById('summary-names').textContent = bride + ' & ' + groom;
+
+            const slug = (groom + '-' + bride).toLowerCase().replace(/[^a-z0-9]/g, '-');
+            document.getElementById('f-slug').value = slug;
+            document.getElementById('summary-slug').textContent = '/' + slug;
+            document.getElementById('f-hashtag').value = '#' + groom + 'FoundHis' + bride.slice(0, 3);
+
+            if (!logoData) {
+                const init = (groom[0] || 'A') + (bride[0] || 'S');
+                document.getElementById('badge-monogram').textContent = init;
+            }
+
+            updateAiPrompt();
+            updateLiveLink();
+        }
+
+        function updateLiveLink() {
+            const slug = document.getElementById('f-slug').value.trim() || 'client';
+            const link = '/templates/' + currentTemplate + '/?client=' + encodeURIComponent(slug);
+            const a = document.getElementById('link-live-preview');
+            if (a) a.setAttribute('href', link);
+        }
+
+        // Dynamic Rows for Ceremonies & Venues
+        function addNewEvent(name = "Sangeet & Cocktail Celebration", time = "28th Nov 2026 • 7:00 PM", venue = "Grand Ballroom") {
+            const list = document.getElementById('events-list');
+            const row = document.createElement('div');
+            row.className = 'row-item';
+            row.innerHTML = '<button class="btn-delete-row" onclick="removeRow(this)">✕</button>' +
+                '<div class="field-grid">' +
+                '<div class="field-group"><label class="field-label">Event Name</label><input type="text" class="field-input ev-name" value="' + name + '"></div>' +
+                '<div class="field-group"><label class="field-label">Date & Time</label><input type="text" class="field-input ev-time" value="' + time + '"></div>' +
+                '</div>' +
+                '<div class="field-group" style="margin-top: 8px;"><label class="field-label">Venue Location</label><input type="text" class="field-input ev-venue" value="' + venue + '"></div>';
+            list.appendChild(row);
+        }
+
+        function addNewVenue(name = "Grand Sanctuary Lawns", maps = "https://maps.google.com/?q=24.6959,84.9913") {
+            const list = document.getElementById('venues-list');
+            const row = document.createElement('div');
+            row.className = 'row-item';
+            row.innerHTML = '<button class="btn-delete-row" onclick="removeRow(this)">✕</button>' +
+                '<div class="field-grid">' +
+                '<div class="field-group"><label class="field-label">Venue Name & Address</label><input type="text" class="field-input ven-name" value="' + name + '"></div>' +
+                '<div class="field-group"><label class="field-label">Google Maps URL</label><input type="text" class="field-input ven-maps" value="' + maps + '"></div>' +
+                '</div>';
+            list.appendChild(row);
+        }
+
+        function removeRow(btn) {
+            btn.closest('.row-item').remove();
+        }
+
+        // SAVE CLIENT INVITE
+        async function saveClient() {
+            const bride = document.getElementById('f-bride').value.trim() || 'Bride';
+            const groom = document.getElementById('f-groom').value.trim() || 'Groom';
+            const connector = document.getElementById('f-connector').value.trim() || 'weds';
+            const slug = document.getElementById('f-slug').value.trim() || (groom + '-' + bride).toLowerCase();
+            const groomParents = document.getElementById('f-gparents').value.trim();
+            const brideParents = document.getElementById('f-bparents').value.trim();
+
+            const rsvpEnabled = document.getElementById('t-rsvp').checked;
+            const musicEnabled = document.getElementById('t-music').checked;
+            const valetEnabled = document.getElementById('t-valet').checked;
+            const dressEnabled = document.getElementById('t-dress').checked;
+            const hashtagEnabled = document.getElementById('t-hashtag').checked;
+            const staffEnabled = document.getElementById('t-staff').checked;
+            const weatherEnabled = document.getElementById('t-weather').checked;
+            const countdownEnabled = document.getElementById('t-countdown').checked;
+            const storyEnabled = document.getElementById('t-story').checked;
+            const galleryEnabled = document.getElementById('t-gallery').checked;
+
+            const events = [];
+            document.querySelectorAll('#events-list .row-item').forEach(r => {
+                events.push({
+                    name: r.querySelector('.ev-name').value.trim(),
+                    time: r.querySelector('.ev-time').value.trim(),
+                    venue: r.querySelector('.ev-venue').value.trim()
+                });
+            });
+
+            const locations = [];
+            document.querySelectorAll('#venues-list .row-item').forEach(r => {
+                locations.push({
+                    name: r.querySelector('.ven-name').value.trim(),
+                    mapsUrl: r.querySelector('.ven-maps').value.trim()
+                });
+            });
+
+            const clientPayload = {
+                slug,
+                template: currentTemplate,
+                couple: {
+                    bride,
+                    groom,
+                    connector,
+                    monogramInitials: (groom[0] || 'A') + (bride[0] || 'S'),
+                    hashtag: document.getElementById('f-hashtag').value.trim()
+                },
+                family: {
+                    groomParents,
+                    brideParents
+                },
+                events,
+                locations,
+                toggles: {
+                    rsvp: rsvpEnabled,
+                    music: musicEnabled,
+                    valet: valetEnabled,
+                    dressCode: dressEnabled,
+                    hashtag: hashtagEnabled,
+                    staff: staffEnabled,
+                    weather: weatherEnabled,
+                    countdown: countdownEnabled,
+                    story: storyEnabled,
+                    gallery: galleryEnabled
+                },
+                logistics: {
+                    whatsappRsvp: document.getElementById('f-phone').value.trim(),
+                    dressCode: document.getElementById('f-dress').value.trim(),
+                    valetParking: document.getElementById('f-valet').value.trim(),
+                    staffContact: document.getElementById('f-staff').value.trim(),
+                    weather: document.getElementById('f-weather').value.trim(),
+                    storyText: document.getElementById('f-story').value.trim()
+                },
+                media: {
+                    logoUrl: logoData,
+                    photos: photosData
+                },
+                createdAt: new Date().toISOString()
+            };
+
+            // 1. Save to localStorage
+            let store = JSON.parse(localStorage.getItem('unforgettable_clients') || '{}');
+            store[slug] = clientPayload;
+            localStorage.setItem('unforgettable_clients', JSON.stringify(store));
+
+            // 2. Persist to invites.config.json via Node server
+            try {
+                await fetch('/api/clients', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ slug, client: clientPayload })
+                });
+            } catch(e) {}
+
+            updateCounters();
+            alert('🎉 Invite "' + slug + '" successfully saved!\\nOpening live preview...');
+            window.open('/templates/' + currentTemplate + '/?client=' + encodeURIComponent(slug), '_blank');
+        }
+
+        // Render Saved Clients Directory
+        function renderClientsList() {
+            const container = document.getElementById('clients-table-body');
+            container.innerHTML = '';
+            const store = JSON.parse(localStorage.getItem('unforgettable_clients') || '{}');
+            const keys = Object.keys(store);
+
+            if (keys.length === 0) {
+                container.innerHTML = '<div style="text-align:center;padding:32px;color:var(--text-muted);font-size:13px;">No client invites saved yet.</div>';
+                return;
+            }
+
+            keys.forEach(k => {
+                const c = store[k];
+                const meta = TEMPLATE_META[c.template] || { name: c.template };
+                const row = document.createElement('div');
+                row.className = 'client-entry-row';
+                row.innerHTML = '<div class="client-main-col">' +
+                    '<div class="client-avatar-sq">' + ((c.couple.monogramInitials || 'AS').slice(0, 2)) + '</div>' +
+                    '<div>' +
+                    '<div class="client-title-text">' + c.couple.bride + ' & ' + c.couple.groom + '</div>' +
+                    '<div class="client-meta-sub">/' + c.slug + ' • ' + meta.name + '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="client-status-badge"><span>●</span> Active Live</div>' +
+                    '<div class="client-actions-grp">' +
+                    '<a class="btn-sm-action" href="/templates/' + c.template + '/?client=' + encodeURIComponent(c.slug) + '" target="_blank">Preview ↗</a>' +
+                    '<button class="btn-sm-action" onclick="loadClientIntoBuilder(\'' + c.slug + '\')">Edit</button>' +
+                    '<button class="btn-sm-action danger" onclick="deleteClient(\'' + c.slug + '\')">Delete</button>' +
+                    '</div>';
+                container.appendChild(row);
+            });
+        }
+
+        function loadClientIntoBuilder(slug) {
+            const store = JSON.parse(localStorage.getItem('unforgettable_clients') || '{}');
+            const c = store[slug];
+            if (!c) return;
+
+            document.getElementById('f-bride').value = c.couple.bride || '';
+            document.getElementById('f-groom').value = c.couple.groom || '';
+            document.getElementById('f-connector').value = c.couple.connector || 'weds';
+            document.getElementById('f-slug').value = c.slug;
+            document.getElementById('f-gparents').value = c.family ? c.family.groomParents || '' : '';
+            document.getElementById('f-bparents').value = c.family ? c.family.brideParents || '' : '';
+            document.getElementById('f-hashtag').value = c.couple.hashtag || '';
+            document.getElementById('f-phone').value = c.logistics ? c.logistics.whatsappRsvp || '' : '';
+            document.getElementById('f-dress').value = c.logistics ? c.logistics.dressCode || '' : '';
+            document.getElementById('f-valet').value = c.logistics ? c.logistics.valetParking || '' : '';
+
+            if (c.toggles) {
+                document.getElementById('t-rsvp').checked = c.toggles.rsvp !== false;
+                document.getElementById('t-music').checked = c.toggles.music !== false;
+                document.getElementById('t-valet').checked = c.toggles.valet !== false;
+                document.getElementById('t-dress').checked = c.toggles.dressCode !== false;
+                document.getElementById('t-hashtag').checked = c.toggles.hashtag !== false;
+                document.getElementById('t-staff').checked = c.toggles.staff !== false;
+                document.getElementById('t-weather').checked = c.toggles.weather === true;
+                document.getElementById('t-countdown').checked = c.toggles.countdown !== false;
+                document.getElementById('t-story').checked = c.toggles.story !== false;
+                document.getElementById('t-gallery').checked = c.toggles.gallery !== false;
+            }
+
+            selectTemplate(c.template);
+            onNamesChange();
+            switchNav('builder');
+        }
+
+        function deleteClient(slug) {
+            if (!confirm('Delete client invite "' + slug + '"?')) return;
+            let store = JSON.parse(localStorage.getItem('unforgettable_clients') || '{}');
+            delete store[slug];
+            localStorage.setItem('unforgettable_clients', JSON.stringify(store));
+            updateCounters();
+            renderClientsList();
+        }
+
+        function updateCounters() {
+            const store = JSON.parse(localStorage.getItem('unforgettable_clients') || '{}');
+            const count = Object.keys(store).length;
+            const el = document.getElementById('card-stat-clients');
+            const badge = document.getElementById('badge-client-count');
+            if (el) el.textContent = count;
+            if (badge) badge.textContent = count;
+        }
+
+        function onSearchFilter(term) {
+            const q = term.toLowerCase();
+            document.querySelectorAll('.t-pill').forEach(pill => {
+                pill.style.display = pill.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+            });
+            document.querySelectorAll('.client-entry-row').forEach(row => {
+                row.style.display = row.textContent.toLowerCase().includes(q) ? 'flex' : 'none';
+            });
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTemplateTiles();
+            selectTemplate('08_unforgettable_buddhist_wedding');
+            addNewEvent("Buddh Vandana & Ring Ceremony", "28th Nov 2026 • 4:00 PM", "Lotus Pavilion, Bodh Gaya");
+            addNewEvent("Sacred Pheras & Triple Gem Blessings", "29th Nov 2026 • 6:00 PM", "Mahabodhi Grand Sanctuary");
+            addNewVenue("Mahabodhi Grand Sanctuary, Bodh Gaya", "https://maps.google.com/?q=24.6959,84.9913");
+            onNamesChange();
+            updateCounters();
+        });
+    </script>
+</body>
+</html>

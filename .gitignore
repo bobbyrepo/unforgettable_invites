@@ -1,20 +1,51 @@
-# Dependencies & System Logs
+# Dependencies & Build Outputs
 node_modules/
-*.log
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# OS & Editor
 .DS_Store
 Thumbs.db
+*.log
+.vscode/
+.idea/
 
-# Heavy Adobe Working Files & Scratch Directories
+# Environment Variables & Secrets
+.env
+.env*.local
+.env.production
+.env.development
+
+# Scratch & Temporary Testing Folders
+scratch/
+tools/
+*.exe
+debug_template.js
+
+# Public directory junctions (prevents duplicate tracking of templates & assets)
+public/templates
+public/assets
+
+# Large Media Files (Hosted in Supabase Storage Vault)
+templates/**/images/*.png
+templates/**/images/*.jpg
+templates/**/images/*.jpeg
+templates/**/images/*.webp
+templates/**/audio/*.mp3
+templates/**/audio/*.wav
+templates/**/videos/*.mp4
+assets/music/*.mp3
+assets/music/*.wav
+
+# Adobe & Raw Design Files
 *.aep
 *.aepx
 *.psd
 *.ai
 **/Adobe After Effects Auto-Save/
-**/to use/
 **/*_backup*
 **/*.tmp
-
-# Environment Variables & Secrets
-.env
-.env.local
-.env.production

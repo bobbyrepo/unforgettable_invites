@@ -88,11 +88,79 @@ const server = http.createServer((req, res) => {
         }
     }
 
+    // API endpoint for reading and writing client configurations (invites.config.json)
+    if (req.url === '/api/clients' || req.url.startsWith('/api/clients')) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+        if (req.method === 'OPTIONS') {
+            res.writeHead(204);
+            return res.end();
+        }
+
+        const configPath = path.join(__dirname, 'invites.config.json');
+
+        if (req.method === 'GET') {
+            let data = {};
+            if (fs.existsSync(configPath)) {
+                try { data = JSON.parse(fs.readFileSync(configPath, 'utf8')); } catch (e) {}
+            }
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify(data));
+        }
+
+        if (req.method === 'POST') {
+            let body = '';
+            req.on('data', chunk => body += chunk);
+            req.on('end', () => {
+                try {
+                    const client = JSON.parse(body);
+                    let allClients = {};
+                    if (fs.existsSync(configPath)) {
+                        try { allClients = JSON.parse(fs.readFileSync(configPath, 'utf8')); } catch (e) {}
+                    }
+                    if (client.slug) {
+                        allClients[client.slug] = client;
+                        fs.writeFileSync(configPath, JSON.stringify(allClients, null, 2), 'utf8');
+                    }
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true, client }));
+                } catch (err) {
+                    res.writeHead(500, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ error: err.message }));
+                }
+            });
+            return;
+        }
+    }
+
     let safeUrl = req.url.split('?')[0];
     try {
         safeUrl = decodeURIComponent(safeUrl);
     } catch (e) {
         // Fallback to unescaped url if malformed
+    }
+
+    // Direct route for Studio Builder
+    if (safeUrl === '/studio' || safeUrl === '/builder') {
+        safeUrl = '/studio.html';
+    }
+
+    // Direct slug route for clients (/aarav-saisha -> template)
+    if (safeUrl !== '/' && !safeUrl.includes('.') && !safeUrl.startsWith('/templates') && !safeUrl.startsWith('/api')) {
+        const potentialSlug = safeUrl.replace(/^\//, '');
+        const configPath = path.join(__dirname, 'invites.config.json');
+        if (fs.existsSync(configPath)) {
+            try {
+                const clients = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+                if (clients[potentialSlug]) {
+                    const tmpl = clients[potentialSlug].template || '08_unforgettable_buddhist_wedding';
+                    res.writeHead(302, { 'Location': `/templates/${tmpl}/?client=${potentialSlug}` });
+                    return res.end();
+                }
+            } catch (e) {}
+        }
     }
     let filePath = path.join(__dirname, safeUrl === '/' ? 'portal.html' : safeUrl);
 
@@ -190,6 +258,9 @@ const server = http.createServer((req, res) => {
     fs.createReadStream(filePath).pipe(res);
 });
 
-server.listen(PORT, () => {
-    console.log(`High-Performance Streaming Server active at http://localhost:${PORT}/`);
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`High-Performance Streaming Server active!`);
+    console.log(`💻 Local Desktop : http://localhost:${PORT}/studio`);
+    console.log(`📱 Mobile Wi-Fi : http://192.168.1.9:${PORT}/studio`);
+    console.log(`🪷 Mobile Invite : http://192.168.1.9:${PORT}/templates/08_unforgettable_buddhist_wedding/?client=aarav-saisha`);
 });
