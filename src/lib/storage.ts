@@ -1,10 +1,34 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
+import { S3Client, GetObjectCommand, PutObjectCommand } from '@aws-sdk/client-s3';
 import { WeddingInviteData, WeddingEvent } from '@/data/types';
 import { INITIAL_INVITES } from '@/data/invites';
 import { cleanSlug } from './slug-engine';
 
 const CONFIG_PATH = path.join(process.cwd(), 'invites.config.json');
+const TMP_CONFIG_PATH = path.join(os.tmpdir(), 'invites.config.json');
+
+// S3 / Cloudflare R2 Client for persistent cloud storage
+const hasR2 = !!(process.env.R2_ACCOUNT_ID && process.env.R2_ACCESS_KEY_ID && process.env.R2_SECRET_ACCESS_KEY);
+const s3 = hasR2
+  ? new S3Client({
+      region: 'auto',
+      endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+      credentials: {
+        accessKeyId: process.env.R2_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
+      },
+    })
+  : null;
+
+const BUCKET_NAME = process.env.R2_BUCKET_NAME || 'unforgettable-invites-assets';
+const R2_CONFIG_KEY = 'data/invites.config.json';
+
+// In-memory cache for ultra-fast serverless execution (5-second TTL)
+let inMemoryCache: WeddingInviteData[] | null = null;
+let lastCacheFetchTime = 0;
+const CACHE_TTL_MS = 5000;
 
 export function normalizeEvent(e: any, index: number): WeddingEvent {
   return {
@@ -102,34 +126,127 @@ export function normalizeInvite(v: any): WeddingInviteData {
   };
 }
 
-export function getAllInvites(): WeddingInviteData[] {
+/**
+ * Fetch all invites with multi-tier storage fallback:
+ * 1. In-memory cache (within TTL)
+ * 2. Cloudflare R2 bucket (cloud-wide persistence)
+ * 3. /tmp/invites.config.json (serverless temporary file)
+ * 4. ./invites.config.json (local file)
+ * 5. INITIAL_INVITES (hardcoded fallback)
+ */
+export async function getAllInvites(): Promise<WeddingInviteData[]> {
+  const now = Date.now();
+  if (inMemoryCache && now - lastCacheFetchTime < CACHE_TTL_MS) {
+    return inMemoryCache;
+  }
+
+  // Tier 1: Try reading from Cloudflare R2
+  if (s3) {
+    try {
+      const res = await s3.send(
+        new GetObjectCommand({
+          Bucket: BUCKET_NAME,
+          Key: R2_CONFIG_KEY,
+        })
+      );
+      const str = await res.Body?.transformToString();
+      if (str) {
+        const parsed = JSON.parse(str);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          const list = parsed.map(normalizeInvite);
+          inMemoryCache = list;
+          lastCacheFetchTime = now;
+          return list;
+        }
+      }
+    } catch (e: any) {
+      // If object doesn't exist yet or network error, fall through to local
+    }
+  }
+
+  // Tier 2: Try reading from /tmp/invites.config.json
+  if (fs.existsSync(TMP_CONFIG_PATH)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(TMP_CONFIG_PATH, 'utf8'));
+      if (Array.isArray(data) && data.length > 0) {
+        const list = data.map(normalizeInvite);
+        inMemoryCache = list;
+        lastCacheFetchTime = now;
+        return list;
+      }
+    } catch (e) {}
+  }
+
+  // Tier 3: Try reading from local project root invites.config.json
   if (fs.existsSync(CONFIG_PATH)) {
     try {
       const data = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'));
       if (Array.isArray(data) && data.length > 0) {
-        return data.map(normalizeInvite);
-      } else if (typeof data === 'object' && data !== null) {
-        const values: any[] = Object.values(data);
-        if (values.length > 0) {
-          return values.map(normalizeInvite);
-        }
+        const list = data.map(normalizeInvite);
+        inMemoryCache = list;
+        lastCacheFetchTime = now;
+        return list;
       }
     } catch (e) {
       console.error('Error reading invites.config.json:', e);
     }
   }
-  return [...INITIAL_INVITES];
+
+  inMemoryCache = [...INITIAL_INVITES];
+  lastCacheFetchTime = now;
+  return inMemoryCache;
 }
 
-export function getInviteBySlug(slug: string): WeddingInviteData | null {
+export async function getInviteBySlug(slug: string): Promise<WeddingInviteData | null> {
   const clean = cleanSlug(slug);
-  const list = getAllInvites();
+  const list = await getAllInvites();
   return list.find((i) => i.slug.toLowerCase() === clean) || null;
 }
 
-export function saveInvite(rawInvite: Partial<WeddingInviteData>): { success: boolean; invite?: WeddingInviteData; error?: string } {
+/**
+ * Persist invites across Cloudflare R2, /tmp, and local disk
+ */
+async function persistInvites(invites: WeddingInviteData[]) {
+  const jsonStr = JSON.stringify(invites, null, 2);
+  inMemoryCache = invites;
+  lastCacheFetchTime = Date.now();
+
+  // 1. Cloudflare R2 (Global persistence across all Vercel serverless containers)
+  if (s3) {
+    try {
+      await s3.send(
+        new PutObjectCommand({
+          Bucket: BUCKET_NAME,
+          Key: R2_CONFIG_KEY,
+          Body: jsonStr,
+          ContentType: 'application/json',
+          CacheControl: 'no-cache, no-store, must-revalidate',
+        })
+      );
+    } catch (err: any) {
+      console.warn('Failed to persist to R2:', err.message);
+    }
+  }
+
+  // 2. /tmp directory (Writable on Vercel AWS Lambda)
   try {
-    const invites = getAllInvites();
+    fs.writeFileSync(TMP_CONFIG_PATH, jsonStr, 'utf8');
+  } catch (e) {}
+
+  // 3. Local working directory (Writable in local dev; catch EROFS silently on Vercel)
+  try {
+    fs.writeFileSync(CONFIG_PATH, jsonStr, 'utf8');
+  } catch (e: any) {
+    // EROFS: read-only file system on Vercel Lambda is normal and expected
+    if (e.code !== 'EROFS') {
+      console.warn('Could not write to local config:', e.message);
+    }
+  }
+}
+
+export async function saveInvite(rawInvite: Partial<WeddingInviteData>): Promise<{ success: boolean; invite?: WeddingInviteData; error?: string }> {
+  try {
+    const invites = await getAllInvites();
     const cleanSlugVal = cleanSlug(rawInvite.slug || '');
 
     if (!cleanSlugVal || cleanSlugVal.length < 2) {
@@ -171,7 +288,7 @@ export function saveInvite(rawInvite: Partial<WeddingInviteData>): { success: bo
       invites.unshift(normalized);
     }
 
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(invites, null, 2), 'utf8');
+    await persistInvites(invites);
     return { success: true, invite: normalized };
   } catch (err: any) {
     console.error('Error in saveInvite:', err);
@@ -179,9 +296,9 @@ export function saveInvite(rawInvite: Partial<WeddingInviteData>): { success: bo
   }
 }
 
-export function deleteInvite(identifier: string): { success: boolean; remaining?: number; error?: string } {
+export async function deleteInvite(identifier: string): Promise<{ success: boolean; remaining?: number; error?: string }> {
   try {
-    let invites = getAllInvites();
+    let invites = await getAllInvites();
     const initialLen = invites.length;
     const clean = cleanSlug(identifier);
 
@@ -191,7 +308,7 @@ export function deleteInvite(identifier: string): { success: boolean; remaining?
       return { success: false, error: 'Invite not found.' };
     }
 
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(invites, null, 2), 'utf8');
+    await persistInvites(invites);
     return { success: true, remaining: invites.length };
   } catch (err: any) {
     console.error('Error in deleteInvite:', err);

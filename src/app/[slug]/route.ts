@@ -6,7 +6,7 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const invite = getInviteBySlug(params.slug);
+  const invite = await getInviteBySlug(params.slug);
 
   if (!invite) {
     return new Response('Wedding Invitation Not Found', { status: 404 });

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getAllInvites, saveInvite, deleteInvite } from '@/lib/storage';
 
 export async function GET() {
-  const invites = getAllInvites();
+  const invites = await getAllInvites();
   return NextResponse.json(invites, {
     headers: {
       'Cache-Control': 'no-cache, no-store, must-revalidate',
@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const rawData = await req.json();
-    const result = saveInvite(rawData);
+    const result = await saveInvite(rawData);
 
     if (!result.success) {
       return NextResponse.json({ error: result.error }, { status: 400 });
@@ -39,7 +39,7 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ error: 'Provide either id or slug to delete.' }, { status: 400 });
     }
 
-    const result = deleteInvite(identifier);
+    const result = await deleteInvite(identifier);
     if (!result.success) {
       return NextResponse.json({ error: result.error }, { status: 404 });
     }
