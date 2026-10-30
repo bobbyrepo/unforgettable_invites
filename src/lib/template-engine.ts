@@ -19,8 +19,12 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
 
   let html = fs.readFileSync(templatePath, 'utf8');
 
-  // 1. Inject base tag for asset resolution
-  html = html.replace('<head>', `<head>\n\t<base href="/templates/${templateId}/">`);
+  // 1. Inject base tag for asset resolution (stream from Cloudflare R2 CDN or local fallback)
+  const r2Base = process.env.NEXT_PUBLIC_R2_URL;
+  const assetBase = r2Base
+    ? `${r2Base.replace(/\/$/, '')}/templates/${templateId}/`
+    : `/templates/${templateId}/`;
+  html = html.replace('<head>', `<head>\n\t<base href="${assetBase}">`);
 
   // 2. Dynamic couple name replacements
   if (templateId === '08_unforgettable_buddhist_wedding') {
