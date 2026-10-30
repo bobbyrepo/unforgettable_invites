@@ -153,16 +153,32 @@ void main() {
     const imageCache = {};
 
     function preloadImage(url, callback) {
-        if (imageCache[url] && imageCache[url].complete) {
-            callback(imageCache[url]);
-        } else if (imageCache[url]) {
-            imageCache[url].addEventListener('load', () => callback(imageCache[url]), { once: true });
-        } else {
-            imageCache[url] = new Image();
-            imageCache[url].crossOrigin = 'anonymous';
-            imageCache[url].src = url;
-            imageCache[url].addEventListener('load', () => callback(imageCache[url]), { once: true });
+        const cached = imageCache[url];
+        if (cached && cached.complete && cached.naturalWidth > 0) {
+            callback(cached);
+            return;
         }
+        if (cached && !cached.complete) {
+            cached.addEventListener('load', () => {
+                if (cached.naturalWidth > 0) callback(cached);
+            }, { once: true });
+            return;
+        }
+
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.src = url;
+        imageCache[url] = img;
+
+        img.addEventListener('load', () => {
+            if (img.naturalWidth > 0) {
+                callback(img);
+            }
+        }, { once: true });
+
+        img.addEventListener('error', () => {
+            console.warn('Flag texture could not be loaded cross-origin:', url);
+        }, { once: true });
     }
 
     function initFlagCanvas(canvas, cfg) {
@@ -208,14 +224,19 @@ void main() {
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([235, 195, 90, 255]));
 
         preloadImage(cfg.texture, function(img) {
-            gl.bindTexture(gl.TEXTURE_2D, tex);
-            gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
-            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
-            gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-            gl.generateMipmap(gl.TEXTURE_2D);
+            if (!img || img.naturalWidth === 0) return;
+            try {
+                gl.bindTexture(gl.TEXTURE_2D, tex);
+                gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, false);
+                gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+                gl.generateMipmap(gl.TEXTURE_2D);
+            } catch (err) {
+                console.warn('Could not bind WebGL flag texture:', err);
+            }
         });
 
         const uTexLoc = gl.getUniformLocation(prog, 'uTex');
