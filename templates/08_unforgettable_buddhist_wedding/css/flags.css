@@ -169,38 +169,59 @@ div[data-framer-name*="Badge" i],
 
     --trees-parallax-speed: 0.42; /* Upward speed: Higher (e.g. 0.6) = scrolls up faster, Lower (e.g. 0.25) = scrolls up slower */
 }
-.framer-trees,
-[data-framer-name="Trees"] {
-    aspect-ratio: 1.23967;
-    z-index: 7 !important; /* Behind Temple (9), in front of Clouds (6) */
-    flex: none;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 600px !important;
-    left: 0;
-    right: 0;
-    overflow: visible;
-    pointer-events: none;
-    transform-origin: center bottom;
-    will-change: transform;
+
+/* 8. Trees Styling & Parallax (Behind Temple, In Front of Clouds) — DESKTOP ONLY */
+@media (min-width: 1025px) {
+    .framer-trees,
+    [data-framer-name="Trees"] {
+        aspect-ratio: 1.23967;
+        z-index: 7 !important; /* Behind Temple (9), in front of Clouds (6) */
+        flex: none;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 600px !important;
+        left: 0;
+        right: 0;
+        overflow: visible;
+        pointer-events: none;
+        transform-origin: center bottom;
+        will-change: transform;
+    }
+
+    /* 7. Cloud Styling: Position and Scale for Clouds — DESKTOP ONLY */
+    .framer-72rtr7 [data-framer-name="Cloud"],
+    .framer-SNM3S .framer-1atv6cy {
+        margin-top: -200px !important;
+    }
+
+    /* 6. Temple Elevation: Move the Temple Image — DESKTOP ONLY */
+    .framer-72rtr7 [data-framer-name="Temple"],
+    .framer-SNM3S .framer-hmdytf {
+        top: 360px !important;
+    }
 }
 
-/* 7. Cloud Styling: Position and Scale for Clouds across all viewports */
-[data-framer-name="Cloud"],
-.framer-SNM3S .framer-1atv6cy,
-.framer-SNM3S .framer-6ca8d0,
-.framer-SNM3S .framer-fd898j {
-    /* Adjust top or margin-top if needed */
-    margin-top: -200px !important;
-}
-
-/* 6. Temple Elevation: Move the Temple Image across Desktop, Tablet & Mobile */
-[data-framer-name="Temple"],
-.framer-SNM3S .framer-hmdytf,
-.framer-SNM3S .framer-13lghix,
-.framer-SNM3S .framer-1sm6may {
-    top: 360px !important;
+/* 8.1 Complete Mobile & Tablet Isolation: Hide Trees and Walkway Flags on Mobile */
+@media (max-width: 1024px) {
+    .framer-trees,
+    [data-framer-name="Trees"],
+    .buddhist-pillar-flag-container,
+    .buddhist-flag-webgl-canvas,
+    .buddhist-flag-static-img {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        max-height: 0 !important;
+        max-width: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        z-index: -999999 !important;
+        transform: scale(0) !important;
+    }
 }
 
 /* 5. Eradicate Flagpole / Flag Pillar across all viewports */
@@ -376,10 +397,12 @@ div[data-framer-name*="Badge" i],
     }
 }
 
-/* Ensure Temple artwork layer sits in front of flags with z-index < 5 */
-[data-framer-name="Temple"] > [data-framer-background-image-wrapper="true"] {
-    z-index: 5 !important;
-    position: absolute !important;
+/* Ensure Desktop Temple artwork layer sits in front of flags with z-index < 5 */
+@media (min-width: 1025px) {
+    [data-framer-name="Temple"] > [data-framer-background-image-wrapper="true"] {
+        z-index: 5 !important;
+        position: absolute !important;
+    }
 }
 
 

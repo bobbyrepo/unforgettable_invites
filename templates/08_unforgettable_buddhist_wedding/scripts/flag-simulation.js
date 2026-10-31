@@ -46,14 +46,14 @@ vec3 computeDisplacedPos(vec2 uv) {
                       + 0.22 * sin(pu) 
                       + 0.18 * sin(pdiag);
 
-    // Initial calibrated medium displacement: 0.18
-    float zAmp = uWindStrength * 0.18;
+    // Doubled displacement & wave amplitude: 0.36 (was 0.18)
+    float zAmp = uWindStrength * 0.36;
     float z = env * wavePattern * zAmp;
 
-    // Natural lateral & vertical silk drape drift
+    // Doubled lateral & vertical silk drape drift
     float xSign = (uIsLeft > 0.5) ? 1.0 : -1.0;
-    float xOff = xSign * env * 0.022 * cos(pu) * uWindStrength;
-    float yOff = env * 0.012 * sin(pv) * uWindStrength;
+    float xOff = xSign * env * 0.045 * cos(pu) * uWindStrength;
+    float yOff = env * 0.024 * sin(pv) * uWindStrength;
 
     float posX = (uv.x * 2.0 - 1.0) + xOff;
     float posY = ((1.0 - v) * 2.0 - 1.0) + yOff;
@@ -266,11 +266,11 @@ void main() {
         gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
         gl.clearColor(0, 0, 0, 0);
 
-        // Original medium calibrated settings
-        const speed = 0.45;
-        const folds = 1.0;
-        const shading = 0.30;
-        const sheen = 0.08;
+        // Doubled speed and vivid wave folds
+        const speed = 0.90;
+        const folds = 1.25;
+        const shading = 0.45;
+        const sheen = 0.16;
         const brightness = 1.0;
 
         // 24 frames per second locked
@@ -321,33 +321,42 @@ void main() {
     }
 
     const flagConfigs = [
-        // Front Walkway Pillars (Active silk cloth ripple physics)
+        // Walkway Pillars — Active silk cloth ripple physics on ALL poles
         { className: 'buddhist-flag-right-1', prefix: '--flag-r1', phase: 0.0, isLeft: false, texture: './images/Right flag.webp', animated: true },
         { className: 'buddhist-flag-right-2', prefix: '--flag-r2', phase: 1.4, isLeft: false, texture: './images/Right flag.webp', animated: true },
+        { className: 'buddhist-flag-right-3', prefix: '--flag-r3', phase: 2.8, isLeft: false, texture: './images/Right flag.webp', animated: true },
+        { className: 'buddhist-flag-right-4', prefix: '--flag-r4', phase: 4.2, isLeft: false, texture: './images/Right flag.webp', animated: true },
         { className: 'buddhist-flag-left-1',  prefix: '--flag-l1', phase: 0.8, isLeft: true,  texture: './images/Left Flag.webp',  animated: true },
         { className: 'buddhist-flag-left-2',  prefix: '--flag-l2', phase: 2.2, isLeft: true,  texture: './images/Left Flag.webp',  animated: true },
-        // Distant Walkway Pillars (Peaceful static drape)
-        { className: 'buddhist-flag-right-3', prefix: '--flag-r3', isLeft: false, texture: './images/Right flag.webp', animated: false },
-        { className: 'buddhist-flag-right-4', prefix: '--flag-r4', isLeft: false, texture: './images/Right flag.webp', animated: false },
-        { className: 'buddhist-flag-left-3',  prefix: '--flag-l3', isLeft: true,  texture: './images/Left Flag.webp',  animated: false },
-        { className: 'buddhist-flag-left-4',  prefix: '--flag-l4', isLeft: true,  texture: './images/Left Flag.webp',  animated: false }
+        { className: 'buddhist-flag-left-3',  prefix: '--flag-l3', phase: 3.6, isLeft: true,  texture: './images/Left Flag.webp',  animated: true },
+        { className: 'buddhist-flag-left-4',  prefix: '--flag-l4', phase: 5.0, isLeft: true,  texture: './images/Left Flag.webp',  animated: true }
     ];
 
     function getVisibleTemples() {
-        const temples = document.querySelectorAll('[data-framer-name="Temple"], .framer-hmdytf, .framer-13lghix, .framer-1sm6may');
+        if (typeof window !== 'undefined' && window.innerWidth < 1025) return [];
+        const temples = document.querySelectorAll('.framer-72rtr7 [data-framer-name="Temple"], .framer-hmdytf[data-framer-name="Temple"]');
         const visible = [];
         temples.forEach(t => {
             if (t.offsetParent !== null || t.offsetWidth > 0 || t.clientHeight > 0) {
                 visible.push(t);
             }
         });
-        return visible.length > 0 ? visible : (temples.length > 0 ? [temples[0]] : []);
+        if (visible.length > 0) return visible;
+        if (typeof window !== 'undefined' && window.innerWidth >= 1025) {
+            const anyDesktop = document.querySelector('.framer-72rtr7 [data-framer-name="Temple"], .framer-hmdytf');
+            if (anyDesktop) return [anyDesktop];
+        }
+        return [];
     }
 
     // Attach MutationObserver so React / Framer client hydration never detaches flags permanently
     function attachTempleObserver(temple) {
         if (temple.__buddhistFlagsObserver) return;
         const observer = new MutationObserver(() => {
+            if (window.innerWidth < 1025) {
+                document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
+                return;
+            }
             const hasAllFlags = flagConfigs.every(cfg => temple.querySelector('.' + cfg.className));
             if (!hasAllFlags) {
                 mountBuddhistFlags();
@@ -358,6 +367,11 @@ void main() {
     }
 
     function mountBuddhistFlags() {
+        if (typeof window !== 'undefined' && window.innerWidth < 1025) {
+            document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
+            return false;
+        }
+
         const activeTemples = getVisibleTemples();
         if (!activeTemples || activeTemples.length === 0) return false;
 
@@ -416,12 +430,22 @@ void main() {
         setTimeout(mountBuddhistFlags, delay);
     });
 
-    // Periodic heartbeat to guarantee flags never vanish
-    setInterval(mountBuddhistFlags, 2000);
+    // Periodic heartbeat to guarantee flags never vanish on desktop
+    setInterval(() => {
+        if (typeof window !== 'undefined' && window.innerWidth >= 1025) {
+            mountBuddhistFlags();
+        }
+    }, 2000);
 
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(mountBuddhistFlags, 150);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth < 1025) {
+                document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
+            } else {
+                mountBuddhistFlags();
+            }
+        }, 150);
     });
 })();
