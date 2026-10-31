@@ -1,6 +1,6 @@
 // =========================================================================
 // OPTIMIZED 3D BUDDHIST TEMPLE SILK CLOTH SIMULATION (WebGL2)
-// True 3D Vertex Physics + Realistic Shading + 60 FPS Locked
+// True 3D Vertex Physics + Realistic Shading + 24 FPS Locked Medium Setting
 // =========================================================================
 
 (function() {
@@ -46,7 +46,7 @@ vec3 computeDisplacedPos(vec2 uv) {
                       + 0.22 * sin(pu) 
                       + 0.18 * sin(pdiag);
 
-    // Explicit User Displacement: 0.18
+    // Initial calibrated medium displacement: 0.18
     float zAmp = uWindStrength * 0.18;
     float z = env * wavePattern * zAmp;
 
@@ -177,7 +177,15 @@ void main() {
         }, { once: true });
 
         img.addEventListener('error', () => {
-            console.warn('Flag texture could not be loaded cross-origin:', url);
+            console.warn('Flag texture load retry:', url);
+            // Retry once without crossOrigin if needed
+            setTimeout(() => {
+                const retryImg = new Image();
+                retryImg.src = url;
+                retryImg.addEventListener('load', () => {
+                    if (retryImg.naturalWidth > 0) callback(retryImg);
+                }, { once: true });
+            }, 500);
         }, { once: true });
     }
 
@@ -185,7 +193,12 @@ void main() {
         if (canvas.__webglInitialized) return;
         canvas.__webglInitialized = true;
 
-        const gl = canvas.getContext('webgl2', { alpha: true, antialias: true, powerPreference: 'low-power' });
+        const gl = canvas.getContext('webgl2', {
+            alpha: true,
+            antialias: true,
+            preserveDrawingBuffer: true,
+            powerPreference: 'low-power'
+        });
         if (!gl) return;
 
         function compileShader(type, src) {
@@ -221,7 +234,8 @@ void main() {
 
         const tex = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, tex);
-        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([235, 195, 90, 255]));
+        // Clean transparent placeholder (zero yellow box artifact)
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0, 0]));
 
         preloadImage(cfg.texture, function(img) {
             if (!img || img.naturalWidth === 0) return;
@@ -231,9 +245,8 @@ void main() {
                 gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+                gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
                 gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-                gl.generateMipmap(gl.TEXTURE_2D);
             } catch (err) {
                 console.warn('Could not bind WebGL flag texture:', err);
             }
@@ -253,39 +266,34 @@ void main() {
         gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
         gl.clearColor(0, 0, 0, 0);
 
-        // User Calibrated Settings: Speed 0.45, Shading, Sheen
+        // Original medium calibrated settings
         const speed = 0.45;
         const folds = 1.0;
         const shading = 0.30;
         const sheen = 0.08;
         const brightness = 1.0;
 
-        // Decreased Frame Rate (Cinema 24 FPS for minimum GPU/CPU overhead)
+        // 24 frames per second locked
         const targetFPS = 24;
         const frameInterval = 1000 / targetFPS;
         let lastFrameTime = 0;
 
         const startTime = performance.now();
-        let isVisible = true;
+        let isVisible = !document.hidden;
 
-        // IntersectionObserver: sleep canvas completely when scrolled offscreen
-        if ('IntersectionObserver' in window) {
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach(e => { isVisible = e.isIntersecting; });
-            }, { threshold: 0.02 });
-            obs.observe(canvas);
-        }
+        // Sleep WebGL rendering cleanly when user switches tabs
+        document.addEventListener('visibilitychange', () => {
+            isVisible = !document.hidden;
+        });
 
         function renderFrame(now) {
-            if (!document.body.contains(canvas)) return;
-
             requestAnimationFrame(renderFrame);
 
-            if (!isVisible) return;
+            if (!canvas.isConnected || !isVisible) return;
 
             if (!now) now = performance.now();
             const delta = now - lastFrameTime;
-            if (delta < frameInterval) return; // Enforce lower FPS cap
+            if (delta < frameInterval) return;
 
             lastFrameTime = now - (delta % frameInterval);
 
@@ -333,14 +341,29 @@ void main() {
                 visible.push(t);
             }
         });
-        return visible.length > 0 ? visible : [temples[0]];
+        return visible.length > 0 ? visible : (temples.length > 0 ? [temples[0]] : []);
+    }
+
+    // Attach MutationObserver so React / Framer client hydration never detaches flags permanently
+    function attachTempleObserver(temple) {
+        if (temple.__buddhistFlagsObserver) return;
+        const observer = new MutationObserver(() => {
+            const hasAllFlags = flagConfigs.every(cfg => temple.querySelector('.' + cfg.className));
+            if (!hasAllFlags) {
+                mountBuddhistFlags();
+            }
+        });
+        observer.observe(temple, { childList: true });
+        temple.__buddhistFlagsObserver = observer;
     }
 
     function mountBuddhistFlags() {
         const activeTemples = getVisibleTemples();
-        if (!activeTemples || activeTemples.length === 0 || !activeTemples[0]) return;
+        if (!activeTemples || activeTemples.length === 0) return false;
 
         activeTemples.forEach(temple => {
+            attachTempleObserver(temple);
+
             flagConfigs.forEach(cfg => {
                 let container = temple.querySelector('.' + cfg.className);
                 if (!container) {
@@ -350,8 +373,8 @@ void main() {
                     if (cfg.animated) {
                         const canvas = document.createElement('canvas');
                         canvas.className = 'buddhist-flag-webgl-canvas';
-                        canvas.width = 390;
-                        canvas.height = 1496;
+                        canvas.width = 195;
+                        canvas.height = 748;
                         container.appendChild(canvas);
                         temple.appendChild(container);
                         initFlagCanvas(canvas, cfg);
@@ -359,10 +382,11 @@ void main() {
                         const img = document.createElement('img');
                         img.className = 'buddhist-flag-static-img';
                         img.src = cfg.texture;
-                        img.width = 390;
-                        img.height = 1496;
+                        img.width = 195;
+                        img.height = 748;
                         img.alt = 'Buddhist Flag';
                         img.loading = 'eager';
+                        img.decoding = 'sync';
                         container.appendChild(img);
                         temple.appendChild(container);
                     }
@@ -376,21 +400,28 @@ void main() {
                 }
             });
         });
+        return true;
     }
+
+    // Multi-phase hydration lifecycle mounts
+    mountBuddhistFlags();
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', mountBuddhistFlags);
-    } else {
-        mountBuddhistFlags();
     }
     window.addEventListener('load', mountBuddhistFlags);
+
+    // Guard against delayed Framer SSR -> React hydration DOM replacement
+    [100, 300, 600, 1000, 1500, 2500, 4000].forEach(delay => {
+        setTimeout(mountBuddhistFlags, delay);
+    });
+
+    // Periodic heartbeat to guarantee flags never vanish
+    setInterval(mountBuddhistFlags, 2000);
 
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(mountBuddhistFlags, 150);
     });
-
-    setTimeout(mountBuddhistFlags, 300);
-    setTimeout(mountBuddhistFlags, 1000);
 })();

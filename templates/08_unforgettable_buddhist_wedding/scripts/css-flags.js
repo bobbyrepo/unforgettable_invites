@@ -1,9 +1,13 @@
 // =========================================================================
 // HIGH-PERFORMANCE 60FPS CSS 3D BUDDHIST FLAG ANIMATOR
-// 100% Hardware-Composited, Zero WebGL Overhead, Zero Forced Reflows
+// 100% Hardware-Composited, Instant Eager Paint, Zero Compositor Stall
 // =========================================================================
 
 (function() {
+    // Eager preload in JS memory to ensure zero decode lag
+    const preloadedR = new Image(); preloadedR.src = './images/Right flag.webp';
+    const preloadedL = new Image(); preloadedL.src = './images/Left Flag.webp';
+
     const flagConfigs = [
         // Front Walkway Flags (High visual focus, compound 3D sway + silk sheen ripple)
         { className: 'buddhist-flag-right-1', prefix: '--flag-r1', isLeft: false, texture: './images/Right flag.webp', delay: '0s', animated: true },
@@ -21,19 +25,18 @@
         const temples = document.querySelectorAll('[data-framer-name="Temple"], .framer-hmdytf, .framer-13lghix, .framer-1sm6may');
         const visible = [];
         temples.forEach(t => {
-            // Check if this breakpoint container is actually displayed
             if (t.offsetParent !== null || t.offsetWidth > 0 || t.clientHeight > 0) {
                 visible.push(t);
             }
         });
-        return visible.length > 0 ? visible : [temples[0]];
+        return visible.length > 0 ? visible : (temples.length > 0 ? [temples[0]] : []);
     }
 
     let isVisibleOnScreen = true;
 
     function mountFlags() {
         const activeTemples = getVisibleTemples();
-        if (!activeTemples || activeTemples.length === 0 || !activeTemples[0]) return;
+        if (!activeTemples || activeTemples.length === 0 || !activeTemples[0]) return false;
 
         activeTemples.forEach(temple => {
             flagConfigs.forEach(cfg => {
@@ -44,29 +47,32 @@
 
                     const img = document.createElement('img');
                     img.className = 'buddhist-flag-static-img';
-                    if (cfg.animated) {
-                        img.classList.add(cfg.isLeft ? 'buddhist-flag-wave-left' : 'buddhist-flag-wave-right');
-                        img.style.animationDelay = cfg.delay;
-
-                        // Add moving silk light/shadow sheen for organic cloth ripple
-                        const sheen = document.createElement('div');
-                        sheen.className = 'buddhist-flag-sheen';
-                        sheen.style.animationDelay = cfg.delay;
-                        container.appendChild(sheen);
-                    }
                     img.src = cfg.texture;
                     img.width = 390;
                     img.height = 1496;
                     img.alt = 'Sacred Buddhist Temple Flag';
                     img.loading = 'eager';
-                    img.decoding = 'async';
+                    img.decoding = 'sync';
+                    if ('fetchPriority' in img) img.fetchPriority = 'high';
+
+                    let sheen = null;
+                    if (cfg.animated) {
+                        img.classList.add(cfg.isLeft ? 'buddhist-flag-wave-left' : 'buddhist-flag-wave-right');
+                        img.style.animationDelay = cfg.delay;
+
+                        // Fast GPU Alpha-gradient sheen overlay for silk ripple
+                        sheen = document.createElement('div');
+                        sheen.className = 'buddhist-flag-sheen';
+                        sheen.style.animationDelay = cfg.delay;
+                    }
 
                     container.appendChild(img);
+                    if (sheen) container.appendChild(sheen);
                     temple.appendChild(container);
                 }
             });
 
-            // Pause animations when hero scrolls out of view
+            // Pause animations when hero scrolls out of view to save battery/GPU
             if ('IntersectionObserver' in window && !temple.__observerAttached) {
                 temple.__observerAttached = true;
                 const obs = new IntersectionObserver((entries) => {
@@ -81,22 +87,29 @@
                 obs.observe(temple);
             }
         });
+        return true;
+    }
+
+    // Instant proactive mount
+    if (!mountFlags()) {
+        let attempts = 0;
+        const interval = setInterval(() => {
+            attempts++;
+            if (mountFlags() || attempts > 20) {
+                clearInterval(interval);
+            }
+        }, 30);
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', mountFlags);
-    } else {
-        mountFlags();
+        document.addEventListener('DOMContentLoaded', mountFlags, { once: true });
     }
-    window.addEventListener('load', mountFlags);
+    window.addEventListener('load', mountFlags, { once: true });
 
-    // Responsive debounce check
+    // Responsive resize check
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(mountFlags, 150);
     });
-
-    setTimeout(mountFlags, 300);
-    setTimeout(mountFlags, 1000);
 })();

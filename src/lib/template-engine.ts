@@ -31,15 +31,14 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
   let html = fs.readFileSync(templatePath, 'utf8');
 
   // 1. Inject base tag for asset resolution & OpenGraph meta tags
-  const r2Base = process.env.NEXT_PUBLIC_R2_URL;
-  const assetBase = r2Base
-    ? `${r2Base.replace(/\/$/, '')}/templates/${templateId}/`
-    : `/templates/${templateId}/`;
+  const r2Base = process.env.NEXT_PUBLIC_R2_URL || 'https://pub-9df949e18be24d52a5ae719c1edfe88c.r2.dev';
+  const assetBase = `/templates/${templateId}/`;
+  const absoluteAssetBase = `${r2Base.replace(/\/$/, '')}/templates/${templateId}/`;
 
   const ogTags = `
 \t<meta property="og:title" content="${groom} &amp; ${bride} | Wedding Invitation" />
 \t<meta property="og:description" content="Together with their families, cordially invite you to celebrate on ${primaryDate} in ${primaryCity}. Tap to view invitation." />
-\t<meta property="og:image" content="${heroImg.startsWith('http') ? heroImg : assetBase + heroImg.replace(/^\//, '')}" />
+\t<meta property="og:image" content="${heroImg.startsWith('http') ? heroImg : absoluteAssetBase + heroImg.replace(/^\//, '')}" />
 \t<meta property="og:type" content="website" />
 \t<meta name="twitter:card" content="summary_large_image" />`;
 
