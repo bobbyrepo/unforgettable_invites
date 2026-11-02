@@ -374,6 +374,18 @@ a[href*="missingpiece"] {
      - Negative (e.g. -100px, -200px, -300px) to pull further UP closer to the gallery.
      ========================================================================== */
     --desktop-timeline-canvas-shift: 0px;
+
+  /* ==========================================================================
+     3. COUNTDOWN & BUDDHA POSITIONING CONTROLS (Desktop & Mobile)
+     - Positions "The countdown begins", family intro text, and the live timer
+       completely ABOVE Gautam Buddha's head so no text overlaps Buddha.
+     - Eliminates the excessive blank void below the Location Map.
+     ========================================================================== */
+    --desktop-countdown-top: 1650px;
+    --desktop-buddha-top: 2180px;
+
+    --mobile-countdown-top: 955px;
+    --mobile-buddha-top: 1155px;
   }
 
   @media (min-width: 960px) {
@@ -433,6 +445,48 @@ a[href*="missingpiece"] {
       padding-bottom: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
     }
   }
+
+  /* ==========================================================================
+     4. COUNTDOWN ABOVE BUDDHA & LOCATION GAP RESOLUTION
+     ========================================================================== */
+  /* Desktop (min-width: 811px) */
+  @media (min-width: 811px) {
+    .framer-12tiy0u [data-framer-name="Countdown"],
+    .framer-10jtawo {
+      top: var(--desktop-countdown-top) !important;
+    }
+
+    .framer-12tiy0u [data-framer-name="Countdown Backdrop"],
+    .framer-qqvm6f {
+      top: var(--desktop-buddha-top) !important;
+    }
+  }
+
+  /* Mobile (max-width: 810px) */
+  @media (max-width: 810px) {
+    .framer-98eqjf [data-framer-name="Countdown Heading"],
+    .framer-8q42g7 {
+      top: var(--mobile-countdown-top) !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Intro Text"],
+    .framer-1lmlpg0 {
+      top: calc(var(--mobile-countdown-top) + 40px) !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Divider"],
+    .framer-178iokx {
+      top: calc(var(--mobile-countdown-top) + 95px) !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Timer"],
+    .framer-dpi7wo-container {
+      top: calc(var(--mobile-countdown-top) + 115px) !important;
+    }
+
+    .framer-98eqjf [data-framer-name="Countdown Backdrop"],
+    .framer-cb5woe {
+      top: var(--mobile-buddha-top) !important;
+    }
+  }
+
 </style>
 </head>
 <body>

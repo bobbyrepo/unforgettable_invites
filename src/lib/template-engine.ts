@@ -37,7 +37,7 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
       let localContent = fs.readFileSync(templatePath, 'utf8');
       let remoteContent = fs.readFileSync(remoteTemplatePath, 'utf8');
 
-      const vars = ['--desktop-story-shift', '--desktop-timeline-canvas-shift'];
+      const vars = ['--desktop-story-shift', '--desktop-timeline-canvas-shift', '--desktop-countdown-top', '--desktop-buddha-top', '--mobile-countdown-top', '--mobile-buddha-top'];
       let localChanged = false;
       let remoteChanged = false;
 
