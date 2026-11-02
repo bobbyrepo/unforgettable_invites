@@ -24,8 +24,38 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
   const heroImg = invite.thumbnailUrl || schema.imageSlots[0]?.defaultUrl;
 
   const templatePath = path.join(process.cwd(), 'templates', templateId, 'index.html');
+  const remoteTemplatePath = path.join(process.cwd(), 'templates', templateId, 'index_remote.html');
   if (!fs.existsSync(templatePath)) {
     return null;
+  }
+
+  // Seamless auto-sync for --desktop-story-shift: whichever file was edited most recently wins and syncs to both!
+  if (fs.existsSync(remoteTemplatePath)) {
+    try {
+      const localStat = fs.statSync(templatePath);
+      const remoteStat = fs.statSync(remoteTemplatePath);
+      const localContent = fs.readFileSync(templatePath, 'utf8');
+      const remoteContent = fs.readFileSync(remoteTemplatePath, 'utf8');
+
+      const localShiftMatch = localContent.match(/--desktop-story-shift:\s*([^;]+);/);
+      const remoteShiftMatch = remoteContent.match(/--desktop-story-shift:\s*([^;]+);/);
+
+      if (localShiftMatch && remoteShiftMatch && localShiftMatch[1].trim() !== remoteShiftMatch[1].trim()) {
+        if (remoteStat.mtimeMs > localStat.mtimeMs) {
+          // User edited index_remote.html -> sync to index.html
+          const updatedVal = remoteShiftMatch[1].trim();
+          const syncedLocal = localContent.replace(/--desktop-story-shift:\s*[^;]+;/, `--desktop-story-shift: ${updatedVal};`);
+          fs.writeFileSync(templatePath, syncedLocal, 'utf8');
+        } else {
+          // User edited index.html -> sync to index_remote.html
+          const updatedVal = localShiftMatch[1].trim();
+          const syncedRemote = remoteContent.replace(/--desktop-story-shift:\s*[^;]+;/, `--desktop-story-shift: ${updatedVal};`);
+          fs.writeFileSync(remoteTemplatePath, syncedRemote, 'utf8');
+        }
+      }
+    } catch (e) {
+      // Ignore sync error
+    }
   }
 
   let html = fs.readFileSync(templatePath, 'utf8');
