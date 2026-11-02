@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { MASTER_TEMPLATES } from '@/config/templates';
 import { renderTemplateHTML } from '@/lib/template-engine';
 
@@ -90,8 +90,31 @@ export async function GET(
 ) {
   const [templateId, ...subPath] = params.path;
 
+  // Handle accidental root images resolution (e.g. from missing trailing slash)
+  if (templateId === 'images' && subPath.length > 0) {
+    const fallbackPath = path.join(process.cwd(), 'templates', '08_unforgettable_buddhist_wedding', 'images', ...subPath);
+    if (fs.existsSync(fallbackPath) && fs.statSync(fallbackPath).isFile()) {
+      const fileBuffer = fs.readFileSync(fallbackPath);
+      const ext = path.extname(fallbackPath).toLowerCase();
+      const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+      return new Response(fileBuffer, {
+        status: 200,
+        headers: {
+          'Content-Type': contentType,
+          'Access-Control-Allow-Origin': '*',
+          'Cache-Control': 'public, max-age=0, must-revalidate',
+        },
+      });
+    }
+  }
+
   // 1. Template Demo Renderer (/templates/:templateId or /templates/:templateId/index.html)
   if (subPath.length === 0 || (subPath.length === 1 && subPath[0] === 'index.html')) {
+    // Ensure trailing slash so relative paths (./images/...) resolve cleanly on mobile browsers
+    if (subPath.length === 0 && !request.nextUrl.pathname.endsWith('/')) {
+      return NextResponse.redirect(new URL(`${request.nextUrl.pathname}/`, request.url), 308);
+    }
+
     const template = MASTER_TEMPLATES.find((t) => t.id === templateId);
     if (!template) {
       return new Response(`Template "${templateId}" not found in master catalog.`, { status: 404 });
