@@ -26,6 +26,8 @@ tools/.sync-cache.json
 tools/*.exe
 *.exe
 debug_template.js
+public/_templates_disabled/
+templates/**/images/New folder/
 
 # Public directory junctions (prevents duplicate tracking of templates & assets)
 public/templates

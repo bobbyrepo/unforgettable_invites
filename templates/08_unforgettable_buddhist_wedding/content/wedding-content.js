@@ -22,10 +22,10 @@ window.WEDDING_CONTENT = {
     // SECTION 2: FAMILY INVITATION & BLESSINGS
     // -------------------------------------------------------------------------
     family: {
-        invitationLine: "Cordially request the honor of your",
+        invitationLine: "Cordially request the honor of your presence at the wedding celebration of our beloved son",
         groomParents: "Shri. Hemant Vardhan & Smt. Sunita Vardhan",
         daughterOfLabel: "Daughter of",
-        brideParents: "Shri. Hemant Vardhan & Smt. Sunita Vardhan",
+        brideParents: "Shri. Arvind Sharma & Smt. Meena Sharma",
         eventsIntroLabel: "On The Following Events"
     },
 

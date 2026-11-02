@@ -80,9 +80,22 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
     if (primaryCity && primaryCity !== 'Bodh Gaya, Bihar') {
       html = html.replaceAll('Bodh Gaya, Bihar', primaryCity);
     }
+    // Groom Parents
     if (groomParents) {
       html = html.replaceAll('Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan', groomParents);
       html = html.replaceAll('Shri. Hemant Vardhan & Smt. Sunita Vardhan', groomParents);
+      html = html.replaceAll('Shri Hemant Vardhan & Smt. Sunita Vardhan', groomParents);
+    }
+    // Bride Parents
+    if (brideParents) {
+      html = html.replaceAll('Shri. Arvind Sharma &amp; Smt. Meena Sharma', brideParents);
+      html = html.replaceAll('Shri. Arvind Sharma & Smt. Meena Sharma', brideParents);
+      html = html.replaceAll('Shri Arvind Sharma & Smt. Meena Sharma', brideParents);
+    }
+    // Custom Invitation Line / Greeting Note
+    if (invite.couple?.greetingNote) {
+      html = html.replaceAll('Cordially request the honor of your presence at the wedding celebration of our beloved son', invite.couple.greetingNote);
+      html = html.replaceAll('Cordially request the honor of your presence at the wedding', invite.couple.greetingNote);
     }
     if (hashtag) html = html.replaceAll('#MayaFoundHerSiddharth', hashtag);
   } else if (templateId === '01_unforgettable_temple_grace') {
