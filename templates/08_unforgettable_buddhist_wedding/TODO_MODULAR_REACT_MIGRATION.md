@@ -1,6 +1,6 @@
 # Buddhist Wedding Template (08) — Modular Architecture Roadmap & To-Do List
 
-> **Project Goal**: Transition the monolithic, machine-compiled Framer template into a clean, modern, modular architecture with section-divided CSS, clean `content.json` data editing, and a fail-safe guarantee of **zero broken pixels**.
+> **Project Goal**: Transition the monolithic, machine-compiled Framer template into a clean, modern, modular architecture with section-divided CSS, clean `content.json` data editing, dynamic multi-event custom invitations, and a fail-safe guarantee of **zero broken pixels**.
 
 ---
 
@@ -43,8 +43,31 @@ Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets 
 
 ---
 
-## 🌐 Phase 4: Backend Data Delivery Strategy (To Decide Later)
-Evaluate and select between the two deployment architectures for serving personalized couple invites (e.g., `yourwebsite.com/rahul-and-priya`):
+## 💌 Phase 4: Multi-Tier Customized Invitations for the Same Client
+Enable a single couple (Client A) to create multiple invitation variations (e.g. Invite 1 = Wedding Only, Invite 2 = Haldi + Sangeet + Wedding, Invite 3 = All Events), while keeping the link in WhatsApp 100% clean with **only the brand name and couple slug** (`yourbrand.com/couple-slug`):
+
+- [ ] **4.1. Admin Form Multi-Invite Builder**:
+  - Add `[+ Create Customized Invitation]` in Admin Form.
+  - Checkboxes to select which events to include (e.g. Haldi, Mehndi, Sangeet, Wedding, Reception).
+  - Dynamic removal/hiding of omitted event cards, medallion badges, and unused locations.
+- [ ] **4.2. Link State Transmission Alternatives (To Decide & Implement)**:
+  - 🌟 **Alternative 1: Zero-Width Invisible Unicode Encoding (Top Preference)**:
+    - *How it works*: Inserts invisible Unicode characters (`\u200C` Zero-Width Non-Joiner) at the end of the URL.
+    - *Appearance in WhatsApp*: Looks 100% identical (`yourbrand.com/maya-and-siddharth`). No visible extra letters, numbers, or parameters.
+    - *Decoding*: React/Next.js reads the trailing invisible character and loads the specific event tier.
+  - 🔹 **Alternative 2: Stealth Token with Auto-Clearing URL (`history.replaceState`)**:
+    - *How it works*: Link has a tiny discreet tag in WhatsApp (`.../maya-and-siddharth?v=1`). The instant the page loads (0.001s), `window.history.replaceState({}, '', '/maya-and-siddharth')` wipes it from the address bar.
+    - *Appearance in Address Bar*: 100% clean brand + couple slug.
+  - 🔹 **Alternative 3: Semantic Sub-Slugs**:
+    - *How it works*: Clean, royal sub-URLs (e.g., `.../maya-and-siddharth/wedding` vs `.../maya-and-siddharth/family`).
+  - 🔹 **Alternative 4: The Royal Guest Pass Modal**:
+    - *How it works*: URL is 100% identical. On page open, a royal prompt asks the guest to tap their pass (e.g. "Family" vs "Wedding & Blessings").
+  - *Note: We will review and test between Alternative 1 and Alternative 2 before final implementation.*
+
+---
+
+## 🌐 Phase 5: Backend Data Delivery Strategy
+Evaluate and select between the two deployment architectures for serving personalized couple invites:
 
 ### 🔹 Option A: Server-Side Injection (SSR) — The Gold Standard
 - **How it works**:
@@ -54,24 +77,19 @@ Evaluate and select between the two deployment architectures for serving persona
   - **Zero Flicker / No Spinners**: The page renders instantly with the couple's names already baked into the HTML.
   - **WhatsApp & Social Link Previews**: WhatsApp, iMessage, and Instagram crawlers immediately see the couple's names and photo in the rich preview card.
   - **100% Reliable**: Zero client-side network race conditions.
-- **Considerations**:
-  - Requires a Node.js/Next.js/Edge runtime on the server.
+- **Considerations**: Requires a Node.js/Next.js/Edge runtime on the server.
 
 ### 🔹 Option B: Client-Side API Fetch (`fetch('/api/invites')`)
 - **How it works**:
   - The template is hosted as static assets (HTML/CSS/JS) on a CDN (Cloudflare R2, AWS S3, Vercel).
   - When the browser opens the page, client-side JavaScript fires `fetch('/api/invites?slug=...')` to load the couple's data from the backend and updates the DOM elements dynamically.
-- **Advantages**:
-  - **Completely Decoupled**: The frontend templates can sit on static object storage/CDN with no server compute required for page loads.
-  - **Pure API Architecture**: Backend only serves lightweight JSON endpoints.
-- **Considerations**:
-  - Potential split-second flash of default text (FOUC) while the API request finishes.
-  - Social media preview cards (WhatsApp link sharing) will not execute JavaScript, so they show generic template fallback text unless a separate prerenderer or edge function handles bot user-agents.
+- **Advantages**: Completely decoupled static CDN hosting; backend only serves lightweight JSON endpoints.
+- **Considerations**: Potential split-second flash of default text (FOUC); WhatsApp link preview cards show generic text unless a separate bot prerenderer handles crawlers.
 
 ---
 
-## ⚛️ Phase 5: Optional Native React Componentization (Future Phase)
-- [ ] **5.1. Parallel Side-by-Side Development**
+## ⚛️ Phase 6: Optional Native React Componentization (Future Phase)
+- [ ] **6.1. Parallel Side-by-Side Development**
   - If desired in the future, build native React components (`HeroSection.tsx`, `CountdownSection.tsx`, `PhotoWheel.tsx`) in a separate directory (`src/components/templates/08_buddhist/`) without touching the working template.
-- [ ] **5.2. Automated Pixel-Diff Verification**
+- [ ] **6.2. Automated Pixel-Diff Verification**
   - Compare headless screenshots of the React version against the current template to ensure 100% visual fidelity before swapping.
