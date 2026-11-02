@@ -29,29 +29,40 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
     return null;
   }
 
-  // Seamless auto-sync for --desktop-story-shift: whichever file was edited most recently wins and syncs to both!
+  // Seamless auto-sync for desktop shift variables: whichever file was edited most recently wins and syncs to both!
   if (fs.existsSync(remoteTemplatePath)) {
     try {
       const localStat = fs.statSync(templatePath);
       const remoteStat = fs.statSync(remoteTemplatePath);
-      const localContent = fs.readFileSync(templatePath, 'utf8');
-      const remoteContent = fs.readFileSync(remoteTemplatePath, 'utf8');
+      let localContent = fs.readFileSync(templatePath, 'utf8');
+      let remoteContent = fs.readFileSync(remoteTemplatePath, 'utf8');
 
-      const localShiftMatch = localContent.match(/--desktop-story-shift:\s*([^;]+);/);
-      const remoteShiftMatch = remoteContent.match(/--desktop-story-shift:\s*([^;]+);/);
+      const vars = ['--desktop-story-shift', '--desktop-timeline-canvas-shift'];
+      let localChanged = false;
+      let remoteChanged = false;
 
-      if (localShiftMatch && remoteShiftMatch && localShiftMatch[1].trim() !== remoteShiftMatch[1].trim()) {
-        if (remoteStat.mtimeMs > localStat.mtimeMs) {
-          // User edited index_remote.html -> sync to index.html
-          const updatedVal = remoteShiftMatch[1].trim();
-          const syncedLocal = localContent.replace(/--desktop-story-shift:\s*[^;]+;/, `--desktop-story-shift: ${updatedVal};`);
-          fs.writeFileSync(templatePath, syncedLocal, 'utf8');
-        } else {
-          // User edited index.html -> sync to index_remote.html
-          const updatedVal = localShiftMatch[1].trim();
-          const syncedRemote = remoteContent.replace(/--desktop-story-shift:\s*[^;]+;/, `--desktop-story-shift: ${updatedVal};`);
-          fs.writeFileSync(remoteTemplatePath, syncedRemote, 'utf8');
+      for (const v of vars) {
+        const vRegex = new RegExp(`${v}:\\s*([^;]+);`);
+        const localMatch = localContent.match(vRegex);
+        const remoteMatch = remoteContent.match(vRegex);
+        if (localMatch && remoteMatch && localMatch[1].trim() !== remoteMatch[1].trim()) {
+          if (remoteStat.mtimeMs > localStat.mtimeMs) {
+            const updatedVal = remoteMatch[1].trim();
+            localContent = localContent.replace(vRegex, `${v}: ${updatedVal};`);
+            localChanged = true;
+          } else {
+            const updatedVal = localMatch[1].trim();
+            remoteContent = remoteContent.replace(vRegex, `${v}: ${updatedVal};`);
+            remoteChanged = true;
+          }
         }
+      }
+
+      if (localChanged) {
+        fs.writeFileSync(templatePath, localContent, 'utf8');
+      }
+      if (remoteChanged) {
+        fs.writeFileSync(remoteTemplatePath, remoteContent, 'utf8');
       }
     } catch (e) {
       // Ignore sync error

@@ -355,14 +355,22 @@ a[href*="missingpiece"] {
 </style>
 <style id="desktop-story-shift-controls">
   /* ==========================================================================
-     DESKTOP STORY & DOWNSTREAM VERTICAL POSITION CONTROLS
-     Easily adjust the vertical placement of everything on Desktop:
-     - Change the pixel value of --desktop-story-shift below.
-     - Increase (e.g. 850px, 900px, 1000px) to shift everything further DOWN.
-     - Decrease (e.g. 700px, 600px, 500px) to move everything further UP.
+     1. DESKTOP STORY SECTION VERTICAL OFFSET ("Meet the BRIDE & GROOM")
+     Adjust this value in pixels to move Section 3 content up or down:
+     - Increase (e.g. 550px, 600px, 700px) to shift further DOWN.
+     - Decrease (e.g. 450px, 400px, 300px) to move further UP.
      ========================================================================== */
   :root {
-    --desktop-story-shift: 650px;
+    --desktop-story-shift: 500px;
+
+  /* ==========================================================================
+     2. DESKTOP TIMELINE CANVAS & COUNTDOWN VERTICAL OFFSET
+     Adjust this value in pixels to move the Timeline Canvas Desktop image
+     layer ("Where our forever begins", Venue card, Countdown timer) up or down:
+     - Positive (e.g. 100px, 200px, 300px) to push further DOWN.
+     - Negative (e.g. -100px, -200px, -300px) to pull further UP closer to the gallery.
+     ========================================================================== */
+    --desktop-timeline-canvas-shift: 0px;
   }
 
   @media (min-width: 960px) {
@@ -396,18 +404,20 @@ a[href*="missingpiece"] {
       margin-top: var(--desktop-story-shift) !important;
     }
 
-    /* 5. Section 4 (Location & Countdown) and Countdown backdrop */
+    /* 5. Section 4 (Location & Countdown) Timeline Canvas Desktop Image Layer */
     .framer-12tiy0u,
-    [data-framer-name="4 — Location & Countdown"],
+    [data-framer-name="4 — Location & Countdown"] {
+      margin-top: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
+    }
     .framer-2ehbvr,
     .framer-qqvm6f {
-      margin-top: var(--desktop-story-shift) !important;
+      margin-top: 0px !important;
     }
 
     /* 6. Expand page root container so all downstream sections and footer flow seamlessly */
     .framer-72rtr7,
     .framer-kmaf13 {
-      padding-bottom: var(--desktop-story-shift) !important;
+      padding-bottom: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
     }
   }
 </style>
