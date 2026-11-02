@@ -353,6 +353,64 @@ a[href*="missingpiece"] {
     overflow: hidden !important;
   }
 </style>
+<style id="desktop-story-shift-controls">
+  /* ==========================================================================
+     DESKTOP STORY & DOWNSTREAM VERTICAL POSITION CONTROLS
+     Easily adjust the vertical placement of everything on Desktop:
+     - Change the pixel value of --desktop-story-shift below.
+     - Increase (e.g. 850px, 900px, 1000px) to shift everything further DOWN.
+     - Decrease (e.g. 700px, 600px, 500px) to move everything further UP.
+     ========================================================================== */
+  :root {
+    --desktop-story-shift: 800px;
+  }
+
+  @media (min-width: 960px) {
+    /* 1. "Meet the BRIDE & GROOM" Heading */
+    .framer-1lydhp1 .framer-1y4ffrc,
+    .framer-1lydhp1 [data-framer-name="Meet the Couple Heading"],
+    .framer-y583dn [data-framer-name="Meet the Couple Heading"] {
+      margin-bottom: calc(-1 * var(--desktop-story-shift)) !important;
+    }
+
+    /* 2. Message Frame Desktop (Plaque) */
+    .framer-1lydhp1 .framer-1hnxm70,
+    .framer-1lydhp1 [data-framer-name="Message Card Frame"],
+    .framer-y583dn [data-framer-name="Message Card Frame"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 3. Photo Gallery */
+    .framer-1lydhp1 .framer-yspo66-container,
+    .framer-1lydhp1 [data-framer-name="Photo Gallery"],
+    .framer-y583dn [data-framer-name="Photo Gallery"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 4. "Almost time to celebrate" Heading */
+    .framer-1lydhp1 .framer-1e4ftiy,
+    .framer-1lydhp1 [data-framer-name*="celebrate"],
+    .framer-1lydhp1 [data-framer-name*="spelling"],
+    .framer-y583dn [data-framer-name*="celebrate"],
+    .framer-y583dn [data-framer-name*="spelling"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 5. Section 4 (Location & Countdown) and Countdown backdrop */
+    .framer-12tiy0u,
+    [data-framer-name="4 — Location & Countdown"],
+    .framer-2ehbvr,
+    .framer-qqvm6f {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 6. Expand page root container so all downstream sections and footer flow seamlessly */
+    .framer-72rtr7,
+    .framer-kmaf13 {
+      padding-bottom: var(--desktop-story-shift) !important;
+    }
+  }
+</style>
 </head>
 <body>
 	<script async src="https://events.framer.com/script?v=2" data-fid="2820109df94629692e6bff25af8e715b87b8f8bfa62ec63e5428ff6e11f45072" data-no-nt></script>
