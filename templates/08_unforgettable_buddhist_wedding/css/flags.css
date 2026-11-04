@@ -202,13 +202,10 @@ div[data-framer-name*="Badge" i],
     }
 }
 
-/* 8.1 Complete Mobile & Tablet Isolation: Hide Trees and Walkway Flags on Mobile */
+/* 8.1 Trees Mobile & Tablet Isolation: Hide Trees Only (Keep Walkway Flags Active) */
 @media (max-width: 1024px) {
     .framer-trees,
-    [data-framer-name="Trees"],
-    .buddhist-pillar-flag-container,
-    .buddhist-flag-webgl-canvas,
-    .buddhist-flag-static-img {
+    [data-framer-name="Trees"] {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
@@ -271,81 +268,47 @@ div[data-framer-name*="Badge" i],
     transform: scale(0) !important;
 }
 
-/* 9. Buddhist Pillar Flags — Dynamic Position, Scale & 3D Cloth Physics */
-:root {
-    /* =====================================================================
-       RIGHT PILLAR FLAG 1 CONTROLS
-       ===================================================================== */
-    --flag-r1-x: 92.6%;           /* <-- Paste your horizontal position here */
-    --flag-r1-y: 890px;         /* <-- Paste your vertical position here */
-    --flag-r1-scale: 0.31;      /* <-- Your scale */
-    --flag-r1-rotate: 0deg;
-    --flag-r1-zindex: 4;        /* Behind temple (temple artwork is at 5) */
-    --flag-r1-opacity: 1;
-    --flag-r1-folds: 1;
-    --flag-r1-speed: .6;
-    --flag-r1-shading: 0.35;
-    --flag-r1-sheen: 0.0;
-    --flag-r1-brightness: 1.0;
-    /* =====================================================================
-       RIGHT PILLAR FLAG 2 CONTROLS (Second Pillar from Right)
-       ===================================================================== */
-    --flag-r2-x: 88.3%;           /* Adjust to align with 2nd pillar from right */
-    --flag-r2-y: 945px;         /* Adjust height on pillar */
-    --flag-r2-scale: 0.26;      /* Adjust scale for perspective */
-    --flag-r2-rotate: 0deg;
-    --flag-r2-zindex: 3;        /* Behind temple */
-    --flag-r2-opacity: 1;
-    --flag-r2-folds: 1;
-    --flag-r2-speed: .58;
-    --flag-r2-shading: 0.35;
-    --flag-r2-sheen: 0.0;
-    --flag-r2-brightness: 1.0;
+/* =========================================================================
+   RESPONSIVE BUDDHIST WALKWAY FLAGS COORDINATES & SCALE
+   Breakpoints: Desktop (>=1280px), Laptop (960-1279px), Tablet (768-959px), Mobile (<768px)
+   ========================================================================= */
 
-    /* =====================================================================
-       RIGHT PILLAR FLAG 3 CONTROLS (Third Pillar from Right)
-       ===================================================================== */
+/* 1. DESKTOP (Default / min-width: 1280px) */
+:root {
+    --flag-r1-x: 92.6%;
+    --flag-r1-y: 890px;
+    --flag-r1-scale: 0.31;
+    --flag-r1-rotate: 0deg;
+    --flag-r1-zindex: 4;
+    --flag-r1-opacity: 1;
+
+    --flag-r2-x: 88.3%;
+    --flag-r2-y: 945px;
+    --flag-r2-scale: 0.26;
+    --flag-r2-rotate: 0deg;
+    --flag-r2-zindex: 3;
+    --flag-r2-opacity: 1;
+
     --flag-r3-x: 85.3%;
     --flag-r3-y: 990px;
     --flag-r3-scale: 0.20;
     --flag-r3-rotate: 0deg;
     --flag-r3-zindex: 2;
     --flag-r3-opacity: 1;
-    --flag-r3-folds: 1;
-    --flag-r3-speed: .56;
-    --flag-r3-shading: 0.35;
-    --flag-r3-sheen: 0.0;
-    --flag-r3-brightness: 1.0;
 
-    /* =====================================================================
-       RIGHT PILLAR FLAG 4 CONTROLS (Fourth Pillar from Right)
-       ===================================================================== */
     --flag-r4-x: 83.1%;
     --flag-r4-y: 1015px;
     --flag-r4-scale: 0.17;
     --flag-r4-rotate: 0deg;
     --flag-r4-zindex: 1;
     --flag-r4-opacity: 1;
-    --flag-r4-folds: 1;
-    --flag-r4-speed: .54;
-    --flag-r4-shading: 0.35;
-    --flag-r4-sheen: 0.0;
-    --flag-r4-brightness: 1.0;
 
-    /* =====================================================================
-       LEFT PILLAR FLAGS 1 to 4 CONTROLS (Pillars from Left to Center)
-       ===================================================================== */
     --flag-l1-x: 23.9%;
     --flag-l1-y: 890px;
     --flag-l1-scale: 0.31;
     --flag-l1-rotate: 0deg;
     --flag-l1-zindex: 4;
     --flag-l1-opacity: 1;
-    --flag-l1-folds: 1;
-    --flag-l1-speed: .6;
-    --flag-l1-shading: 0.35;
-    --flag-l1-sheen: 0.0;
-    --flag-l1-brightness: 1.0;
 
     --flag-l2-x: 29.1%;
     --flag-l2-y: 940px;
@@ -353,11 +316,6 @@ div[data-framer-name*="Badge" i],
     --flag-l2-rotate: 0deg;
     --flag-l2-zindex: 3;
     --flag-l2-opacity: 1;
-    --flag-l2-folds: 1;
-    --flag-l2-speed: .58;
-    --flag-l2-shading: 0.35;
-    --flag-l2-sheen: 0.0;
-    --flag-l2-brightness: 1.0;
 
     --flag-l3-x: 33.7%;
     --flag-l3-y: 990px;
@@ -365,11 +323,6 @@ div[data-framer-name*="Badge" i],
     --flag-l3-rotate: 0deg;
     --flag-l3-zindex: 2;
     --flag-l3-opacity: 1;
-    --flag-l3-folds: 1;
-    --flag-l3-speed: .56;
-    --flag-l3-shading: 0.35;
-    --flag-l3-sheen: 0.0;
-    --flag-l3-brightness: 1.0;
 
     --flag-l4-x: 36.5%;
     --flag-l4-y: 1015px;
@@ -377,32 +330,124 @@ div[data-framer-name*="Badge" i],
     --flag-l4-rotate: 0deg;
     --flag-l4-zindex: 1;
     --flag-l4-opacity: 1;
-    --flag-l4-folds: 1;
-    --flag-l4-speed: .54;
-    --flag-l4-shading: 0.35;
-    --flag-l4-sheen: 0.0;
-    --flag-l4-brightness: 1.0;
-
 }
 
-@media (max-width: 810px) {
+/* 2. LAPTOP (960px - 1279.98px) */
+@media (min-width: 960px) and (max-width: 1279.98px) {
     :root {
         --flag-r1-x: 92.6%;
         --flag-r1-y: 890px;
-        --flag-r1-scale: 0.31;
+        --flag-r1-scale: 0.29;
 
         --flag-r2-x: 88.3%;
         --flag-r2-y: 945px;
-        --flag-r2-scale: 0.26;
+        --flag-r2-scale: 0.24;
+
+        --flag-r3-x: 85.3%;
+        --flag-r3-y: 990px;
+        --flag-r3-scale: 0.19;
+
+        --flag-r4-x: 83.1%;
+        --flag-r4-y: 1015px;
+        --flag-r4-scale: 0.16;
+
+        --flag-l1-x: 23.9%;
+        --flag-l1-y: 890px;
+        --flag-l1-scale: 0.29;
+
+        --flag-l2-x: 29.1%;
+        --flag-l2-y: 940px;
+        --flag-l2-scale: 0.24;
+
+        --flag-l3-x: 33.7%;
+        --flag-l3-y: 990px;
+        --flag-l3-scale: 0.19;
+
+        --flag-l4-x: 36.5%;
+        --flag-l4-y: 1015px;
+        --flag-l4-scale: 0.16;
     }
 }
 
-/* Ensure Desktop Temple artwork layer sits in front of flags with z-index < 5 */
-@media (min-width: 1025px) {
-    [data-framer-name="Temple"] > [data-framer-background-image-wrapper="true"] {
-        z-index: 5 !important;
-        position: absolute !important;
+/* 3. TABLET (768px - 959.98px) */
+@media (min-width: 768px) and (max-width: 959.98px) {
+    :root {
+        --flag-r1-x: 91.0%;
+        --flag-r1-y: 850px;
+        --flag-r1-scale: 0.25;
+
+        --flag-r2-x: 87.0%;
+        --flag-r2-y: 900px;
+        --flag-r2-scale: 0.21;
+
+        --flag-r3-x: 84.5%;
+        --flag-r3-y: 940px;
+        --flag-r3-scale: 0.17;
+
+        --flag-r4-x: 82.5%;
+        --flag-r4-y: 965px;
+        --flag-r4-scale: 0.14;
+
+        --flag-l1-x: 25.5%;
+        --flag-l1-y: 850px;
+        --flag-l1-scale: 0.25;
+
+        --flag-l2-x: 30.0%;
+        --flag-l2-y: 900px;
+        --flag-l2-scale: 0.21;
+
+        --flag-l3-x: 34.0%;
+        --flag-l3-y: 940px;
+        --flag-l3-scale: 0.17;
+
+        --flag-l4-x: 36.5%;
+        --flag-l4-y: 965px;
+        --flag-l4-scale: 0.14;
     }
+}
+
+/* 4. MOBILE (< 768px) */
+@media (max-width: 767.98px) {
+    :root {
+        --flag-r1-x: 90.0%;
+        --flag-r1-y: 580px;
+        --flag-r1-scale: 0.18;
+
+        --flag-r2-x: 85.5%;
+        --flag-r2-y: 615px;
+        --flag-r2-scale: 0.15;
+
+        --flag-r3-x: 82.0%;
+        --flag-r3-y: 645px;
+        --flag-r3-scale: 0.12;
+
+        --flag-r4-x: 80.0%;
+        --flag-r4-y: 660px;
+        --flag-r4-scale: 0.10;
+
+        --flag-l1-x: 24.5%;
+        --flag-l1-y: 580px;
+        --flag-l1-scale: 0.18;
+
+        --flag-l2-x: 29.5%;
+        --flag-l2-y: 615px;
+        --flag-l2-scale: 0.15;
+
+        --flag-l3-x: 33.5%;
+        --flag-l3-y: 645px;
+        --flag-l3-scale: 0.12;
+
+        --flag-l4-x: 36.0%;
+        --flag-l4-y: 660px;
+        --flag-l4-scale: 0.10;
+    }
+}
+
+
+/* Ensure Temple artwork layer sits in front of flags with z-index < 5 across all viewports */
+[data-framer-name="Temple"] > [data-framer-background-image-wrapper="true"] {
+    z-index: 5 !important;
+    position: absolute !important;
 }
 
 

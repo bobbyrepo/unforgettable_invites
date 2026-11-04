@@ -333,19 +333,17 @@ void main() {
     ];
 
     function getVisibleTemples() {
-        if (typeof window !== 'undefined' && window.innerWidth < 1025) return [];
-        const temples = document.querySelectorAll('.framer-72rtr7 [data-framer-name="Temple"], .framer-hmdytf[data-framer-name="Temple"]');
+        const temples = Array.from(document.querySelectorAll('[data-framer-name="Temple"]'));
         const visible = [];
         temples.forEach(t => {
-            if (t.offsetParent !== null || t.offsetWidth > 0 || t.clientHeight > 0) {
+            const style = window.getComputedStyle(t);
+            const rect = t.getBoundingClientRect();
+            if (style.display !== 'none' && style.visibility !== 'hidden' && (rect.width > 20 || t.offsetWidth > 20)) {
                 visible.push(t);
             }
         });
         if (visible.length > 0) return visible;
-        if (typeof window !== 'undefined' && window.innerWidth >= 1025) {
-            const anyDesktop = document.querySelector('.framer-72rtr7 [data-framer-name="Temple"], .framer-hmdytf');
-            if (anyDesktop) return [anyDesktop];
-        }
+        if (temples.length > 0) return [temples[0]];
         return [];
     }
 
@@ -353,10 +351,6 @@ void main() {
     function attachTempleObserver(temple) {
         if (temple.__buddhistFlagsObserver) return;
         const observer = new MutationObserver(() => {
-            if (window.innerWidth < 1025) {
-                document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
-                return;
-            }
             const hasAllFlags = flagConfigs.every(cfg => temple.querySelector('.' + cfg.className));
             if (!hasAllFlags) {
                 mountBuddhistFlags();
@@ -367,11 +361,6 @@ void main() {
     }
 
     function mountBuddhistFlags() {
-        if (typeof window !== 'undefined' && window.innerWidth < 1025) {
-            document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
-            return false;
-        }
-
         const activeTemples = getVisibleTemples();
         if (!activeTemples || activeTemples.length === 0) return false;
 
@@ -430,22 +419,16 @@ void main() {
         setTimeout(mountBuddhistFlags, delay);
     });
 
-    // Periodic heartbeat to guarantee flags never vanish on desktop
+    // Periodic heartbeat to guarantee flags never vanish across all viewports
     setInterval(() => {
-        if (typeof window !== 'undefined' && window.innerWidth >= 1025) {
-            mountBuddhistFlags();
-        }
+        mountBuddhistFlags();
     }, 2000);
 
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            if (window.innerWidth < 1025) {
-                document.querySelectorAll('.buddhist-pillar-flag-container').forEach(el => el.remove());
-            } else {
-                mountBuddhistFlags();
-            }
+            mountBuddhistFlags();
         }, 150);
     });
 })();

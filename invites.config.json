@@ -1,5 +1,88 @@
 [
   {
+    "id": "invite-1793795469254",
+    "slug": "akash-weds-drashti",
+    "templateId": "08_unforgettable_buddhist_wedding",
+    "lifecycleStatus": "UPCOMING",
+    "weddingDateISO": "2027-02-02T07:00:00.000Z",
+    "couple": {
+      "groom": {
+        "name": "Akash",
+        "father": "",
+        "mother": "",
+        "parents": "Smt. & Shri Vikram Mehra"
+      },
+      "bride": {
+        "name": "Drashti",
+        "father": "",
+        "mother": "",
+        "parents": "Smt. & Shri Alok Verma"
+      },
+      "connector": "weds",
+      "monogram": "A & D",
+      "hashtag": "#AkashKiDrashti",
+      "greetingNote": "With the divine blessings of Lord Rama and our beloved elders, we cordially invite you to celebrate our holy union."
+    },
+    "shloka": {
+      "deity": "Buddha Triple Gem (Triratna)",
+      "verseSanskrit": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+      "verseEnglish": "Buddham Saranam Gacchami • Dhammam Saranam Gacchami • Sangham Saranam Gacchami",
+      "translation": "May wisdom, boundless compassion, and peaceful harmony bless this sacred union for all lifetimes."
+    },
+    "events": [
+      {
+        "id": "ev-1-1793795444595",
+        "title": "Buddh Vandana & Ring Ceremony",
+        "date": "28th Aug 2026",
+        "day": "Thursday",
+        "time": "4:00 PM Onwards",
+        "venueName": "Lotus Pavilion Hall",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra",
+        "dressCode": "Indo-Western & Pastel Silks"
+      },
+      {
+        "id": "ev-2-1793795444595",
+        "title": "Sacred Pheras & Triple Gem Blessings",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "6:00 PM Onwards",
+        "venueName": "The Grand Lotus Sanctuary",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra",
+        "dressCode": "Royal Traditional Wedding Attire"
+      }
+    ],
+    "audio": {
+      "title": "Sacred Flute & Bells Meditation",
+      "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/mjZh3ISr0YDK01kdBZisCq18TDo.mp3",
+      "autoUnlockOnFirstTouch": true
+    },
+    "logistics": {
+      "dressCode": "Royal Pastels / Traditional Elegant Attire",
+      "valetParking": "Complimentary valet parking available at East Sanctuary Gate",
+      "weather": "Pleasant monsoon evening (24°C - 28°C)",
+      "contactName": "Rohit Sharma (Guest Liaison)",
+      "contactNumber": "+91 98200 12345",
+      "accommodation": "Suites reserved at sanctuary guesthouse for outstation family members."
+    },
+    "toggles": {
+      "enableMusic": true,
+      "enableDressCode": true,
+      "enableValet": true,
+      "enableWeather": true,
+      "enableShloka": true,
+      "enableMaps": true
+    },
+    "stats": {
+      "views": 0,
+      "viewsToday": 0,
+      "activeDays": 1,
+      "boosted": false
+    },
+    "thumbnailUrl": "/templates/08_unforgettable_buddhist_wedding/images/Left Flag.webp"
+  },
+  {
     "id": "invite-002",
     "slug": "ram-mandir-divine",
     "templateId": "07_unforgettable_ram_mandir",
