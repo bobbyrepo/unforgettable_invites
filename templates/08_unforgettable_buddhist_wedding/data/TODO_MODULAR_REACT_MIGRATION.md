@@ -1,10 +1,10 @@
 # Buddhist Wedding Template (08) — Modular Architecture Roadmap & To-Do List
 
-> **Project Goal**: Transition the monolithic, machine-compiled Framer template into a clean, modern, modular architecture with section-divided CSS, clean `content.json` data editing, dynamic multi-event custom invitations, and a fail-safe guarantee of **zero broken pixels**.
+> **Project Goal**: Transition the monolithic, machine-compiled Framer template into a clean, modern, modular architecture with section-divided CSS, clean `content.json` data editing, dynamic multi-event custom invitations, asset optimization (PNG-to-WebP), security sanitization (anti-tamper/telemetry purge), and a fail-safe guarantee of **zero broken pixels**.
 
 ---
 
-## 📋 Phase 1: Quick Workspace Cleanup & Immediate Controls
+## 📋 Phase 1: Quick Workspace Cleanup, Immediate Controls & Security Sanitization
 - [ ] **1.1. Consolidate & Archive `index_remote.html`**
   - Move/archive `index_remote.html` out of the active template root into `_archive/`.
   - Ensure Next.js dynamic route (`/templates/[...path]`) serves `index.html` seamlessly with `<base>` tag.
@@ -14,11 +14,16 @@
   - *Outcome*: Immediate control over countdown positioning without inspecting cluttered DOM trees.
 - [ ] **1.3. Clean Audit of Content & Image Keys**
   - Map every piece of text and image slot (Couple names, parents, greeting note, event dates, venues, hashtags) into a single master reference map.
+- [ ] **1.4. Security, Telemetry & Upstream "Phone-Home" Code Audit (Air-Gap Sanitization)**
+  - **Comprehensive Codebase & Runtime Audit**: Scan all HTML, JS/MJS modules, and runtime bundles for any hidden analytics, remote pings, phone-home beacons, or external telemetry (e.g., Framer analytics, Google Tag Manager, Sentry, Mixpanel, Hotjar, or obscure analytics endpoints).
+  - **Anti-Cloning & Domain-Lock / IP Check Removal**: Audit and eliminate any anti-tampering logic, domain locks (e.g., `window.location.hostname` checks), origin verification fences, or device/IP address verification checks that may have been baked in by previous authors or cloned template boilerplates (e.g., checks designed to prevent running outside a specific machine or alerting an external server of who is running the code).
+  - **Purge Dead / Foreign Upstream Code**: Ensure no unused third-party callbacks, tracking hooks, or unauthorized surveillance functions exist anywhere in the code.
+  - **Air-Gap Guarantee**: Guarantee that the application is 100% self-sovereign, respects client privacy, and runs without pinging any unauthorized external servers or tracking hosts on any machine, local environment, or CDN.
 
 ---
 
-## 🎨 Phase 2: Section-Divided Modular CSS Architecture
-Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets matching the React component mental model:
+## 🎨 Phase 2: Section-Divided Modular CSS Architecture & Asset Optimization
+Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets matching the React component mental model, and optimize high-weight assets:
 
 - [ ] **2.1. Establish `css/sections/` Folder Structure**:
   - `css/main.css` — Central orchestrator that imports all section modules.
@@ -32,6 +37,17 @@ Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets 
 - [ ] **2.2. Clean HTML Link Integration**:
   - Replace all inline `<style>` overrides in `index.html` with a single `<link rel="stylesheet" href="./css/main.css">`.
   - *Outcome*: 100% pixel-perfect preservation with modular, readable CSS files.
+- [ ] **2.3. Intelligent PNG-to-WebP Conversion & Asset Optimization Pipeline**:
+  - **Evaluate Transparency & Cutout Safety**: Modern WebP supports full 8-bit alpha transparency natively. All transparent cutouts (sandstone arches, Gautam Buddha illustration, countdown frames, lotus medallions, floral dividers) will be converted from heavy 32-bit PNG to optimized WebP with zero visual degradation, zero edge fringing, and a 60%–85% reduction in asset weight.
+  - **WebGL Shader & Flag Texture Benchmarking**:
+    - Benchmark the 3D WebGL cloth simulation (`flag-simulation.js`) using WebP textures.
+    - If `gl.texImage2D` binds WebP with pristine visual fidelity and identical 60 FPS performance, convert flags to WebP as well.
+    - If any specific shader strictly requires raw uncompressed RGBA pixel buffers, keep only that designated asset as PNG.
+  - **Automated Batch Conversion & R2 Synchronization**:
+    - Implement a deterministic script (`tools/convert_assets_to_webp.js`) using `sharp` to convert PNGs to WebP, preserving exact dimensions and transparency.
+    - Update all CSS `url()` and HTML `src` references to the new `.webp` paths.
+    - Synchronize the optimized `.webp` assets to Cloudflare R2 and update the CDN cache.
+    - *Outcome*: Drastic reduction in mobile bundle size (e.g., from ~25MB to ~4MB), accelerating invite loading on mobile cellular networks.
 
 ---
 
