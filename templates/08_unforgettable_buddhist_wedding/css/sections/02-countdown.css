@@ -1,0 +1,191 @@
+/* =====================================================================
+   SECTION 02: LIVE WEDDING COUNTDOWN & BUDDHA SANCTUARY
+   Unified Modular Component Styles for Digital Timer & Flourishes
+   ===================================================================== */
+
+:root {
+    --desktop-countdown-top: 5740px;
+    --tablet-countdown-top: 5740px;
+    --mobile-countdown-top: 5740px;
+    --countdown-shift-y: 0px;
+    --countdown-photo-shift-y: 0px;
+    --timer-gold: rgb(221, 164, 93);
+    --timer-label-gray: rgb(136, 136, 136);
+    --countdown-text-brown: rgb(95, 37, 15);
+}
+
+/* Master Countdown Section Container */
+.section-countdown {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 60px 16px 80px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.countdown-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* 1. Countdown Heading */
+.countdown-heading-wrap {
+    margin-bottom: 24px;
+    z-index: 2;
+}
+
+.countdown-heading-title {
+    font-family: "IvyOra Display Medium", "IvyOra Display Medium Placeholder", serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--countdown-text-brown);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* 2. Master Countdown Timer Component */
+.countdown-timer-wrap {
+    z-index: 2;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.countdown-units-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+/* 3. Single Deduplicated Countdown Unit (.countdown-unit) */
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.countdown-digits-box {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.countdown-digit {
+    font-family: "Inter", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--timer-gold);
+    width: 25px;
+    height: 42px;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 2px 8px rgba(221, 164, 93, 0.2);
+}
+
+.countdown-unit-label {
+    font-family: "Inter", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    text-align: center;
+    color: var(--timer-label-gray);
+}
+
+/* 4. Countdown Intro Text */
+.countdown-intro-wrap {
+    margin-bottom: 20px;
+    z-index: 2;
+    max-width: 400px;
+}
+
+.countdown-intro-line {
+    font-family: "IvyOra Display Regular", "IvyOra Display Regular Placeholder", serif;
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--countdown-text-brown);
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* 5. Star / Flourish Divider */
+.countdown-divider-wrap {
+    margin-bottom: 28px;
+    z-index: 2;
+    width: 100%;
+    max-width: 380px;
+}
+
+.countdown-divider-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-position: center;
+}
+
+/* 6. Portrait / Buddha Backdrop */
+.countdown-backdrop-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 12px 36px rgba(120, 80, 20, 0.12);
+}
+
+.countdown-backdrop-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* ---------------------------------------------------------------------
+   Responsive Fine-Tuning
+   --------------------------------------------------------------------- */
+@media (max-width: 389px) {
+    .countdown-units-grid {
+        gap: 14px;
+    }
+    .countdown-digit {
+        font-size: 32px;
+        width: 22px;
+        height: 36px;
+    }
+}
+
+@media (min-width: 834px) {
+    .countdown-heading-title {
+        font-size: 32px;
+    }
+    .countdown-units-grid {
+        gap: 40px;
+    }
+    .countdown-digit {
+        font-size: 46px;
+        width: 30px;
+        height: 50px;
+    }
+    .countdown-intro-line {
+        font-size: 13px;
+    }
+}

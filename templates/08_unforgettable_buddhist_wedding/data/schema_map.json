@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "templateId": "08_unforgettable_buddhist_wedding",
+  "name": "Buddhist Serenity Vivah",
+  "themeTag": "Sacred Bodh Gaya",
+  "architecture": "Next.js Server Components + CSS Modules",
+  "version": "1.0.0-modular",
+  "dataBindings": {
+    "couple": {
+      "groom": {
+        "name": {
+          "type": "string",
+          "default": "Siddharth",
+          "framerSelector": "[data-framer-name='Groom Name'], .framer-groom-text",
+          "description": "Full name of the groom"
+        },
+        "parents": {
+          "type": "string",
+          "default": "Shri Hemant Vardhan & Smt. Sunita Vardhan",
+          "framerSelector": "[data-framer-name='Groom Parents']",
+          "description": "Parents of the groom"
+        }
+      },
+      "bride": {
+        "name": {
+          "type": "string",
+          "default": "Maya",
+          "framerSelector": "[data-framer-name='Bride Name'], .framer-bride-text",
+          "description": "Full name of the bride"
+        },
+        "parents": {
+          "type": "string",
+          "default": "Shri Arvind Sharma & Smt. Meena Sharma",
+          "framerSelector": "[data-framer-name='Bride Parents']",
+          "description": "Parents of the bride"
+        }
+      },
+      "monogram": {
+        "type": "string",
+        "default": "S & M",
+        "framerSelector": "[data-framer-name='Monogram']"
+      },
+      "hashtag": {
+        "type": "string",
+        "default": "#MayaFoundHerSiddharth",
+        "framerSelector": "[data-framer-name='Hashtag Text']"
+      },
+      "greetingNote": {
+        "type": "string",
+        "default": "Together with their families, cordially invite you to celebrate the holy wedding ceremony and sacred Buddhist blessings.",
+        "framerSelector": "[data-framer-name='Greeting Note']"
+      }
+    },
+    "shloka": {
+      "deity": "Buddha Triple Gem (Triratna)",
+      "verseSanskrit": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+      "verseEnglish": "Buddham Saranam Gacchami • Dhammam Saranam Gacchami • Sangham Saranam Gacchami",
+      "translation": "May wisdom, boundless compassion, and peaceful harmony bless this sacred union for all lifetimes.",
+      "framerSelector": "[data-framer-name='Shloka Container']"
+    },
+    "events": [
+      {
+        "id": "event-1",
+        "title": "Buddh Vandana & Ring Ceremony",
+        "date": "28th Aug 2026",
+        "day": "Thursday",
+        "time": "4:00 PM Onwards",
+        "venueName": "Lotus Pavilion Hall",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra"
+      },
+      {
+        "id": "event-2",
+        "title": "Sacred Vivah Ceremony & Blessings",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "10:30 AM Onwards",
+        "venueName": "Mahabodhi Grand Sanctuary",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra"
+      },
+      {
+        "id": "event-3",
+        "title": "Evening Blessings & Reception Dinner",
+        "date": "29th Aug 2026",
+        "day": "Friday",
+        "time": "7:00 PM Onwards",
+        "venueName": "The Bodhi Gardens",
+        "venueAddress": "Pune, Maharashtra",
+        "mapDeepLink": "https://maps.google.com/?q=Pune,Maharashtra"
+      }
+    ],
+    "logistics": {
+      "city": "Pune, Maharashtra",
+      "weather": "27°C Pleasant Evening Breeze",
+      "valetParking": "Complimentary Valet at Main Gate",
+      "dressCode": "Traditional Royal Silk & Pastel Hues"
+    }
+  },
+  "imageSlots": {
+    "heroArchDesktop": {
+      "src": "./images/lKVzZvE9zjHal1zLmfO4koCjo.webp",
+      "dimensions": "1515x3526",
+      "role": "Alpha-cutout stone temple shikhar framing the sky"
+    },
+    "heroArchMobile": {
+      "src": "./images/Vmh2DwpF7PAgb69W6NahdCwGidA.webp",
+      "dimensions": "430x1567",
+      "role": "Mobile responsive stone shikhar foreground"
+    },
+    "bodhiTreeBackdrop": {
+      "src": "./images/Trees.webp",
+      "dimensions": "1440x900",
+      "role": "Sacred Bodhi Tree foliage parallax layer"
+    },
+    "flagsLeft": {
+      "src": "./images/Left Flag.webp",
+      "dimensions": "256x512",
+      "role": "Panchavanna Buddhist silk flag texture (Left)"
+    },
+    "flagsRight": {
+      "src": "./images/Right flag.webp",
+      "dimensions": "256x512",
+      "role": "Panchavanna Buddhist silk flag texture (Right)"
+    },
+    "buddhaEmblem": {
+      "src": "./images/dh5fZvEiBieci19vHLxfPJc5QAI.webp",
+      "role": "Golden Buddha meditation illumination"
+    }
+  },
+  "layoutControls": {
+    "--desktop-countdown-top": "1750px",
+    "--desktop-buddha-top": "2180px",
+    "--tablet-countdown-top": "1200px",
+    "--tablet-buddha-top": "1300px",
+    "--mobile-countdown-top": "955px",
+    "--mobile-buddha-top": "1155px",
+    "--countdown-shift-y": "0px",
+    "--countdown-photo-shift-y": "0px",
+    "--desktop-story-shift": "120px",
+    "--desktop-timeline-canvas-shift": "160px"
+  }
+}

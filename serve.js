@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-const PORT = 5050;
+const PORT = process.env.PORT || 5050;
 
 const mimeTypes = {
     '.html': 'text/html; charset=utf-8',
@@ -25,6 +25,104 @@ const mimeTypes = {
 
 const compressExtensions = new Set(['.html', '.js', '.mjs', '.css', '.json', '.svg']);
 
+/* ---------------------------------------------------------------------------
+   Responsive flag CSS writer (kept in sync with src/app/api/save-flags)
+   --------------------------------------------------------------------------- */
+const FLAG_IDS = ['r1', 'r2', 'r3', 'r4', 'l1', 'l2', 'l3', 'l4'];
+
+function normaliseBoundaries(input) {
+    if (!Array.isArray(input) || input.length < 2) return [null, 1558, 1280, 960, 768];
+    const cleaned = [null];
+    input.slice(1)
+        .map(v => Math.round(Number(v)))
+        .filter(v => Number.isFinite(v) && v > 0 && v < 20000)
+        .forEach(v => { if (cleaned.indexOf(v) === -1) cleaned.push(v); });
+    cleaned.sort((a, b) => (a === null ? -1 : b === null ? 1 : b - a));
+    return cleaned;
+}
+
+function buildTiers(boundaries) {
+    return boundaries.map((max, i) => {
+        const min = i + 1 < boundaries.length ? boundaries[i + 1] : 0;
+        const isLast = i === boundaries.length - 1;
+        const label = max === null ? `>= ${min}px` : isLast ? `< ${max}px` : `${min}px - ${max - 1}px`;
+        return { id: max === null ? 'inf' : String(max), max, min, isLast, label };
+    });
+}
+
+function tierQuery(tier) {
+    if (tier.max === null) return `@media (min-width: ${tier.min}px)`;
+    const maxPx = (tier.max - 0.02).toFixed(2);
+    return tier.isLast
+        ? `@media (max-width: ${maxPx}px)`
+        : `@media (min-width: ${tier.min}px) and (max-width: ${maxPx}px)`;
+}
+
+function generateResponsiveCSS(data, boundaries, seeded) {
+    const tiers = buildTiers(boundaries);
+    const isSeeded = tier => !seeded || seeded.length === 0 || seeded.indexOf(tier.id) !== -1;
+
+    const buildVars = (tier, indent) => {
+        const tierData = (data && data[tier.id]) || {};
+        let out = '';
+        FLAG_IDS.forEach(id => {
+            const c = tierData[id] || { x: 50, y: 60, scale: 0.25 };
+            out += `${indent}--flag-${id}-x: ${Number(c.x).toFixed(1)}%;\n`;
+            out += `${indent}--flag-${id}-y: ${Number(c.y).toFixed(1)}%;\n`;
+            out += `${indent}--flag-${id}-scale: ${Number(c.scale).toFixed(2)};\n`;
+        });
+        return out;
+    };
+
+    let css = `/* === FLAG STUDIO OVERRIDES (auto-generated) === */
+/* Every width band edited in Visual Flag Studio. Y is a % of the artwork
+   (Temple) height, so flags stay glued to the image at any viewport width.
+   Bands: ${tiers.map(t => t.label).join('  |  ')} */
+
+`;
+
+    for (let i = 0; i < tiers.length; i++) {
+        const t = tiers[i];
+        if (!isSeeded(t)) continue;
+        css += `/* ${t.label} */
+${tierQuery(t)} {
+    :root {
+${buildVars(t, '        ')}
+    }
+}
+
+`;
+    }
+
+    css += '/* === END FLAG STUDIO OVERRIDES === */\n';
+    return css;
+}
+
+function writeFlagCSS(data, boundaries, seeded) {
+    const cssPath = path.join(__dirname, 'templates', '08_unforgettable_buddhist_wedding', 'css', 'flags.css');
+    if (!fs.existsSync(cssPath)) return { ok: false, error: 'flags.css not found at ' + cssPath };
+
+    let cssContent = fs.readFileSync(cssPath, 'utf8');
+    const newBlock = generateResponsiveCSS(data, boundaries, seeded);
+
+    const overrideRegex = /\/\* === FLAG STUDIO OVERRIDES \(auto-generated\) === \*\/[\s\S]*?\/\* === END FLAG STUDIO OVERRIDES === \*\/\n?/;
+
+    if (overrideRegex.test(cssContent)) {
+        cssContent = cssContent.replace(overrideRegex, newBlock);
+    } else {
+        cssContent = cssContent.trimEnd() + '\n\n' + newBlock;
+    }
+
+    fs.writeFileSync(cssPath, cssContent, 'utf8');
+
+    try {
+        const backup = 'E:/Unforgettable Invites/Template Backup/08_unforgettable_buddhist_wedding/css/flags.css';
+        if (fs.existsSync(path.dirname(backup))) fs.writeFileSync(backup, cssContent, 'utf8');
+    } catch (e) { /* backup optional */ }
+
+    return { ok: true, path: cssPath, bands: buildTiers(boundaries).map(t => t.label) };
+}
+
 const server = http.createServer((req, res) => {
     // API endpoint for live visual flag positioning & scaling persistence
     if (req.url === '/api/save-flags' || req.url.startsWith('/api/save-flags')) {
@@ -39,49 +137,25 @@ const server = http.createServer((req, res) => {
         }
 
         if (req.method === 'POST') {
-            let body = '';
-            req.on('data', chunk => body += chunk);
+            let bodyRaw = '';
+            req.on('data', chunk => bodyRaw += chunk);
             req.on('end', () => {
                 try {
-                    const data = JSON.parse(body);
-                    console.log('[API /save-flags] Received save request:', data);
+                    const body = JSON.parse(bodyRaw);
+                    const data = body.data || body;
+                    const boundaries = normaliseBoundaries(body.boundaries);
 
-                    const targetFiles = [
-                        path.join(__dirname, 'templates', '08_buddhist_wedding', 'css', 'flags.css'),
-                        path.join(__dirname, 'templates', '08_buddhist_wedding', 'index.html'),
-                        path.join(__dirname, 'templates', '08_buddhist_wedding', 'index_remote.html')
-                    ];
-                    targetFiles.forEach(file => {
-                        if (!fs.existsSync(file)) return;
-                        let content = fs.readFileSync(file, 'utf8');
+                    const result = writeFlagCSS(data, boundaries, Array.isArray(body.seeded) ? body.seeded : undefined);
+                    if (!result.ok) throw new Error(result.error);
 
-                        // Replace CSS variables everywhere in the file
-                        for (const [key, val] of Object.entries(data)) {
-                            const regex = new RegExp(key.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&') + ':\\s*[^;]+;', 'g');
-                            content = content.replace(regex, `${key}: ${val};`);
-                        }
-
-                        // Also update initial JS state in antigravity-visual-flag-studio-script if present
-                        ['r1', 'r2', 'r3', 'r4', 'l1', 'l2', 'l3', 'l4'].forEach(id => {
-                            if (data['--flag-' + id + '-x']) {
-                                const x = parseFloat(data['--flag-' + id + '-x']);
-                                const y = parseFloat(data['--flag-' + id + '-y']);
-                                const s = parseFloat(data['--flag-' + id + '-scale']);
-                                const re = new RegExp(id + ':\\s*\\{\\s*x:\\s*[^,]+,\\s*y:\\s*[^,]+,\\s*scale:\\s*[^,]+');
-                                content = content.replace(re, `${id}: { x: ${x}, y: ${y}, scale: ${s}`);
-                            }
-                        });
-
-                        fs.writeFileSync(file, content, 'utf8');
-                        console.log('[API /save-flags] Successfully saved to:', file);
-                    });
+                    console.log('[API /save-flags] Saved bands:', result.bands.join(' | '));
 
                     res.writeHead(200, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ success: true, saved: data }));
+                    res.end(JSON.stringify({ success: true, bands: result.bands }));
                 } catch (err) {
                     console.error('[API /save-flags] Error:', err);
                     res.writeHead(500, { 'Content-Type': 'application/json' });
-                    res.end(JSON.stringify({ error: err.message }));
+                    res.end(JSON.stringify({ success: false, error: err.message }));
                 }
             });
             return;
@@ -174,7 +248,12 @@ const server = http.createServer((req, res) => {
         filePath = path.join(filePath, 'index.html');
     }
 
-    // Smart extension fallback for swapped images (.webp <-> .png <-> .jpg)
+    // Smart extension fallback & unconditional WebP preference for performance
+    if (filePath.endsWith('.png')) {
+        const altWebp = filePath.replace(/\.png$/i, '.webp');
+        if (fs.existsSync(altWebp)) filePath = altWebp;
+    }
+
     if (!fs.existsSync(filePath)) {
         const extname = path.extname(filePath).toLowerCase();
         if (extname === '.webp') {

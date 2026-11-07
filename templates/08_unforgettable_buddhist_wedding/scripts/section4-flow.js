@@ -2,156 +2,192 @@
  * Section 4 Sequential Flow Controller
  * 
  * Organizes Location Map -> Countdown Block -> Buddha Backdrop sequentially:
- * 1. Location Map (Leaflet map + venue info + location buttons)
+ * 1. Location Map (map + venue info + location buttons)
  * 2. Countdown Block ("The countdown begins", family intro, star divider, live timer)
- *    placed directly after the map buttons with natural ~45px-50px gap.
- * 3. Buddha Backdrop placed directly after the countdown, offset by -100px
- *    (mobile: -30px) so the halo begins gracefully right below the timer digits.
+ *    placed directly after the map buttons with natural gap.
+ * 3. Buddha Backdrop placed directly after the countdown, offset gracefully
+ *    so the halo begins right below the timer digits.
+ * 
+ * Deterministic, scroll-independent, and clamped within strict layout boundaries.
  */
 (function initSection4Flow() {
+  let isAdjusting = false;
+
   function adjustFlow() {
-    console.log('[section4-flow] adjustFlow called');
-    const candidates = [
-      { el: document.querySelector('.framer-12tiy0u'), mode: 'desktop' },
-      { el: document.querySelector('.framer-1hm5mtp'), mode: 'tablet' },
-      { el: document.querySelector('.framer-98eqjf'), mode: 'mobile' }
-    ];
+    if (isAdjusting) return;
+    isAdjusting = true;
 
-    const active = candidates.find(c => c.el && c.el.getBoundingClientRect().width > 50);
-    if (!active) {
-      console.log('[section4-flow] No active candidate found');
-      return;
-    }
-    console.log('[section4-flow] Active mode:', active.mode, 'width:', active.el.getBoundingClientRect().width);
+    try {
+      const width = window.innerWidth;
+      const mode = width >= 1280 ? 'desktop' : (width >= 768 ? 'tablet' : 'mobile');
 
-    const section = active.el;
-    const mode = active.mode;
-    const sectionRect = section.getBoundingClientRect();
-    const sectionTop = sectionRect.top + window.scrollY;
+      const containerSelector = (mode === 'desktop')
+        ? '.framer-12tiy0u'
+        : (mode === 'tablet')
+          ? '.framer-1hm5mtp'
+          : '.framer-98eqjf';
 
-    // Find the Location Map container
-    const mapEl = section.querySelector('[data-framer-name="Location Map"]');
-    if (!mapEl) return;
+      const section = document.querySelector(containerSelector);
+      if (!section) return;
 
-    // Find the lowest visual point of the map or any of its buttons
-    let mapBottom = mapEl.getBoundingClientRect().bottom + window.scrollY;
-    const descendants = mapEl.querySelectorAll('*');
-    for (let i = 0; i < descendants.length; i++) {
-      const b = descendants[i].getBoundingClientRect().bottom + window.scrollY;
-      if (b > mapBottom) mapBottom = b;
-    }
+      if (mode === 'desktop') {
+        const countdownTop = 1750;
+        const buddhaTop = 2120;
 
-    const mapBottomRel = mapBottom - sectionTop;
-    const mapToCountdownGap = (mode === 'mobile') ? 52 : (mode === 'tablet') ? 68 : 95;
-    const countdownTop = Math.round(mapBottomRel + mapToCountdownGap);
-
-    let countdownBottomRel = countdownTop;
-
-    if (mode === 'desktop') {
-      const countdown = section.querySelector('[data-framer-name="Countdown"]');
-      if (countdown) {
-        // Find Heading inside countdown to calculate exact gap
-        const heading = countdown.querySelector('[data-framer-name="Countdown Heading"]');
-        const intro = countdown.querySelector('[data-framer-name="Countdown Intro Text"]');
-        const divider = countdown.querySelector('[data-framer-name="Countdown Divider"]');
-        const timer = countdown.querySelector('[data-framer-name="Countdown Timer"]');
-
-        countdown.style.setProperty('top', countdownTop + 'px', 'important');
-        countdown.style.setProperty('opacity', '1', 'important');
-        countdown.style.setProperty('visibility', 'visible', 'important');
-
-        // Reveal all descendants (Framer scroll animations set inline opacity: 0)
-        countdown.querySelectorAll('*').forEach(c => {
-          c.style.setProperty('opacity', '1', 'important');
-          c.style.setProperty('visibility', 'visible', 'important');
+        const countdowns = section.querySelectorAll('[data-framer-name="Countdown"]');
+        countdowns.forEach(countdown => {
+          countdown.style.setProperty('top', countdownTop + 'px', 'important');
+          countdown.style.setProperty('opacity', '1', 'important');
+          countdown.style.setProperty('visibility', 'visible', 'important');
+          countdown.querySelectorAll('*').forEach(c => {
+            c.style.setProperty('opacity', '1', 'important');
+            c.style.setProperty('visibility', 'visible', 'important');
+          });
         });
 
-        if (timer) {
-          const tRect = timer.getBoundingClientRect();
-          if (tRect.height > 0) {
-            countdownBottomRel = (tRect.bottom + window.scrollY) - sectionTop;
-          } else {
-            countdownBottomRel = countdownTop + 340;
-          }
-        } else {
-          countdownBottomRel = countdownTop + 340;
+        const buddhas = section.querySelectorAll('[data-framer-name="Countdown Backdrop"], .framer-qqvm6f');
+        buddhas.forEach(buddha => {
+          buddha.style.setProperty('top', buddhaTop + 'px', 'important');
+          buddha.style.setProperty('opacity', '1', 'important');
+          buddha.style.setProperty('visibility', 'visible', 'important');
+          buddha.style.setProperty('display', 'block', 'important');
+          buddha.style.setProperty('z-index', '5', 'important');
+          buddha.querySelectorAll('*').forEach(child => {
+            child.style.setProperty('opacity', '1', 'important');
+            child.style.setProperty('visibility', 'visible', 'important');
+          });
+        });
+      } else if (mode === 'tablet') {
+        const countdownTop = 1220;
+        const buddhaTop = 1360;
+
+        const headings = section.querySelectorAll('[data-framer-name="Countdown Heading"]');
+        const intros = section.querySelectorAll('[data-framer-name="Countdown Intro Text"]');
+        const dividers = section.querySelectorAll('[data-framer-name="Countdown Divider"]');
+        const timers = section.querySelectorAll('[data-framer-name="Countdown Timer"]');
+        const buddhas = section.querySelectorAll('[data-framer-name="Countdown Backdrop"], .framer-m2ne5z');
+
+        const applyStyles = (nodeList, topOffset) => {
+          nodeList.forEach(el => {
+            el.style.setProperty('top', topOffset + 'px', 'important');
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.querySelectorAll('*').forEach(c => {
+              c.style.setProperty('opacity', '1', 'important');
+              c.style.setProperty('visibility', 'visible', 'important');
+            });
+          });
+        };
+
+        applyStyles(headings, countdownTop);
+        applyStyles(intros, countdownTop + 44);
+        applyStyles(dividers, countdownTop + 94);
+        applyStyles(timers, countdownTop + 124);
+
+        buddhas.forEach(buddha => {
+          buddha.style.setProperty('top', buddhaTop + 'px', 'important');
+          buddha.style.setProperty('opacity', '1', 'important');
+          buddha.style.setProperty('visibility', 'visible', 'important');
+          buddha.style.setProperty('display', 'block', 'important');
+          buddha.style.setProperty('z-index', '5', 'important');
+          buddha.querySelectorAll('*').forEach(child => {
+            child.style.setProperty('opacity', '1', 'important');
+            child.style.setProperty('visibility', 'visible', 'important');
+          });
+        });
+      } else {
+        // Mobile (< 768px)
+        const allMaps = Array.from(section.querySelectorAll('[data-framer-name="Location Map"]'));
+        const mapEl = allMaps.find(m => m.offsetHeight > 50) || allMaps[0];
+
+        // Measure local layout offset strictly using offsetTop and offsetHeight (SCROLL INDEPENDENT!)
+        let mapBottomLocal = 909;
+        if (mapEl && mapEl.offsetHeight > 50) {
+          mapBottomLocal = mapEl.offsetTop + mapEl.offsetHeight;
         }
+
+        // Calculate countdownTop with natural 35px gap below map buttons
+        let countdownTop = mapBottomLocal + 35;
+        // Clamp countdownTop strictly between 930px and 1000px
+        countdownTop = Math.max(930, Math.min(1000, countdownTop));
+
+        // Buddha sits comfortably right below timer digits
+        // Timer is at countdownTop + 104px (ends at countdownTop + 134px)
+        // Buddha halo begins at countdownTop + 130px (~1065px - 1080px)
+        let buddhaTop = countdownTop + 130;
+        // Clamp buddhaTop strictly between 1060px and 1130px
+        buddhaTop = Math.max(1060, Math.min(1130, buddhaTop));
+
+        const headings = section.querySelectorAll('[data-framer-name="Countdown Heading"]');
+        const intros = section.querySelectorAll('[data-framer-name="Countdown Intro Text"]');
+        const dividers = section.querySelectorAll('[data-framer-name="Countdown Divider"]');
+        const timers = section.querySelectorAll('[data-framer-name="Countdown Timer"]');
+        const buddhas = section.querySelectorAll('[data-framer-name="Countdown Backdrop"], .framer-cb5woe');
+
+        const applyStyles = (nodeList, topOffset) => {
+          nodeList.forEach(el => {
+            el.style.setProperty('top', topOffset + 'px', 'important');
+            el.style.setProperty('opacity', '1', 'important');
+            el.style.setProperty('visibility', 'visible', 'important');
+            el.querySelectorAll('*').forEach(c => {
+              c.style.setProperty('opacity', '1', 'important');
+              c.style.setProperty('visibility', 'visible', 'important');
+            });
+          });
+        };
+
+        applyStyles(headings, countdownTop);
+        applyStyles(intros, countdownTop + 34);
+        applyStyles(dividers, countdownTop + 78);
+        applyStyles(timers, countdownTop + 104);
+
+        buddhas.forEach(buddha => {
+          buddha.style.setProperty('top', buddhaTop + 'px', 'important');
+          buddha.style.setProperty('opacity', '1', 'important');
+          buddha.style.setProperty('visibility', 'visible', 'important');
+          buddha.style.setProperty('display', 'block', 'important');
+          buddha.style.setProperty('z-index', '5', 'important');
+          buddha.querySelectorAll('*').forEach(child => {
+            child.style.setProperty('opacity', '1', 'important');
+            child.style.setProperty('visibility', 'visible', 'important');
+          });
+        });
       }
-    } else {
-      // Tablet or Mobile
-      const heading = section.querySelector('[data-framer-name="Countdown Heading"]');
-      const intro = section.querySelector('[data-framer-name="Countdown Intro Text"]');
-      const divider = section.querySelector('[data-framer-name="Countdown Divider"]');
-      const timer = section.querySelector('[data-framer-name="Countdown Timer"]');
-
-      const hSpacing = (mode === 'mobile') ? 34 : 44;
-      const dSpacing = (mode === 'mobile') ? 78 : 94;
-      const tSpacing = (mode === 'mobile') ? 104 : 124;
-
-      const elements = [heading, intro, divider, timer];
-      elements.forEach(el => {
-        if (el) {
-          el.style.setProperty('opacity', '1', 'important');
-          el.style.setProperty('visibility', 'visible', 'important');
-        }
-      });
-
-      if (heading) heading.style.setProperty('top', countdownTop + 'px', 'important');
-      if (intro) intro.style.setProperty('top', (countdownTop + hSpacing) + 'px', 'important');
-      if (divider) divider.style.setProperty('top', (countdownTop + dSpacing) + 'px', 'important');
-      if (timer) {
-        timer.style.setProperty('top', (countdownTop + tSpacing) + 'px', 'important');
-        const tRect = timer.getBoundingClientRect();
-        countdownBottomRel = countdownTop + tSpacing + (tRect.height || 50);
-      }
-    }
-
-    // Buddha Backdrop: offset from countdown bottom
-    // Desktop: -200px (halo begins gracefully ~60px below timer digits)
-    // Tablet: -140px (halo begins gracefully ~50px below timer digits)
-    // Mobile: 0px (preserves full halo visibility with ~50px sky clearance under timer)
-    const buddhaOffset = (mode === 'desktop') ? -200 : (mode === 'tablet') ? -140 : 0;
-    const buddhaTop = Math.round(countdownBottomRel + buddhaOffset);
-
-    const buddha = section.querySelector('[data-framer-name="Countdown Backdrop"]');
-    if (buddha) {
-      buddha.style.setProperty('top', buddhaTop + 'px', 'important');
-      buddha.style.setProperty('opacity', '1', 'important');
-      buddha.style.setProperty('visibility', 'visible', 'important');
+    } finally {
+      isAdjusting = false;
     }
   }
 
-  // Run on initial load, DOM updates, and resize
+  // Execution triggers: DOMContentLoaded, safe post-hydration timeouts, window load, resize
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       adjustFlow();
-      setTimeout(adjustFlow, 500);
+      setTimeout(adjustFlow, 300);
+      setTimeout(adjustFlow, 800);
       setTimeout(adjustFlow, 1500);
     });
   } else {
     adjustFlow();
-    setTimeout(adjustFlow, 500);
+    setTimeout(adjustFlow, 300);
+    setTimeout(adjustFlow, 800);
     setTimeout(adjustFlow, 1500);
   }
 
   window.addEventListener('load', () => {
     adjustFlow();
-    setTimeout(adjustFlow, 800);
+    setTimeout(adjustFlow, 500);
   });
 
   window.addEventListener('resize', () => {
     adjustFlow();
   });
 
-  // Watch for map rendering / tab clicks
-  const observer = new MutationObserver(() => {
-    adjustFlow();
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const map = document.querySelector('[data-framer-name="Location Map"]');
-    if (map) {
-      observer.observe(map, { childList: true, subtree: true, attributes: true });
+  // Re-adjust when user clicks on Location buttons/tabs
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-framer-name="Location Map"] button');
+    if (btn) {
+      setTimeout(adjustFlow, 50);
+      setTimeout(adjustFlow, 300);
     }
   });
 })();

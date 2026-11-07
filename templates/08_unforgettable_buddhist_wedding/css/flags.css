@@ -69,7 +69,7 @@ div[data-framer-name*="Badge" i],
        RIGHT WALKWAY FLAGS (R1, R2, R3, R4 - Exact Saved Coordinates)
        ===================================================================== */
     --flag-r1-x: 92.6%;
-    --flag-r1-y: 890px;
+    --flag-r1-y: 24.5%;
     --flag-r1-scale: 0.31;
     --flag-r1-rotate: 0deg;
     --flag-r1-zindex: 4;
@@ -81,7 +81,7 @@ div[data-framer-name*="Badge" i],
     --flag-r1-brightness: 1.0;
 
     --flag-r2-x: 88.3%;
-    --flag-r2-y: 945px;
+    --flag-r2-y: 25.9%;
     --flag-r2-scale: 0.26;
     --flag-r2-rotate: 0deg;
     --flag-r2-zindex: 3;
@@ -93,7 +93,7 @@ div[data-framer-name*="Badge" i],
     --flag-r2-brightness: 1.0;
 
     --flag-r3-x: 85.3%;
-    --flag-r3-y: 990px;
+    --flag-r3-y: 27.3%;
     --flag-r3-scale: 0.20;
     --flag-r3-rotate: 0deg;
     --flag-r3-zindex: 2;
@@ -105,7 +105,7 @@ div[data-framer-name*="Badge" i],
     --flag-r3-brightness: 1.0;
 
     --flag-r4-x: 83.1%;
-    --flag-r4-y: 1015px;
+    --flag-r4-y: 28.0%;
     --flag-r4-scale: 0.17;
     --flag-r4-rotate: 0deg;
     --flag-r4-zindex: 1;
@@ -120,7 +120,7 @@ div[data-framer-name*="Badge" i],
        LEFT WALKWAY FLAGS (L1, L2, L3, L4 - Perspective Symmetrical)
        ===================================================================== */
     --flag-l1-x: 23.9%;
-    --flag-l1-y: 890px;
+    --flag-l1-y: 24.5%;
     --flag-l1-scale: 0.31;
     --flag-l1-rotate: 0deg;
     --flag-l1-zindex: 4;
@@ -132,7 +132,7 @@ div[data-framer-name*="Badge" i],
     --flag-l1-brightness: 1.0;
 
     --flag-l2-x: 29.1%;
-    --flag-l2-y: 940px;
+    --flag-l2-y: 25.9%;
     --flag-l2-scale: 0.26;
     --flag-l2-rotate: 0deg;
     --flag-l2-zindex: 3;
@@ -144,7 +144,7 @@ div[data-framer-name*="Badge" i],
     --flag-l2-brightness: 1.0;
 
     --flag-l3-x: 33.7%;
-    --flag-l3-y: 990px;
+    --flag-l3-y: 27.3%;
     --flag-l3-scale: 0.20;
     --flag-l3-rotate: 0deg;
     --flag-l3-zindex: 2;
@@ -156,7 +156,7 @@ div[data-framer-name*="Badge" i],
     --flag-l3-brightness: 1.0;
 
     --flag-l4-x: 36.5%;
-    --flag-l4-y: 1015px;
+    --flag-l4-y: 28.0%;
     --flag-l4-scale: 0.17;
     --flag-l4-rotate: 0deg;
     --flag-l4-zindex: 1;
@@ -276,56 +276,56 @@ div[data-framer-name*="Badge" i],
 /* 1. DESKTOP (Default / min-width: 1280px) */
 :root {
     --flag-r1-x: 92.6%;
-    --flag-r1-y: 890px;
+    --flag-r1-y: 24.5%;
     --flag-r1-scale: 0.31;
     --flag-r1-rotate: 0deg;
     --flag-r1-zindex: 4;
     --flag-r1-opacity: 1;
 
     --flag-r2-x: 88.3%;
-    --flag-r2-y: 945px;
+    --flag-r2-y: 25.9%;
     --flag-r2-scale: 0.26;
     --flag-r2-rotate: 0deg;
     --flag-r2-zindex: 3;
     --flag-r2-opacity: 1;
 
     --flag-r3-x: 85.3%;
-    --flag-r3-y: 990px;
+    --flag-r3-y: 27.3%;
     --flag-r3-scale: 0.20;
     --flag-r3-rotate: 0deg;
     --flag-r3-zindex: 2;
     --flag-r3-opacity: 1;
 
     --flag-r4-x: 83.1%;
-    --flag-r4-y: 1015px;
+    --flag-r4-y: 28.0%;
     --flag-r4-scale: 0.17;
     --flag-r4-rotate: 0deg;
     --flag-r4-zindex: 1;
     --flag-r4-opacity: 1;
 
     --flag-l1-x: 23.9%;
-    --flag-l1-y: 890px;
+    --flag-l1-y: 24.5%;
     --flag-l1-scale: 0.31;
     --flag-l1-rotate: 0deg;
     --flag-l1-zindex: 4;
     --flag-l1-opacity: 1;
 
     --flag-l2-x: 29.1%;
-    --flag-l2-y: 940px;
+    --flag-l2-y: 25.9%;
     --flag-l2-scale: 0.26;
     --flag-l2-rotate: 0deg;
     --flag-l2-zindex: 3;
     --flag-l2-opacity: 1;
 
     --flag-l3-x: 33.7%;
-    --flag-l3-y: 990px;
+    --flag-l3-y: 27.3%;
     --flag-l3-scale: 0.20;
     --flag-l3-rotate: 0deg;
     --flag-l3-zindex: 2;
     --flag-l3-opacity: 1;
 
     --flag-l4-x: 36.5%;
-    --flag-l4-y: 1015px;
+    --flag-l4-y: 28.0%;
     --flag-l4-scale: 0.17;
     --flag-l4-rotate: 0deg;
     --flag-l4-zindex: 1;
@@ -336,35 +336,35 @@ div[data-framer-name*="Badge" i],
 @media (min-width: 960px) and (max-width: 1279.98px) {
     :root {
         --flag-r1-x: 92.6%;
-        --flag-r1-y: 890px;
+        --flag-r1-y: 24.5%;
         --flag-r1-scale: 0.29;
 
         --flag-r2-x: 88.3%;
-        --flag-r2-y: 945px;
+        --flag-r2-y: 25.9%;
         --flag-r2-scale: 0.24;
 
         --flag-r3-x: 85.3%;
-        --flag-r3-y: 990px;
+        --flag-r3-y: 27.3%;
         --flag-r3-scale: 0.19;
 
         --flag-r4-x: 83.1%;
-        --flag-r4-y: 1015px;
+        --flag-r4-y: 28.0%;
         --flag-r4-scale: 0.16;
 
         --flag-l1-x: 23.9%;
-        --flag-l1-y: 890px;
+        --flag-l1-y: 24.5%;
         --flag-l1-scale: 0.29;
 
         --flag-l2-x: 29.1%;
-        --flag-l2-y: 940px;
+        --flag-l2-y: 25.9%;
         --flag-l2-scale: 0.24;
 
         --flag-l3-x: 33.7%;
-        --flag-l3-y: 990px;
+        --flag-l3-y: 27.3%;
         --flag-l3-scale: 0.19;
 
         --flag-l4-x: 36.5%;
-        --flag-l4-y: 1015px;
+        --flag-l4-y: 28.0%;
         --flag-l4-scale: 0.16;
     }
 }
@@ -373,35 +373,35 @@ div[data-framer-name*="Badge" i],
 @media (min-width: 768px) and (max-width: 959.98px) {
     :root {
         --flag-r1-x: 91.0%;
-        --flag-r1-y: 850px;
+        --flag-r1-y: 24.1%;
         --flag-r1-scale: 0.25;
 
         --flag-r2-x: 87.0%;
-        --flag-r2-y: 900px;
+        --flag-r2-y: 25.5%;
         --flag-r2-scale: 0.21;
 
         --flag-r3-x: 84.5%;
-        --flag-r3-y: 940px;
+        --flag-r3-y: 26.7%;
         --flag-r3-scale: 0.17;
 
         --flag-r4-x: 82.5%;
-        --flag-r4-y: 965px;
+        --flag-r4-y: 27.4%;
         --flag-r4-scale: 0.14;
 
         --flag-l1-x: 25.5%;
-        --flag-l1-y: 850px;
+        --flag-l1-y: 24.1%;
         --flag-l1-scale: 0.25;
 
         --flag-l2-x: 30.0%;
-        --flag-l2-y: 900px;
+        --flag-l2-y: 25.5%;
         --flag-l2-scale: 0.21;
 
         --flag-l3-x: 34.0%;
-        --flag-l3-y: 940px;
+        --flag-l3-y: 26.7%;
         --flag-l3-scale: 0.17;
 
         --flag-l4-x: 36.5%;
-        --flag-l4-y: 965px;
+        --flag-l4-y: 27.4%;
         --flag-l4-scale: 0.14;
     }
 }
@@ -410,35 +410,35 @@ div[data-framer-name*="Badge" i],
 @media (max-width: 767.98px) {
     :root {
         --flag-r1-x: 90.0%;
-        --flag-r1-y: 580px;
+        --flag-r1-y: 24.1%;
         --flag-r1-scale: 0.18;
 
         --flag-r2-x: 85.5%;
-        --flag-r2-y: 615px;
+        --flag-r2-y: 25.5%;
         --flag-r2-scale: 0.15;
 
         --flag-r3-x: 82.0%;
-        --flag-r3-y: 645px;
+        --flag-r3-y: 26.7%;
         --flag-r3-scale: 0.12;
 
         --flag-r4-x: 80.0%;
-        --flag-r4-y: 660px;
+        --flag-r4-y: 27.4%;
         --flag-r4-scale: 0.10;
 
         --flag-l1-x: 24.5%;
-        --flag-l1-y: 580px;
+        --flag-l1-y: 24.1%;
         --flag-l1-scale: 0.18;
 
         --flag-l2-x: 29.5%;
-        --flag-l2-y: 615px;
+        --flag-l2-y: 25.5%;
         --flag-l2-scale: 0.15;
 
         --flag-l3-x: 33.5%;
-        --flag-l3-y: 645px;
+        --flag-l3-y: 26.7%;
         --flag-l3-scale: 0.12;
 
         --flag-l4-x: 36.0%;
-        --flag-l4-y: 660px;
+        --flag-l4-y: 27.4%;
         --flag-l4-scale: 0.10;
     }
 }
@@ -547,3 +547,260 @@ div[data-framer-name*="Badge" i],
     will-change: opacity, transform;
     transform: translate3d(0, 0, 0);
 }
+
+/* === FLAG STUDIO OVERRIDES (auto-generated) === */
+/* Every width band edited in Visual Flag Studio. Y is a % of the artwork
+   (Temple) height, so flags stay glued to the image at any viewport width.
+   Bands: >= 1558px  |  1280px - 1557px  |  960px - 1279px  |  768px - 959px  |  < 768px */
+
+/* >= 1558px */
+@media (min-width: 1558px) {
+    :root {
+        --flag-r1-x: 92.6%;
+        --flag-r1-y: 24.5%;
+        --flag-r1-scale: 0.31;
+        --flag-r2-x: 88.2%;
+        --flag-r2-y: 25.9%;
+        --flag-r2-scale: 0.26;
+        --flag-r3-x: 85.3%;
+        --flag-r3-y: 27.3%;
+        --flag-r3-scale: 0.20;
+        --flag-r4-x: 83.1%;
+        --flag-r4-y: 28.0%;
+        --flag-r4-scale: 0.17;
+        --flag-l1-x: 23.9%;
+        --flag-l1-y: 24.5%;
+        --flag-l1-scale: 0.31;
+        --flag-l2-x: 29.1%;
+        --flag-l2-y: 25.9%;
+        --flag-l2-scale: 0.26;
+        --flag-l3-x: 33.7%;
+        --flag-l3-y: 27.3%;
+        --flag-l3-scale: 0.20;
+        --flag-l4-x: 36.5%;
+        --flag-l4-y: 28.0%;
+        --flag-l4-scale: 0.17;
+
+    }
+}
+
+/* 1349px - 1557px (Temple width 1515px) */
+@media (min-width: 1349px) and (max-width: 1557.98px) {
+    :root {
+        --flag-r1-x: 93.0%;
+        --flag-r1-y: 25.0%;
+        --flag-r1-scale: 0.31;
+        --flag-r2-x: 88.8%;
+        --flag-r2-y: 26.4%;
+        --flag-r2-scale: 0.26;
+        --flag-r3-x: 85.8%;
+        --flag-r3-y: 27.7%;
+        --flag-r3-scale: 0.20;
+        --flag-r4-x: 83.5%;
+        --flag-r4-y: 28.4%;
+        --flag-r4-scale: 0.17;
+        --flag-l1-x: 23.8%;
+        --flag-l1-y: 25.0%;
+        --flag-l1-scale: 0.31;
+        --flag-l2-x: 29.1%;
+        --flag-l2-y: 26.4%;
+        --flag-l2-scale: 0.26;
+        --flag-l3-x: 33.6%;
+        --flag-l3-y: 27.7%;
+        --flag-l3-scale: 0.20;
+        --flag-l4-x: 36.6%;
+        --flag-l4-y: 28.4%;
+        --flag-l4-scale: 0.17;
+    }
+}
+
+/* 1280px - 1348px (Temple width 1282px - Framer Layout Shift) */
+@media (min-width: 1280px) and (max-width: 1348.98px) {
+    :root {
+        --flag-r1-x: 93.5%;
+        --flag-r1-y: 25.3%;
+        --flag-r1-scale: 0.31;
+        --flag-r2-x: 89.1%;
+        --flag-r2-y: 26.7%;
+        --flag-r2-scale: 0.26;
+        --flag-r3-x: 86.2%;
+        --flag-r3-y: 28.0%;
+        --flag-r3-scale: 0.20;
+        --flag-r4-x: 83.9%;
+        --flag-r4-y: 28.7%;
+        --flag-r4-scale: 0.17;
+        --flag-l1-x: 23.7%;
+        --flag-l1-y: 25.3%;
+        --flag-l1-scale: 0.31;
+        --flag-l2-x: 29.0%;
+        --flag-l2-y: 26.7%;
+        --flag-l2-scale: 0.26;
+        --flag-l3-x: 33.5%;
+        --flag-l3-y: 28.0%;
+        --flag-l3-scale: 0.20;
+        --flag-l4-x: 36.6%;
+        --flag-l4-y: 28.7%;
+        --flag-l4-scale: 0.17;
+    }
+}
+
+/* === END FLAG STUDIO OVERRIDES === */
+
+
+
+/* =========================================================================
+   RESPONSIVE BUDDHIST WALKWAY FLAGS COORDINATES & SCALE
+   Auto-saved via Visual Flag Studio across Desktop, Laptop, Tablet & Mobile
+   ========================================================================= */
+
+/* 1. DESKTOP (Default / min-width: 1280px) */
+:root {
+    --flag-r1-x: 50.0%;
+    --flag-r1-y: 500px;
+    --flag-r1-scale: 0.25;
+    --flag-r2-x: 50.0%;
+    --flag-r2-y: 500px;
+    --flag-r2-scale: 0.25;
+    --flag-r3-x: 50.0%;
+    --flag-r3-y: 500px;
+    --flag-r3-scale: 0.25;
+    --flag-r4-x: 50.0%;
+    --flag-r4-y: 500px;
+    --flag-r4-scale: 0.25;
+    --flag-l1-x: 50.0%;
+    --flag-l1-y: 500px;
+    --flag-l1-scale: 0.25;
+    --flag-l2-x: 50.0%;
+    --flag-l2-y: 500px;
+    --flag-l2-scale: 0.25;
+    --flag-l3-x: 50.0%;
+    --flag-l3-y: 500px;
+    --flag-l3-scale: 0.25;
+    --flag-l4-x: 50.0%;
+    --flag-l4-y: 500px;
+    --flag-l4-scale: 0.25;
+
+}
+
+/* 2. LAPTOP (960px - 1279.98px) */
+@media (min-width: 960px) and (max-width: 1279.98px) {
+    :root {
+        --flag-r1-x: 50.0%;
+        --flag-r1-y: 500px;
+        --flag-r1-scale: 0.25;
+        --flag-r2-x: 50.0%;
+        --flag-r2-y: 500px;
+        --flag-r2-scale: 0.25;
+        --flag-r3-x: 50.0%;
+        --flag-r3-y: 500px;
+        --flag-r3-scale: 0.25;
+        --flag-r4-x: 50.0%;
+        --flag-r4-y: 500px;
+        --flag-r4-scale: 0.25;
+        --flag-l1-x: 50.0%;
+        --flag-l1-y: 500px;
+        --flag-l1-scale: 0.25;
+        --flag-l2-x: 50.0%;
+        --flag-l2-y: 500px;
+        --flag-l2-scale: 0.25;
+        --flag-l3-x: 50.0%;
+        --flag-l3-y: 500px;
+        --flag-l3-scale: 0.25;
+        --flag-l4-x: 50.0%;
+        --flag-l4-y: 500px;
+        --flag-l4-scale: 0.25;
+
+    }
+}
+
+/* 3. TABLET (768px - 959.98px) */
+@media (min-width: 768px) and (max-width: 959.98px) {
+    :root {
+        --flag-r1-x: 50.0%;
+        --flag-r1-y: 500px;
+        --flag-r1-scale: 0.25;
+        --flag-r2-x: 50.0%;
+        --flag-r2-y: 500px;
+        --flag-r2-scale: 0.25;
+        --flag-r3-x: 50.0%;
+        --flag-r3-y: 500px;
+        --flag-r3-scale: 0.25;
+        --flag-r4-x: 50.0%;
+        --flag-r4-y: 500px;
+        --flag-r4-scale: 0.25;
+        --flag-l1-x: 50.0%;
+        --flag-l1-y: 500px;
+        --flag-l1-scale: 0.25;
+        --flag-l2-x: 50.0%;
+        --flag-l2-y: 500px;
+        --flag-l2-scale: 0.25;
+        --flag-l3-x: 50.0%;
+        --flag-l3-y: 500px;
+        --flag-l3-scale: 0.25;
+        --flag-l4-x: 50.0%;
+        --flag-l4-y: 500px;
+        --flag-l4-scale: 0.25;
+
+    }
+}
+
+/* 4. MOBILE (< 768px) */
+@media (max-width: 767.98px) {
+    :root {
+        --flag-r1-x: 50.0%;
+        --flag-r1-y: 500px;
+        --flag-r1-scale: 0.25;
+        --flag-r2-x: 50.0%;
+        --flag-r2-y: 500px;
+        --flag-r2-scale: 0.25;
+        --flag-r3-x: 50.0%;
+        --flag-r3-y: 500px;
+        --flag-r3-scale: 0.25;
+        --flag-r4-x: 50.0%;
+        --flag-r4-y: 500px;
+        --flag-r4-scale: 0.25;
+        --flag-l1-x: 50.0%;
+        --flag-l1-y: 500px;
+        --flag-l1-scale: 0.25;
+        --flag-l2-x: 50.0%;
+        --flag-l2-y: 500px;
+        --flag-l2-scale: 0.25;
+        --flag-l3-x: 50.0%;
+        --flag-l3-y: 500px;
+        --flag-l3-scale: 0.25;
+        --flag-l4-x: 50.0%;
+        --flag-l4-y: 500px;
+        --flag-l4-scale: 0.25;
+
+    }
+}
+
+.buddhist-flag-left-1 {
+    left: var(--flag-l1-x) !important;
+    top: var(--flag-l1-y) !important;
+    transform: translate(-50%, -50%) scale(var(--flag-l1-scale)) rotate(var(--flag-l1-rotate)) !important;
+    z-index: var(--flag-l1-zindex) !important;
+    opacity: var(--flag-l1-opacity) !important;
+}
+.buddhist-flag-left-2 {
+    left: var(--flag-l2-x) !important;
+    top: var(--flag-l2-y) !important;
+    transform: translate(-50%, -50%) scale(var(--flag-l2-scale)) rotate(var(--flag-l2-rotate)) !important;
+    z-index: var(--flag-l2-zindex) !important;
+    opacity: var(--flag-l2-opacity) !important;
+}
+.buddhist-flag-left-3 {
+    left: var(--flag-l3-x) !important;
+    top: var(--flag-l3-y) !important;
+    transform: translate(-50%, -50%) scale(var(--flag-l3-scale)) rotate(var(--flag-l3-rotate)) !important;
+    z-index: var(--flag-l3-zindex) !important;
+    opacity: var(--flag-l3-opacity) !important;
+}
+.buddhist-flag-left-4 {
+    left: var(--flag-l4-x) !important;
+    top: var(--flag-l4-y) !important;
+    transform: translate(-50%, -50%) scale(var(--flag-l4-scale)) rotate(var(--flag-l4-rotate)) !important;
+    z-index: var(--flag-l4-zindex) !important;
+    opacity: var(--flag-l4-opacity) !important;
+}
+

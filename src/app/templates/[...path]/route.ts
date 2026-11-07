@@ -177,18 +177,18 @@ export async function GET(
     });
   }
 
-  // === STRICT UNCONDITIONAL PNG PREFERENCE ===
-  // When ANY asset is requested (even if requested as .webp, or aliased as .webp),
-  // if a .png with the same base name exists on disk, ALWAYS serve the .png!
+  // === STRICT UNCONDITIONAL WEBP PREFERENCE ===
+  // When ANY asset is requested (even if requested as .png),
+  // if a .webp with the same base name exists on disk, ALWAYS serve the lightweight .webp!
   const currentExt = path.extname(localDiskPath).toLowerCase();
   const basePathNoExt = currentExt ? localDiskPath.slice(0, -currentExt.length) : localDiskPath;
-  const candidatePng = basePathNoExt + '.png';
+  const candidateWebp = basePathNoExt + '.webp';
 
-  if (fs.existsSync(candidatePng) && fs.statSync(candidatePng).isFile()) {
-    localDiskPath = candidatePng;
+  if (fs.existsSync(candidateWebp) && fs.statSync(candidateWebp).isFile()) {
+    localDiskPath = candidateWebp;
   } else if (!fs.existsSync(localDiskPath) || !fs.statSync(localDiskPath).isFile()) {
-    // Fallback: check alternative extensions (.png -> .webp -> .jpg -> .jpeg)
-    const altExts = ['.png', '.webp', '.jpg', '.jpeg'];
+    // Fallback: check alternative extensions (.webp -> .png -> .jpg -> .jpeg)
+    const altExts = ['.webp', '.png', '.jpg', '.jpeg'];
     for (const alt of altExts) {
       const altPath = basePathNoExt + alt;
       if (fs.existsSync(altPath) && fs.statSync(altPath).isFile()) {

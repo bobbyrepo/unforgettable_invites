@@ -1,0 +1,71 @@
+<!-- ========================================================================== -->
+<!-- SECTION 06: LOCATION & VENUE DETAILS                                        -->
+<!-- Matches: css/sections/06-location.css | Data: content.json -> location      -->
+<!-- ========================================================================== -->
+<section id="location-section" class="template-section section-location" data-section="06-location">
+    <div class="location-container">
+        <!-- Section Heading -->
+        <div class="location-header-wrap">
+            <h2 class="location-title">Location &amp; Directions</h2>
+            <p class="location-subtext">We look forward to welcoming you to the sacred sanctuary</p>
+        </div>
+
+        <!-- Master Interactive Map & Venue Card -->
+        <div class="location-card-box">
+            <!-- 1. Interactive Map Viewport -->
+            <div class="map-viewport-wrap">
+                <div id="interactive-venue-map" class="map-canvas-area" role="region" aria-label="Map showing Location 1">
+                    <iframe 
+                        title="Mahabodhi Sanctuary Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14472.934812308891!2d84.9813!3d24.6959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQxJzQ1LjIiTiA4NMKwNTgnNTIuNyJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
+                        class="map-iframe"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Floating Map Interaction Chips -->
+                <div class="map-chip chip-hint">Tap to interact with map</div>
+                <div class="map-chip chip-nearby">Nearby Location</div>
+                
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=24.6959%2C%2084.9913" 
+                   target="_blank" rel="noopener noreferrer" class="map-btn-external">
+                    <span>Open in Google Maps</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H8M17 7V16"/>
+                    </svg>
+                </a>
+
+                <button type="button" aria-label="Recenter map on location" title="Recenter" class="map-btn-recenter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15 0a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 2. Clean Venue Address Card (Replaces the raw white text) -->
+            <div class="venue-address-card">
+                <h3 class="venue-name">Mahabodhi Grand Sanctuary</h3>
+                <p class="venue-address-line">Royal Bodhi Grove, Sanctuary Way</p>
+                <p class="venue-address-line">Near Bodh Gaya Heritage Enclave, Bihar — 824231</p>
+                <p class="venue-contact-line">Inquiries / Assistance: +91 98192 00906</p>
+
+                <button type="button" aria-label="Copy address to clipboard" title="Copy Address" class="btn-copy-address" onclick="navigator.clipboard.writeText('Mahabodhi Grand Sanctuary, Royal Bodhi Grove, Sanctuary Way, Near Bodh Gaya Heritage Enclave, Bihar 824231'); alert('Address copied to clipboard!');">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="11" height="11" rx="2"/>
+                        <path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 3. Master Modular Venue Selector Buttons (Deduplicated) -->
+            <div class="venue-buttons-grid">
+                <button type="button" class="venue-btn is-active" data-venue-target="1">Location 1</button>
+                <button type="button" class="venue-btn" data-venue-target="2">Location 2</button>
+                <button type="button" class="venue-btn" data-venue-target="3">Location 3</button>
+                <button type="button" class="venue-btn" data-venue-target="4">Location 4</button>
+            </div>
+        </div>
+    </div>
+</section>

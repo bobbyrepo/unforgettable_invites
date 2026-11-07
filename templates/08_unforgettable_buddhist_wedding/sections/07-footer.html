@@ -1,0 +1,61 @@
+<!-- ========================================================================== -->
+<!-- SECTION 07: SACRED BLESSINGS, RSVP & FOOTER SERENITY                        -->
+<!-- Matches: css/sections/07-footer.css | Data: content.json -> rsvp, footer   -->
+<!-- ========================================================================== -->
+<section id="footer-section" class="template-section section-footer" data-section="07-footer">
+    <div class="footer-container">
+        <!-- RSVP Interactive Call to Action -->
+        <div class="rsvp-action-box">
+            <h2 class="rsvp-title font-cinzel" data-content-key="rsvp.heading">Celebrate With Us</h2>
+            <p class="rsvp-subtext font-alegreya" data-content-key="rsvp.subtext">
+                Kindly confirm your presence by November 15, 2026 to help us make your stay delightful
+            </p>
+
+            <div class="rsvp-buttons-wrap">
+                <a href="https://wa.me/919819200906?text=Dear%20Maya%20and%20Siddharth,%20we%20are%20thrilled%20to%20attend%20your%20wedding!" target="_blank" rel="noopener noreferrer" class="rsvp-primary-btn font-cinzel">
+                    <span>Confirm Attendance via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sacred Golden Buddha & Lotus Sunburst Garden -->
+        <div class="sacred-buddha-garden" aria-hidden="true">
+            <div class="lotus-sunburst-wrap">
+                <img src="./images/Lotus Sunburst Motif.webp" alt="Sacred Lotus Sunburst" class="lotus-sunburst-img">
+            </div>
+            <div class="sacred-buddha-artwork">
+                <img src="./images/Bridge with Deer.webp" alt="Serene Bodhi Garden with Deer" class="buddha-garden-img" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Closing Benediction & Family Gratitude -->
+        <div class="closing-benediction-wrap">
+            <div class="closing-emblem">
+                <img src="./images/Lotus Medallion.webp" alt="Lotus Medallion" class="medallion-icon">
+            </div>
+            <p class="benediction-quote font-alegreya" data-content-key="footer.benediction">
+                "May your journey together be guided by peace, filled with boundless compassion, and blessed with eternal joy."
+            </p>
+            <p class="family-signoff font-brother-signature" data-content-key="footer.signoff">
+                Sharma &amp; Verma Families
+            </p>
+        </div>
+
+        <!-- Unforgettable Tales Signature Footer Brand -->
+        <div class="unforgettable-branding-bar">
+            <span>Crafted with love by </span>
+            <a href="http://localhost:3000" class="brand-link">Unforgettable Tales</a>
+        </div>
+    </div>
+
+    <!-- Floating Master Audio Controller Pill -->
+    <div class="audio-controller-floating-pill" id="master-audio-controller">
+        <audio id="wedding-audio-track" loop preload="none">
+            <source src="./audio/flute_meditation.mp3" type="audio/mpeg">
+        </audio>
+        <button id="audio-toggle-btn" class="audio-pill-btn" aria-label="Toggle Wedding Music">
+            <span class="music-icon">🎵</span>
+            <span class="music-label">Playing Sacred Bansuri</span>
+        </button>
+    </div>
+</section>

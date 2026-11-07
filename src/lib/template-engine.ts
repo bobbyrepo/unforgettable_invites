@@ -8,19 +8,29 @@ export function renderTemplateHTML(invite: WeddingInviteData): string | null {
   const templateId = invite.templateId || '07_unforgettable_ram_mandir';
   const schema = TEMPLATE_SCHEMAS[templateId] || TEMPLATE_SCHEMAS['07_unforgettable_ram_mandir'];
 
-  const groom = invite.couple?.groom?.name || schema.defaultCouple.groom;
-  const bride = invite.couple?.bride?.name || schema.defaultCouple.bride;
-  const groomParents = invite.couple?.groom?.parents || schema.defaultCouple.groomParents;
-  const brideParents = invite.couple?.bride?.parents || schema.defaultCouple.brideParents;
+  const contentJsonPath = path.join(process.cwd(), 'templates', templateId, 'content.json');
+  let fallbackContent: any = {};
+  if (fs.existsSync(contentJsonPath)) {
+    try {
+      fallbackContent = JSON.parse(fs.readFileSync(contentJsonPath, 'utf8'));
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  const groom = invite.couple?.groom?.name || fallbackContent.couple?.groom?.name || schema.defaultCouple.groom;
+  const bride = invite.couple?.bride?.name || fallbackContent.couple?.bride?.name || schema.defaultCouple.bride;
+  const groomParents = invite.couple?.groom?.parents || fallbackContent.couple?.groom?.parents || schema.defaultCouple.groomParents;
+  const brideParents = invite.couple?.bride?.parents || fallbackContent.couple?.bride?.parents || schema.defaultCouple.brideParents;
   
-  const primaryEvent = invite.events?.[0];
-  const primaryCity = primaryEvent?.venueAddress || schema.defaultCouple.city;
+  const primaryEvent = invite.events?.[0] || fallbackContent.events?.[0];
+  const primaryCity = primaryEvent?.venueAddress || fallbackContent.logistics?.city || schema.defaultCouple.city;
   const primaryVenue = primaryEvent?.venueName || primaryEvent?.title || 'The Grand Palace';
   const primaryDate = primaryEvent?.date || '20th Nov 2026';
 
-  const hashtag = invite.couple?.hashtag || schema.defaultCouple.hashtag;
-  const weather = invite.logistics?.weather || schema.defaultLogistics.weather;
-  const valet = invite.logistics?.valetParking || schema.defaultLogistics.valetParking;
+  const hashtag = invite.couple?.hashtag || fallbackContent.couple?.hashtag || schema.defaultCouple.hashtag;
+  const weather = invite.logistics?.weather || fallbackContent.logistics?.weather || schema.defaultLogistics.weather;
+  const valet = invite.logistics?.valetParking || fallbackContent.logistics?.valetParking || schema.defaultLogistics.valetParking;
   const heroImg = invite.thumbnailUrl || schema.imageSlots[0]?.defaultUrl;
 
   const templatePath = path.join(process.cwd(), 'templates', templateId, 'index.html');

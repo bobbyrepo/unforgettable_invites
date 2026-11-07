@@ -1,0 +1,114 @@
+<!-- ========================================================================== -->
+<!-- SECTION 01: HERO ARCHWAY, SACRED BLESSINGS & COUPLE INVOCATION             -->
+<!-- Matches: css/sections/01-hero.css | Data: content.json                     -->
+<!-- ========================================================================== -->
+<section id="hero-section" class="template-section section-hero" data-section="01-hero">
+    <!-- 1. Architectural Gateway Arch & Hanging Ceremonial Bells -->
+    <div class="hero-arch-header" aria-hidden="true">
+        <picture class="arch-frame-picture">
+            <source media="(min-width: 768px)" srcset="./images/Arch_Frame_Desktop.webp">
+            <img src="./images/Arch_Frame_Mobile.webp" alt="Sacred Buddhist Arch Frame" class="arch-frame-img" loading="eager" fetchpriority="high">
+        </picture>
+
+        <!-- Hanging Ceremonial Bells (Consolidated Modular Component) -->
+        <div class="hanging-bells-suite">
+            <div class="hanging-bell bell-l1" title="Sacred Bell Left 1">
+                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-l2" title="Floral Bell Left 2">
+                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-r2" title="Floral Bell Right 2">
+                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-r1" title="Sacred Bell Right 1">
+                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Sacred Invocation Emblem & Pali Shloka -->
+    <div class="hero-invocation-wrap">
+        <div class="invocation-emblem-wrap">
+            <img src="./images/Blessing_Emblem_Mobile.webp" srcset="./images/Blessing_Emblem_Mobile.webp 1x, ./images/Blessing_Emblem_Desktop.webp 2x" alt="Lord Buddha Sacred Emblem" class="invocation-emblem-img" loading="eager" fetchpriority="high">
+        </div>
+        <div class="invocation-shloka-text font-cinzel">
+            || Om Mani Padme Hum ||
+        </div>
+        <p class="invocation-subtitle font-cinzel">
+            Under the Divine Blessings of Lord Buddha
+        </p>
+    </div>
+
+    <!-- 3. Couple Calligraphy & Title Promenade -->
+    <div class="hero-couple-wrap">
+        <div class="couple-name bride font-brother-signature" data-content-key="couple.bride.name">
+            Maya
+        </div>
+        <div class="couple-connector font-brother-signature">
+            weds
+        </div>
+        <div class="couple-name groom font-brother-signature" data-content-key="couple.groom.name">
+            Siddharth
+        </div>
+    </div>
+
+    <!-- 4. Family Invitation Benediction & Parents Colonnade -->
+    <div class="hero-benediction-card">
+        <p class="benediction-intro font-cinzel" data-content-key="couple.greetingNote">
+            Cordially request the honor of your presence at the auspicious wedding celebration of our beloved children
+        </p>
+
+        <div class="parents-colonnade">
+            <div class="parents-col bride-parents">
+                <span class="parents-role font-cinzel">Daughter of</span>
+                <p class="parents-names font-gotham" data-content-key="couple.bride.parents">
+                    Shri. Arvind Sharma &amp; Smt. Meena Sharma
+                </p>
+            </div>
+            <div class="parents-separator" aria-hidden="true">✦</div>
+            <div class="parents-col groom-parents">
+                <span class="parents-role font-cinzel">Son of</span>
+                <p class="parents-names font-gotham" data-content-key="couple.groom.parents">
+                    Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. 3D WebGL Walkway Flag Cloth Physics Simulation Container -->
+    <div class="buddhist-pillar-flag-container" aria-hidden="true">
+        <canvas id="buddhist-flag-canvas" class="buddhist-flag-webgl-canvas"></canvas>
+    </div>
+
+    <!-- 6. Architectural Mahabodhi Temple & Parallax Scenic Layers -->
+    <div class="hero-scenic-backdrop" aria-hidden="true">
+        <picture class="scenic-layer layer-temple">
+            <source media="(min-width: 768px)" srcset="./images/Temple_Desktop.webp">
+            <img src="./images/Temple_Mobile.webp" alt="Mahabodhi Temple Walkway" class="scenic-img" loading="eager">
+        </picture>
+        <img src="./images/Trees_Desktop.webp" alt="Sacred Bodhi Trees" class="scenic-layer layer-trees" loading="eager">
+        <picture class="scenic-layer layer-clouds">
+            <source media="(min-width: 768px)" srcset="./images/Cloud_Desktop.webp">
+            <img src="./images/Cloud_Mobile.webp" alt="Drifting Clouds" class="scenic-img" loading="eager">
+        </picture>
+        <picture class="scenic-layer layer-mountains">
+            <source media="(min-width: 768px)" srcset="./images/Mountain_Desktop.webp">
+            <img src="./images/Mountain_Mobile.webp" alt="Distant Sacred Peaks" class="scenic-img" loading="lazy">
+        </picture>
+        <picture class="scenic-layer layer-sun">
+            <source media="(min-width: 768px)" srcset="./images/Sun_Desktop.webp">
+            <img src="./images/Sun_Mobile.webp" alt="Golden Sunrise" class="scenic-img" loading="lazy">
+        </picture>
+        <picture class="scenic-layer layer-sky">
+            <source media="(min-width: 768px)" srcset="./images/Sky_Desktop.webp">
+            <img src="./images/Sky_Mobile.webp" alt="Serene Blue Morning Sky" class="scenic-img" loading="lazy">
+        </picture>
+    </div>
+
+    <!-- 7. Ceremonial Scroll Indicator -->
+    <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-arrow-line"></div>
+        <div class="scroll-arrow-chevron"></div>
+    </div>
+</section>

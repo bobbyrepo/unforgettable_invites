@@ -1,0 +1,5 @@
+/* Section 4: Photo Gallery Wheel (100% Transparent Background Rule) */
+[data-framer-name="Photo Gallery"],
+.photo-gallery-transparent {
+  background: transparent !important;
+}

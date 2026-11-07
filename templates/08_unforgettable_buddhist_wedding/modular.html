@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya &amp; Siddharth | Sacred Buddhist Wedding Invitation</title>
+    
+    <!-- Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modular CSS Orchestration -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/flags.css">
+    <link rel="stylesheet" href="./css/audio-player.css">
+    <link rel="stylesheet" href="./css/sections/01-hero.css">
+    <link rel="stylesheet" href="./css/sections/02-countdown.css">
+    <link rel="stylesheet" href="./css/sections/03-story.css">
+    <link rel="stylesheet" href="./css/sections/04-gallery.css">
+    <link rel="stylesheet" href="./css/sections/05-timeline.css">
+    <link rel="stylesheet" href="./css/sections/06-location.css">
+    <link rel="stylesheet" href="./css/sections/07-footer.css">
+    
+    <!-- Preload High-Priority Scenic WebP Assets -->
+    <link rel="preload" as="image" href="./images/Arch_Frame_Mobile.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./images/Temple_Mobile.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./images/Blessing_Emblem_Mobile.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./images/Trees_Desktop.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="./images/Cloud_Mobile.webp" fetchpriority="high">
+</head>
+<body class="buddhist-theme-body">
+    <!-- Floating Serenity Widgets (Audio & Navigation) -->
+    
+<!-- === WIDGET START: widget-audio.html === -->
+<!-- ========================================================================== -->
+<!-- BUDDHIST SERENITY SUITE: Audio Player Controller Widget                   -->
+<!-- Matches: css/audio-player.css | Script: scripts/audio-player.js            -->
+<!-- ========================================================================== -->
+<div id="buddhist-audio-controller" class="buddhist-audio-pill" role="button" aria-label="Toggle Buddhist Temple Music">
+    <div id="audio-icon-wrap" class="audio-pill-icon">🪷</div>
+    <div id="audio-text-wrap" class="audio-pill-text">
+        <div class="audio-pill-label">Temple Flute</div>
+        <div id="audio-eq-bars" class="audio-pill-bars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+        </div>
+    </div>
+</div>
+
+<audio id="buddhist-audio-element" loop preload="auto">
+    <source src="./audio/buddhist_flute_blessing.mp3" type="audio/mpeg">
+</audio>
+
+<!-- === WIDGET END: widget-audio.html === -->
+
+<!-- === WIDGET START: widget-switcher.html === -->
+<!-- ========================================================================== -->
+<!-- FLOATING MASTER TEMPLATE SWITCHER PILL                                     -->
+<!-- Matches: css/controls.css (.template-switcher-pill)                         -->
+<!-- ========================================================================== -->
+<nav id="unified-template-switcher" class="template-switcher-pill" aria-label="Template Switcher">
+    <a href="/portal.html" title="Open Master Catalog" class="switcher-brand">
+        <span>🏛️ All 8 Demos</span>
+    </a>
+    <span class="switcher-divider" style="color: rgba(255,255,255,0.2);">|</span>
+    <select class="switcher-select" onchange="if(this.value) window.location.href=this.value;" aria-label="Select Wedding Invitation Template">
+        <option value="/templates/08_unforgettable_buddhist_wedding/" selected>🪷 Mahabodhi Buddhist (Bodh Gaya)</option>
+        <option value="/templates/07_unforgettable_ram_mandir/">🚩 Ram Mandir (Unforgettable Invites)</option>
+        <option value="/templates/02_unforgettable_radha_krishna/">🦚 Radha Krishna Vrindavan</option>
+        <option value="/templates/01_unforgettable_temple_grace/">🏛️ Temple Grace Gopuram</option>
+        <option value="/templates/04_unforgettable_ayodhya_heritage/">🛕 Ayodhya Vedic Mandir</option>
+        <option value="/templates/05_unforgettable_meenakshi_royal/">👑 Meenakshi Royal Sanctuary</option>
+        <option value="/templates/06_unforgettable_udaipur_palace/">🏰 Udaipur Lake Palace</option>
+        <option value="/templates/03_unforgettable_pastel_elegance/">✨ Royal Pastel Luxury</option>
+    </select>
+</nav>
+
+<!-- === WIDGET END: widget-switcher.html === -->
+
+
+    <!-- Master Modular Wedding Invitation Container -->
+    <main id="modular-wedding-app" class="modular-wedding-wrapper">
+        
+<!-- === COMPONENT START: 01-hero.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 01: HERO ARCHWAY, SACRED BLESSINGS & COUPLE INVOCATION             -->
+<!-- Matches: css/sections/01-hero.css | Data: content.json                     -->
+<!-- ========================================================================== -->
+<section id="hero-section" class="template-section section-hero" data-section="01-hero">
+    <!-- 1. Architectural Gateway Arch & Hanging Ceremonial Bells -->
+    <div class="hero-arch-header" aria-hidden="true">
+        <picture class="arch-frame-picture">
+            <source media="(min-width: 768px)" srcset="./images/Arch_Frame_Desktop.webp">
+            <img src="./images/Arch_Frame_Mobile.webp" alt="Sacred Buddhist Arch Frame" class="arch-frame-img" loading="eager" fetchpriority="high">
+        </picture>
+
+        <!-- Hanging Ceremonial Bells (Consolidated Modular Component) -->
+        <div class="hanging-bells-suite">
+            <div class="hanging-bell bell-l1" title="Sacred Bell Left 1">
+                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-l2" title="Floral Bell Left 2">
+                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-r2" title="Floral Bell Right 2">
+                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
+            </div>
+            <div class="hanging-bell bell-r1" title="Sacred Bell Right 1">
+                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Sacred Invocation Emblem & Pali Shloka -->
+    <div class="hero-invocation-wrap">
+        <div class="invocation-emblem-wrap">
+            <img src="./images/Blessing_Emblem_Mobile.webp" srcset="./images/Blessing_Emblem_Mobile.webp 1x, ./images/Blessing_Emblem_Desktop.webp 2x" alt="Lord Buddha Sacred Emblem" class="invocation-emblem-img" loading="eager" fetchpriority="high">
+        </div>
+        <div class="invocation-shloka-text font-cinzel">
+            || Om Mani Padme Hum ||
+        </div>
+        <p class="invocation-subtitle font-cinzel">
+            Under the Divine Blessings of Lord Buddha
+        </p>
+    </div>
+
+    <!-- 3. Couple Calligraphy & Title Promenade -->
+    <div class="hero-couple-wrap">
+        <div class="couple-name bride font-brother-signature" data-content-key="couple.bride.name">
+            Maya
+        </div>
+        <div class="couple-connector font-brother-signature">
+            weds
+        </div>
+        <div class="couple-name groom font-brother-signature" data-content-key="couple.groom.name">
+            Siddharth
+        </div>
+    </div>
+
+    <!-- 4. Family Invitation Benediction & Parents Colonnade -->
+    <div class="hero-benediction-card">
+        <p class="benediction-intro font-cinzel" data-content-key="couple.greetingNote">
+            Cordially request the honor of your presence at the auspicious wedding celebration of our beloved children
+        </p>
+
+        <div class="parents-colonnade">
+            <div class="parents-col bride-parents">
+                <span class="parents-role font-cinzel">Daughter of</span>
+                <p class="parents-names font-gotham" data-content-key="couple.bride.parents">
+                    Shri. Arvind Sharma &amp; Smt. Meena Sharma
+                </p>
+            </div>
+            <div class="parents-separator" aria-hidden="true">✦</div>
+            <div class="parents-col groom-parents">
+                <span class="parents-role font-cinzel">Son of</span>
+                <p class="parents-names font-gotham" data-content-key="couple.groom.parents">
+                    Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. 3D WebGL Walkway Flag Cloth Physics Simulation Container -->
+    <div class="buddhist-pillar-flag-container" aria-hidden="true">
+        <canvas id="buddhist-flag-canvas" class="buddhist-flag-webgl-canvas"></canvas>
+    </div>
+
+    <!-- 6. Architectural Mahabodhi Temple & Parallax Scenic Layers -->
+    <div class="hero-scenic-backdrop" aria-hidden="true">
+        <picture class="scenic-layer layer-temple">
+            <source media="(min-width: 768px)" srcset="./images/Temple_Desktop.webp">
+            <img src="./images/Temple_Mobile.webp" alt="Mahabodhi Temple Walkway" class="scenic-img" loading="eager">
+        </picture>
+        <img src="./images/Trees_Desktop.webp" alt="Sacred Bodhi Trees" class="scenic-layer layer-trees" loading="eager">
+        <picture class="scenic-layer layer-clouds">
+            <source media="(min-width: 768px)" srcset="./images/Cloud_Desktop.webp">
+            <img src="./images/Cloud_Mobile.webp" alt="Drifting Clouds" class="scenic-img" loading="eager">
+        </picture>
+        <picture class="scenic-layer layer-mountains">
+            <source media="(min-width: 768px)" srcset="./images/Mountain_Desktop.webp">
+            <img src="./images/Mountain_Mobile.webp" alt="Distant Sacred Peaks" class="scenic-img" loading="lazy">
+        </picture>
+        <picture class="scenic-layer layer-sun">
+            <source media="(min-width: 768px)" srcset="./images/Sun_Desktop.webp">
+            <img src="./images/Sun_Mobile.webp" alt="Golden Sunrise" class="scenic-img" loading="lazy">
+        </picture>
+        <picture class="scenic-layer layer-sky">
+            <source media="(min-width: 768px)" srcset="./images/Sky_Desktop.webp">
+            <img src="./images/Sky_Mobile.webp" alt="Serene Blue Morning Sky" class="scenic-img" loading="lazy">
+        </picture>
+    </div>
+
+    <!-- 7. Ceremonial Scroll Indicator -->
+    <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-arrow-line"></div>
+        <div class="scroll-arrow-chevron"></div>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 01-hero.html === -->
+
+<!-- === COMPONENT START: 02-countdown.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 02: LIVE WEDDING COUNTDOWN                                         -->
+<!-- Matches: css/sections/02-countdown.css | Data: content.json -> countdown   -->
+<!-- ========================================================================== -->
+<section id="countdown-section" class="template-section section-countdown" data-section="02-countdown">
+    <div class="countdown-container">
+        <!-- Countdown Heading -->
+        <div class="countdown-heading-wrap" data-framer-name="Countdown Heading">
+            <h2 class="countdown-heading-title">The countdown begins</h2>
+        </div>
+
+        <!-- Master Modular Countdown Timer -->
+        <div class="countdown-timer-wrap" data-framer-name="Countdown Timer">
+            <div class="countdown-units-grid" id="live-wedding-timer">
+                <!-- Unit 1: DAYS -->
+                <div class="countdown-unit" data-unit="days">
+                    <div class="countdown-digits-box">
+                        <span class="countdown-digit" id="timer-days-tens">0</span>
+                        <span class="countdown-digit" id="timer-days-ones">0</span>
+                    </div>
+                    <span class="countdown-unit-label">DAYS</span>
+                </div>
+
+                <!-- Unit 2: HOURS -->
+                <div class="countdown-unit" data-unit="hours">
+                    <div class="countdown-digits-box">
+                        <span class="countdown-digit" id="timer-hours-tens">0</span>
+                        <span class="countdown-digit" id="timer-hours-ones">0</span>
+                    </div>
+                    <span class="countdown-unit-label">HOURS</span>
+                </div>
+
+                <!-- Unit 3: MINUTES -->
+                <div class="countdown-unit" data-unit="minutes">
+                    <div class="countdown-digits-box">
+                        <span class="countdown-digit" id="timer-minutes-tens">0</span>
+                        <span class="countdown-digit" id="timer-minutes-ones">0</span>
+                    </div>
+                    <span class="countdown-unit-label">MINUTES</span>
+                </div>
+
+                <!-- Unit 4: SECONDS -->
+                <div class="countdown-unit" data-unit="seconds">
+                    <div class="countdown-digits-box">
+                        <span class="countdown-digit" id="timer-seconds-tens">0</span>
+                        <span class="countdown-digit" id="timer-seconds-ones">0</span>
+                    </div>
+                    <span class="countdown-unit-label">SECONDS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Countdown Intro Text -->
+        <div class="countdown-intro-wrap" data-framer-name="Countdown Intro Text">
+            <p class="countdown-intro-line">Our families are excited that you are able to join</p>
+            <p class="countdown-intro-line">us in celebrating what we hope will be one</p>
+            <p class="countdown-intro-line">of the happiest days of our lives</p>
+        </div>
+
+        <!-- Star / Flourish Divider -->
+        <div class="countdown-divider-wrap" data-framer-name="Countdown Divider">
+            <img loading="lazy" decoding="async" src="./images/Countdown_Divider_Mobile.webp" alt="Countdown Divider Flourish" class="countdown-divider-img">
+        </div>
+
+        <!-- Portrait Backdrop (Gautam Buddha Enlightenment Sanctuary) -->
+        <div class="countdown-backdrop-wrap" data-framer-name="Countdown Backdrop">
+            <img loading="lazy" decoding="async" src="./images/Countdown_Frame_Mobile.webp" alt="Sacred Buddha Backdrop" class="countdown-backdrop-img">
+        </div>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 02-countdown.html === -->
+
+<!-- === COMPONENT START: 03-story.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 03: MEET THE COUPLE / OUR SACRED STORY                             -->
+<!-- Matches: css/sections/03-story.css | Data: content.json -> story           -->
+<!-- ========================================================================== -->
+<section id="story-section" class="template-section section-story" data-section="03-story">
+    <div class="story-container">
+        <!-- Section Heading -->
+        <div class="story-header-wrap">
+            <h2 class="story-title font-cinzel" data-content-key="story.heading">Meet the Bride &amp; Groom</h2>
+            <div class="story-subtitle-flourish">
+                <img src="./images/Lotus Vine Divider.webp" alt="Lotus Vine Flourish" class="flourish-icon">
+            </div>
+        </div>
+
+        <!-- Sacred Message Parchment / Letter Frame -->
+        <div class="story-message-card">
+            <div class="message-card-frame-bg">
+                <img src="./images/Message_Frame_Desktop.webp" alt="Message Card Frame" class="frame-bg-img">
+            </div>
+
+            <div class="story-message-content">
+                <h3 class="message-salutation font-cinzel" data-content-key="story.salutation">Dearest Family &amp; Friends,</h3>
+                <p class="message-body-text font-alegreya" data-content-key="story.letter_paragraph_1">
+                    Two paths crossed under the auspicious canopy of destiny, bringing our souls together in peace, laughter, and timeless devotion.
+                </p>
+                <p class="message-body-text font-alegreya" data-content-key="story.letter_paragraph_2">
+                    As we step into this sacred chapter of marriage surrounded by the serene chants of Lord Buddha, your love, blessings, and presence will be our greatest gift.
+                </p>
+                <div class="message-signature font-brother-signature" data-content-key="story.signature">
+                    With love &amp; gratitude,<br>
+                    Maya &amp; Siddharth
+                </div>
+            </div>
+        </div>
+
+        <!-- Sandstone Alcove & Bodhi Grove Backdrop -->
+        <div class="story-scenic-backdrop" aria-hidden="true">
+            <img src="./images/Story_Backdrop_Desktop.webp" alt="Sacred Bodhi Grove Backdrop" class="story-bg-img">
+        </div>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 03-story.html === -->
+
+<!-- === COMPONENT START: 04-gallery.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 04: SACRED MOMENTS / PHOTO WHEEL GALLERY                           -->
+<!-- Matches: css/sections/04-gallery.css | Data: content.json -> gallery       -->
+<!-- ========================================================================== -->
+<section id="gallery-section" class="template-section section-gallery" data-section="04-gallery">
+    <div class="gallery-container">
+        <!-- Section Heading -->
+        <div class="gallery-header-wrap">
+            <h2 class="gallery-title font-cinzel" data-content-key="gallery.heading">Cherished Moments</h2>
+            <p class="gallery-subtext font-alegreya" data-content-key="gallery.subtext">Glimpses of our journey towards forever</p>
+        </div>
+
+        <!-- Transparent Parallax Photo Wheel / Carousel -->
+        <div class="photo-wheel-track" id="buddhist-photo-wheel">
+            <div class="photo-wheel-card card-1">
+                <div class="photo-frame-border">
+                    <img src="./images/Garden Temple Frame.webp" alt="Ornamental Photo Frame" class="frame-overlay">
+                    <div class="photo-inner-slot" style="background-image: url('./images/Alcove_Backdrop_Desktop.webp');"></div>
+                </div>
+                <span class="photo-caption font-alegreya">The Beginning</span>
+            </div>
+
+            <div class="photo-wheel-card card-2">
+                <div class="photo-frame-border">
+                    <img src="./images/Garden Temple Frame.webp" alt="Ornamental Photo Frame" class="frame-overlay">
+                    <div class="photo-inner-slot" style="background-image: url('./images/Bridge with Deer.webp');"></div>
+                </div>
+                <span class="photo-caption font-alegreya">A Quiet Promise</span>
+            </div>
+
+            <div class="photo-wheel-card card-3">
+                <div class="photo-frame-border">
+                    <img src="./images/Garden Temple Frame.webp" alt="Ornamental Photo Frame" class="frame-overlay">
+                    <div class="photo-inner-slot" style="background-image: url('./images/Lush Flowering Garden.webp');"></div>
+                </div>
+                <span class="photo-caption font-alegreya">Together Forever</span>
+            </div>
+        </div>
+
+        <!-- Decorative Floral Ground Flourish -->
+        <div class="gallery-footer-flourish" aria-hidden="true">
+            <img src="./images/Peacock_Trim_Ornament.webp" alt="Peacock Trim" class="peacock-trim-img">
+        </div>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 04-gallery.html === -->
+
+<!-- === COMPONENT START: 05-timeline.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 05: SACRED WEDDING TIMELINE / ITINERARY                             -->
+<!-- Matches: css/sections/05-timeline.css | Data: content.json -> events       -->
+<!-- ========================================================================== -->
+<section id="timeline-section" class="template-section section-timeline" data-section="05-timeline">
+    <!-- Peacock Sacred Alcove Backdrop -->
+    <div class="timeline-backdrop-wrap" aria-hidden="true">
+        <img src="./images/Alcove_Backdrop_Mobile.webp" alt="Sacred Buddhist Alcove Backdrop" class="timeline-backdrop-img" loading="eager" fetchpriority="high">
+    </div>
+
+    <!-- Timeline Heading & Sacred Header -->
+    <div class="timeline-header-wrap">
+        <h2 class="timeline-heading">Wedding Timeline</h2>
+        <p class="timeline-subheading">Mark Your Calendars, We Can't Wait to Celebrate</p>
+    </div>
+
+    <!-- Master Modular Event Cards Grid -->
+    <div class="timeline-cards-container" id="timeline-cards-list">
+        <!-- Row 1 Left: Card 6 — Grand Bodhi Gala -->
+        <article class="event-card col-left card-row-1 card-6" data-event-index="6">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Grand Bodhi Gala</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+
+        <!-- Row 1 Right: Card 5 — Pradakshina of Light -->
+        <article class="event-card col-right card-row-1 card-5" data-event-index="5">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Pradakshina of Light</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+
+        <!-- Row 2 Left: Card 4 — Sacred Bodhi Vivaha -->
+        <article class="event-card col-left card-row-2 card-4" data-event-index="4">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Sacred Bodhi Vivaha</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+
+        <!-- Row 2 Right: Card 3 — Bodhi Sangeet -->
+        <article class="event-card col-right card-row-2 card-3" data-event-index="3">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Bodhi Sangeet</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+
+        <!-- Row 3 Left: Card 2 — Haldi & Teerth Snan -->
+        <article class="event-card col-left card-row-3 card-2" data-event-index="2">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Haldi &amp; Teerth Snan</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+
+        <!-- Row 3 Right: Card 1 — Mangala Vandana -->
+        <article class="event-card col-right card-row-3 card-1" data-event-index="1">
+            <div class="card-badge-wrap">
+                <img loading="lazy" decoding="async" width="1515" height="2342" src="./images/Event_Frame_Pillar.webp" alt="Ceremony Frame" class="card-badge-img">
+            </div>
+            <h3 class="card-title">Mangala Vandana</h3>
+            <p class="card-day">Friday</p>
+            <p class="card-date">29th Aug 2026</p>
+            <p class="card-venue">Bodh Gaya, Bihar</p>
+            <p class="card-time">6 Pm Onwards</p>
+            <p class="card-caption">More details below</p>
+        </article>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 05-timeline.html === -->
+
+<!-- === COMPONENT START: 06-location.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 06: LOCATION & VENUE DETAILS                                        -->
+<!-- Matches: css/sections/06-location.css | Data: content.json -> location      -->
+<!-- ========================================================================== -->
+<section id="location-section" class="template-section section-location" data-section="06-location">
+    <div class="location-container">
+        <!-- Section Heading -->
+        <div class="location-header-wrap">
+            <h2 class="location-title">Location &amp; Directions</h2>
+            <p class="location-subtext">We look forward to welcoming you to the sacred sanctuary</p>
+        </div>
+
+        <!-- Master Interactive Map & Venue Card -->
+        <div class="location-card-box">
+            <!-- 1. Interactive Map Viewport -->
+            <div class="map-viewport-wrap">
+                <div id="interactive-venue-map" class="map-canvas-area" role="region" aria-label="Map showing Location 1">
+                    <iframe 
+                        title="Mahabodhi Sanctuary Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14472.934812308891!2d84.9813!3d24.6959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQxJzQ1LjIiTiA4NMKwNTgnNTIuNyJF!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" 
+                        class="map-iframe"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Floating Map Interaction Chips -->
+                <div class="map-chip chip-hint">Tap to interact with map</div>
+                <div class="map-chip chip-nearby">Nearby Location</div>
+                
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=24.6959%2C%2084.9913" 
+                   target="_blank" rel="noopener noreferrer" class="map-btn-external">
+                    <span>Open in Google Maps</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H8M17 7V16"/>
+                    </svg>
+                </a>
+
+                <button type="button" aria-label="Recenter map on location" title="Recenter" class="map-btn-recenter">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15 0a6 6 0 1 1-12 0 6 6 0 0 1 12 0Z"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 2. Clean Venue Address Card (Replaces the raw white text) -->
+            <div class="venue-address-card">
+                <h3 class="venue-name">Mahabodhi Grand Sanctuary</h3>
+                <p class="venue-address-line">Royal Bodhi Grove, Sanctuary Way</p>
+                <p class="venue-address-line">Near Bodh Gaya Heritage Enclave, Bihar — 824231</p>
+                <p class="venue-contact-line">Inquiries / Assistance: +91 98192 00906</p>
+
+                <button type="button" aria-label="Copy address to clipboard" title="Copy Address" class="btn-copy-address" onclick="navigator.clipboard.writeText('Mahabodhi Grand Sanctuary, Royal Bodhi Grove, Sanctuary Way, Near Bodh Gaya Heritage Enclave, Bihar 824231'); alert('Address copied to clipboard!');">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="11" height="11" rx="2"/>
+                        <path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- 3. Master Modular Venue Selector Buttons (Deduplicated) -->
+            <div class="venue-buttons-grid">
+                <button type="button" class="venue-btn is-active" data-venue-target="1">Location 1</button>
+                <button type="button" class="venue-btn" data-venue-target="2">Location 2</button>
+                <button type="button" class="venue-btn" data-venue-target="3">Location 3</button>
+                <button type="button" class="venue-btn" data-venue-target="4">Location 4</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 06-location.html === -->
+
+<!-- === COMPONENT START: 07-footer.html === -->
+<!-- ========================================================================== -->
+<!-- SECTION 07: SACRED BLESSINGS, RSVP & FOOTER SERENITY                        -->
+<!-- Matches: css/sections/07-footer.css | Data: content.json -> rsvp, footer   -->
+<!-- ========================================================================== -->
+<section id="footer-section" class="template-section section-footer" data-section="07-footer">
+    <div class="footer-container">
+        <!-- RSVP Interactive Call to Action -->
+        <div class="rsvp-action-box">
+            <h2 class="rsvp-title font-cinzel" data-content-key="rsvp.heading">Celebrate With Us</h2>
+            <p class="rsvp-subtext font-alegreya" data-content-key="rsvp.subtext">
+                Kindly confirm your presence by November 15, 2026 to help us make your stay delightful
+            </p>
+
+            <div class="rsvp-buttons-wrap">
+                <a href="https://wa.me/919819200906?text=Dear%20Maya%20and%20Siddharth,%20we%20are%20thrilled%20to%20attend%20your%20wedding!" target="_blank" rel="noopener noreferrer" class="rsvp-primary-btn font-cinzel">
+                    <span>Confirm Attendance via WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sacred Golden Buddha & Lotus Sunburst Garden -->
+        <div class="sacred-buddha-garden" aria-hidden="true">
+            <div class="lotus-sunburst-wrap">
+                <img src="./images/Lotus Sunburst Motif.webp" alt="Sacred Lotus Sunburst" class="lotus-sunburst-img">
+            </div>
+            <div class="sacred-buddha-artwork">
+                <img src="./images/Bridge with Deer.webp" alt="Serene Bodhi Garden with Deer" class="buddha-garden-img" loading="lazy">
+            </div>
+        </div>
+
+        <!-- Closing Benediction & Family Gratitude -->
+        <div class="closing-benediction-wrap">
+            <div class="closing-emblem">
+                <img src="./images/Lotus Medallion.webp" alt="Lotus Medallion" class="medallion-icon">
+            </div>
+            <p class="benediction-quote font-alegreya" data-content-key="footer.benediction">
+                "May your journey together be guided by peace, filled with boundless compassion, and blessed with eternal joy."
+            </p>
+            <p class="family-signoff font-brother-signature" data-content-key="footer.signoff">
+                Sharma &amp; Verma Families
+            </p>
+        </div>
+
+        <!-- Unforgettable Tales Signature Footer Brand -->
+        <div class="unforgettable-branding-bar">
+            <span>Crafted with love by </span>
+            <a href="http://localhost:3000" class="brand-link">Unforgettable Tales</a>
+        </div>
+    </div>
+
+    <!-- Floating Master Audio Controller Pill -->
+    <div class="audio-controller-floating-pill" id="master-audio-controller">
+        <audio id="wedding-audio-track" loop preload="none">
+            <source src="./audio/flute_meditation.mp3" type="audio/mpeg">
+        </audio>
+        <button id="audio-toggle-btn" class="audio-pill-btn" aria-label="Toggle Wedding Music">
+            <span class="music-icon">🎵</span>
+            <span class="music-label">Playing Sacred Bansuri</span>
+        </button>
+    </div>
+</section>
+
+<!-- === COMPONENT END: 07-footer.html === -->
+
+    </main>
+
+    <!-- Modular Vanilla Scripts -->
+    <script src="./scripts/audio-player.js"></script>
+    <script src="./scripts/flag-simulation.js"></script>
+    <script src="./scripts/tree-parallax.js"></script>
+    <script src="./scripts/section4-flow.js"></script>
+</body>
+</html>

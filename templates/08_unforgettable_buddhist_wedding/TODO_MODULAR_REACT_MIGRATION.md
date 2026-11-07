@@ -4,28 +4,33 @@
 
 ---
 
-## 📋 Phase 1: Quick Workspace Cleanup, Immediate Controls & Security Sanitization
-- [ ] **1.1. Consolidate & Archive `index_remote.html`**
-  - Move/archive `index_remote.html` out of the active template root into `_archive/`.
-  - Ensure Next.js dynamic route (`/templates/[...path]`) serves `index.html` seamlessly with `<base>` tag.
-  - *Outcome*: Cuts VS Code global search results by 50% immediately, eliminating duplicate hits.
-- [ ] **1.2. Expose Countdown Section Spacing Controls**
-  - Add explicit CSS variables in the template (`--countdown-shift-y`, `--countdown-photo-shift-y`) to easily move *"The countdown begins"*, the live timer (days, hours, minutes, seconds), and the family portrait up and down.
-  - *Outcome*: Immediate control over countdown positioning without inspecting cluttered DOM trees.
-- [ ] **1.3. Clean Audit of Content & Image Keys**
-  - Map every piece of text and image slot (Couple names, parents, greeting note, event dates, venues, hashtags) into a single master reference map.
-- [ ] **1.4. Security, Telemetry & Upstream "Phone-Home" Code Audit (Air-Gap Sanitization)**
-  - **Comprehensive Codebase & Runtime Audit**: Scan all HTML, JS/MJS modules, and runtime bundles for any hidden analytics, remote pings, phone-home beacons, or external telemetry (e.g., Framer analytics, Google Tag Manager, Sentry, Mixpanel, Hotjar, or obscure analytics endpoints).
-  - **Anti-Cloning & Domain-Lock / IP Check Removal**: Audit and eliminate any anti-tampering logic, domain locks (e.g., `window.location.hostname` checks), origin verification fences, or device/IP address verification checks that may have been baked in by previous authors or cloned template boilerplates (e.g., checks designed to prevent running outside a specific machine or alerting an external server of who is running the code).
-  - **Purge Dead / Foreign Upstream Code**: Ensure no unused third-party callbacks, tracking hooks, or unauthorized surveillance functions exist anywhere in the code.
-  - **Air-Gap Guarantee**: Guarantee that the application is 100% self-sovereign, respects client privacy, and runs without pinging any unauthorized external servers or tracking hosts on any machine, local environment, or CDN.
+## 📋 Phase 1: Next.js Workspace Consolidation, CSS Controls & Security Sanitization
+- [x] **1.1. Consolidate & Archive `index_remote.html` into Next.js Server Architecture**
+  - Verified and merged latest calibrated layout styles (`--desktop-buddha-top`, `--mobile-countdown-top`, `--mobile-buddha-top`, rosette comment) into `index.html`.
+  - Moved/archived `index_remote.html` out of active template root into `_archive/index_remote.html`.
+  - Streamlined Next.js `renderTemplateHTML` in `src/lib/template-engine.ts` by removing legacy bi-directional disk sync logic.
+  - *Outcome*: Cuts VS Code global search results by 50% immediately, eliminates duplicate file confusion, and accelerates SSR rendering.
+- [x] **1.2. Expose Countdown & Spacing Controls via CSS Variables**
+  - Added explicit CSS variables in `:root` (`--countdown-shift-y`, `--countdown-photo-shift-y`, `--desktop-countdown-top`, etc.).
+  - Wired `transform: translateY(var(--countdown-shift-y, 0px))` across Desktop, Tablet, and Mobile breakpoints to control *"The countdown begins"*, the live timer, and backdrop.
+  - *Outcome*: Clean runtime and Next.js SSR control over countdown and portrait spacing without DOM inspection.
+- [x] **1.3. Clean Master Content & Image Schema Contract (`data/schema_map.json`)**
+  - Mapped every piece of text and image slot (Couple names, parents, greeting note, event dates, venues, hashtags, shlokas, and image slots) into a single master reference map.
+  - Aligned keys 1-to-1 with Next.js `TEMPLATE_SCHEMAS['08_unforgettable_buddhist_wedding']` and `WeddingInviteData` TypeScript definitions.
+  - *Outcome*: Deterministic contract for server-side hydration and dynamic client customization.
+- [x] **1.4. Security, Telemetry & Upstream "Phone-Home" Code Audit (Air-Gap Sanitization)**
+  - **Purged External Framer Telemetry**: Removed `<script async src="https://events.framer.com/script?v=2" ...></script>`.
+  - **Removed Foreign Canonical / Domain Tags**: Eliminated upstream Framer references (`rammandir.framer.website`).
+  - **Comprehensive Codebase & Runtime Audit**: Scanned all HTML, JS/MJS modules, and runtime bundles for any hidden analytics, remote pings, phone-home beacons, or external telemetry (e.g., Framer analytics, Google Tag Manager, Sentry, Mixpanel, Hotjar, or obscure analytics endpoints).
+  - **Anti-Cloning & Domain-Lock / IP Check Removal**: Audited and confirmed clean state with 0 domain locks or anti-tamper logic.
+  - **Air-Gap Guarantee**: Verified via automated scanner: 100% self-sovereign, zero pings to external servers.
 
 ---
 
 ## 🎨 Phase 2: Section-Divided Modular CSS Architecture & Asset Optimization
 Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets matching the React component mental model, and optimize high-weight assets:
 
-- [ ] **2.1. Establish `css/sections/` Folder Structure**:
+- [x] **2.1. Establish `css/sections/` Folder Structure**:
   - `css/main.css` — Central orchestrator that imports all section modules.
   - `css/sections/01-hero.css` — Hero arch backdrop, couple typography, temple flags, music player pill.
   - `css/sections/02-countdown.css` — "The countdown begins", live timer, photo shift controls (`--countdown-shift-y`).
@@ -34,7 +39,7 @@ Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets 
   - `css/sections/05-timeline.css` — Event itinerary cards, floral dividers, timeline canvas shift controls (`--desktop-timeline-canvas-shift`).
   - `css/sections/06-location.css` — Venue address cards, map container, weather & valet badges.
   - `css/sections/07-footer.css` — Golden Buddha garden, lotus sunburst emblem, closing benediction, RSVP toggle.
-- [ ] **2.2. Clean HTML Link Integration**:
+- [x] **2.2. Clean HTML Link Integration**:
   - Replace all inline `<style>` overrides in `index.html` with a single `<link rel="stylesheet" href="./css/main.css">`.
   - *Outcome*: 100% pixel-perfect preservation with modular, readable CSS files.
 - [ ] **2.3. Intelligent PNG-to-WebP Conversion & Asset Optimization Pipeline**:
@@ -52,9 +57,9 @@ Divide all CSS out of HTML into clean, isolated, section-by-section stylesheets 
 ---
 
 ## 📄 Phase 3: Centralized `content.json` Data Blueprint
-- [ ] **3.1. Create `templates/08_unforgettable_buddhist_wedding/content.json`**:
+- [x] **3.1. Create `templates/08_unforgettable_buddhist_wedding/content.json`**:
   - Store all default text, couple details, greeting notes, countdown target dates, story cards, and itinerary events in pure, human-readable JSON.
-- [ ] **3.2. Wire Template Engine to `content.json`**:
+- [x] **3.2. Wire Template Engine to `content.json`**:
   - Allow editing text directly in `content.json` without ever opening or searching minified HTML files.
 
 ---

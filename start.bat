@@ -16,11 +16,14 @@ for /f "tokens=2 delims=:" %%a in ('ipconfig ^| findstr /c:"IPv4 Address"') do (
     )
 )
 
-:: 2. Start Cloudflare R2 CDN Asset Sync Watcher in background
+:: 2. Ensure Port 3000 is clean (free any stale/orphaned sessions)
+powershell -NoProfile -Command "(Get-NetTCPConnection -LocalPort 3000 -State Listen -ErrorAction SilentlyContinue).OwningProcess | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }" >nul 2>&1
+
+:: 3. Start Cloudflare R2 CDN Asset Sync Watcher in background
 echo [1/3] Starting Cloudflare R2 CDN Live Asset Watcher...
 start "Unforgettable Invites - CDN R2 Watcher" /min cmd /k "cd /d \"%~dp0\" && npm run cdn:watch"
 
-:: 3. Start Cloudflare Mobile Public HTTPS Tunnel
+:: 4. Start Cloudflare Mobile Public HTTPS Tunnel
 if exist "tools\cloudflared.exe" (
     echo [2/3] Starting Cloudflare Mobile Public HTTPS Tunnel...
     del /f /q "%TEMP%\cloudflared_mobile.log" 2>nul
@@ -34,24 +37,23 @@ if exist "tools\cloudflared.exe" (
     echo.
 )
 
-:: 4. Display Access Hub Points
+:: 5. Display Access Hub Points
 echo [3/3] Application Access Hub:
 echo   ------------------------------------------------------------------
-echo   * Main Catalog & Live Demos : http://localhost:3000
-echo   * Admin Studio Dashboard    : http://localhost:3000/admin
-echo   * Wedding Invite Editor     : http://localhost:3000/admin/editor
-echo   * Template 08 Live Demo     : http://localhost:3000/templates/08_unforgettable_buddhist_wedding
-echo   * Template 07 Live Demo     : http://localhost:3000/templates/07_unforgettable_ram_mandir
+echo   * Main Catalog & Portal     : http://localhost:3000
+echo   * Studio Flag Editor        : http://localhost:3000/studio.html
+echo   * Template 08 Live Demo     : http://localhost:3000/templates/08_unforgettable_buddhist_wedding/
+echo   * Template 07 Live Demo     : http://localhost:3000/templates/07_unforgettable_ram_mandir/
 echo   * Local Wi-Fi (Phone/Tablet): http://%LOCAL_IP%:3000
 echo   ------------------------------------------------------------------
 echo.
 
-:: 5. Open the Main Catalog in default browser
+:: 6. Open the Main Catalog in default browser
 start "" powershell -NoProfile -Command "Start-Sleep -Seconds 3; Start-Process 'http://localhost:3000'"
 
-:: 6. Launch Next.js Server (Serves entire platform: Catalog, Admin, API, Templates)
-echo Starting Web Application Server - Next.js (All templates & Admin)...
+:: 7. Launch Native Fast Application Server (serve.js)
+echo Starting Native Fast Web Application Server (All templates & Portal)...
 echo.
-npm run dev -- -H 0.0.0.0 -p 3000
+node serve.js
 
 pause

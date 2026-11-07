@@ -1,0 +1,306 @@
+/* =====================================================================
+   SECTION 05: SACRED WEDDING TIMELINE / ITINERARY
+   Unified Modular Component Styles for Event Itinerary Cards
+   ===================================================================== */
+
+:root {
+    --desktop-timeline-canvas-shift: 0px;
+    --card-title-color: rgb(171, 86, 38);
+    --card-body-color: rgb(95, 37, 15);
+}
+
+/* Master Timeline Section Wrapper */
+.section-timeline {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Peacock Sacred Alcove Backdrop */
+.timeline-backdrop-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 0.200647;
+    height: auto;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.timeline-backdrop-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+/* Timeline Heading Block */
+.timeline-header-wrap {
+    position: absolute;
+    top: 840px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    max-width: 400px;
+}
+
+.timeline-heading {
+    font-family: "IvyOra Display Medium", "IvyOra Display Medium Placeholder", serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--card-body-color);
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+}
+
+.timeline-subheading {
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--card-body-color);
+    margin: 0;
+    opacity: 0.85;
+}
+
+.timeline-cards-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ---------------------------------------------------------------------
+   1. Master Event Card Component (.event-card)
+   Replaces framer-ltqi77, framer-10mht0w, framer-1tdswmf, framer-74gvdh,
+   framer-69gunc, framer-1lti5mb with a single unified component class.
+   --------------------------------------------------------------------- */
+.event-card {
+    aspect-ratio: 0.646883;
+    z-index: 2;
+    flex: none;
+    width: 148px;
+    height: auto;
+    position: absolute;
+    overflow: visible;
+    transform: translate(-50%);
+    will-change: transform;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* 2. Card Background Frame Image Wrapper */
+.event-card .card-badge-wrap {
+    position: absolute;
+    border-radius: inherit;
+    corner-shape: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.event-card .card-badge-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: cover;
+    filter: drop-shadow(0px 8px 18px rgba(120, 80, 20, 0.15));
+}
+
+/* 3. Text Slot Elements (Deduplicated Typography) */
+.event-card .card-title {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "IvyOra Display Medium", "IvyOra Display Medium Placeholder", serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--card-title-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.event-card .card-day {
+    position: absolute;
+    top: 66px;
+    left: 49%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.6px;
+    color: var(--card-body-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.event-card .card-date {
+    position: absolute;
+    top: 80px;
+    left: 49%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.6px;
+    color: var(--card-body-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.event-card .card-venue {
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.6px;
+    color: var(--card-body-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.event-card .card-time {
+    position: absolute;
+    top: 110px;
+    left: 49%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 13.6px;
+    color: var(--card-body-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.event-card .card-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 49%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
+    font-size: 8px;
+    font-weight: 300;
+    line-height: 14px;
+    color: var(--card-body-color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------
+   4. Staggered Alternating Layouts (Mobile: width < 834px)
+   --------------------------------------------------------------------- */
+.event-card.col-left {
+    left: 26%;
+}
+
+.event-card.col-right {
+    left: 74%;
+}
+
+/* Row 1: Cards 6 & 5 */
+.event-card.card-row-1 {
+    top: 970px;
+}
+
+/* Row 2: Cards 4 & 3 */
+.event-card.card-row-2 {
+    top: 1230px;
+}
+
+/* Row 3: Cards 2 & 1 */
+.event-card.card-row-3 {
+    top: 1490px;
+}
+
+/* Small mobile width fine-tuning (360px - 389px) */
+@media (max-width: 389px) {
+    .timeline-header-wrap { top: 760px; }
+    .event-card.card-row-1 { top: 880px; }
+    .event-card.card-row-2 { top: 1140px; }
+    .event-card.card-row-3 { top: 1400px; }
+}
+
+@media (min-width: 390px) and (max-width: 429px) {
+    .timeline-header-wrap { top: 820px; }
+    .event-card.card-row-1 { top: 940px; }
+    .event-card.card-row-2 { top: 1200px; }
+    .event-card.card-row-3 { top: 1460px; }
+}
+
+/* ---------------------------------------------------------------------
+   5. Tablet Layout (834px - 1199px): Horizontal Promenade
+   --------------------------------------------------------------------- */
+@media (min-width: 834px) and (max-width: 1199px) {
+    .timeline-header-wrap { top: 40px; }
+    .event-card {
+        width: 186px;
+        top: 119px !important;
+        transform: none;
+    }
+    .event-card.card-6 { left: 0px !important; }
+    .event-card.card-5 { left: 245px !important; }
+    .event-card.card-4 { left: 490px !important; }
+    .event-card.card-3 { left: 734px !important; }
+    .event-card.card-2 { left: 979px !important; }
+    .event-card.card-1 { right: 0px !important; left: auto !important; }
+}
+
+/* ---------------------------------------------------------------------
+   6. Desktop Layout (1200px+): Royal Dual Colonnade
+   --------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+    .timeline-header-wrap { top: 1380px; }
+    .timeline-heading { font-size: 38px; }
+    
+    .event-card {
+        width: 265px;
+        transform: none;
+    }
+    .event-card.card-6 { top: 1514px; left: 141px; }
+    .event-card.card-5 { top: 1514px; left: 574px; }
+    .event-card.card-4 { top: 1950px; left: 145px; }
+    .event-card.card-3 { top: 1943px; left: 578px; }
+    .event-card.card-2 { top: 53%; left: 141px; transform: translateY(-50%); }
+    .event-card.card-1 { top: 53%; left: 574px; transform: translateY(-50%); }
+
+    .event-card .card-title {
+        font-size: 24px;
+        top: 48px;
+    }
+    .event-card .card-day { top: 110px; font-size: 14px; }
+    .event-card .card-date { top: 135px; font-size: 14px; }
+    .event-card .card-venue { top: 160px; font-size: 14px; }
+    .event-card .card-time { top: 185px; font-size: 14px; }
+    .event-card .card-caption { bottom: 85px; font-size: 10px; }
+}

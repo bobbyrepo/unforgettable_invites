@@ -1,0 +1,253 @@
+/* ==========================================================================
+     1. DESKTOP STORY SECTION VERTICAL OFFSET ("Meet the BRIDE & GROOM")
+     Adjust this value in pixels to move Section 3 content up or down:
+     - Increase (e.g. 550px, 600px, 700px) to shift further DOWN.
+     - Decrease (e.g. 450px, 400px, 300px) to move further UP.
+     ========================================================================== */
+  :root {
+    --desktop-story-shift: 500px;
+
+  /* ==========================================================================
+     2. DESKTOP TIMELINE CANVAS & COUNTDOWN VERTICAL OFFSET
+     Adjust this value in pixels to move the Timeline Canvas Desktop image
+     layer ("Where our forever begins", Venue card, Countdown timer) up or down:
+     - Positive (e.g. 100px, 200px, 300px) to push further DOWN.
+     - Negative (e.g. -100px, -200px, -300px) to pull further UP closer to the gallery.
+     ========================================================================== */
+    --desktop-timeline-canvas-shift: 0px;
+
+  
+  /* ==========================================================================
+     3. COUNTDOWN & BUDDHA POSITIONING CONTROLS (Desktop, Tablet & Mobile)
+     - Positions "The countdown begins", family intro text, and live timer
+       completely ABOVE Gautam Buddha's head so zero text overlaps Buddha.
+     - Eliminates the excessive blank void below the Location Map.
+     - Offsets Buddha image by -100px so halo sits right beneath the timer.
+     ========================================================================== */
+    --desktop-countdown-top: 1750px;
+    --desktop-buddha-top: 2120px;
+
+    --tablet-countdown-top: 1220px;
+    --tablet-buddha-top: 1360px;
+
+    --mobile-countdown-top: 945px;
+    --mobile-buddha-top: 1075px;
+  }
+
+  @media (min-width: 960px) {
+    /* 1. "Meet the BRIDE & GROOM" Heading */
+    .framer-1lydhp1 .framer-1y4ffrc,
+    .framer-1lydhp1 [data-framer-name="Meet the Couple Heading"],
+    .framer-y583dn [data-framer-name="Meet the Couple Heading"] {
+      margin-bottom: calc(-1 * var(--desktop-story-shift)) !important;
+    }
+
+    /* 2. Message Frame Desktop (Plaque) */
+    .framer-1lydhp1 .framer-1hnxm70,
+    .framer-1lydhp1 [data-framer-name="Message Card Frame"],
+    .framer-y583dn [data-framer-name="Message Card Frame"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 3. Photo Gallery */
+    .framer-1lydhp1 .framer-yspo66-container,
+    .framer-1lydhp1 [data-framer-name="Photo Gallery"],
+    .framer-y583dn [data-framer-name="Photo Gallery"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 4. "Almost time to celebrate" Heading */
+    .framer-1lydhp1 .framer-1e4ftiy,
+    .framer-1lydhp1 [data-framer-name*="celebrate"],
+    .framer-1lydhp1 [data-framer-name*="spelling"],
+    .framer-y583dn [data-framer-name*="celebrate"],
+    .framer-y583dn [data-framer-name*="spelling"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 5. Section 4 (Location & Countdown) Timeline Canvas Desktop Image Layer */
+    .framer-12tiy0u,
+    [data-framer-name="4 — Location & Countdown"] {
+      margin-top: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
+    }
+    .framer-2ehbvr,
+    .framer-qqvm6f {
+      margin-top: 0px !important;
+    }
+
+
+  /* Photo Gallery: Ensure completely transparent background on Mobile, Tablet & Desktop */
+  .framer-1wwqjsk-container > div,
+  .framer-118f0os-container > div,
+  .framer-yspo66-container > div,
+  [data-framer-name="Photo Gallery"] > div {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+    /* 6. Expand page root container so all downstream sections and footer flow seamlessly */
+    .framer-72rtr7,
+    .framer-kmaf13 {
+      padding-bottom: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
+    }
+  }
+
+  
+  /* ==========================================================================
+     4. COUNTDOWN ABOVE BUDDHA & LOCATION GAP RESOLUTION
+     Sequential flow fallback: Location Map -> Countdown -> Buddha Backdrop
+     Permanent visibility & z-index enforcement across Desktop, Tablet & Mobile
+     ========================================================================== */
+
+  /* All Buddha Backdrop instances and their descendants MUST remain permanently visible */
+  [data-framer-name="Countdown Backdrop"],
+  [data-framer-name="Countdown Backdrop"] *,
+  .framer-cb5woe,
+  .framer-cb5woe *,
+  .framer-m2ne5z,
+  .framer-m2ne5z *,
+  .framer-qqvm6f,
+  .framer-qqvm6f * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  [data-framer-name="Countdown Backdrop"],
+  .framer-cb5woe,
+  .framer-m2ne5z,
+  .framer-qqvm6f {
+    z-index: 5 !important;
+  }
+
+  /* Desktop (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .framer-12tiy0u [data-framer-name="Countdown"],
+    .framer-10jtawo {
+      top: var(--desktop-countdown-top, 1750px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-12tiy0u [data-framer-name="Countdown Backdrop"],
+    .framer-qqvm6f {
+      top: var(--desktop-buddha-top, 2120px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+  /* Tablet / Laptop (min-width: 768px) and (max-width: 1279.98px) */
+  @media (min-width: 768px) and (max-width: 1279.98px) {
+    .framer-1hm5mtp [data-framer-name="Countdown Heading"],
+    .framer-1grsw9j {
+      top: var(--tablet-countdown-top, 1220px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Intro Text"],
+    .framer-16wl77i {
+      top: calc(var(--tablet-countdown-top, 1220px) + 44px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Divider"],
+    .framer-11asyj8 {
+      top: calc(var(--tablet-countdown-top, 1220px) + 94px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Timer"],
+    .framer-g74md3-container {
+      top: calc(var(--tablet-countdown-top, 1220px) + 124px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-1hm5mtp [data-framer-name="Countdown Backdrop"],
+    .framer-m2ne5z {
+      top: var(--tablet-buddha-top, 1360px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+  /* Mobile (max-width: 767.98px) */
+  @media (max-width: 767.98px) {
+    .framer-98eqjf [data-framer-name="Countdown Heading"],
+    .framer-8q42g7 {
+      top: var(--mobile-countdown-top, 1220px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Intro Text"],
+    .framer-1lmlpg0 {
+      top: calc(var(--mobile-countdown-top, 1220px) + 34px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Divider"],
+    .framer-178iokx {
+      top: calc(var(--mobile-countdown-top, 1220px) + 78px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Timer"],
+    .framer-dpi7wo-container {
+      top: calc(var(--mobile-countdown-top, 1220px) + 104px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-98eqjf [data-framer-name="Countdown Backdrop"],
+    .framer-cb5woe {
+      top: var(--mobile-buddha-top, 1360px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+/* Clean Class-Based Styling for Template Switcher */
+.template-switcher-pill {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2147483647;
+    background: rgba(18, 20, 26, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(246, 200, 96, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(246, 200, 96, 0.15);
+    border-radius: 9999px;
+    padding: 6px 14px 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 92vw;
+}
+.switcher-brand {
+    text-decoration: none;
+    color: #f6c860;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+.switcher-select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    max-width: 200px;
+}

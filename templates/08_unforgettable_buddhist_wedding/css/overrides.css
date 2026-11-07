@@ -1,0 +1,66 @@
+/* ==========================================================================
+   GLOBAL PLATFORM OVERRIDES & ERADICATORS
+   ========================================================================== */
+
+html body { background: rgb(255, 255, 255); }
+
+/* Permanently eradicate all pricing pills, buy now buttons, and competitor cart links */
+.framer-JT1sO,
+.framer-149jzij,
+.framer-v-149jzij,
+.framer-1hoq8tr,
+.framer-1bblg9p,
+.framer-tabn6s,
+[data-framer-name*="Floating button"],
+[data-framer-name*="₹ 5999"],
+[data-framer-name*="Buy Now"],
+a[href*="rzp.io"],
+a[href*="razorpay"],
+a[href*="missingpiece"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Fully disable Things to Know, Info Icons, RSVP Form, and surrounding Ornaments */
+  [data-framer-name="Things to Know"],
+  [data-framer-name="Things to Know Content"],
+  [data-framer-name="Things to Know Heading"],
+  [data-framer-name="Things to Know Subtext"],
+  [data-framer-name="Info Icons Row"],
+  [data-framer-name="Looking Forward Heading"],
+  [data-framer-name="RSVP Form"],
+  [data-framer-name="Ornament Top"],
+  [data-framer-name="Ornament Bottom"],
+    [data-framer-name="Timeline Ornament 1"],
+    [data-framer-name="Timeline Ornament 2"],
+    .framer-vlnotz,
+    .framer-dblqkx,
+    .framer-1vn5b0j,
+    .framer-1e4kx6w,
+    [data-framer-name="Mandala Decoration L"],
+  [data-framer-name="Mandala Decoration R"],
+  .framer-1r1asus,
+  .framer-11m16yz,
+  .framer-xh8krv-container,
+  .framer-15hwvei-container,
+  .framer-nubze9-container {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+  }
+

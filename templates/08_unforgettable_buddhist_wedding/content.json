@@ -1,0 +1,72 @@
+{
+  "templateId": "08_unforgettable_buddhist_wedding",
+  "templateName": "Mahabodhi Buddhist Serenity Vivah",
+  "weddingDateISO": "2026-08-29T10:30:00",
+  "couple": {
+    "groom": {
+      "name": "Siddharth",
+      "fullName": "Siddharth Vardhan",
+      "parents": "Shri. Hemant Vardhan & Smt. Sunita Vardhan"
+    },
+    "bride": {
+      "name": "Maya",
+      "fullName": "Maya Sharma",
+      "parents": "Shri. Arvind Sharma & Smt. Meena Sharma"
+    },
+    "greetingNote": "Cordially request the honor of your presence at the wedding celebration of our beloved son & daughter",
+    "hashtag": "#MayaFoundHerSiddharth"
+  },
+  "shloka": {
+    "sanskrit": "नत्थि सन्ति परं सुखं",
+    "translation": "There is no higher happiness than peace & sacred union"
+  },
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Auspicious Haldi & Sacred Chanting",
+      "date": "28th Aug 2026",
+      "day": "Thursday",
+      "time": "4:00 PM Onwards",
+      "venueName": "Lotus Pavilion Hall",
+      "venueAddress": "Pune, Maharashtra",
+      "mapDeepLink": "https://maps.google.com/?q=Lotus+Pavilion+Hall+Pune"
+    },
+    {
+      "id": "event-2",
+      "title": "Holy Vivah & Mangala Sutta Chants",
+      "date": "29th Aug 2026",
+      "day": "Friday",
+      "time": "10:30 AM Onwards",
+      "venueName": "Mahabodhi Grand Sanctuary",
+      "venueAddress": "Pune, Maharashtra",
+      "mapDeepLink": "https://maps.google.com/?q=Mahabodhi+Sanctuary+Pune"
+    },
+    {
+      "id": "event-3",
+      "title": "Evening Blessings & Reception Dinner",
+      "date": "29th Aug 2026",
+      "day": "Friday",
+      "time": "7:00 PM Onwards",
+      "venueName": "The Bodhi Gardens",
+      "venueAddress": "Pune, Maharashtra",
+      "mapDeepLink": "https://maps.google.com/?q=The+Bodhi+Gardens+Pune"
+    }
+  ],
+  "logistics": {
+    "city": "Pune, Maharashtra",
+    "weather": "27°C Pleasant Evening Breeze",
+    "valetParking": "Complimentary Valet at Main Gate",
+    "dressCode": "Traditional Royal Silk & Pastel Hues",
+    "contactNumber": "919876543210"
+  },
+  "audio": {
+    "title": "Buddhist Flute Blessing",
+    "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/buddhist_flute_blessing.mp3",
+    "autoUnlockOnFirstTouch": true
+  },
+  "toggles": {
+    "enableAudio": true,
+    "enableRSVP": false,
+    "enableThingsToKnow": false
+  }
+}

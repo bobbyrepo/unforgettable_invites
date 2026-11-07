@@ -77,10 +77,16 @@ function getAllFiles(dirPath, arrayOfFiles = []) {
   const files = fs.readdirSync(dirPath);
   files.forEach((file) => {
     const fullPath = path.join(dirPath, file);
+    // Ignore _archive and hidden/system folders
+    if (file === '_archive' || file.startsWith('.')) return;
     if (fs.statSync(fullPath).isDirectory()) {
       getAllFiles(fullPath, arrayOfFiles);
     } else {
-      arrayOfFiles.push(fullPath);
+      const ext = path.extname(file).toLowerCase();
+      // Only sync real media assets and static resources (exclude source code)
+      if (!['.tsx', '.ts', '.md', '.log', '.tmp'].includes(ext)) {
+        arrayOfFiles.push(fullPath);
+      }
     }
   });
   return arrayOfFiles;
@@ -136,8 +142,15 @@ function watchMode() {
     if (!filename) return;
     const fullPath = path.join(templatesDir, filename);
 
-    // Filter out temporary editor files
-    if (filename.includes('~') || filename.endsWith('.tmp')) return;
+    // Filter out temporary editor files, _archive, and source code files
+    if (
+      filename.includes('~') ||
+      filename.endsWith('.tmp') ||
+      filename.includes('_archive') ||
+      filename.endsWith('.tsx') ||
+      filename.endsWith('.ts') ||
+      filename.endsWith('.md')
+    ) return;
 
     if (debounceTimers[filename]) {
       clearTimeout(debounceTimers[filename]);
