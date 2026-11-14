@@ -6,7 +6,8 @@ export type TemplateId =
   | '05_unforgettable_meenakshi_royal'
   | '06_unforgettable_udaipur_palace'
   | '07_unforgettable_ram_mandir'
-  | '08_unforgettable_buddhist_wedding';
+  | '08_unforgettable_buddhist_wedding'
+  | '09_unforgettable_buddha_react';
 
 export type LifecycleStatus = 'UPCOMING' | 'WEDDING_DAY' | 'ARCHIVED';
 
@@ -27,6 +28,10 @@ export interface WeddingEvent {
   venueName: string;
   venueAddress: string;
   mapDeepLink?: string;
+  mapUrl?: string;
+  startISO?: string;
+  endISO?: string;
+  badges?: Array<'weather' | 'valet' | 'attire'>;
   dressCode?: string;
 }
 
@@ -92,5 +97,7 @@ export interface WeddingInviteData {
   toggles?: FeatureToggles;
   stats?: InviteStats;
   thumbnailUrl?: string;
+  rsvp?: { kind: 'whatsapp' | 'phone' | 'url'; target: string; label?: string; };
+  share?: { ogImage: string; title?: string; description?: string; };
   updatedAt?: string;
 }

@@ -1,114 +1,183 @@
-<!-- ========================================================================== -->
-<!-- SECTION 01: HERO ARCHWAY, SACRED BLESSINGS & COUPLE INVOCATION             -->
-<!-- Matches: css/sections/01-hero.css | Data: content.json                     -->
-<!-- ========================================================================== -->
-<section id="hero-section" class="template-section section-hero" data-section="01-hero">
-    <!-- 1. Architectural Gateway Arch & Hanging Ceremonial Bells -->
-    <div class="hero-arch-header" aria-hidden="true">
-        <picture class="arch-frame-picture">
-            <source media="(min-width: 768px)" srcset="./images/Arch_Frame_Desktop.webp">
-            <img src="./images/Arch_Frame_Mobile.webp" alt="Sacred Buddhist Arch Frame" class="arch-frame-img" loading="eager" fetchpriority="high">
+<!-- =====================================================================
+     UNFORGETTABLE INVITES — 08 MAHABODHI BUDDHIST WEDDING
+     SECTION 01: UNIFIED HERO & SACRED TEMPLE INVITATION (Single DOM Tree)
+     Compatible: Mobile (<768px), Tablet (768-1279px), Desktop (≥1280px)
+     ===================================================================== -->
+<section class="hero-unified-section" id="hero-section" data-framer-name="1 — Hero &amp; Invitation">
+    
+    <!-- 1. Background Scenic Layers (Sky, Sun, Mountains, Clouds) -->
+    <div class="hero-scenic-layer" aria-hidden="true">
+        <!-- Sky Backdrop -->
+        <picture class="hero-sky-picture">
+            <source media="(min-width: 1280px)" srcset="./images/Sky_Desktop.webp">
+            <img src="./images/Sky_Mobile.webp" alt="Sacred Sky" class="hero-sky-img" loading="eager" fetchpriority="high">
         </picture>
 
-        <!-- Hanging Ceremonial Bells (Consolidated Modular Component) -->
-        <div class="hanging-bells-suite">
-            <div class="hanging-bell bell-l1" title="Sacred Bell Left 1">
-                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
-            </div>
-            <div class="hanging-bell bell-l2" title="Floral Bell Left 2">
-                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
-            </div>
-            <div class="hanging-bell bell-r2" title="Floral Bell Right 2">
-                <img src="./images/Bell_Floral_Chain.webp" alt="Floral Chain Bell" class="bell-img" draggable="false">
-            </div>
-            <div class="hanging-bell bell-r1" title="Sacred Bell Right 1">
-                <img src="./images/Bell_Long_Chain.webp" alt="Long Chain Bell" class="bell-img" draggable="false">
-            </div>
+        <!-- Golden Sun -->
+        <div class="hero-sun-wrap" data-framer-name="Sun">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Sun_Desktop.webp">
+                <img src="./images/Sun_Mobile.webp" alt="Sacred Sun" class="hero-sun-img" loading="eager">
+            </picture>
+        </div>
+
+        <!-- Serene Mountains -->
+        <div class="hero-mountain-wrap" data-framer-name="Mountain">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Mountain_Desktop.webp">
+                <img src="./images/Mountain_Mobile.webp" alt="Bodh Gaya Mountains" class="hero-mountain-img" loading="eager">
+            </picture>
+        </div>
+
+        <!-- Heavenly Clouds -->
+        <div class="hero-cloud-wrap" data-framer-name="Cloud">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Cloud_Desktop.webp">
+                <img src="./images/Cloud_Mobile.webp" alt="Clouds" class="hero-cloud-img" loading="eager">
+            </picture>
         </div>
     </div>
 
-    <!-- 2. Sacred Invocation Emblem & Pali Shloka -->
-    <div class="hero-invocation-wrap">
-        <div class="invocation-emblem-wrap">
-            <img src="./images/Blessing_Emblem_Mobile.webp" srcset="./images/Blessing_Emblem_Mobile.webp 1x, ./images/Blessing_Emblem_Desktop.webp 2x" alt="Lord Buddha Sacred Emblem" class="invocation-emblem-img" loading="eager" fetchpriority="high">
-        </div>
-        <div class="invocation-shloka-text font-cinzel">
-            || Om Mani Padme Hum ||
-        </div>
-        <p class="invocation-subtitle font-cinzel">
-            Under the Divine Blessings of Lord Buddha
-        </p>
+    <!-- 2. Flocking Birds Simulation / Canvas Container -->
+    <div class="hero-birds-container" data-framer-name="Flocking Birds" id="flocking-birds-container">
+        <!-- Optional SVG Fallback Birds for instant zero-JS render -->
+        <svg class="hero-birds-svg" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M120,80 Q135,70 150,80 Q165,70 180,80 Q165,75 150,82 Q135,75 120,80 Z" fill="rgba(36, 0, 0, 0.65)" />
+            <path d="M280,50 Q292,42 304,50 Q316,42 328,50 Q316,46 304,52 Q292,46 280,50 Z" fill="rgba(36, 0, 0, 0.55)" />
+            <path d="M450,95 Q460,88 470,95 Q480,88 490,95 Q480,91 470,97 Q460,91 450,95 Z" fill="rgba(36, 0, 0, 0.6)" />
+            <path d="M620,60 Q632,52 644,60 Q656,52 668,60 Q656,56 644,62 Q632,56 620,60 Z" fill="rgba(36, 0, 0, 0.7)" />
+            <path d="M780,110 Q790,103 800,110 Q810,103 820,110 Q810,106 800,112 Q790,106 780,110 Z" fill="rgba(36, 0, 0, 0.5)" />
+            <path d="M850,75 Q862,67 874,75 Q886,67 898,75 Q886,71 874,77 Q862,71 850,75 Z" fill="rgba(36, 0, 0, 0.6)" />
+        </svg>
     </div>
 
-    <!-- 3. Couple Calligraphy & Title Promenade -->
-    <div class="hero-couple-wrap">
-        <div class="couple-name bride font-brother-signature" data-content-key="couple.bride.name">
-            Maya
-        </div>
-        <div class="couple-connector font-brother-signature">
-            weds
-        </div>
-        <div class="couple-name groom font-brother-signature" data-content-key="couple.groom.name">
-            Siddharth
-        </div>
-    </div>
-
-    <!-- 4. Family Invitation Benediction & Parents Colonnade -->
-    <div class="hero-benediction-card">
-        <p class="benediction-intro font-cinzel" data-content-key="couple.greetingNote">
-            Cordially request the honor of your presence at the auspicious wedding celebration of our beloved children
-        </p>
-
-        <div class="parents-colonnade">
-            <div class="parents-col bride-parents">
-                <span class="parents-role font-cinzel">Daughter of</span>
-                <p class="parents-names font-gotham" data-content-key="couple.bride.parents">
-                    Shri. Arvind Sharma &amp; Smt. Meena Sharma
-                </p>
-            </div>
-            <div class="parents-separator" aria-hidden="true">✦</div>
-            <div class="parents-col groom-parents">
-                <span class="parents-role font-cinzel">Son of</span>
-                <p class="parents-names font-gotham" data-content-key="couple.groom.parents">
-                    Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. 3D WebGL Walkway Flag Cloth Physics Simulation Container -->
-    <div class="buddhist-pillar-flag-container" aria-hidden="true">
-        <canvas id="buddhist-flag-canvas" class="buddhist-flag-webgl-canvas"></canvas>
-    </div>
-
-    <!-- 6. Architectural Mahabodhi Temple & Parallax Scenic Layers -->
-    <div class="hero-scenic-backdrop" aria-hidden="true">
-        <picture class="scenic-layer layer-temple">
-            <source media="(min-width: 768px)" srcset="./images/Temple_Desktop.webp">
-            <img src="./images/Temple_Mobile.webp" alt="Mahabodhi Temple Walkway" class="scenic-img" loading="eager">
-        </picture>
-        <img src="./images/Trees_Desktop.webp" alt="Sacred Bodhi Trees" class="scenic-layer layer-trees" loading="eager">
-        <picture class="scenic-layer layer-clouds">
-            <source media="(min-width: 768px)" srcset="./images/Cloud_Desktop.webp">
-            <img src="./images/Cloud_Mobile.webp" alt="Drifting Clouds" class="scenic-img" loading="eager">
-        </picture>
-        <picture class="scenic-layer layer-mountains">
-            <source media="(min-width: 768px)" srcset="./images/Mountain_Desktop.webp">
-            <img src="./images/Mountain_Mobile.webp" alt="Distant Sacred Peaks" class="scenic-img" loading="lazy">
-        </picture>
-        <picture class="scenic-layer layer-sun">
-            <source media="(min-width: 768px)" srcset="./images/Sun_Desktop.webp">
-            <img src="./images/Sun_Mobile.webp" alt="Golden Sunrise" class="scenic-img" loading="lazy">
-        </picture>
-        <picture class="scenic-layer layer-sky">
-            <source media="(min-width: 768px)" srcset="./images/Sky_Desktop.webp">
-            <img src="./images/Sky_Mobile.webp" alt="Serene Blue Morning Sky" class="scenic-img" loading="lazy">
+    <!-- 3. Bodh Gaya Mahabodhi Temple Tower (Mount point for 3D silk flags) -->
+    <div class="hero-temple-wrap" data-framer-name="Temple" id="hero-temple">
+        <picture>
+            <source media="(min-width: 1280px)" srcset="./images/Temple_Desktop.webp">
+            <img src="./images/Temple_Mobile.webp" alt="Mahabodhi Temple Sanctuary" class="hero-temple-img" loading="eager" fetchpriority="high">
         </picture>
     </div>
 
-    <!-- 7. Ceremonial Scroll Indicator -->
-    <div class="hero-scroll-indicator" aria-hidden="true">
-        <div class="scroll-arrow-line"></div>
-        <div class="scroll-arrow-chevron"></div>
+    <!-- 4. Upper Archway Couple Titles (Siddharth weds Maya) -->
+    <div class="hero-curved-titles" aria-label="Siddharth weds Maya">
+        <!-- Groom Title -->
+        <div class="hero-title-wrap hero-title-groom" data-framer-name="Hero Title — Siddharth">
+            <p class="hero-title-text hero-text-groom">Siddharth</p>
+        </div>
+        <!-- Connector -->
+        <div class="hero-title-wrap hero-title-connector" data-framer-name="Hero Title — and">
+            <p class="hero-title-text hero-text-connector">weds</p>
+        </div>
+        <!-- Bride Title -->
+        <div class="hero-title-wrap hero-title-bride" data-framer-name="Hero Title — Maya">
+            <p class="hero-title-text hero-text-maya">Maya</p>
+        </div>
     </div>
+
+    <!-- 5. Grand Torana Arch Frame (Carved Golden Entrance) -->
+    <div class="hero-arch-wrap" data-framer-name="Bells Frame" data-framer-appear-id="k4dhgx">
+        <picture>
+            <source media="(min-width: 1280px)" srcset="./images/Arch_Frame_Desktop.webp">
+            <img src="./images/Arch_Frame_Mobile.webp" alt="Sacred Torana Golden Arch" class="hero-arch-img" loading="eager" fetchpriority="high">
+        </picture>
+    </div>
+
+    <!-- 6. Hanging Brass Bells with Spring Physics Sway -->
+    <div class="hero-bells-layer" aria-hidden="true">
+        <!-- Bell 1 (Floral Chain - Left) -->
+        <div class="hero-bell hero-bell-1 hero-bell-sway-1" data-framer-name="Hanging Bell 1" data-framer-appear-id="12jygvc">
+            <img src="./images/Bell_Floral_Chain.webp" alt="Brass Bell 1" class="hero-bell-img">
+        </div>
+        <!-- Bell 2 (Floral Chain - Right) -->
+        <div class="hero-bell hero-bell-2 hero-bell-sway-2" data-framer-name="Hanging Bell 2" data-framer-appear-id="axskc8">
+            <img src="./images/Bell_Floral_Chain.webp" alt="Brass Bell 2" class="hero-bell-img">
+        </div>
+        <!-- Bell 3 (Long Chain - Mid Left) -->
+        <div class="hero-bell hero-bell-3 hero-bell-sway-3" data-framer-name="Hanging Bell 3" data-framer-appear-id="556qa9">
+            <img src="./images/Bell_Long_Chain.webp" alt="Brass Bell 3" class="hero-bell-img">
+        </div>
+        <!-- Bell 4 (Long Chain - Mid Right) -->
+        <div class="hero-bell hero-bell-4 hero-bell-sway-4" data-framer-name="Hanging Bell 4" data-framer-appear-id="1sl8bfq">
+            <img src="./images/Bell_Long_Chain.webp" alt="Brass Bell 4" class="hero-bell-img">
+        </div>
+        <!-- Bell 5 (Long Chain - Outer Left - Desktop) -->
+        <div class="hero-bell hero-bell-5 hero-bell-sway-5 desktop-only-bell" data-framer-name="Hanging Bell 5" data-framer-appear-id="17r56f2">
+            <img src="./images/Bell_Long_Chain.webp" alt="Brass Bell 5" class="hero-bell-img">
+        </div>
+        <!-- Bell 6 (Long Chain - Outer Right - Desktop) -->
+        <div class="hero-bell hero-bell-6 hero-bell-sway-6 desktop-only-bell" data-framer-name="Hanging Bell 6" data-framer-appear-id="1516w3j">
+            <img src="./images/Bell_Long_Chain.webp" alt="Brass Bell 6" class="hero-bell-img">
+        </div>
+    </div>
+
+    <!-- 7. Sacred Invocations, Blessings & Formal Invitation Details Card -->
+    <div class="hero-invitation-card" data-framer-name="Invitation Details">
+        
+        <!-- Sacred Sanskrit Invocation ("Om Mani Padme Hum" / Ganesha Benediction) -->
+        <div class="hero-invocation-wrap" data-framer-name="Ganpati Name (img)">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Invocation_Text_Desktop.webp">
+                <img src="./images/Invocation_Text_Mobile.webp" alt="Sacred Invocation" class="hero-invocation-img">
+            </picture>
+        </div>
+
+        <!-- Buddhist Dharmachakra Insignia Emblem -->
+        <div class="hero-emblem-wrap" data-framer-name="Ganpati Icon">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Blessing_Emblem_Desktop.webp">
+                <img src="./images/Blessing_Emblem_Mobile.webp" alt="Dharmachakra Blessing Emblem" class="hero-emblem-img">
+            </picture>
+        </div>
+
+        <!-- Calligraphic Benediction Script Line -->
+        <div class="hero-benediction-wrap" data-framer-name="Shri Line (img)">
+            <picture>
+                <source media="(min-width: 1280px)" srcset="./images/Benediction_Line_Desktop.webp">
+                <img src="./images/Benediction_Line_Mobile.webp" alt="Sacred Benediction Line" class="hero-benediction-img">
+            </picture>
+        </div>
+
+        <!-- Groom Parents -->
+        <div class="hero-groom-parents" data-framer-name="Groom Parents">
+            <p class="hero-parents-text">Shri. Hemant Vardhan &amp; Smt. Sunita Vardhan</p>
+        </div>
+
+        <!-- Formal Invitation Line -->
+        <div class="hero-invitation-line" data-framer-name="Invitation Line">
+            <p class="hero-invitation-text">Cordially request the honor of your presence at the wedding celebration of our beloved son</p>
+        </div>
+
+        <!-- Main Couple Names Display -->
+        <div class="hero-couple-display">
+            <!-- Groom Name -->
+            <div class="hero-groom-name" data-framer-name="Groom Name — Siddharth">
+                <p class="hero-name-primary">Siddharth</p>
+            </div>
+            <!-- Connector -->
+            <div class="hero-ampersand" data-framer-name="Ampersand — and">
+                <p class="hero-ampersand-text">and</p>
+            </div>
+            <!-- Bride Name -->
+            <div class="hero-bride-name" data-framer-name="Bride Name — Maya">
+                <p class="hero-name-primary">Maya</p>
+            </div>
+        </div>
+
+        <!-- Daughter of Label -->
+        <div class="hero-daughter-of" data-framer-name="Label — Daughter of">
+            <p class="hero-label-subtext">Daughter of</p>
+        </div>
+
+        <!-- Bride Parents -->
+        <div class="hero-bride-parents" data-framer-name="Bride Parents">
+            <p class="hero-parents-text">Shri. Arvind Sharma &amp; Smt. Meena Sharma</p>
+        </div>
+
+        <!-- Events Intro Line -->
+        <div class="hero-events-intro" data-framer-name="Label — Events Intro">
+            <p class="hero-events-intro-text">On the following events</p>
+        </div>
+    </div>
+
 </section>

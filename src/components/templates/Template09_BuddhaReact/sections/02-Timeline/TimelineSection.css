@@ -1,0 +1,316 @@
+/* ==========================================================================
+   02-TIMELINE SECTION — AUTHENTIC FRAMER ARCHITECTURE & RESPONSIVENESS
+   Includes:
+   - Sandstone Colonnade Courtyard (Pillar Backdrop behind Temple)
+   - Carved Sandstone Bridge with Golden Deer (Peacock Backdrop)
+   - 6 Sacred Ceremonial Event Cards (Haldi, Mehendi, Sangeet, Shadi, Gala)
+   ========================================================================== */
+
+.framer-timeline-root {
+    position: absolute;
+    top: 2228px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4380px;
+    z-index: 2;
+    overflow: visible;
+    pointer-events: auto;
+    box-sizing: border-box;
+}
+
+@media (max-width: 767.98px) {
+    .framer-timeline-root {
+        top: 938px;
+        height: 2445px;
+    }
+}
+
+/* -------------------------------------------------------------------------
+   1. PILLAR BACKDROP (Sandstone Colonnade Courtyard behind Temple)
+   ------------------------------------------------------------------------- */
+.timeline-pillar-backdrop {
+    position: absolute;
+    top: 141px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 2095px;
+    z-index: 0;
+    pointer-events: none;
+    display: block;
+}
+
+.colonnade-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    .timeline-pillar-backdrop {
+        top: 231px;
+        height: 433px;
+    }
+}
+
+/* -------------------------------------------------------------------------
+   2. PEACOCK BACKDROP (Carved Sandstone Bridge with Golden Deer & Floral Trees)
+   ------------------------------------------------------------------------- */
+.timeline-peacock-backdrop {
+    position: absolute;
+    top: 719px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4698px;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+}
+
+.alcove-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+@media (max-width: 767.98px) {
+    .timeline-peacock-backdrop {
+        top: 329px;
+        height: 1978px;
+    }
+}
+
+/* -------------------------------------------------------------------------
+   3. TIMELINE HEADING & SUBTEXT
+   ------------------------------------------------------------------------- */
+.timeline-heading-block {
+    position: absolute;
+    top: 2290px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1043px, 92vw);
+    z-index: 2;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.timeline-title-text {
+    font-family: 'IvyOra Display Medium', Georgia, serif;
+    font-size: 80px;
+    font-weight: 500;
+    color: #5f250f;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.01em;
+    text-shadow: 0 1px 3px rgba(255, 248, 240, 0.8);
+}
+
+.timeline-subtext-block {
+    position: absolute;
+    top: 2400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(600px, 90vw);
+    z-index: 2;
+    text-align: center;
+    pointer-events: auto;
+}
+
+.timeline-subtext-text {
+    font-family: 'Gotham Light', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    color: #5f250f;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 767.98px) {
+    .timeline-heading-block {
+        top: 928px;
+        width: 90vw;
+    }
+    .timeline-title-text {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+    .timeline-subtext-block {
+        top: 980px;
+        width: 88vw;
+    }
+    .timeline-subtext-text {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+}
+
+/* -------------------------------------------------------------------------
+   4. EVENT PILLARS CARDS (HALDI, MEHENDI, SANGEET, SHADI, GALA / RECEPTION)
+   ------------------------------------------------------------------------- */
+.timeline-events-container {
+    position: absolute;
+    top: 2543px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1360px, 96vw);
+    z-index: 3;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.timeline-pillars-row {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* Individual Pillar Card */
+.event-pillar-card {
+    position: relative;
+    width: 204px;
+    height: 334px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 54px 16px 26px 16px;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.event-pillar-card:hover {
+    transform: translateY(-6px);
+}
+
+.pillar-frame-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 6px 16px rgba(95, 37, 15, 0.12));
+}
+
+.pillar-content-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pillar-title-area {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pillar-event-title {
+    font-family: 'IvyOra Display Medium', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ab5626;
+    line-height: 1.15;
+    margin: 0;
+    text-align: center;
+}
+
+.pillar-details-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin: auto 0;
+}
+
+.pillar-day,
+.pillar-date,
+.pillar-venue,
+.pillar-time {
+    font-family: 'Gotham Light', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #5f250f;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.pillar-link-cta {
+    font-family: 'Gotham Light', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: #5f250f;
+    opacity: 0.85;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    margin: 0;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* -------------------------------------------------------------------------
+   5. MOBILE RESPONSIVE TIMELINE CARDS
+   ------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .timeline-events-container {
+        top: 1040px;
+        transform: translateX(-50%);
+        width: 92vw;
+        max-width: 360px;
+    }
+
+    .timeline-pillars-row {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 10px;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+
+    .event-pillar-card {
+        width: 100%;
+        height: 236px;
+        padding: 38px 10px 18px 10px;
+    }
+
+    .pillar-event-title {
+        font-size: 13px;
+        line-height: 1.15;
+    }
+
+    .pillar-day,
+    .pillar-date,
+    .pillar-venue,
+    .pillar-time {
+        font-size: 10px;
+        line-height: 1.25;
+    }
+
+    .pillar-link-cta {
+        font-size: 8px;
+    }
+}

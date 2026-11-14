@@ -23,6 +23,25 @@ export interface TemplateMetadata {
 
 export const MASTER_TEMPLATES: TemplateMetadata[] = [
   {
+    id: '09_unforgettable_buddha_react',
+    name: 'Buddhist Serenity Vivah (React)',
+    tag: 'Next.js React',
+    category: 'vedic',
+    icon: '☸️',
+    description: 'Ultra-fast, modular Next.js React edition of the Buddhist Wedding invitation with GSAP scroll parallax and zero Framer bloat.',
+    specs: [
+      { val: 'Next.js 14', key: 'Engine' },
+      { val: '60 FPS', key: 'Framerate' },
+      { val: 'Temple Flute', key: 'Audio' },
+    ],
+    defaultCouple: {
+      groom: 'Siddharth',
+      bride: 'Maya',
+      city: 'Bodh Gaya, Bihar',
+    },
+    demoPath: '/templates/09_unforgettable_buddha_react/',
+  },
+  {
     id: '08_unforgettable_buddhist_wedding',
     name: 'Buddhist Serenity Vivah',
     tag: 'Serene Temple',

@@ -1,0 +1,117 @@
+/* ==========================================================================
+   07-FOOTER SECTION STYLES
+   Golden Gautam Buddha Garden, Sacred Lotus Halo & RSVP Action
+   ========================================================================== */
+
+.footerSection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(750 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding: calc(60 * var(--u)) calc(16 * var(--u)) calc(80 * var(--u)) calc(16 * var(--u));
+  overflow: visible;
+}
+
+/* Golden Buddha Statue Image Anchor */
+.buddhaContainer {
+  position: relative;
+  width: calc(320 * var(--u));
+  height: calc(440 * var(--u));
+  margin-bottom: calc(24 * var(--u));
+  z-index: var(--z-arch, 3);
+}
+
+.buddhaImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 0 35px rgba(224, 170, 62, 0.4));
+}
+
+/* Lotus Sunburst Halo */
+.lotusHalo {
+  position: absolute;
+  top: calc(40 * var(--u));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(180 * var(--u));
+  height: calc(180 * var(--u));
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 215, 122, 0.6) 0%, rgba(224, 170, 62, 0.2) 50%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+  animation: haloPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes haloPulse {
+  0% { transform: translateX(-50%) scale(0.95); opacity: 0.7; }
+  100% { transform: translateX(-50%) scale(1.08); opacity: 1; }
+}
+
+/* Closing Benediction Text */
+.closingBlock {
+  position: relative;
+  z-index: var(--z-text, 5);
+  text-align: center;
+  max-width: calc(360 * var(--u));
+  margin-bottom: calc(32 * var(--u));
+}
+
+.closingTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(20 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(2 * var(--u));
+  margin: 0 0 calc(8 * var(--u)) 0;
+  text-transform: uppercase;
+}
+
+.closingText {
+  font-family: 'Alegreya', Georgia, serif;
+  font-size: calc(14 * var(--u));
+  line-height: 1.6;
+  color: rgba(245, 215, 127, 0.85);
+  margin: 0;
+}
+
+/* RSVP Action Button */
+.rsvpActionBtn {
+  position: relative;
+  z-index: var(--z-text, 5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+  font-family: 'Cinzel', serif;
+  font-size: calc(13 * var(--u));
+  font-weight: 700;
+  letter-spacing: calc(1.5 * var(--u));
+  color: #0b0704;
+  background: linear-gradient(135deg, #f5d77f 0%, #e0aa3e 100%);
+  border: none;
+  border-radius: calc(24 * var(--u));
+  padding: calc(14 * var(--u)) calc(36 * var(--u));
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(224, 170, 62, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvpActionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(224, 170, 62, 0.6);
+}
+
+.copyrightTag {
+  margin-top: calc(40 * var(--u));
+  font-family: 'Gotham Medium', sans-serif;
+  font-size: calc(10 * var(--u));
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: calc(1 * var(--u));
+}

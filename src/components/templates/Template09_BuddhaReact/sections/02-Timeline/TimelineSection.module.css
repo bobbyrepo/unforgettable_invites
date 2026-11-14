@@ -1,0 +1,163 @@
+/* ==========================================================================
+   02-TIMELINE SECTION STYLES
+   Auspicious Ceremonies with alternating card rotation & Peacock Backdrop
+   ========================================================================== */
+
+.timelineSection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(1800 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: calc(60 * var(--u)) calc(16 * var(--u));
+}
+
+/* Peacock Alcove Scenic Backdrop */
+.alcoveBackdrop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: calc(480 * var(--u));
+  height: 100%;
+  background-image: url('/templates/08_unforgettable_buddhist_wedding/images/Alcove_Backdrop_Mobile.webp');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: var(--z-back, 1);
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+  .alcoveBackdrop {
+    max-width: 100%;
+    background-image: url('/templates/08_unforgettable_buddhist_wedding/images/Alcove_Backdrop_Desktop.webp');
+  }
+}
+
+.headingBlock {
+  position: relative;
+  z-index: var(--z-text, 5);
+  text-align: center;
+  margin-bottom: calc(40 * var(--u));
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(2 * var(--u));
+  text-transform: uppercase;
+  margin: 0 0 calc(8 * var(--u)) 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.sectionSubtext {
+  font-family: 'Alegreya', serif;
+  font-size: calc(14 * var(--u));
+  color: var(--color-sandstone, rgba(171, 86, 38, 0.85));
+  margin: 0;
+}
+
+/* Event Cards Flow Container */
+.cardsStack {
+  position: relative;
+  z-index: var(--z-card, 4);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(32 * var(--u));
+}
+
+/* Single Event Card */
+.eventCard {
+  position: relative;
+  width: 100%;
+  max-width: calc(340 * var(--u));
+  background: rgba(18, 12, 8, 0.82);
+  border: 1px solid rgba(224, 170, 62, 0.35);
+  border-radius: calc(12 * var(--u));
+  padding: calc(24 * var(--u)) calc(20 * var(--u));
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+/* Alternating Card Rotation: Even +5deg, Odd -5deg */
+.cardTiltEven {
+  transform: rotate(3deg);
+}
+
+.cardTiltOdd {
+  transform: rotate(-3deg);
+}
+
+.cardDateBadge {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: calc(11 * var(--u));
+  font-weight: 600;
+  color: var(--color-gold-light, #f5d77f);
+  letter-spacing: calc(1 * var(--u));
+  background: rgba(224, 170, 62, 0.15);
+  border: 1px solid rgba(224, 170, 62, 0.3);
+  border-radius: calc(20 * var(--u));
+  padding: calc(4 * var(--u)) calc(14 * var(--u));
+  margin-bottom: calc(12 * var(--u));
+  text-transform: uppercase;
+}
+
+.cardEventTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(18 * var(--u));
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 calc(8 * var(--u)) 0;
+  letter-spacing: calc(0.5 * var(--u));
+}
+
+.cardTimeVenue {
+  font-family: 'Alegreya', serif;
+  font-size: calc(13 * var(--u));
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin: 0 0 calc(14 * var(--u)) 0;
+}
+
+.cardDivider {
+  width: calc(80 * var(--u));
+  height: calc(1 * var(--u));
+  background: linear-gradient(90deg, transparent, rgba(224, 170, 62, 0.6), transparent);
+  margin: calc(12 * var(--u)) auto;
+}
+
+.mapButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: calc(10 * var(--u));
+  font-weight: 600;
+  letter-spacing: calc(1 * var(--u));
+  color: var(--color-gold, #e0aa3e);
+  text-decoration: none;
+  border: 1px solid rgba(224, 170, 62, 0.4);
+  border-radius: calc(6 * var(--u));
+  padding: calc(6 * var(--u)) calc(16 * var(--u));
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.mapButton:hover {
+  background: rgba(224, 170, 62, 0.15);
+  border-color: var(--color-gold, #e0aa3e);
+}

@@ -36,7 +36,7 @@
 
     let activeBreakpoint = detectCurrentBreakpoint();
     let activeFlag = 'r1';
-    let isPanelOpen = true;
+    let isPanelOpen = false;
     let dragEnabled = true;
 
     // Multi-device responsive state store
@@ -167,7 +167,7 @@
                 font-size: 13px;
                 font-weight: 700;
                 cursor: pointer;
-                display: flex;
+                display: none;
                 align-items: center;
                 gap: 8px;
                 box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 12px rgba(246,200,96,0.2);
@@ -190,7 +190,7 @@
                 box-shadow: 0 20px 40px rgba(0,0,0,0.85), 0 0 20px rgba(246,200,96,0.12);
                 backdrop-filter: blur(16px);
                 -webkit-backdrop-filter: blur(16px);
-                display: flex;
+                display: none;
                 flex-direction: column;
                 gap: 10px;
                 box-sizing: border-box;
@@ -264,7 +264,7 @@
 
         <button id="vfs-toggle-btn">
             <span>🚩 Flag Studio (Responsive)</span>
-            <span id="vfs-toggle-icon">▼</span>
+            <span id="vfs-toggle-icon">▲</span>
         </button>
 
         <div id="vfs-panel">

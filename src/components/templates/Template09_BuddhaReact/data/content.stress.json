@@ -1,0 +1,111 @@
+{
+  "slug": "dr-harishchandra-and-rajeshwari",
+  "templateId": "09_unforgettable_buddha_react",
+  "locale": "en",
+  "timeZone": "Asia/Kolkata",
+  "couple": {
+    "bride": {
+      "name": "Rajeshwari Devi Deshmukh",
+      "parents": "Shriman Shivajirao Deshmukh & Shrimati Anuradha Deshmukh (Patil Family of Sangli)",
+      "titles": "Granddaughter of Late Rao Bahadur Shankarrao Deshmukh",
+      "bio": "Dedicated to the ancient path of Dhamma, mindful grace, environmental stewardship, and lifelong educational pursuit."
+    },
+    "groom": {
+      "name": "Dr. Harishchandra Suryavanshi",
+      "parents": "Prof. Dr. Dnyaneshwar Suryavanshi & Dr. Kamalabai Suryavanshi (MBBS, MD)",
+      "titles": "Eldest Son & Associate Professor of Cognitive Neuroscience",
+      "bio": "Practicing the paramitas of wisdom, unconditional metta, and ethical living alongside the medical community."
+    },
+    "connector": "weds with divine blessings",
+    "note": "Together with our respected elders, esteemed grandparents, and extended families from Maharashtra and Karnataka, we most humbly invite your auspicious presence to witness our sacred vivah ceremony.",
+    "portrait": {
+      "src": "/templates/08_unforgettable_buddhist_wedding/images/countdown_photo.webp",
+      "alt": "Dr. Harishchandra & Rajeshwari",
+      "width": 868,
+      "height": 4326
+    }
+  },
+  "shloka": {
+    "text": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि • सब्बदा सोत्थि भवन्तु ते",
+    "translation": "May the supreme wisdom of the Buddha, the righteous path of Dhamma, and the harmonious Sangha protect, enlighten, and bless this matrimonial bond with peace and prosperity."
+  },
+  "gallery": [
+    {
+      "src": "/templates/08_unforgettable_buddhist_wedding/images/gallery_1.webp",
+      "alt": "Ceremonial moment",
+      "width": 800,
+      "height": 1000
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Auspicious Haldi, Mangal Snan & Paritta Sutta Chanting",
+      "startISO": "2026-08-28T09:00:00+05:30",
+      "venueName": "The Heritage Grand Banquet Palace & Convention Center",
+      "venueAddress": "Plot 104, VIP Airport Ring Road, Near Viman Nagar Interchange, Pune, Maharashtra 411014",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["valet", "attire"]
+    },
+    {
+      "id": "event-2",
+      "title": "Buddh Vandana, Sangeet & Musical Evening with Classical Sitar",
+      "startISO": "2026-08-28T17:00:00+05:30",
+      "venueName": "The Royal Lotus Pavilion Hall, Sanctuary Wings A & B",
+      "venueAddress": "Survey 45/2, Koregaon Park North Main Road, Next to Chhatrapati Garden, Pune, Maharashtra 411001",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["weather", "valet", "attire"]
+    },
+    {
+      "id": "event-3",
+      "title": "Main Auspicious Vivah, Garland Exchange & Blessings",
+      "startISO": "2026-08-29T10:30:00+05:30",
+      "venueName": "Mahabodhi Grand Sanctuary & Meditation Amphi-theater",
+      "venueAddress": "Senapati Bapat Road, Opposite University Main Gate, Pune, Maharashtra 411016",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["valet", "attire"]
+    },
+    {
+      "id": "event-4",
+      "title": "Sacred Triple Gem Blessings & Dhamma Discourse by Respected Bhikkhus",
+      "startISO": "2026-08-29T12:30:00+05:30",
+      "venueName": "Mahabodhi Grand Sanctuary Inner Lotus Hall",
+      "venueAddress": "Senapati Bapat Road, Pune, Maharashtra 411016",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["attire"]
+    },
+    {
+      "id": "event-5",
+      "title": "Evening Wedding Reception, Royal Feast & Felicitations",
+      "startISO": "2026-08-29T19:00:00+05:30",
+      "venueName": "The Imperial Bodhi Grand Ballroom & Lawns",
+      "venueAddress": "Koregaon Park Annexe, Mundhwa-Kalyani Nagar Bridge Road, Pune, Maharashtra 411036",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["weather", "valet", "attire"]
+    },
+    {
+      "id": "event-6",
+      "title": "Farewell Brunch & Family Gratitude Gathering",
+      "startISO": "2026-08-30T10:00:00+05:30",
+      "venueName": "The Riverside Magnolia Terraces",
+      "venueAddress": "Bund Garden Road, Near Boat Club, Pune, Maharashtra 411001",
+      "mapUrl": "https://maps.google.com/?q=Pune",
+      "badges": ["valet"]
+    }
+  ],
+  "rsvp": {
+    "kind": "whatsapp",
+    "target": "+919876543210",
+    "label": "Confirm Attendance on WhatsApp"
+  },
+  "audio": {
+    "title": "Buddhist Flute Blessing",
+    "src": "/templates/08_unforgettable_buddhist_wedding/audio/buddhist_flute_blessing.mp3",
+    "startOnFirstTap": true
+  },
+  "share": {
+    "ogImage": "/templates/09_unforgettable_buddha_react/og_card_1200x630.jpg",
+    "title": "Dr. Harishchandra & Rajeshwari — Sacred Buddhist Wedding Invitation",
+    "description": "Cordially inviting you to our grand wedding ceremony and celebrations."
+  }
+}

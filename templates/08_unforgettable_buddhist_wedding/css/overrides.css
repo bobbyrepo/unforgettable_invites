@@ -2,7 +2,7 @@
    GLOBAL PLATFORM OVERRIDES & ERADICATORS
    ========================================================================== */
 
-html body { background: rgb(255, 255, 255); }
+html body { background: rgb(255, 255, 255); margin: 0; padding: 0; }
 
 /* Permanently eradicate all pricing pills, buy now buttons, and competitor cart links */
 .framer-JT1sO,
@@ -29,29 +29,31 @@ a[href*="missingpiece"] {
     left: -9999px !important;
 }
 
-/* Fully disable Things to Know, Info Icons, RSVP Form, and surrounding Ornaments */
-  [data-framer-name="Things to Know"],
-  [data-framer-name="Things to Know Content"],
-  [data-framer-name="Things to Know Heading"],
-  [data-framer-name="Things to Know Subtext"],
-  [data-framer-name="Info Icons Row"],
-  [data-framer-name="Looking Forward Heading"],
-  [data-framer-name="RSVP Form"],
-  [data-framer-name="Ornament Top"],
-  [data-framer-name="Ornament Bottom"],
-    [data-framer-name="Timeline Ornament 1"],
-    [data-framer-name="Timeline Ornament 2"],
-    .framer-vlnotz,
-    .framer-dblqkx,
-    .framer-1vn5b0j,
-    .framer-1e4kx6w,
-    [data-framer-name="Mandala Decoration L"],
-  [data-framer-name="Mandala Decoration R"],
-  .framer-1r1asus,
-  .framer-11m16yz,
-  .framer-xh8krv-container,
-  .framer-15hwvei-container,
-  .framer-nubze9-container {
+/* Fully disable Things to Know, Info Icons, RSVP Form, Spacers, and surrounding Ornaments */
+[data-framer-name*="White Spacer"],
+.framer-ie3i0y,
+[data-framer-name="Things to Know"],
+[data-framer-name="Things to Know Content"],
+[data-framer-name="Things to Know Heading"],
+[data-framer-name="Things to Know Subtext"],
+[data-framer-name="Info Icons Row"],
+[data-framer-name="Looking Forward Heading"],
+[data-framer-name="RSVP Form"],
+[data-framer-name="Ornament Top"],
+[data-framer-name="Ornament Bottom"],
+[data-framer-name="Timeline Ornament 1"],
+[data-framer-name="Timeline Ornament 2"],
+.framer-vlnotz,
+.framer-dblqkx,
+.framer-1vn5b0j,
+.framer-1e4kx6w,
+[data-framer-name="Mandala Decoration L"],
+[data-framer-name="Mandala Decoration R"],
+.framer-1r1asus,
+.framer-11m16yz,
+.framer-xh8krv-container,
+.framer-15hwvei-container,
+.framer-nubze9-container {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
@@ -62,5 +64,168 @@ a[href*="missingpiece"] {
     opacity: 0 !important;
     pointer-events: none !important;
     overflow: hidden !important;
-  }
+}
 
+/* ==========================================================================
+   Section 4 — Timeline Frame Overlay & Timeline Canvas Background Architecture
+   ========================================================================== */
+
+/* 1. Prevent parent page containers from clipping tall backgrounds or bottom Buddha */
+.framer-SNM3S,
+.framer-rweuzc {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+html body #main .framer-SNM3S .framer-98eqjf,
+html body #main .framer-SNM3S .framer-12tiy0u,
+html body #main [data-framer-name*="4 — Location & Countdown"],
+html body #main [data-framer-name="Section Background"] {
+    overflow: visible !important;
+    z-index: 10 !important;
+}
+
+/* 2. Couple Photo Container Stacking Context & Frame Overlay */
+[data-framer-name="Section Background"] {
+    position: absolute;
+    z-index: 10 !important;
+    overflow: visible !important;
+}
+
+/* Mobile & Tablet: Timeline_Frame_Mobile overlay above couple photo */
+@media (max-width: 1024px) {
+    [data-framer-name="Section Background"] {
+        top: -70px !important;
+    }
+    [data-framer-name="Section Background"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/Timeline_Frame_Mobile.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 12 !important;
+    }
+}
+
+/* Desktop: Timeline_Frame_Desktop overlay above couple photo */
+@media (min-width: 1025px) {
+    [data-framer-name="Section Background"] {
+        top: -135px !important;
+    }
+    [data-framer-name="Section Background"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/Timeline_Frame_Desktop.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 12 !important;
+    }
+}
+
+/* 3. Timeline Canvas Background: Placed behind everything, perfectly filling section */
+[data-framer-name="Location & Countdown BG"],
+.framer-jab4b0,
+.framer-2ehbvr,
+.framer-13ss7kg {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Background image specifically (Timeline Canvas) - Exclude Leaflet map tiles and markers */
+[data-framer-name="Location & Countdown BG"] img:not(.leaflet-tile):not(.leaflet-marker-icon),
+.framer-jab4b0 > div > img,
+.framer-2ehbvr > div > img,
+.framer-13ss7kg > div > img,
+img[src*="Timeline_Canvas"] {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* ==========================================================================
+   Leaflet Interactive Map Protection (Preserve Tiles, Pins & Controls)
+   ========================================================================== */
+.leaflet-container {
+    background: #e5e3df !important;
+}
+
+.leaflet-container .leaflet-tile-pane img,
+.leaflet-container img.leaflet-tile,
+.leaflet-tile {
+    width: 256px !important;
+    height: 256px !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 256px !important;
+    min-height: 256px !important;
+    object-fit: fill !important;
+    display: block !important;
+    visibility: inherit !important;
+    opacity: 1 !important;
+}
+
+.leaflet-container .leaflet-marker-pane img,
+.leaflet-container .leaflet-marker-icon,
+.leaflet-container .leaflet-shadow-pane img {
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+}
+
+/* 4. Ensure Section 4 containers do not spill any overflow */
+.framer-12tiy0u,
+.framer-1hm5mtp,
+.framer-98eqjf {
+    overflow: hidden !important;
+}
+
+
+/* ==========================================================================
+   Message Card Frame - Text Color Uniformity
+   Enforce dark brown color rgb(95, 37, 15) across all words in the message
+   ========================================================================== */
+[data-framer-name="Message Scroll Text"] span,
+[data-framer-name="Message Card Frame"] [data-framer-name="Message Scroll Text"] span,
+.framer-1ffy2vr-container span,
+.framer-1fgi09q-container span,
+.framer-1qeunjp-container span {
+    color: rgb(95, 37, 15) !important;
+}
+
+/* ==========================================================================
+   Mobile Sky Layer - Upward Offset & Extended Parallax Coverage
+   ========================================================================== */
+@media (max-width: 1024px) {
+    :root {
+        --sky-mobile-offset-y: -1080px;
+    }
+    .framer-b8pafc,
+    .framer-l0jkpb,
+    [data-framer-name="Sky Background"] {
+        height: 2600px !important;
+        min-height: 2600px !important;
+        transform: translate3d(0, -1080px, 0) !important;
+        will-change: transform;
+    }
+}

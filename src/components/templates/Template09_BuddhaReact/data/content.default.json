@@ -1,0 +1,129 @@
+{
+  "slug": "maya-and-siddharth",
+  "templateId": "09_unforgettable_buddha_react",
+  "locale": "en",
+  "timeZone": "Asia/Kolkata",
+  "couple": {
+    "bride": {
+      "name": "Maya",
+      "parents": "Shri Arvind Sharma & Smt. Meena Sharma",
+      "titles": "Beloved Daughter",
+      "bio": "A journey of mindful serenity, grace, and eternal devotion."
+    },
+    "groom": {
+      "name": "Siddharth",
+      "parents": "Shri Hemant Vardhan & Smt. Sunita Vardhan",
+      "titles": "Beloved Son",
+      "bio": "Guided by compassion, wisdom, and boundless love."
+    },
+    "connector": "weds",
+    "note": "Cordially request the honor of your presence at the wedding celebration of our beloved son & daughter",
+    "portrait": {
+      "src": "/templates/08_unforgettable_buddhist_wedding/images/countdown_photo.webp",
+      "alt": "Maya & Siddharth",
+      "width": 868,
+      "height": 4326
+    }
+  },
+  "shloka": {
+    "text": "बुद्धं शरणं गच्छामि • धर्मं शरणं गच्छामि • संघं शरणं गच्छामि",
+    "translation": "May wisdom, boundless compassion, and peaceful harmony bless this sacred union for all lifetimes."
+  },
+  "gallery": [
+    {
+      "src": "/templates/08_unforgettable_buddhist_wedding/images/gallery_1.webp",
+      "alt": "Ceremonial moment",
+      "width": 800,
+      "height": 1000
+    }
+  ],
+  "events": [
+    {
+      "id": "event-1",
+      "title": "Mangala Vandana & Mehendi",
+      "startISO": "2026-08-28T16:00:00+05:30",
+      "date": "28th Aug 2026",
+      "day": "Thursday",
+      "time": "4:00 PM Onwards",
+      "venueName": "Lotus Pavilion Hall",
+      "venueAddress": "Koregaon Park, Pune, Maharashtra",
+      "mapUrl": "https://maps.google.com/?q=Lotus+Pavilion+Hall+Pune",
+      "badges": ["weather", "valet", "attire"]
+    },
+    {
+      "id": "event-2",
+      "title": "Auspicious Haldi & Teerth Snan",
+      "startISO": "2026-08-29T10:30:00+05:30",
+      "date": "29th Aug 2026",
+      "day": "Friday",
+      "time": "10:30 AM Onwards",
+      "venueName": "Mahabodhi Grand Sanctuary",
+      "venueAddress": "Senapati Bapat Road, Pune, Maharashtra",
+      "mapUrl": "https://maps.google.com/?q=Mahabodhi+Sanctuary+Pune",
+      "badges": ["valet", "attire"]
+    },
+    {
+      "id": "event-3",
+      "title": "Bodhi Sangeet & Musical Evening",
+      "startISO": "2026-08-29T18:00:00+05:30",
+      "date": "29th Aug 2026",
+      "day": "Friday",
+      "time": "6:00 PM Onwards",
+      "venueName": "The Bodhi Gardens",
+      "venueAddress": "Near Osho Teerth Park, Pune, Maharashtra",
+      "mapUrl": "https://maps.google.com/?q=The+Bodhi+Gardens+Pune",
+      "badges": ["valet", "attire"]
+    },
+    {
+      "id": "event-4",
+      "title": "Sacred Bodhi Vivaha (Shadi)",
+      "startISO": "2026-08-29T20:00:00+05:30",
+      "date": "29th Aug 2026",
+      "day": "Friday",
+      "time": "8:00 PM Onwards",
+      "venueName": "Mahabodhi Sanctuary",
+      "venueAddress": "Senapati Bapat Road, Pune, Maharashtra",
+      "mapUrl": "https://maps.google.com/?q=Mahabodhi+Sanctuary+Pune",
+      "badges": ["valet", "attire"]
+    },
+    {
+      "id": "event-5",
+      "title": "Pradakshina of Light & Lanterns",
+      "startISO": "2026-08-30T18:00:00+05:30",
+      "date": "30th Aug 2026",
+      "day": "Saturday",
+      "time": "6:00 PM Onwards",
+      "venueName": "Temple Grounds",
+      "venueAddress": "Bodh Gaya, Bihar",
+      "mapUrl": "https://maps.google.com/?q=Bodh+Gaya",
+      "badges": ["weather", "attire"]
+    },
+    {
+      "id": "event-6",
+      "title": "Grand Bodhi Gala (Royal Reception)",
+      "startISO": "2026-08-30T20:00:00+05:30",
+      "date": "30th Aug 2026",
+      "day": "Saturday",
+      "time": "8:00 PM Onwards",
+      "venueName": "Royal Bodhi Banquet Hall",
+      "venueAddress": "Bodh Gaya, Bihar",
+      "mapUrl": "https://maps.google.com/?q=Bodh+Gaya",
+      "badges": ["valet", "attire"]
+    }
+  ],
+  "rsvp": {
+    "kind": "whatsapp",
+    "target": "+919876543210",
+    "label": "RSVP on WhatsApp"
+  },
+  "audio": {
+    "title": "Buddhist Flute Blessing",
+    "src": "/templates/08_unforgettable_buddhist_wedding/audio/buddhist_flute_blessing.mp3",
+    "startOnFirstTap": true
+  },
+  "share": {
+    "ogImage": "/templates/09_unforgettable_buddha_react/og_card_1200x630.jpg",
+    "title": "Maya & Siddharth — Sacred Buddhist Wedding Invitation",
+    "description": "Cordially inviting you to our auspicious wedding ceremony and blessings in Pune."
+  }
+}

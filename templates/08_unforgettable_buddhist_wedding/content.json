@@ -1,72 +1,120 @@
 {
   "templateId": "08_unforgettable_buddhist_wedding",
   "templateName": "Mahabodhi Buddhist Serenity Vivah",
-  "weddingDateISO": "2026-08-29T10:30:00",
+  "weddingDateISO": "2026-12-20T19:00:00",
   "couple": {
     "groom": {
-      "name": "Siddharth",
-      "fullName": "Siddharth Vardhan",
-      "parents": "Shri. Hemant Vardhan & Smt. Sunita Vardhan"
+      "name": "Sarvesh",
+      "fullName": "Sarvesh Bhagat",
+      "parents": "Mrs. Vaishali Bhagat & Mr. Suresh Bhagat"
     },
     "bride": {
-      "name": "Maya",
-      "fullName": "Maya Sharma",
-      "parents": "Shri. Arvind Sharma & Smt. Meena Sharma"
+      "name": "Nikita",
+      "fullName": "Nikita Wanjari",
+      "parents": "Mrs. Asmita Wanjari & Mr. Balakrishna Wanjari"
     },
-    "greetingNote": "Cordially request the honor of your presence at the wedding celebration of our beloved son & daughter",
-    "hashtag": "#MayaFoundHerSiddharth"
+    "connector": "weds",
+    "greetingNote": "Cordially invite you and your family to grace the auspicious occasion of wedding celebration of our beloved son",
+    "hashtag": "#SarveshWedsNikita",
+    "photo": "./images/Location_Canvas_Mobile.webp",
+    "photoDesktop": "./images/Location_Canvas_Desktop.webp"
   },
   "shloka": {
-    "sanskrit": "नत्थि सन्ति परं सुखं",
-    "translation": "There is no higher happiness than peace & sacred union"
+    "sanskrit": "|| नमो बुद्धाय ||",
+    "translation": "Homage to the Buddha - May all beings be happy and peaceful"
   },
   "events": [
     {
       "id": "event-1",
-      "title": "Auspicious Haldi & Sacred Chanting",
-      "date": "28th Aug 2026",
-      "day": "Thursday",
-      "time": "4:00 PM Onwards",
-      "venueName": "Lotus Pavilion Hall",
-      "venueAddress": "Pune, Maharashtra",
-      "mapDeepLink": "https://maps.google.com/?q=Lotus+Pavilion+Hall+Pune"
+      "title": "Mehendi",
+      "date": "18th Dec 2026",
+      "day": "Friday",
+      "time": "7:00 PM Onwards",
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
     },
     {
       "id": "event-2",
-      "title": "Holy Vivah & Mangala Sutta Chants",
-      "date": "29th Aug 2026",
-      "day": "Friday",
-      "time": "10:30 AM Onwards",
-      "venueName": "Mahabodhi Grand Sanctuary",
-      "venueAddress": "Pune, Maharashtra",
-      "mapDeepLink": "https://maps.google.com/?q=Mahabodhi+Sanctuary+Pune"
+      "title": "Haldi",
+      "date": "19th Dec 2026",
+      "day": "Saturday",
+      "time": "11:30 AM Onwards",
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
     },
     {
       "id": "event-3",
-      "title": "Evening Blessings & Reception Dinner",
-      "date": "29th Aug 2026",
-      "day": "Friday",
+      "title": "Sangeet",
+      "date": "19th Dec 2026",
+      "day": "Saturday",
+      "time": "6:00 PM Onwards",
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
+    },
+    {
+      "id": "event-4",
+      "title": "Barat",
+      "date": "20th Dec 2026",
+      "day": "Sunday",
+      "time": "5:00 PM Onwards",
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
+    },
+    {
+      "id": "event-5",
+      "title": "Shadi",
+      "date": "20th Dec 2026",
+      "day": "Sunday",
       "time": "7:00 PM Onwards",
-      "venueName": "The Bodhi Gardens",
-      "venueAddress": "Pune, Maharashtra",
-      "mapDeepLink": "https://maps.google.com/?q=The+Bodhi+Gardens+Pune"
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
+    },
+    {
+      "id": "event-6",
+      "title": "Reception",
+      "date": "21st Dec 2026",
+      "day": "Monday",
+      "time": "7:00 PM Onwards",
+      "venueName": "The Greens Lawn & Banquet",
+      "venueAddress": "Kamptee Rd, Khairy, Nagpur",
+      "mapDeepLink": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA"
     }
   ],
   "logistics": {
-    "city": "Pune, Maharashtra",
-    "weather": "27°C Pleasant Evening Breeze",
-    "valetParking": "Complimentary Valet at Main Gate",
-    "dressCode": "Traditional Royal Silk & Pastel Hues",
+    "city": "Nagpur, Maharashtra",
+    "weather": "24°C Pleasant Winter Evening",
+    "valetParking": "Valet parking for all our guests will be available at The Greens Lawn & Banquet",
+    "dressCode": "Traditional Festive & Royal Pastels",
+    "hotel": "Accommodation arranged for family & guests near the venue",
     "contactNumber": "919876543210"
   },
   "audio": {
     "title": "Buddhist Flute Blessing",
-    "fileSrc": "/templates/08_unforgettable_buddhist_wedding/audio/buddhist_flute_blessing.mp3",
+    "fileSrc": "./audio/buddhist_flute_blessing.mp3",
     "autoUnlockOnFirstTouch": true
   },
   "toggles": {
     "enableAudio": true,
-    "enableRSVP": false,
-    "enableThingsToKnow": false
+    "enableRSVP": true,
+    "enableThingsToKnow": true,
+    "enableCountdown": true
+  },
+  "gallery": [
+    "./images/collage_1.webp",
+    "./images/collage_2.webp",
+    "./images/collage_3.webp",
+    "./images/collage_4.webp",
+    "./images/collage_5.webp"
+  ],
+  "venue": {
+    "name": "The Greens Lawn & Banquet",
+    "address": "Kamptee Rd, Khairy, Nagpur",
+    "mapUrl": "https://maps.app.goo.gl/RgQCQpsYKtC8RMEFA",
+    "coordinates": "21.2116, 79.1601"
   }
 }

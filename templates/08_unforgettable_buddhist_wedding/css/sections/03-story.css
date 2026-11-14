@@ -1,4 +1,54 @@
-/* Section 3: Meet the Bride & Groom Story Shift */
+/* =====================================================================
+   SECTION 03: MEET THE COUPLE / LOVE STORY
+   Clean Modular CSS with Responsive Breakpoints (Single HTML Node Architecture)
+   ===================================================================== */
+
 :root {
   --desktop-story-shift: 500px;
+}
+
+/* Ensure Visibility of Meet Couple Components */
+.framer-1ufhllk [data-framer-name="Meet Couple Content"] > div {
+    opacity: 1 !important;
+}
+
+/* Heading Typography */
+.meet-couple-title,
+.meet-couple-subtitle {
+    --font-selector: Q1VTVE9NVjI7Q2FzdGVsYSBSZWd1bGFy;
+    --framer-font-family: "Castela Regular", "Castela Regular Placeholder", sans-serif;
+    --framer-font-size: 34px;
+    --framer-text-color: rgb(86, 38, 14);
+    font-size: var(--framer-font-size) !important;
+    color: var(--framer-text-color) !important;
+}
+@media (max-width: 429.98px) {
+    .meet-couple-title,
+    .meet-couple-subtitle {
+        --framer-font-size: 30px;
+        font-size: 30px !important;
+    }
+}
+@media (max-width: 374.98px) {
+    .meet-couple-title,
+    .meet-couple-subtitle {
+        --framer-font-size: 28px;
+        font-size: 28px !important;
+    }
+}
+
+/* Subtext / Note */
+.meet-couple-note {
+    --font-selector: Q1VTVE9NVjI7Q2FzdGVsYSBSZWd1bGFy;
+    --framer-font-family: "Castela Regular", "Castela Regular Placeholder", sans-serif;
+    --framer-font-size: 20px;
+    --framer-text-color: rgb(86, 38, 14);
+    font-size: var(--framer-font-size) !important;
+    color: var(--framer-text-color) !important;
+}
+@media (max-width: 429.98px) {
+    .meet-couple-note {
+        --framer-font-size: 17px;
+        font-size: 17px !important;
+    }
 }

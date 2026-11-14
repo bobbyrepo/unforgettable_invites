@@ -153,6 +153,14 @@ export async function GET(
   // 2. Direct Static Asset Serving:
   let localDiskPath = path.join(process.cwd(), 'templates', ...params.path);
 
+  // If requested under template 09 and does not exist locally, fallback to template 08
+  if (!fs.existsSync(localDiskPath) && templateId === '09_unforgettable_buddha_react') {
+    const t08Fallback = path.join(process.cwd(), 'templates', '08_unforgettable_buddhist_wedding', ...subPath);
+    if (fs.existsSync(t08Fallback)) {
+      localDiskPath = t08Fallback;
+    }
+  }
+
   // First check legacy alias map (e.g. hashed names to human-readable names)
   const reqFileName = path.basename(localDiskPath);
   if (ASSET_ALIASES[reqFileName]) {

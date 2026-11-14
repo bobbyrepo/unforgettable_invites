@@ -1,0 +1,113 @@
+/* ==========================================================================
+   04-LOCATION SECTION STYLES
+   Venue information, Google Maps button, travel badges
+   ========================================================================== */
+
+.locationSection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: calc(60 * var(--u)) calc(16 * var(--u));
+}
+
+.headingBlock {
+  position: relative;
+  z-index: var(--z-text, 5);
+  text-align: center;
+  margin-bottom: calc(32 * var(--u));
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(2 * var(--u));
+  text-transform: uppercase;
+  margin: 0 0 calc(8 * var(--u)) 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.sectionSubtext {
+  font-family: 'Alegreya', serif;
+  font-size: calc(14 * var(--u));
+  color: var(--color-sandstone, rgba(171, 86, 38, 0.85));
+  margin: 0;
+}
+
+.venueCard {
+  position: relative;
+  z-index: var(--z-card, 4);
+  width: 100%;
+  max-width: calc(360 * var(--u));
+  background: rgba(18, 12, 8, 0.85);
+  border: 1px solid rgba(224, 170, 62, 0.35);
+  border-radius: calc(16 * var(--u));
+  padding: calc(28 * var(--u)) calc(24 * var(--u));
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.venueName {
+  font-family: 'Cinzel', serif;
+  font-size: calc(20 * var(--u));
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 calc(8 * var(--u)) 0;
+}
+
+.venueAddress {
+  font-family: 'Alegreya', serif;
+  font-size: calc(14 * var(--u));
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 calc(20 * var(--u)) 0;
+}
+
+.badgesRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(8 * var(--u));
+  margin-bottom: calc(24 * var(--u));
+}
+
+.badgePill {
+  font-family: 'Gotham Medium', sans-serif;
+  font-size: calc(11 * var(--u));
+  color: var(--color-gold-light, #f5d77f);
+  background: rgba(224, 170, 62, 0.12);
+  border: 1px solid rgba(224, 170, 62, 0.25);
+  border-radius: calc(16 * var(--u));
+  padding: calc(4 * var(--u)) calc(12 * var(--u));
+}
+
+.mapActionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(6 * var(--u));
+  font-family: 'Cinzel', serif;
+  font-size: calc(12 * var(--u));
+  font-weight: 700;
+  letter-spacing: calc(1 * var(--u));
+  color: #0b0704;
+  background: linear-gradient(135deg, #f5d77f 0%, #e0aa3e 100%);
+  border: none;
+  border-radius: calc(8 * var(--u));
+  padding: calc(12 * var(--u)) calc(24 * var(--u));
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(224, 170, 62, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mapActionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(224, 170, 62, 0.5);
+}

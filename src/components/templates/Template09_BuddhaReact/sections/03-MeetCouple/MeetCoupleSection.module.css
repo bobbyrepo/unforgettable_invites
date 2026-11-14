@@ -1,0 +1,141 @@
+/* ==========================================================================
+   03-MEET COUPLE SECTION STYLES
+   Parchment story card, bride & groom bio cards
+   ========================================================================== */
+
+.meetCoupleSection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: calc(1200 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: calc(60 * var(--u)) calc(16 * var(--u));
+}
+
+.headingBlock {
+  position: relative;
+  z-index: var(--z-text, 5);
+  text-align: center;
+  margin-bottom: calc(36 * var(--u));
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(2 * var(--u));
+  text-transform: uppercase;
+  margin: 0 0 calc(8 * var(--u)) 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.sectionSubtext {
+  font-family: 'Alegreya', serif;
+  font-size: calc(14 * var(--u));
+  color: var(--color-sandstone, rgba(171, 86, 38, 0.85));
+  margin: 0;
+}
+
+/* Parchment Message Card Frame */
+.messageCardWrapper {
+  position: relative;
+  width: 100%;
+  max-width: calc(360 * var(--u));
+  min-height: calc(380 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(40 * var(--u)) calc(32 * var(--u));
+  box-sizing: border-box;
+  margin-bottom: calc(48 * var(--u));
+  z-index: var(--z-card, 4);
+}
+
+.messageCardBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/templates/08_unforgettable_buddhist_wedding/images/Message_Frame_Mobile.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .messageCardWrapper {
+    max-width: calc(600 * var(--u));
+  }
+  .messageCardBackground {
+    background-image: url('/templates/08_unforgettable_buddhist_wedding/images/Message_Frame_Desktop.webp');
+  }
+}
+
+.messageNoteText {
+  font-family: 'Alegreya', Georgia, serif;
+  font-size: calc(15 * var(--u));
+  line-height: 1.7;
+  color: #3b2210;
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Couple Bio Row */
+.coupleBioRow {
+  position: relative;
+  z-index: var(--z-card, 4);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(24 * var(--u));
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .coupleBioRow {
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(32 * var(--u));
+  }
+}
+
+.bioCard {
+  width: 100%;
+  max-width: calc(320 * var(--u));
+  background: rgba(18, 12, 8, 0.75);
+  border: 1px solid rgba(224, 170, 62, 0.25);
+  border-radius: calc(12 * var(--u));
+  padding: calc(20 * var(--u));
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.bioName {
+  font-family: 'Cinzel', serif;
+  font-size: calc(18 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  margin: 0 0 calc(6 * var(--u)) 0;
+}
+
+.bioTitle {
+  font-family: 'Alegreya', serif;
+  font-size: calc(13 * var(--u));
+  color: var(--color-gold-light, #f5d77f);
+  margin: 0 0 calc(10 * var(--u)) 0;
+}
+
+.bioDesc {
+  font-family: 'Alegreya', serif;
+  font-size: calc(13 * var(--u));
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}

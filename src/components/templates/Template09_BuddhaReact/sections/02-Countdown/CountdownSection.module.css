@@ -1,0 +1,130 @@
+/* ==========================================================================
+   02-COUNTDOWN SECTION STYLES
+   Sandstone countdown arch, couple photo frame & live dials
+   ========================================================================== */
+
+.countdownSection {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: calc(60 * var(--u)) calc(16 * var(--u));
+}
+
+.headingBlock {
+  position: relative;
+  z-index: var(--z-text, 5);
+  text-align: center;
+  margin-bottom: calc(28 * var(--u));
+}
+
+.sectionTitle {
+  font-family: 'Cinzel', serif;
+  font-size: calc(24 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(2 * var(--u));
+  text-transform: uppercase;
+  margin: 0 0 calc(8 * var(--u)) 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.sectionSubtext {
+  font-family: 'Alegreya', serif;
+  font-size: calc(14 * var(--u));
+  color: var(--color-sandstone, rgba(171, 86, 38, 0.85));
+  margin: 0;
+}
+
+/* Sandstone Countdown Frame Container */
+.countdownFrameContainer {
+  position: relative;
+  width: 100%;
+  max-width: calc(360 * var(--u));
+  background: rgba(18, 12, 8, 0.85);
+  border: 1px solid rgba(224, 170, 62, 0.35);
+  border-radius: calc(16 * var(--u));
+  padding: calc(32 * var(--u)) calc(20 * var(--u));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  z-index: var(--z-card, 4);
+}
+
+/* Couple Portrait Inside Arch */
+.portraitWrap {
+  width: calc(180 * var(--u));
+  height: calc(240 * var(--u));
+  border-radius: calc(90 * var(--u)) calc(90 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u));
+  overflow: hidden;
+  border: 2px solid var(--color-gold, #e0aa3e);
+  margin-bottom: calc(24 * var(--u));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.portraitImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Live Dials Row */
+.dialsRow {
+  display: flex;
+  gap: calc(12 * var(--u));
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: calc(72 * var(--u)); /* Fixed height guarantees CLS < 0.05 */
+}
+
+.dialBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(64 * var(--u));
+  height: calc(68 * var(--u));
+  background: rgba(224, 170, 62, 0.1);
+  border: 1px solid rgba(224, 170, 62, 0.3);
+  border-radius: calc(8 * var(--u));
+  backdrop-filter: blur(4px);
+}
+
+.dialNum {
+  font-family: 'Cinzel', serif;
+  font-size: calc(22 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold-light, #f5d77f);
+  line-height: 1.1;
+}
+
+.dialLabel {
+  font-family: 'Alegreya', serif;
+  font-size: calc(10 * var(--u));
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: calc(1 * var(--u));
+  margin-top: calc(2 * var(--u));
+}
+
+.dialsRowCelebrated {
+  min-height: calc(72 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celebratedText {
+  font-family: 'Cinzel', serif;
+  font-size: calc(16 * var(--u));
+  font-weight: 700;
+  color: var(--color-gold, #e0aa3e);
+  letter-spacing: calc(1 * var(--u));
+}

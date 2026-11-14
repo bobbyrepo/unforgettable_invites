@@ -1,81 +1,110 @@
 // ==========================================================================
-// WEDDING CONTENT CONFIGURATION (MODULAR DATA COMPONENT)
-// Edit any text, names, dates, or phrases below.
-// This automatically updates across all Desktop, Tablet & Mobile views.
+// WEDDING CONTENT FALLBACK (OFFLINE / FILE PROTOCOL MIRROR)
+// Automatically kept in sync with content.json
 // ==========================================================================
 
 window.WEDDING_CONTENT = {
-    // -------------------------------------------------------------------------
-    // SECTION 1: HERO & MAIN INVITATION HEADER (Top of Page)
-    // -------------------------------------------------------------------------
-    hero: {
-        brideName: "Maya",                  // Main Bride Name
-        connector: "weds",                  // Connector ("weds" or "&")
-        groomName: "Siddharth",             // Main Groom Name
-        weddingDate: "29th Aug 2026",       // Date
-        weddingDay: "Friday",               // Day
-        weddingTime: "6 Pm Onwards",        // Time
-        venueCity: "Bodh Gaya, Bihar"       // City & State
+    templateId: "08_unforgettable_buddhist_wedding",
+    templateName: "Mahabodhi Buddhist Serenity Vivah",
+    weddingDateISO: "2026-12-20T19:00:00",
+    couple: {
+        groom: {
+            name: "Sarvesh",
+            fullName: "Sarvesh Bhagat",
+            parents: "Mrs. Vaishali Bhagat & Mr. Suresh Bhagat"
+        },
+        bride: {
+            name: "Nikita",
+            fullName: "Nikita Wanjari",
+            parents: "Mrs. Asmita Wanjari & Mr. Balakrishna Wanjari"
+        },
+        connector: "weds",
+        greetingNote: "Cordially invite you and your family to grace the auspicious occasion of wedding celebration of our beloved son",
+        hashtag: "#SarveshWedsNikita"
     },
-
-    // -------------------------------------------------------------------------
-    // SECTION 2: FAMILY INVITATION & BLESSINGS
-    // -------------------------------------------------------------------------
-    family: {
-        invitationLine: "Cordially request the honor of your presence at the wedding celebration of our beloved son",
-        groomParents: "Shri. Hemant Vardhan & Smt. Sunita Vardhan",
-        daughterOfLabel: "Daughter of",
-        brideParents: "Shri. Arvind Sharma & Smt. Meena Sharma",
-        eventsIntroLabel: "On The Following Events"
+    shloka: {
+        sanskrit: "|| नमो बुद्धाय ||",
+        translation: "Homage to the Buddha - May all beings be happy and peaceful"
     },
-
-    // -------------------------------------------------------------------------
-    // SECTION 3: WEDDING TIMELINE / CEREMONIES SCHEDULE
-    // -------------------------------------------------------------------------
-    timeline: {
-        heading: "Wedding Timeline",
-        subtext: "Mark Your Calendars, We Can’t Wait to Celebrate"
-    },
-
-    // -------------------------------------------------------------------------
-    // SECTION 4: MEET THE COUPLE / STORY
-    // -------------------------------------------------------------------------
-    coupleStory: {
-        heading: "Meet the"
-    },
-
-    // -------------------------------------------------------------------------
-    // SECTION 5: THINGS TO KNOW (GUEST LOGISTICS)
-    // -------------------------------------------------------------------------
-    thingsToKnow: {
-        heading: "Things to know",
-        subtext: "To help you feel at ease and enjoy every moment of the celebrations, we’ve gathered a few thoughtful",
-        cards: {
-            hashtag: {
-                title: "Hashtag",
-                description: "While posting photos"
-            },
-            weather: {
-                title: "Weather",
-                description: "It will be mostly sunny with temperature reaching up to 28 degrees at the venue"
-            },
-            staff: {
-                title: "Staff",
-                description: "We recommend the nearby hotel called Bodhi Serene Luxury Retreat near the venue for the staff member"
-            },
-            parking: {
-                title: "Parking",
-                description: "Valet parking for all our guests will be available at the venue"
-            }
+    events: [
+        {
+            id: "event-1",
+            title: "Mehendi",
+            date: "18th Dec 2026",
+            day: "Friday",
+            time: "7:00 PM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
+        },
+        {
+            id: "event-2",
+            title: "Haldi",
+            date: "19th Dec 2026",
+            day: "Saturday",
+            time: "11:30 AM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
+        },
+        {
+            id: "event-3",
+            title: "Sangeet",
+            date: "19th Dec 2026",
+            day: "Saturday",
+            time: "6:00 PM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
+        },
+        {
+            id: "event-4",
+            title: "Barat",
+            date: "20th Dec 2026",
+            day: "Sunday",
+            time: "5:00 PM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
+        },
+        {
+            id: "event-5",
+            title: "Shadi",
+            date: "20th Dec 2026",
+            day: "Sunday",
+            time: "7:00 PM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
+        },
+        {
+            id: "event-6",
+            title: "Reception",
+            date: "21st Dec 2026",
+            day: "Monday",
+            time: "7:00 PM Onwards",
+            venueName: "The Greens Lawn & Banquet",
+            venueAddress: "Kamptee Rd, Khairy, Nagpur",
+            mapDeepLink: "https://maps.google.com/?q=The+Greens+Lawn+and+Banquet+Nagpur"
         }
+    ],
+    logistics: {
+        city: "Nagpur, Maharashtra",
+        weather: "24°C Pleasant Winter Evening",
+        valetParking: "Valet parking for all our guests will be available at The Greens Lawn & Banquet",
+        dressCode: "Traditional Festive & Royal Pastels",
+        hotel: "Accommodation arranged for family & guests near the venue",
+        contactNumber: "919876543210"
     },
-
-    // -------------------------------------------------------------------------
-    // SECTION 6: COUNTDOWN & RSVP (Bottom of Page)
-    // -------------------------------------------------------------------------
-    countdownAndRsvp: {
-        countdownHeading: "The countdown begins",
-        countdownIntro: "Our families are excited that you are able to join us in celebrating what we hope will be one of the",
-        rsvpButtonText: "RSVP via WhatsApp"
+    audio: {
+        title: "Buddhist Flute Blessing",
+        fileSrc: "./audio/buddhist_flute_blessing.mp3",
+        autoUnlockOnFirstTouch: true
+    },
+    toggles: {
+        enableAudio: true,
+        enableRSVP: true,
+        enableThingsToKnow: true,
+        enableCountdown: true
     }
 };
