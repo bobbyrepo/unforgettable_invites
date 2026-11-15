@@ -539,11 +539,69 @@
 
     let isSyncing = false;
 
+    function cleanupGroups() {
+        // Desktop / Tablet cleanup: unwrap all groups and restore original DOM structure
+        const g2 = document.getElementById('group-wedding-timeline');
+        if (g2) {
+            const pillarsRow = document.querySelector('[data-framer-name="Pillars Row"]');
+            const timelineSection = document.querySelector('[data-framer-name="2 — Wedding Timeline"]');
+            
+            while (g2.firstChild) {
+                const child = g2.firstChild;
+                const framerName = child.getAttribute && child.getAttribute('data-framer-name');
+                if (pillarsRow && ['1', '2', '3', '4', '5', '6'].includes(framerName)) {
+                    pillarsRow.appendChild(child);
+                } else if (timelineSection) {
+                    timelineSection.insertBefore(child, g2);
+                } else if (g2.parentNode) {
+                    g2.parentNode.insertBefore(child, g2);
+                }
+            }
+            if (g2.parentNode) g2.parentNode.removeChild(g2);
+        }
+
+        const g1 = document.getElementById('group-hero-invitation');
+        if (g1) {
+            const heroSection = document.querySelector('[data-framer-name="1 — Hero & Invitation"]') || g1.parentNode;
+            while (g1.firstChild) {
+                if (heroSection) heroSection.insertBefore(g1.firstChild, g1);
+                else g1.parentNode.insertBefore(g1.firstChild, g1);
+            }
+            if (g1.parentNode) g1.parentNode.removeChild(g1);
+        }
+
+        const g3 = document.getElementById('group-meet-the-couple');
+        if (g3) {
+            const coupleSection = document.querySelector('[data-framer-name="3 — Meet the Couple"]') || g3.parentNode;
+            while (g3.firstChild) {
+                if (coupleSection) coupleSection.insertBefore(g3.firstChild, g3);
+                else g3.parentNode.insertBefore(g3.firstChild, g3);
+            }
+            if (g3.parentNode) g3.parentNode.removeChild(g3);
+        }
+
+        const g4 = document.getElementById('group-rotating-collage');
+        if (g4) {
+            const coupleSection = document.querySelector('[data-framer-name="3 — Meet the Couple"]') || g4.parentNode;
+            while (g4.firstChild) {
+                if (coupleSection) coupleSection.insertBefore(g4.firstChild, g4);
+                else g4.parentNode.insertBefore(g4.firstChild, g4);
+            }
+            if (g4.parentNode) g4.parentNode.removeChild(g4);
+        }
+    }
+
     function syncGroups() {
         if (isSyncing) return;
         isSyncing = true;
 
         try {
+            // STRICT DESKTOP / TABLET GUARD: Groups are strictly for mobile screens <= 809px
+            if (window.innerWidth > 809) {
+                cleanupGroups();
+                return;
+            }
+
             // Group 1: Hero Invitation Details & Scroll Arrow
             const arrow = document.querySelector('[data-framer-name="Scroll Arrow"]');
             const details = document.querySelector('[data-framer-name="Invitation Details"]');
@@ -734,15 +792,17 @@
         setTimeout(syncGroups, 100);
     });
 
-    // MutationObserver to withstand Framer React hydration
+    // MutationObserver to withstand Framer React hydration on mobile
     try {
         const observer = new MutationObserver(() => {
-            const g1 = document.getElementById('group-hero-invitation');
-            const g2 = document.getElementById('group-wedding-timeline');
-            const g3 = document.getElementById('group-meet-the-couple');
-            const g4 = document.getElementById('group-rotating-collage');
-            if (!g1 || !g2 || !g3 || !g4) {
-                syncGroups();
+            if (window.innerWidth <= 809) {
+                const g1 = document.getElementById('group-hero-invitation');
+                const g2 = document.getElementById('group-wedding-timeline');
+                const g3 = document.getElementById('group-meet-the-couple');
+                const g4 = document.getElementById('group-rotating-collage');
+                if (!g1 || !g2 || !g3 || !g4) {
+                    syncGroups();
+                }
             }
         });
         observer.observe(document.body || document.documentElement, {
@@ -751,8 +811,8 @@
         });
     } catch (e) {}
 
-    // Periodic safety passes for late hydration
-    setTimeout(syncGroups, 300);
-    setTimeout(syncGroups, 800);
-    setTimeout(syncGroups, 2000);
+    // Periodic safety passes for late hydration on mobile
+    setTimeout(() => { if (window.innerWidth <= 809) syncGroups(); }, 300);
+    setTimeout(() => { if (window.innerWidth <= 809) syncGroups(); }, 800);
+    setTimeout(() => { if (window.innerWidth <= 809) syncGroups(); }, 2000);
 })();
