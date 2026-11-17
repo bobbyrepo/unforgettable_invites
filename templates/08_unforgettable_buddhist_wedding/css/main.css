@@ -21,3 +21,6 @@
 
 /* 6. Audio Player */
 @import './audio.css';
+
+/* 7. Extracted Static Inline Styles (Track 4A) */
+@import './extracted.css';
