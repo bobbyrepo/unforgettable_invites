@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-11-17T17:32:15.458Z",
+  "filePath": "E:/Unforgettable_Invites/Web_Templates/templates/08_unforgettable_buddhist_wedding/index.html",
+  "totalOps": 1,
+  "applied": true,
+  "ops": [
+    {
+      "start": 1385265,
+      "end": 1385369,
+      "reason": "Track 5: replace tree-parallax and sky-parallax with consolidated parallax.js",
+      "replacementLength": 45
+    }
+  ]
+}
