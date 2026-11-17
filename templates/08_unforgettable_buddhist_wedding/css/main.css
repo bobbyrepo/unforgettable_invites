@@ -1,7 +1,7 @@
 /* =====================================================================
    UNFORGETTABLE INVITES — MASTER MODULAR STYLESHEET
    Template: 08_unforgettable_buddhist_wedding
-   Architecture: Section-Divided CSS Modules
+   Architecture: Consolidated Clean Modules
    ===================================================================== */
 
 /* 1. Typography & Web Fonts */
@@ -11,21 +11,13 @@
 @import './breakpoints.css';
 
 /* 3. Core SSR Framer Styles */
-@import './framer-core.css';
+@import './layout.css';
 
-/* 4. Global Overrides & Eradicators */
-@import './overrides.css';
+/* 4. Global Overrides, Controls & Dynamic Content */
+@import './theme.css';
 
 /* 5. Real-Time 3D WebGL Cloth Physics & Flag Studio */
 @import './flags.css';
 
-/* 6. Dynamic Content Injections & Audio Player */
-@import './content.css';
-@import './audio-player.css';
-
-/* 7. Master Calibrated Shift Controls & Variables */
-@import './controls.css';
-
-/* 8. Modular Section Stylesheets */
-@import './sections/01-hero.css';
-
+/* 6. Audio Player */
+@import './audio.css';

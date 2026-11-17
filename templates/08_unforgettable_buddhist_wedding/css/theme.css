@@ -1,0 +1,1790 @@
+/* ==========================================================================
+   THEME.CSS — CONSOLIDATED OVERRIDES, CONTROLS, CONTENT & SECTIONS
+   ========================================================================== */
+
+/* --- 1. OVERRIDES --- */
+/* ==========================================================================
+   GLOBAL PLATFORM OVERRIDES & ERADICATORS
+   ========================================================================== */
+
+html body { background: rgb(255, 255, 255); margin: 0; padding: 0; }
+
+/* Permanently eradicate all pricing pills, buy now buttons, and competitor cart links */
+.framer-JT1sO,
+.framer-149jzij,
+.framer-v-149jzij,
+.framer-1hoq8tr,
+.framer-1bblg9p,
+.framer-tabn6s,
+[data-framer-name*="Floating button"],
+[data-framer-name*="₹ 5999"],
+[data-framer-name*="Buy Now"],
+a[href*="rzp.io"],
+a[href*="razorpay"],
+a[href*="missingpiece"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+/* Fully disable Things to Know, Info Icons, RSVP Form, Spacers, and surrounding Ornaments */
+[data-framer-name*="White Spacer"],
+.framer-ie3i0y,
+[data-framer-name="Things to Know"],
+[data-framer-name="Things to Know Content"],
+[data-framer-name="Things to Know Heading"],
+[data-framer-name="Things to Know Subtext"],
+[data-framer-name="Info Icons Row"],
+[data-framer-name="Looking Forward Heading"],
+[data-framer-name="RSVP Form"],
+[data-framer-name="Ornament Top"],
+[data-framer-name="Ornament Bottom"],
+[data-framer-name="Timeline Ornament 1"],
+[data-framer-name="Timeline Ornament 2"],
+.framer-vlnotz,
+.framer-dblqkx,
+.framer-1vn5b0j,
+.framer-1e4kx6w,
+[data-framer-name="Mandala Decoration L"],
+[data-framer-name="Mandala Decoration R"],
+.framer-1r1asus,
+.framer-11m16yz,
+.framer-xh8krv-container,
+.framer-15hwvei-container,
+.framer-nubze9-container {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    overflow: hidden !important;
+}
+
+/* ==========================================================================
+   Section 4 — Timeline Frame Overlay & Timeline Canvas Background Architecture
+   ========================================================================== */
+
+/* 1. Prevent parent page containers from clipping tall backgrounds or bottom Buddha */
+.framer-SNM3S,
+.framer-rweuzc {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+html body #main .framer-SNM3S .framer-98eqjf,
+html body #main .framer-SNM3S .framer-12tiy0u,
+html body #main [data-framer-name*="4 — Location & Countdown"],
+html body #main [data-framer-name="Section Background"] {
+    overflow: visible !important;
+    z-index: 10 !important;
+}
+
+/* 2. Couple Photo Container Stacking Context & Frame Overlay */
+[data-framer-name="Section Background"] {
+    position: absolute;
+    z-index: 10 !important;
+    overflow: visible !important;
+}
+
+/* Mobile & Tablet: Timeline_Frame_Mobile overlay above couple photo */
+@media (max-width: 1024px) {
+    [data-framer-name="Section Background"] {
+        top: -70px !important;
+    }
+    [data-framer-name="Section Background"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/Timeline_Frame_Mobile.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 12 !important;
+    }
+}
+
+/* Desktop: Timeline_Frame_Desktop overlay above couple photo */
+@media (min-width: 1025px) {
+    [data-framer-name="Section Background"] {
+        top: -135px !important;
+    }
+    [data-framer-name="Section Background"]::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../images/Timeline_Frame_Desktop.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        pointer-events: none;
+        z-index: 12 !important;
+    }
+}
+
+/* 3. Timeline Canvas Background: Placed behind everything, perfectly filling section */
+[data-framer-name="Location & Countdown BG"],
+.framer-jab4b0,
+.framer-2ehbvr,
+.framer-13ss7kg {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Background image specifically (Timeline Canvas) - Exclude Leaflet map tiles and markers */
+[data-framer-name="Location & Countdown BG"] img:not(.leaflet-tile):not(.leaflet-marker-icon),
+.framer-jab4b0 > div > img,
+.framer-2ehbvr > div > img,
+.framer-13ss7kg > div > img,
+img[src*="Timeline_Canvas"] {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+}
+
+/* ==========================================================================
+   Leaflet Interactive Map Protection (Preserve Tiles, Pins & Controls)
+   ========================================================================== */
+.leaflet-container {
+    background: #e5e3df !important;
+}
+
+.leaflet-container .leaflet-tile-pane img,
+.leaflet-container img.leaflet-tile,
+.leaflet-tile {
+    width: 256px !important;
+    height: 256px !important;
+    max-width: none !important;
+    max-height: none !important;
+    min-width: 256px !important;
+    min-height: 256px !important;
+    object-fit: fill !important;
+    display: block !important;
+    visibility: inherit !important;
+    opacity: 1 !important;
+}
+
+.leaflet-container .leaflet-marker-pane img,
+.leaflet-container .leaflet-marker-icon,
+.leaflet-container .leaflet-shadow-pane img {
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    object-fit: contain !important;
+}
+
+/* 4. Ensure Section 4 containers do not spill any overflow */
+.framer-12tiy0u,
+.framer-1hm5mtp,
+.framer-98eqjf {
+    overflow: hidden !important;
+}
+
+
+/* ==========================================================================
+   Message Card Frame - Text Color Uniformity
+   Enforce dark brown color rgb(95, 37, 15) across all words in the message
+   ========================================================================== */
+[data-framer-name="Message Scroll Text"] span,
+[data-framer-name="Message Card Frame"] [data-framer-name="Message Scroll Text"] span,
+.framer-1ffy2vr-container span,
+.framer-1fgi09q-container span,
+.framer-1qeunjp-container span {
+    color: rgb(95, 37, 15) !important;
+}
+
+/* ==========================================================================
+   Mobile Sky Layer - Upward Offset & Extended Parallax Coverage
+   ========================================================================== */
+@media (max-width: 1024px) {
+    :root {
+        --sky-mobile-offset-y: -1080px;
+    }
+    .framer-b8pafc,
+    .framer-l0jkpb,
+    [data-framer-name="Sky Background"] {
+        height: 2600px !important;
+        min-height: 2600px !important;
+        transform: translate3d(0, -1080px, 0) !important;
+        will-change: transform;
+    }
+}
+
+/* ==========================================================================
+   Section 2 — Timeline Event Cards & Headings
+   Safeguard: Section 2 Heading & Subtext are strictly protected from card constraints
+   Card Order: Title -> Timing -> Day -> Date -> Venue -> More details below
+   ========================================================================== */
+
+/* Safeguard: Section 2 Timeline Heading & Subtext - Center & Prevent Sideways Overflow */
+[data-framer-name="2 — Wedding Timeline"] [data-framer-name="Timeline Heading"],
+[data-framer-name="2 — Wedding Timeline"] [data-framer-name="Timeline Subtext"] {
+    max-width: none !important;
+    width: auto !important;
+    white-space: pre !important;
+    text-align: center !important;
+}
+
+/* Universal Flex Column Container for Cards across All Breakpoints */
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0px !important;
+    row-gap: 0px !important;
+    column-gap: 0px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+/* Background frame badge pinned to full card dimensions */
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > [data-framer-background-image-wrapper="true"] {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Neutralize absolute positioning & fixed heights on text children inside cards only */
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > [data-framer-component-type="RichTextContainer"] {
+    position: static !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    text-align: center !important;
+    z-index: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Text wrapping and reset margins on paragraphs */
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) p {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+/* 1. Title (Event Name: Mehendi, Haldi, Sangeet, Barat, Shadi, Reception) */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="title"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(7) {
+    order: 1 !important;
+    margin-bottom: 2px !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="title"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(7) p {
+    color: rgb(95, 37, 15) !important;
+    font-weight: 600 !important;
+}
+
+/* 2. Time (7:00 PM Onwards, 11:30 AM Onwards, etc.) */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) {
+    order: 2 !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) p {
+    color: rgb(95, 37, 15) !important;
+    font-weight: 500 !important;
+}
+
+/* 3. Day (Friday, Saturday, Sunday, Monday) */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) {
+    order: 3 !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) p {
+    color: rgb(95, 37, 15) !important;
+}
+
+/* 4. Date (18th Dec 2026, 19th Dec 2026, 20th Dec 2026, etc.) */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) {
+    order: 4 !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) p {
+    color: rgb(95, 37, 15) !important;
+}
+
+/* 5. Address / Location (multiline inside frame arch) */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) {
+    order: 5 !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) p {
+    color: rgb(95, 37, 15) !important;
+    opacity: 0.95 !important;
+}
+
+/* 6. More Details Below */
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"],
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) {
+    order: 6 !important;
+}
+[data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"] p,
+[data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) p {
+    color: rgb(95, 37, 15) !important;
+    opacity: 0.8 !important;
+}
+
+/* --- BREAKPOINT 1: MOBILE (<= 767.98px) --- */
+@media (max-width: 767.98px) {
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) {
+        padding-top: 42px !important;
+        padding-bottom: 12px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > [data-framer-component-type="RichTextContainer"] {
+        max-width: 124px !important;
+    }
+    /* Title */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="title"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(7) p {
+        font-size: 19.5px !important;
+        line-height: 1.15 !important;
+    }
+    /* Time */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) {
+        margin-bottom: 2px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) p {
+        font-size: 12px !important;
+        line-height: 1.25 !important;
+    }
+    /* Day */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) {
+        margin-bottom: 1px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) p {
+        font-size: 11.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Date */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) {
+        margin-bottom: 3px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) p {
+        font-size: 11.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Venue */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) {
+        margin-bottom: 3px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) p {
+        font-size: 10px !important;
+        line-height: 1.25 !important;
+    }
+    /* More details below */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) {
+        margin-top: 6px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) p {
+        font-size: 8.5px !important;
+        line-height: 1.15 !important;
+    }
+}
+
+/* --- BREAKPOINT 2: TABLET (768px - 1279.98px) --- */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) {
+        padding-top: 64px !important;
+        padding-bottom: 16px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > [data-framer-component-type="RichTextContainer"] {
+        max-width: 195px !important;
+        width: 100% !important;
+    }
+    /* Title */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="title"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(7) p {
+        font-size: 27px !important;
+        line-height: 1.15 !important;
+        font-weight: 600 !important;
+    }
+    /* Time */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) {
+        margin-bottom: 4px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) p {
+        font-size: 16.5px !important;
+        line-height: 1.25 !important;
+        font-weight: 500 !important;
+    }
+    /* Day */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) {
+        margin-bottom: 2px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) p {
+        font-size: 15.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Date */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) {
+        margin-bottom: 6px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) p {
+        font-size: 15.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Venue */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) {
+        margin-bottom: 6px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) p {
+        font-size: 13.5px !important;
+        line-height: 1.25 !important;
+    }
+    /* More details below */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) {
+        margin-top: 10px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) p {
+        font-size: 11.5px !important;
+        line-height: 1.15 !important;
+    }
+}
+
+/* --- BREAKPOINT 3: DESKTOP (>= 1280px) --- */
+@media (min-width: 1280px) {
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) {
+        padding-top: 40px !important;
+        padding-bottom: 12px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > [data-framer-component-type="RichTextContainer"] {
+        max-width: 152px !important;
+        width: 100% !important;
+    }
+    /* Title */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="title"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(7) p {
+        font-size: 23px !important;
+        line-height: 1.15 !important;
+        font-weight: 600 !important;
+    }
+    /* Time */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) {
+        margin-bottom: 3px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="time"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(3) p {
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+        font-weight: 500 !important;
+    }
+    /* Day */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) {
+        margin-bottom: 1px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="day"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(6) p {
+        font-size: 13.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Date */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) {
+        margin-bottom: 4px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="date"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(5) p {
+        font-size: 13.5px !important;
+        line-height: 1.2 !important;
+    }
+    /* Venue */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) {
+        margin-bottom: 4px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="venue"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(4) p {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+    /* More details below */
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"],
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) {
+        margin-top: 8px !important;
+    }
+    [data-framer-name="2 — Wedding Timeline"] [data-card-slot="more-details"] p,
+    [data-framer-name="2 — Wedding Timeline"] :is([data-framer-name="1"], [data-framer-name="2"], [data-framer-name="3"], [data-framer-name="4"], [data-framer-name="5"], [data-framer-name="6"]) > :nth-child(2) p {
+        font-size: 10.5px !important;
+        line-height: 1.15 !important;
+    }
+}
+
+
+/* --- 2. CONTROLS --- */
+/* ==========================================================================
+     1. DESKTOP STORY SECTION VERTICAL OFFSET ("Meet the BRIDE & GROOM")
+     Adjust this value in pixels to move Section 3 content up or down:
+     - Increase (e.g. 550px, 600px, 700px) to shift further DOWN.
+     - Decrease (e.g. 450px, 400px, 300px) to move further UP.
+     ========================================================================== */
+  :root {
+    --desktop-story-shift: 500px;
+
+  /* ==========================================================================
+     2. DESKTOP TIMELINE CANVAS & COUNTDOWN VERTICAL OFFSET
+     Adjust this value in pixels to move the Timeline Canvas Desktop image
+     layer ("Where our forever begins", Venue card, Countdown timer) up or down:
+     - Positive (e.g. 100px, 200px, 300px) to push further DOWN.
+     - Negative (e.g. -100px, -200px, -300px) to pull further UP closer to the gallery.
+     ========================================================================== */
+    --desktop-timeline-canvas-shift: 0px;
+
+  
+  /* ==========================================================================
+     3. COUNTDOWN & BUDDHA POSITIONING CONTROLS (Desktop, Tablet & Mobile)
+     - Positions "The countdown begins", family intro text, and live timer
+       completely ABOVE Gautam Buddha's head so zero text overlaps Buddha.
+     - Eliminates the excessive blank void below the Location Map.
+     - Offsets Buddha image by -100px so halo sits right beneath the timer.
+     ========================================================================== */
+    --desktop-countdown-top: 1750px;
+    --desktop-buddha-top: 2120px;
+
+    --tablet-countdown-top: 1220px;
+    --tablet-buddha-top: 1360px;
+
+    --mobile-countdown-top: 945px;
+    --mobile-buddha-top: 1075px;
+  }
+
+  @media (min-width: 960px) {
+    /* 1. "Meet the BRIDE & GROOM" Heading */
+    .framer-1lydhp1 .framer-1y4ffrc,
+    .framer-1lydhp1 [data-framer-name="Meet the Couple Heading"],
+    .framer-y583dn [data-framer-name="Meet the Couple Heading"] {
+      margin-bottom: calc(-1 * var(--desktop-story-shift)) !important;
+    }
+
+    /* 2. Message Frame Desktop (Plaque) */
+    .framer-1lydhp1 .framer-1hnxm70,
+    .framer-1lydhp1 [data-framer-name="Message Card Frame"],
+    .framer-y583dn [data-framer-name="Message Card Frame"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 3. Photo Gallery */
+    .framer-1lydhp1 .framer-yspo66-container,
+    .framer-1lydhp1 [data-framer-name="Photo Gallery"],
+    .framer-y583dn [data-framer-name="Photo Gallery"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 4. "Almost time to celebrate" Heading */
+    .framer-1lydhp1 .framer-1e4ftiy,
+    .framer-1lydhp1 [data-framer-name*="celebrate"],
+    .framer-1lydhp1 [data-framer-name*="spelling"],
+    .framer-y583dn [data-framer-name*="celebrate"],
+    .framer-y583dn [data-framer-name*="spelling"] {
+      margin-top: var(--desktop-story-shift) !important;
+    }
+
+    /* 5. Section 4 (Location & Countdown) Timeline Canvas Desktop Image Layer */
+    .framer-12tiy0u,
+    [data-framer-name="4 — Location & Countdown"] {
+      margin-top: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
+    }
+    .framer-2ehbvr,
+    .framer-qqvm6f {
+      margin-top: 0px !important;
+    }
+
+
+  /* Photo Gallery: Ensure completely transparent background on Mobile, Tablet & Desktop */
+  .framer-1wwqjsk-container > div,
+  .framer-118f0os-container > div,
+  .framer-yspo66-container > div,
+  [data-framer-name="Photo Gallery"] > div {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+    /* 6. Expand page root container so all downstream sections and footer flow seamlessly */
+    .framer-72rtr7,
+    .framer-kmaf13 {
+      padding-bottom: calc(var(--desktop-story-shift) + var(--desktop-timeline-canvas-shift)) !important;
+    }
+  }
+
+  
+  /* ==========================================================================
+     4. COUNTDOWN ABOVE BUDDHA & LOCATION GAP RESOLUTION
+     Sequential flow fallback: Location Map -> Countdown -> Buddha Backdrop
+     Permanent visibility & z-index enforcement across Desktop, Tablet & Mobile
+     ========================================================================== */
+
+  /* All Buddha Backdrop instances and their descendants MUST remain permanently visible */
+  [data-framer-name="Countdown Backdrop"],
+  [data-framer-name="Countdown Backdrop"] *,
+  .framer-cb5woe,
+  .framer-cb5woe *,
+  .framer-m2ne5z,
+  .framer-m2ne5z *,
+  .framer-qqvm6f,
+  .framer-qqvm6f * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  [data-framer-name="Countdown Backdrop"],
+  .framer-cb5woe,
+  .framer-m2ne5z,
+  .framer-qqvm6f {
+    z-index: 5 !important;
+  }
+
+  /* Desktop (min-width: 1280px) */
+  @media (min-width: 1280px) {
+    .framer-12tiy0u [data-framer-name="Countdown"],
+    .framer-10jtawo {
+      top: var(--desktop-countdown-top, 1750px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-12tiy0u [data-framer-name="Countdown Backdrop"],
+    .framer-qqvm6f {
+      top: var(--desktop-buddha-top, 2120px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+  /* Tablet / Laptop (min-width: 768px) and (max-width: 1279.98px) */
+  @media (min-width: 768px) and (max-width: 1279.98px) {
+    .framer-1hm5mtp [data-framer-name="Countdown Heading"],
+    .framer-1grsw9j {
+      top: var(--tablet-countdown-top, 1220px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Intro Text"],
+    .framer-16wl77i {
+      top: calc(var(--tablet-countdown-top, 1220px) + 44px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Divider"],
+    .framer-11asyj8 {
+      top: calc(var(--tablet-countdown-top, 1220px) + 94px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-1hm5mtp [data-framer-name="Countdown Timer"],
+    .framer-g74md3-container {
+      top: calc(var(--tablet-countdown-top, 1220px) + 124px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-1hm5mtp [data-framer-name="Countdown Backdrop"],
+    .framer-m2ne5z {
+      top: var(--tablet-buddha-top, 1360px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+  /* Mobile (max-width: 767.98px) */
+  @media (max-width: 767.98px) {
+    .framer-98eqjf [data-framer-name="Countdown Heading"],
+    .framer-8q42g7 {
+      top: var(--mobile-countdown-top, 1220px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Intro Text"],
+    .framer-1lmlpg0 {
+      top: calc(var(--mobile-countdown-top, 1220px) + 34px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Divider"],
+    .framer-178iokx {
+      top: calc(var(--mobile-countdown-top, 1220px) + 78px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .framer-98eqjf [data-framer-name="Countdown Timer"],
+    .framer-dpi7wo-container {
+      top: calc(var(--mobile-countdown-top, 1220px) + 104px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .framer-98eqjf [data-framer-name="Countdown Backdrop"],
+    .framer-cb5woe {
+      top: var(--mobile-buddha-top, 1360px) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5 !important;
+    }
+  }
+
+/* Clean Class-Based Styling for Template Switcher */
+.template-switcher-pill {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2147483647;
+    background: rgba(18, 20, 26, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(246, 200, 96, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px rgba(246, 200, 96, 0.15);
+    border-radius: 9999px;
+    padding: 6px 14px 6px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    max-width: 92vw;
+}
+.switcher-brand {
+    text-decoration: none;
+    color: #f6c860;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+.switcher-select {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    max-width: 200px;
+}
+
+
+/* --- 3. CONTENT INJECTIONS --- */
+/* ==========================================================================
+   CONTENT STYLING (MODULAR COMPONENT)
+   Use this file if you wish to adjust typography, colors, or text styles.
+   All rules below are commented by default so that existing layouts remain
+   100% pixel-perfect and untouched. Uncomment any rule to customize.
+   ========================================================================== */
+
+/* -------------------------------------------------------------------------
+   SECTION 1: HERO & MAIN INVITATION HEADER
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Hero Title — Maya"] p,
+[data-framer-name="Hero Title — Siddharth"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Hero Title — and"] p {
+    font-style: italic !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 2: FAMILY INVITATION & BLESSINGS
+   ------------------------------------------------------------------------- */
+
+/* Entire Family Invitation Section Wrapper (Move up/down, change margins) */
+[data-framer-name="Invitation Details"] {
+    /* 1. Shift the entire family section up or down (Recommended):
+       Use a negative value (e.g. -20px, -40px) to pull it UP closer to the walkway.
+       Use a positive value (e.g. 20px, 40px) to push it DOWN. */
+    /* transform: translateY(-20px) !important; */
+
+    /* 2. Margin controls for the entire family section: */
+    /* margin-top: 0px !important; */
+    /* margin-bottom: 0px !important; */
+}
+
+/* Spacing between individual text lines inside the family section */
+/*
+[data-framer-name="Invitation Details"] [data-framer-component-type="RichTextContainer"] {
+    margin-bottom: 6px !important;
+}
+*/
+
+/* Text Colors */
+[data-framer-name="Groom Parents"] p,
+[data-framer-name="Bride Parents"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Invitation Line"] p {
+    color: rgb(95, 37, 15) !important;
+}
+
+
+/* -------------------------------------------------------------------------
+   SECTION 3: WEDDING TIMELINE / CEREMONIES SCHEDULE
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Timeline Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Timeline Subtext"] p {
+    color: rgb(95, 37, 15) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 4: MEET THE COUPLE / STORY
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Meet the Couple Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 5: THINGS TO KNOW (LOGISTICS CARDS)
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Things to Know Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="Hashtag Title"] p,
+[data-framer-name="Weather Title"] p,
+[data-framer-name="Staff Title"] p,
+[data-framer-name="Parking Title"] p {
+    color: rgb(171, 86, 38) !important;
+}
+*/
+
+/* -------------------------------------------------------------------------
+   SECTION 6: COUNTDOWN & RSVP
+   ------------------------------------------------------------------------- */
+/*
+[data-framer-name="Countdown Heading"] p {
+    color: rgb(171, 86, 38) !important;
+}
+
+[data-framer-name="RSVP Form"] button,
+[data-framer-name="RSVP Form"] a {
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3) !important;
+}
+*/
+
+
+/* --- 4. SECTION 01 HERO --- */
+/* =====================================================================
+   UNFORGETTABLE INVITES — 08 MAHABODHI BUDDHIST WEDDING
+   SECTION 01: UNIFIED RESPONSIVE HERO STYLESHEET
+   Clean CSS Architecture with Device Tier Breakpoints
+   Single DOM Tree Supporting Mobile, Tablet, and Desktop
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   0. Hero Section Container
+   --------------------------------------------------------------------- */
+.hero-unified-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: visible;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ---------------------------------------------------------------------
+   1. Scenic Layers (Sky, Sun, Mountains, Clouds)
+   --------------------------------------------------------------------- */
+.hero-scenic-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Sky Backdrop */
+.hero-sky-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-sky-img {
+    width: 100%;
+    height: 802px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+@media (min-width: 1280px) {
+    .hero-sky-img {
+        height: 1282px;
+    }
+}
+
+@media (min-width: 1559px) {
+    .hero-sky-img {
+        height: 1565px;
+    }
+}
+
+/* Golden Sun */
+.hero-sun-wrap {
+    position: absolute;
+    top: 260px;
+    left: 45%;
+    transform: translateX(-50%) scale(1.2);
+    height: 149px;
+    aspect-ratio: 1.17994;
+    z-index: 2;
+}
+
+.hero-sun-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-sun-wrap {
+        top: 280px;
+        left: 45%;
+        height: 260px;
+        transform: translateX(-50%) scale(1.3);
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-sun-wrap {
+        top: 260px;
+        left: 43%;
+        height: 580px;
+        aspect-ratio: 1.17857;
+        transform: translateX(-50%) scale(1.4);
+    }
+}
+
+/* Bodh Gaya Mountains */
+.hero-mountain-wrap {
+    position: absolute;
+    top: 336px;
+    left: -40px;
+    right: -40px;
+    aspect-ratio: 1.01036;
+    z-index: 5;
+}
+
+.hero-mountain-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-mountain-wrap {
+        top: 380px;
+        left: -20px;
+        right: -20px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-mountain-wrap {
+        top: 451px;
+        left: 0;
+        right: 0;
+        aspect-ratio: 1.00925;
+    }
+}
+
+/* Heavenly Clouds */
+.hero-cloud-wrap {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 1.23967;
+    z-index: 6;
+}
+
+.hero-cloud-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-cloud-wrap {
+        top: 40px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-cloud-wrap {
+        top: -2px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   2. Flocking Birds Simulation
+   --------------------------------------------------------------------- */
+.hero-birds-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 28%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.hero-birds-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+}
+
+@media (min-width: 1280px) {
+    .hero-birds-container {
+        height: 17%;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   3. Bodh Gaya Mahabodhi Temple Sanctuary (Flag Mount)
+   --------------------------------------------------------------------- */
+.hero-temple-wrap {
+    position: absolute;
+    z-index: 9;
+    left: -1px;
+    right: -1px;
+    top: 290px;
+    height: auto;
+    aspect-ratio: 0.274386;
+    overflow: visible;
+}
+
+.hero-temple-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-temple-wrap {
+        top: 320px;
+        left: 50%;
+        right: auto;
+        width: 876px;
+        max-width: 90vw;
+        transform: translateX(-50%);
+    }
+}
+
+/* Standard Desktop: 1280px - 1558px */
+@media (min-width: 1280px) and (max-width: 1558.98px) {
+    .hero-temple-wrap {
+        aspect-ratio: unset;
+        width: 1515px;
+        height: 3574px;
+        left: 50%;
+        right: auto;
+        top: 360px;
+        transform: translateX(-50%);
+    }
+}
+
+/* Large Desktop: 1559px - 1727px */
+@media (min-width: 1559px) and (max-width: 1727.98px) {
+    .hero-temple-wrap {
+        aspect-ratio: unset;
+        width: 1583px;
+        height: 3630px;
+        left: 50%;
+        right: auto;
+        top: 380px;
+        transform: translateX(-50%);
+    }
+}
+
+/* 2K / 4K / Ultrawide: ≥1728px */
+@media (min-width: 1728px) {
+    .hero-temple-wrap {
+        aspect-ratio: unset;
+        width: 100vw;
+        height: 4500px;
+        left: 0;
+        right: 0;
+        top: 376px;
+        transform: none;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   4. Upper Archway Couple Titles (Siddharth weds Maya)
+   --------------------------------------------------------------------- */
+.hero-curved-titles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1515px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 8;
+}
+
+.hero-title-wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+}
+
+.hero-title-text {
+    margin: 0;
+    line-height: 1;
+}
+
+/* Groom: Siddharth (Top) */
+.hero-title-groom {
+    top: 94px;
+}
+
+.hero-text-groom {
+    font-family: "Miofarin Regular", sans-serif;
+    font-size: 86px;
+    color: rgba(171, 86, 38, 0.72);
+}
+
+/* Connector: weds (Middle) */
+.hero-title-connector {
+    top: 156px;
+}
+
+.hero-text-connector {
+    font-family: "Brother Signature Regular", cursive, sans-serif;
+    font-size: 71px;
+    color: rgba(171, 86, 38, 0.72);
+}
+
+/* Bride: Maya (Bottom) */
+.hero-title-bride {
+    top: 211px;
+}
+
+.hero-text-maya {
+    font-family: "Miofarin Regular", sans-serif;
+    font-size: 86px;
+    color: rgba(171, 86, 38, 0.72);
+}
+
+/* Compact Mobile (<390px) */
+@media (max-width: 389.98px) {
+    .hero-title-groom {
+        top: 90px;
+    }
+    .hero-title-connector {
+        top: 146px;
+    }
+    .hero-title-bride {
+        top: 196px;
+    }
+    .hero-text-groom,
+    .hero-text-maya {
+        font-size: 65px;
+    }
+    .hero-text-connector {
+        font-size: 54px;
+    }
+}
+
+/* Tablet (768px - 1279px) */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-title-groom {
+        top: 130px;
+    }
+    .hero-title-connector {
+        top: 215px;
+    }
+    .hero-title-bride {
+        top: 290px;
+    }
+    .hero-text-groom,
+    .hero-text-maya {
+        font-size: 110px;
+    }
+    .hero-text-connector {
+        font-size: 92px;
+    }
+}
+
+/* Standard Desktop (1280px - 1558px) */
+@media (min-width: 1280px) and (max-width: 1558.98px) {
+    .hero-title-groom {
+        top: 93px;
+    }
+    .hero-title-connector {
+        top: 193px;
+    }
+    .hero-title-bride {
+        top: 283px;
+    }
+    .hero-text-groom,
+    .hero-text-maya {
+        font-size: 140px;
+    }
+    .hero-text-connector {
+        font-size: 117px;
+    }
+}
+
+/* Large Desktop (≥1559px) */
+@media (min-width: 1559px) {
+    .hero-title-groom {
+        top: 85px;
+    }
+    .hero-title-connector {
+        top: 205px;
+    }
+    .hero-title-bride {
+        top: 315px;
+    }
+    .hero-text-groom,
+    .hero-text-maya {
+        font-size: 171px;
+    }
+    .hero-text-connector {
+        font-size: 143px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+   5. Grand Torana Arch Frame (Carved Golden Entrance)
+   --------------------------------------------------------------------- */
+.hero-arch-wrap {
+    position: absolute;
+    top: 0;
+    left: -6px;
+    right: -6px;
+    aspect-ratio: 1.95759;
+    height: auto;
+    z-index: 9;
+    overflow: visible;
+    pointer-events: none;
+    transform-origin: 50% 0%;
+}
+
+.hero-arch-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center top;
+}
+
+/* Tablet: 768px - 1279px */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-arch-wrap {
+        left: 50%;
+        right: auto;
+        width: 1000px;
+        transform: translateX(-50%) scale(1.15);
+    }
+}
+
+/* Desktop: 1280px - 1558px */
+@media (min-width: 1280px) and (max-width: 1558.98px) {
+    .hero-arch-wrap {
+        top: -185px;
+        left: 50%;
+        right: auto;
+        width: 1513px;
+        transform: translateX(-50%) scale(1.6);
+    }
+}
+
+/* Large Desktop: 1559px - 1727px */
+@media (min-width: 1559px) and (max-width: 1727.98px) {
+    .hero-arch-wrap {
+        top: -207px;
+        left: 50%;
+        right: auto;
+        width: 1583px;
+        transform: translateX(-50%) scale(1.6);
+    }
+}
+
+/* Ultrawide / 4K: ≥1728px */
+@media (min-width: 1728px) {
+    .hero-arch-wrap {
+        top: -105px;
+        left: 50%;
+        right: auto;
+        width: 1600px;
+        transform: translateX(-50%) scale(1.65);
+    }
+}
+
+/* ---------------------------------------------------------------------
+   6. Hanging Brass Bells with Physics Sway
+   --------------------------------------------------------------------- */
+.hero-bells-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    pointer-events: none;
+    z-index: 10;
+    overflow: visible;
+}
+
+.hero-bell {
+    position: absolute;
+    transform-origin: 50% 0%;
+    cursor: pointer;
+    pointer-events: auto;
+    will-change: transform;
+}
+
+.hero-bell-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Mobile Bell Layout */
+.hero-bell-1 {
+    top: -1px;
+    left: calc(83.5897% - 26px);
+    width: 52px;
+    height: 181px;
+    z-index: 10;
+    animation: bellSwayA 4.8s ease-in-out infinite alternate;
+}
+
+.hero-bell-2 {
+    top: -1px;
+    left: 36px;
+    width: 43px;
+    height: 181px;
+    z-index: 10;
+    animation: bellSwayB 5.2s ease-in-out 0.6s infinite alternate;
+}
+
+.hero-bell-3 {
+    top: 0;
+    left: 12px;
+    width: 37px;
+    height: 137px;
+    z-index: 10;
+    animation: bellSwayA 4.4s ease-in-out 1.2s infinite alternate;
+}
+
+.hero-bell-4 {
+    top: 15px;
+    left: calc(89.4872% - 23px);
+    width: 46px;
+    height: 121px;
+    z-index: 10;
+    animation: bellSwayB 5.6s ease-in-out 0.3s infinite alternate;
+}
+
+/* Bells 5 & 6 (Desktop Only) */
+.desktop-only-bell {
+    display: none;
+}
+
+/* Desktop Bells Layout (≥1280px) */
+@media (min-width: 1280px) {
+    .desktop-only-bell {
+        display: block;
+    }
+    .hero-bell-1 {
+        top: -2px;
+        left: calc(15.9076% - 100px);
+        width: 200px;
+        height: 350px;
+        animation: bellSwayA 5.0s ease-in-out infinite alternate;
+    }
+    .hero-bell-2 {
+        top: -2px;
+        left: calc(83.6304% - 100px);
+        width: 200px;
+        height: 350px;
+        animation: bellSwayB 5.4s ease-in-out 0.8s infinite alternate;
+    }
+    .hero-bell-3 {
+        top: 60px;
+        left: calc(9.30693% - 76.5px);
+        width: 153px;
+        height: 350px;
+        z-index: 8;
+        animation: bellSwayA 4.6s ease-in-out 1.5s infinite alternate;
+    }
+    .hero-bell-4 {
+        top: 60px;
+        left: calc(90.4951% - 76.5px);
+        width: 153px;
+        height: 350px;
+        z-index: 8;
+        animation: bellSwayB 5.1s ease-in-out 0.4s infinite alternate;
+    }
+    .hero-bell-5 {
+        top: 138px;
+        left: calc(4.68647% - 100px);
+        width: 200px;
+        height: 350px;
+        z-index: 7;
+        animation: bellSwayA 4.9s ease-in-out 1.1s infinite alternate;
+    }
+    .hero-bell-6 {
+        top: 158px;
+        left: calc(95.7756% - 100px);
+        width: 200px;
+        height: 350px;
+        z-index: 7;
+        animation: bellSwayB 5.3s ease-in-out 1.7s infinite alternate;
+    }
+}
+
+@keyframes bellSwayA {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(2.2deg); }
+    100% { transform: rotate(-2.0deg); }
+}
+
+@keyframes bellSwayB {
+    0%   { transform: rotate(0deg); }
+    50%  { transform: rotate(-2.4deg); }
+    100% { transform: rotate(1.8deg); }
+}
+
+/* ---------------------------------------------------------------------
+   7. Formal Invitation Details Card & Sacred Blessings
+   --------------------------------------------------------------------- */
+.hero-invitation-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 430px;
+    margin-top: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px 60px;
+    box-sizing: border-box;
+}
+
+/* Sacred Invocations */
+.hero-invocation-wrap {
+    width: 83px;
+    aspect-ratio: 3.2234;
+    margin-bottom: 8px;
+}
+.hero-invocation-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hero-emblem-wrap {
+    width: 47px;
+    aspect-ratio: 0.725922;
+    margin-bottom: 8px;
+}
+.hero-emblem-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.hero-benediction-wrap {
+    width: 195px;
+    aspect-ratio: 5.13559;
+    margin-bottom: 16px;
+}
+.hero-benediction-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Groom Parents */
+.hero-groom-parents {
+    margin-bottom: 12px;
+}
+
+.hero-parents-text {
+    font-family: "Gotham Medium", "Castela Regular", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(171, 86, 38);
+    margin: 0;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+}
+
+/* Formal Line */
+.hero-invitation-line {
+    margin-bottom: 18px;
+    max-width: 320px;
+}
+
+.hero-invitation-text {
+    font-family: "IvyOra Display Regular", serif;
+    font-size: 14px;
+    color: rgb(95, 37, 15);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Main Couple Display in Card */
+.hero-couple-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.hero-name-primary {
+    font-family: "Miofarin Regular", sans-serif;
+    font-size: 86px;
+    color: rgba(171, 86, 38, 0.72);
+    margin: 0;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+}
+
+.hero-ampersand {
+    margin: 4px 0;
+}
+
+.hero-ampersand-text {
+    font-family: "Brother Signature Regular", cursive, sans-serif;
+    font-size: 73px;
+    color: rgba(171, 86, 38, 0.72);
+    margin: 0;
+    line-height: 0.9;
+}
+
+/* Daughter of */
+.hero-daughter-of {
+    margin-bottom: 8px;
+}
+
+.hero-label-subtext {
+    font-family: "IvyOra Display Medium", serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(95, 37, 15);
+    margin: 0;
+    letter-spacing: 0.08em;
+}
+
+/* Bride Parents */
+.hero-bride-parents {
+    margin-bottom: 20px;
+}
+
+/* Events Intro */
+.hero-events-intro-text {
+    font-family: "IvyOra Display Medium", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(95, 37, 15);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+/* Tablet Invitation Card Scaling */
+@media (min-width: 768px) and (max-width: 1279.98px) {
+    .hero-invitation-card {
+        max-width: 650px;
+        margin-top: 880px;
+        padding-bottom: 80px;
+    }
+    .hero-invocation-wrap {
+        width: 150px;
+        margin-bottom: 12px;
+    }
+    .hero-emblem-wrap {
+        width: 65px;
+        margin-bottom: 12px;
+    }
+    .hero-benediction-wrap {
+        width: 230px;
+        margin-bottom: 20px;
+    }
+    .hero-parents-text {
+        font-size: 22px;
+    }
+    .hero-invitation-line {
+        max-width: 500px;
+        margin-bottom: 22px;
+    }
+    .hero-invitation-text {
+        font-size: 20px;
+    }
+    .hero-name-primary {
+        font-size: 110px;
+    }
+    .hero-ampersand-text {
+        font-size: 90px;
+    }
+    .hero-label-subtext {
+        font-size: 18px;
+    }
+    .hero-events-intro-text {
+        font-size: 28px;
+    }
+}
+
+/* Desktop Invitation Card Scaling */
+@media (min-width: 1280px) {
+    .hero-invitation-card {
+        max-width: 900px;
+        margin-top: 1150px;
+        padding-bottom: 120px;
+    }
+    .hero-invocation-wrap {
+        width: 211px;
+        margin-bottom: 16px;
+    }
+    .hero-emblem-wrap {
+        width: 83px;
+        margin-bottom: 16px;
+    }
+    .hero-benediction-wrap {
+        width: 269px;
+        margin-bottom: 24px;
+    }
+    .hero-parents-text {
+        font-size: 32px;
+    }
+    .hero-invitation-line {
+        max-width: 650px;
+        margin-bottom: 28px;
+    }
+    .hero-invitation-text {
+        font-size: 27px;
+    }
+    .hero-name-primary {
+        font-size: 145px;
+    }
+    .hero-ampersand-text {
+        font-size: 120px;
+    }
+    .hero-label-subtext {
+        font-size: 24px;
+    }
+    .hero-events-intro-text {
+        font-size: 36px;
+    }
+}
+
+

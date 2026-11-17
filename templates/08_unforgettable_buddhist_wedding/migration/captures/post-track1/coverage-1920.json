@@ -1,0 +1,177 @@
+[
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "29",
+    "totalBytes": 1258,
+    "executedBytes": 3745,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "30",
+    "totalBytes": 940,
+    "executedBytes": 1877,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "31",
+    "totalBytes": 13245,
+    "executedBytes": 41133,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "32",
+    "totalBytes": 853,
+    "executedBytes": 3191,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "33",
+    "totalBytes": 119,
+    "executedBytes": 119,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/rolldown-runtime.Dh6celcD.mjs",
+    "scriptId": "15",
+    "totalBytes": 629,
+    "executedBytes": 1342,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/react.iNMCLRE-.mjs",
+    "scriptId": "16",
+    "totalBytes": 144710,
+    "executedBytes": 377340,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/framer.CmgPE89d.mjs",
+    "scriptId": "17",
+    "totalBytes": 406012,
+    "executedBytes": 819875,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/motion.CSEoZ5UY.mjs",
+    "scriptId": "18",
+    "totalBytes": 148973,
+    "executedBytes": 324138,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/VR998DU3WSRaZIpYrcWhMoQxMWGXSrJFDK6jx2eUMjE.DKHZzuKc.mjs",
+    "scriptId": "19",
+    "totalBytes": 592136,
+    "executedBytes": 1808388,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/shared-lib.DDe1d4ZQ.mjs",
+    "scriptId": "20",
+    "totalBytes": 630232,
+    "executedBytes": 1337919,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/script_main.BNALTGIK.mjs",
+    "scriptId": "21",
+    "totalBytes": 6464,
+    "executedBytes": 15460,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/audio-player.js",
+    "scriptId": "22",
+    "totalBytes": 1785,
+    "executedBytes": 4550,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/index.html",
+    "scriptId": "34",
+    "totalBytes": 437,
+    "executedBytes": 855,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/tree-parallax.js",
+    "scriptId": "23",
+    "totalBytes": 5792,
+    "executedBytes": 17398,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/sky-parallax.js",
+    "scriptId": "25",
+    "totalBytes": 4605,
+    "executedBytes": 13562,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/group-manager.js",
+    "scriptId": "24",
+    "totalBytes": 27693,
+    "executedBytes": 65329,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/content/wedding-content.js",
+    "scriptId": "26",
+    "totalBytes": 4084,
+    "executedBytes": 4084,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/content-manager.js",
+    "scriptId": "27",
+    "totalBytes": 23888,
+    "executedBytes": 85523,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/section4-flow.js",
+    "scriptId": "28",
+    "totalBytes": 9397,
+    "executedBytes": 28220,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/gsap@3.12.DQhLipkJ.mjs",
+    "scriptId": "35",
+    "totalBytes": 173,
+    "executedBytes": 181,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "http://localhost:8099/scripts/ScrollTrigger.oiqn99lx.mjs",
+    "scriptId": "36",
+    "totalBytes": 141,
+    "executedBytes": 180,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "https://framer.com/edit/init.mjs",
+    "scriptId": "37",
+    "totalBytes": 8463,
+    "executedBytes": 16131,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "https://app.framerstatic.com/chunk-HA3TJUCE.mjs",
+    "scriptId": "38",
+    "totalBytes": 4043,
+    "executedBytes": 4610,
+    "isDeadCandidate": false
+  },
+  {
+    "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+    "scriptId": "194",
+    "totalBytes": 147552,
+    "executedBytes": 335047,
+    "isDeadCandidate": false
+  }
+]
