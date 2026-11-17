@@ -1,0 +1,1784 @@
+{
+  "timestamp": "2026-11-17T14:25:55.031Z",
+  "inventory": [
+    {
+      "relPath": "audio/buddhist_flute_blessing.mp3",
+      "sizeBytes": 2010102,
+      "lines": null
+    },
+    {
+      "relPath": "audio/h45eKdEQgEZsNQLY8z9lrI3tuY.mp3",
+      "sizeBytes": 58708,
+      "lines": null
+    },
+    {
+      "relPath": "BUDDHIST_AI_BLUEPRINT.md",
+      "sizeBytes": 7100,
+      "lines": 106
+    },
+    {
+      "relPath": "content/wedding-content.js",
+      "sizeBytes": 4105,
+      "lines": 111
+    },
+    {
+      "relPath": "content.json",
+      "sizeBytes": 3857,
+      "lines": 120
+    },
+    {
+      "relPath": "css/audio-player.css",
+      "sizeBytes": 1969,
+      "lines": 72
+    },
+    {
+      "relPath": "css/breakpoints.css",
+      "sizeBytes": 1319,
+      "lines": 2
+    },
+    {
+      "relPath": "css/content.css",
+      "sizeBytes": 3706,
+      "lines": 107
+    },
+    {
+      "relPath": "css/controls.css",
+      "sizeBytes": 9170,
+      "lines": 254
+    },
+    {
+      "relPath": "css/flags.css",
+      "sizeBytes": 20183,
+      "lines": 728
+    },
+    {
+      "relPath": "css/fonts.css",
+      "sizeBytes": 18907,
+      "lines": 218
+    },
+    {
+      "relPath": "css/framer-core.css",
+      "sizeBytes": 152600,
+      "lines": 2
+    },
+    {
+      "relPath": "css/main.css",
+      "sizeBytes": 894,
+      "lines": 32
+    },
+    {
+      "relPath": "css/main_clean.css",
+      "sizeBytes": 213,
+      "lines": 10
+    },
+    {
+      "relPath": "css/overrides.css",
+      "sizeBytes": 29314,
+      "lines": 582
+    },
+    {
+      "relPath": "css/sections/01-hero.css",
+      "sizeBytes": 17280,
+      "lines": 835
+    },
+    {
+      "relPath": "css/sections/02-countdown.css",
+      "sizeBytes": 4195,
+      "lines": 192
+    },
+    {
+      "relPath": "css/sections/03-story.css",
+      "sizeBytes": 1661,
+      "lines": 55
+    },
+    {
+      "relPath": "css/sections/04-gallery.css",
+      "sizeBytes": 177,
+      "lines": 6
+    },
+    {
+      "relPath": "css/sections/05-timeline.css",
+      "sizeBytes": 8080,
+      "lines": 307
+    },
+    {
+      "relPath": "css/sections/06-location.css",
+      "sizeBytes": 5947,
+      "lines": 271
+    },
+    {
+      "relPath": "css/sections/07-footer.css",
+      "sizeBytes": 164,
+      "lines": 7
+    },
+    {
+      "relPath": "data/schema_map.json",
+      "sizeBytes": 5137,
+      "lines": 144
+    },
+    {
+      "relPath": "data/TODO_MODULAR_REACT_MIGRATION.md",
+      "sizeBytes": 10479,
+      "lines": 117
+    },
+    {
+      "relPath": "fonts/1K3W8DizY3v4emK8Mb08YHxTbs.woff2",
+      "sizeBytes": 4628,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/2A4Xx7CngadFGlVV4xrO06OBHY.woff2",
+      "sizeBytes": 4236,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/3qTrojWunjGQtEBlIcwMbSoI7iowbS7F.woff2",
+      "sizeBytes": 11168,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/3qTrojWunjGQtEBlIcwMbSoI7jgwbS7F.woff2",
+      "sizeBytes": 15584,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/3qTrojWunjGQtEBlIcwMbSoI7kowbS7F.woff2",
+      "sizeBytes": 10760,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/3qTrojWunjGQtEBlIcwMbSoI7kQwbQ.woff2",
+      "sizeBytes": 21396,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2",
+      "sizeBytes": 4960,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4Jgqn7NsDO77QsxaQyfnM0ICLY4.woff2",
+      "sizeBytes": 60764,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2",
+      "sizeBytes": 7080,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-6qj.woff2",
+      "sizeBytes": 24352,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4-KqjgSE.woff2",
+      "sizeBytes": 8568,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI496qjgSE.woff2",
+      "sizeBytes": 7360,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49aqjgSE.woff2",
+      "sizeBytes": 21612,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49KqjgSE.woff2",
+      "sizeBytes": 6972,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI49qqjgSE.woff2",
+      "sizeBytes": 11544,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4UacrEBBsBhlBjvfkQjt71kZfyBzPgNGERI4_6qjgSE.woff2",
+      "sizeBytes": 12944,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/4y04scLej0VIDnfiTUaHmR9kJ8.woff2",
+      "sizeBytes": 31316,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2",
+      "sizeBytes": 8896,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/867QObYax8ANsfX4TGEVU9YiCM.woff2",
+      "sizeBytes": 7408,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/b6Y37FthZeALduNqHicBT6FutY.woff2",
+      "sizeBytes": 4168,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/BMjg1YByjbhOVDynKUorFYRCk.woff2",
+      "sizeBytes": 18572,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2",
+      "sizeBytes": 7228,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2",
+      "sizeBytes": 9500,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/DOfvtmE1UplCq161m6Hj8CSQYg.woff2",
+      "sizeBytes": 26696,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2",
+      "sizeBytes": 8892,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/EOr0mi4hNtlgWNn9if640EZzXCo.woff2",
+      "sizeBytes": 7116,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/GIryZETIX4IFypco5pYZONKhJIo.woff2",
+      "sizeBytes": 4268,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/GrgcKwrN6d3Uz8EwcLHZxwEfC4.woff2",
+      "sizeBytes": 27380,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/H89BbHkbHDzlxZzxi8uPzTsp90.woff2",
+      "sizeBytes": 9564,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/ia3uin3hQWqDrVloC1zEtYHWw.woff2",
+      "sizeBytes": 30368,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2",
+      "sizeBytes": 25348,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2",
+      "sizeBytes": 4756,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2",
+      "sizeBytes": 6652,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/pKRFNWFoZl77qYCAIp84lN1h944.woff2",
+      "sizeBytes": 29380,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/s9K7gd62GoiEFlvMdmFDczcSwA.woff2",
+      "sizeBytes": 31252,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/SEQP8hnAhgJcZlHjxip9s3uuKg.woff2",
+      "sizeBytes": 60460,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/syRNPWzAMIrcJ3wIlPIP43KjQs.woff2",
+      "sizeBytes": 27900,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/tDHgE1HIlQZDKKTmmqw6GznA8AA.woff2",
+      "sizeBytes": 30452,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2",
+      "sizeBytes": 4052,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2",
+      "sizeBytes": 6672,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2",
+      "sizeBytes": 7556,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/VBd98BPo7gIkQI9U4PQ8dyWGdw.woff2",
+      "sizeBytes": 57884,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/VgYFWiwsAC5OYxAycRXXvhze58.woff2",
+      "sizeBytes": 26076,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2",
+      "sizeBytes": 7360,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/WWjETWwBUpECorvxciFxrUEZg.woff2",
+      "sizeBytes": 35348,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2",
+      "sizeBytes": 27736,
+      "lines": null
+    },
+    {
+      "relPath": "fonts/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2",
+      "sizeBytes": 4504,
+      "lines": null
+    },
+    {
+      "relPath": "images/72XoQPUGMzuAK0nUiljwSxGw2HA.webp",
+      "sizeBytes": 302546,
+      "lines": null
+    },
+    {
+      "relPath": "images/Alcove_Backdrop_Desktop.png",
+      "sizeBytes": 3181052,
+      "lines": null
+    },
+    {
+      "relPath": "images/Alcove_Backdrop_Desktop.webp",
+      "sizeBytes": 637150,
+      "lines": null
+    },
+    {
+      "relPath": "images/Alcove_Backdrop_Mobile.png",
+      "sizeBytes": 1330810,
+      "lines": null
+    },
+    {
+      "relPath": "images/Alcove_Backdrop_Mobile.webp",
+      "sizeBytes": 286750,
+      "lines": null
+    },
+    {
+      "relPath": "images/Arch_Frame_Desktop.png",
+      "sizeBytes": 833496,
+      "lines": null
+    },
+    {
+      "relPath": "images/Arch_Frame_Desktop.webp",
+      "sizeBytes": 217860,
+      "lines": null
+    },
+    {
+      "relPath": "images/Arch_Frame_Mobile.png",
+      "sizeBytes": 409423,
+      "lines": null
+    },
+    {
+      "relPath": "images/Arch_Frame_Mobile.webp",
+      "sizeBytes": 116250,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell with Floral Chain.png",
+      "sizeBytes": 560677,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell with Floral Chain.webp",
+      "sizeBytes": 155032,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell with Long Chain.png",
+      "sizeBytes": 1028481,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell with Long Chain.webp",
+      "sizeBytes": 447186,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell_Floral_Chain.png",
+      "sizeBytes": 560677,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell_Floral_Chain.webp",
+      "sizeBytes": 155032,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell_Long_Chain.png",
+      "sizeBytes": 1028481,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bell_Long_Chain.webp",
+      "sizeBytes": 447186,
+      "lines": null
+    },
+    {
+      "relPath": "images/Benediction_Line_Bhavatu_Sabba_Mangalam.png",
+      "sizeBytes": 222486,
+      "lines": null
+    },
+    {
+      "relPath": "images/Benediction_Line_Desktop.webp",
+      "sizeBytes": 108278,
+      "lines": null
+    },
+    {
+      "relPath": "images/Benediction_Line_Mobile.webp",
+      "sizeBytes": 108278,
+      "lines": null
+    },
+    {
+      "relPath": "images/Blessing_Emblem_Desktop.png",
+      "sizeBytes": 60357,
+      "lines": null
+    },
+    {
+      "relPath": "images/Blessing_Emblem_Desktop.webp",
+      "sizeBytes": 19962,
+      "lines": null
+    },
+    {
+      "relPath": "images/Blessing_Emblem_Mobile.png",
+      "sizeBytes": 21585,
+      "lines": null
+    },
+    {
+      "relPath": "images/Blessing_Emblem_Mobile.webp",
+      "sizeBytes": 8664,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bridge with Deer.png",
+      "sizeBytes": 43006327,
+      "lines": null
+    },
+    {
+      "relPath": "images/Bridge with Deer.webp",
+      "sizeBytes": 5096536,
+      "lines": null
+    },
+    {
+      "relPath": "images/Buddha Lotus Emblem.webp",
+      "sizeBytes": 306362,
+      "lines": null
+    },
+    {
+      "relPath": "images/Cloud_Desktop.png",
+      "sizeBytes": 38416306,
+      "lines": null
+    },
+    {
+      "relPath": "images/Cloud_Desktop.webp",
+      "sizeBytes": 5495638,
+      "lines": null
+    },
+    {
+      "relPath": "images/Cloud_Mobile.png",
+      "sizeBytes": 38416306,
+      "lines": null
+    },
+    {
+      "relPath": "images/Cloud_Mobile.webp",
+      "sizeBytes": 5495638,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_1.webp",
+      "sizeBytes": 60762,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_2.webp",
+      "sizeBytes": 55898,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_3.webp",
+      "sizeBytes": 60954,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_4.webp",
+      "sizeBytes": 39046,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_5.webp",
+      "sizeBytes": 45388,
+      "lines": null
+    },
+    {
+      "relPath": "images/collage_6.webp",
+      "sizeBytes": 56266,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Divider_Desktop.webp",
+      "sizeBytes": 3722,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Divider_Mobile.webp",
+      "sizeBytes": 1506,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Frame_Desktop.png",
+      "sizeBytes": 4359755,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Frame_Desktop.webp",
+      "sizeBytes": 946418,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Frame_Mobile.png",
+      "sizeBytes": 1472696,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Frame_Mobile.webp",
+      "sizeBytes": 352110,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Ornament_Desktop.webp",
+      "sizeBytes": 11992,
+      "lines": null
+    },
+    {
+      "relPath": "images/Countdown_Ornament_Mobile.webp",
+      "sizeBytes": 12272,
+      "lines": null
+    },
+    {
+      "relPath": "images/couple_main_photo.jpg",
+      "sizeBytes": 209453,
+      "lines": null
+    },
+    {
+      "relPath": "images/couple_stage_portrait.jpg",
+      "sizeBytes": 228263,
+      "lines": null
+    },
+    {
+      "relPath": "images/default-favicon-dark.v1.webp",
+      "sizeBytes": 266,
+      "lines": null
+    },
+    {
+      "relPath": "images/default-favicon-light.v1.webp",
+      "sizeBytes": 210,
+      "lines": null
+    },
+    {
+      "relPath": "images/default-touch-icon.v3.webp",
+      "sizeBytes": 1888,
+      "lines": null
+    },
+    {
+      "relPath": "images/default28.svg",
+      "sizeBytes": 1820,
+      "lines": null
+    },
+    {
+      "relPath": "images/Event_Badge_Medallion.png",
+      "sizeBytes": 1672228,
+      "lines": null
+    },
+    {
+      "relPath": "images/Event_Badge_Medallion.webp",
+      "sizeBytes": 307370,
+      "lines": null
+    },
+    {
+      "relPath": "images/Event_Frame_Pillar.png",
+      "sizeBytes": 2241841,
+      "lines": null
+    },
+    {
+      "relPath": "images/Event_Frame_Pillar.webp",
+      "sizeBytes": 157894,
+      "lines": null
+    },
+    {
+      "relPath": "images/Event_Numeral_Badge.webp",
+      "sizeBytes": 27838,
+      "lines": null
+    },
+    {
+      "relPath": "images/Garden Temple Frame.png",
+      "sizeBytes": 2190076,
+      "lines": null
+    },
+    {
+      "relPath": "images/Garden Temple Frame.webp",
+      "sizeBytes": 510850,
+      "lines": null
+    },
+    {
+      "relPath": "images/Gateway_desktop.png",
+      "sizeBytes": 2480651,
+      "lines": null
+    },
+    {
+      "relPath": "images/Gateway_desktop.webp",
+      "sizeBytes": 465966,
+      "lines": null
+    },
+    {
+      "relPath": "images/Gateway_mobile.png",
+      "sizeBytes": 1043504,
+      "lines": null
+    },
+    {
+      "relPath": "images/Gateway_mobile.webp",
+      "sizeBytes": 200112,
+      "lines": null
+    },
+    {
+      "relPath": "images/Icon_Hashtag.webp",
+      "sizeBytes": 14834,
+      "lines": null
+    },
+    {
+      "relPath": "images/Icon_Parking.webp",
+      "sizeBytes": 12034,
+      "lines": null
+    },
+    {
+      "relPath": "images/Icon_Staff.webp",
+      "sizeBytes": 13526,
+      "lines": null
+    },
+    {
+      "relPath": "images/Icon_Weather.webp",
+      "sizeBytes": 14804,
+      "lines": null
+    },
+    {
+      "relPath": "images/Indian Arch Frames.png",
+      "sizeBytes": 1690459,
+      "lines": null
+    },
+    {
+      "relPath": "images/Indian Arch Frames.webp",
+      "sizeBytes": 425670,
+      "lines": null
+    },
+    {
+      "relPath": "images/Invocation_Text_Desktop.webp",
+      "sizeBytes": 79662,
+      "lines": null
+    },
+    {
+      "relPath": "images/Invocation_Text_Mobile.webp",
+      "sizeBytes": 79662,
+      "lines": null
+    },
+    {
+      "relPath": "images/Invocation_Text_Namo_Buddhay.png",
+      "sizeBytes": 191124,
+      "lines": null
+    },
+    {
+      "relPath": "images/Left Flag.webp",
+      "sizeBytes": 24506,
+      "lines": null
+    },
+    {
+      "relPath": "images/Location_Canvas_Desktop.webp",
+      "sizeBytes": 318280,
+      "lines": null
+    },
+    {
+      "relPath": "images/Location_Canvas_Desktop_ORIGINAL_BACKUP.webp",
+      "sizeBytes": 293320,
+      "lines": null
+    },
+    {
+      "relPath": "images/Location_Canvas_Mobile.webp",
+      "sizeBytes": 150742,
+      "lines": null
+    },
+    {
+      "relPath": "images/Location_Canvas_Mobile_ORIGINAL_BACKUP.webp",
+      "sizeBytes": 130288,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Arch Frame.png",
+      "sizeBytes": 2241841,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Arch Frame.webp",
+      "sizeBytes": 157894,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Medallion.png",
+      "sizeBytes": 1672228,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Medallion.webp",
+      "sizeBytes": 307370,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Sunburst Motif.png",
+      "sizeBytes": 2027506,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Sunburst Motif.webp",
+      "sizeBytes": 252736,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Vine Divider.png",
+      "sizeBytes": 1298210,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Vine Divider.webp",
+      "sizeBytes": 365014,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lotus Wedding Plaque.webp",
+      "sizeBytes": 337724,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lush Flowering Garden.png",
+      "sizeBytes": 41038250,
+      "lines": null
+    },
+    {
+      "relPath": "images/Lush Flowering Garden.webp",
+      "sizeBytes": 4983842,
+      "lines": null
+    },
+    {
+      "relPath": "images/Mandala_Corner_Accent.webp",
+      "sizeBytes": 34,
+      "lines": null
+    },
+    {
+      "relPath": "images/Mandala_Rosette_Ornament.webp",
+      "sizeBytes": 34,
+      "lines": null
+    },
+    {
+      "relPath": "images/Message_Frame_Desktop.png",
+      "sizeBytes": 2657111,
+      "lines": null
+    },
+    {
+      "relPath": "images/Message_Frame_Desktop.webp",
+      "sizeBytes": 337724,
+      "lines": null
+    },
+    {
+      "relPath": "images/Message_Frame_Mobile.png",
+      "sizeBytes": 877642,
+      "lines": null
+    },
+    {
+      "relPath": "images/Message_Frame_Mobile.webp",
+      "sizeBytes": 119270,
+      "lines": null
+    },
+    {
+      "relPath": "images/Mountain_Desktop.webp",
+      "sizeBytes": 324168,
+      "lines": null
+    },
+    {
+      "relPath": "images/Mountain_Mobile.webp",
+      "sizeBytes": 221872,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Bell with Floral Chain.png",
+      "sizeBytes": 560677,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Bell with Floral Chain.webp",
+      "sizeBytes": 155032,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Bell with Long Chain.png",
+      "sizeBytes": 1028481,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Bell with Long Chain.webp",
+      "sizeBytes": 447186,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Buddha Lotus Emblem.png",
+      "sizeBytes": 2222769,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Buddha Lotus Emblem.webp",
+      "sizeBytes": 306362,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Garden Temple Frame.png",
+      "sizeBytes": 2190076,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Garden Temple Frame.webp",
+      "sizeBytes": 510850,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Indian Arch Frames.png",
+      "sizeBytes": 1690459,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Indian Arch Frames.webp",
+      "sizeBytes": 425670,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Arch Frame.png",
+      "sizeBytes": 2241841,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Arch Frame.webp",
+      "sizeBytes": 157894,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Medallion.png",
+      "sizeBytes": 1672228,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Medallion.webp",
+      "sizeBytes": 307370,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Sunburst Motif.png",
+      "sizeBytes": 2027506,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Sunburst Motif.webp",
+      "sizeBytes": 252736,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Vine Divider.png",
+      "sizeBytes": 1298210,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Vine Divider.webp",
+      "sizeBytes": 365014,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Wedding Plaque.png",
+      "sizeBytes": 2657111,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Lotus Wedding Plaque.webp",
+      "sizeBytes": 337724,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Sandstone Pavilion with Deer and Blossoms.png",
+      "sizeBytes": 3008154,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Sandstone Pavilion with Deer and Blossoms.webp",
+      "sizeBytes": 508724,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Sandstone Temple Courtyard.png",
+      "sizeBytes": 3249167,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Sandstone Temple Courtyard.webp",
+      "sizeBytes": 650768,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Wedding Stage.png",
+      "sizeBytes": 2970831,
+      "lines": null
+    },
+    {
+      "relPath": "images/New folder/Wedding Stage.webp",
+      "sizeBytes": 416266,
+      "lines": null
+    },
+    {
+      "relPath": "images/Peacock_Trim_Ornament.png",
+      "sizeBytes": 1298210,
+      "lines": null
+    },
+    {
+      "relPath": "images/Peacock_Trim_Ornament.webp",
+      "sizeBytes": 365014,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Bracket_Left.png",
+      "sizeBytes": 497389,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Bracket_Left.webp",
+      "sizeBytes": 168356,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Bracket_Right.png",
+      "sizeBytes": 506664,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Bracket_Right.webp",
+      "sizeBytes": 169612,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Capital_Ornament.png",
+      "sizeBytes": 2027506,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Capital_Ornament.webp",
+      "sizeBytes": 252736,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Colonnade_Desktop.png",
+      "sizeBytes": 3249167,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Colonnade_Desktop.webp",
+      "sizeBytes": 650768,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Colonnade_Mobile.png",
+      "sizeBytes": 3249167,
+      "lines": null
+    },
+    {
+      "relPath": "images/Pillar_Colonnade_Mobile.webp",
+      "sizeBytes": 650768,
+      "lines": null
+    },
+    {
+      "relPath": "images/plRMuObVZgXFVWzrOuY2xNVRHHs.webp",
+      "sizeBytes": 13422,
+      "lines": null
+    },
+    {
+      "relPath": "images/plyr.svg",
+      "sizeBytes": 5785,
+      "lines": null
+    },
+    {
+      "relPath": "images/Right flag.webp",
+      "sizeBytes": 24902,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sandstone Pavilion with Deer and Blossoms.webp",
+      "sizeBytes": 508724,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sandstone Temple Courtyard.webp",
+      "sizeBytes": 650768,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sky_Desktop.webp",
+      "sizeBytes": 75032,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sky_Mobile - Copy.webp",
+      "sizeBytes": 75032,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sky_Mobile.jpg",
+      "sizeBytes": 45720,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sky_Mobile.webp",
+      "sizeBytes": 75032,
+      "lines": null
+    },
+    {
+      "relPath": "images/Story_Backdrop_Desktop.png",
+      "sizeBytes": 1535939,
+      "lines": null
+    },
+    {
+      "relPath": "images/Story_Backdrop_Desktop.webp",
+      "sizeBytes": 197790,
+      "lines": null
+    },
+    {
+      "relPath": "images/Story_Backdrop_Mobile.png",
+      "sizeBytes": 3923148,
+      "lines": null
+    },
+    {
+      "relPath": "images/Story_Backdrop_Mobile.webp",
+      "sizeBytes": 468834,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sun_Desktop.webp",
+      "sizeBytes": 62770,
+      "lines": null
+    },
+    {
+      "relPath": "images/Sun_Mobile.webp",
+      "sizeBytes": 72210,
+      "lines": null
+    },
+    {
+      "relPath": "images/svYNfrgA0JSnowyYTfnNW2qkvHY.webp",
+      "sizeBytes": 95594,
+      "lines": null
+    },
+    {
+      "relPath": "images/Temple_Desktop.png",
+      "sizeBytes": 4703582,
+      "lines": null
+    },
+    {
+      "relPath": "images/Temple_Desktop.webp",
+      "sizeBytes": 736184,
+      "lines": null
+    },
+    {
+      "relPath": "images/Temple_Mobile.png",
+      "sizeBytes": 2611424,
+      "lines": null
+    },
+    {
+      "relPath": "images/Temple_Mobile.webp",
+      "sizeBytes": 435136,
+      "lines": null
+    },
+    {
+      "relPath": "images/Temple_WhatsApp.webp",
+      "sizeBytes": 144604,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Desktop aaaa.webp",
+      "sizeBytes": 722580,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Desktop.png",
+      "sizeBytes": 1670667,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Desktop.webp",
+      "sizeBytes": 253788,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Mobile aaaa.webp",
+      "sizeBytes": 27214,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Mobile.png",
+      "sizeBytes": 1470073,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Canvas_Mobile.webp",
+      "sizeBytes": 123750,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Divider_Flourish.png",
+      "sizeBytes": 1298210,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Divider_Flourish.webp",
+      "sizeBytes": 365014,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Frame_Desktop.png",
+      "sizeBytes": 64631,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Frame_Desktop.webp",
+      "sizeBytes": 12568,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Frame_Mobile.png",
+      "sizeBytes": 37594,
+      "lines": null
+    },
+    {
+      "relPath": "images/Timeline_Frame_Mobile.webp",
+      "sizeBytes": 9820,
+      "lines": null
+    },
+    {
+      "relPath": "images/Trees_Desktop.png",
+      "sizeBytes": 1506625,
+      "lines": null
+    },
+    {
+      "relPath": "images/Trees_Desktop.webp",
+      "sizeBytes": 253696,
+      "lines": null
+    },
+    {
+      "relPath": "images/Wedding Stage.webp",
+      "sizeBytes": 416266,
+      "lines": null
+    },
+    {
+      "relPath": "index.html",
+      "sizeBytes": 1386373,
+      "lines": 11282
+    },
+    {
+      "relPath": "manifest.json",
+      "sizeBytes": 24710,
+      "lines": 864
+    },
+    {
+      "relPath": "migration/package-lock.json",
+      "sizeBytes": 5114,
+      "lines": 164
+    },
+    {
+      "relPath": "migration/package.json",
+      "sizeBytes": 402,
+      "lines": 21
+    },
+    {
+      "relPath": "migration/scripts/discover.mjs",
+      "sizeBytes": 8449,
+      "lines": 208
+    },
+    {
+      "relPath": "migration/scripts/surgical-edit.mjs",
+      "sizeBytes": 3914,
+      "lines": 104
+    },
+    {
+      "relPath": "modular.html",
+      "sizeBytes": 1402375,
+      "lines": 11308
+    },
+    {
+      "relPath": "README.md",
+      "sizeBytes": 11219,
+      "lines": 82
+    },
+    {
+      "relPath": "scripts/audio-player.js",
+      "sizeBytes": 1785,
+      "lines": 46
+    },
+    {
+      "relPath": "scripts/build-modular.js",
+      "sizeBytes": 9298,
+      "lines": 157
+    },
+    {
+      "relPath": "scripts/content-manager.js",
+      "sizeBytes": 23912,
+      "lines": 526
+    },
+    {
+      "relPath": "scripts/css-flags.js",
+      "sizeBytes": 5790,
+      "lines": 116
+    },
+    {
+      "relPath": "scripts/flag-simulation.js",
+      "sizeBytes": 16352,
+      "lines": 435
+    },
+    {
+      "relPath": "scripts/flag-studio.js",
+      "sizeBytes": 32750,
+      "lines": 772
+    },
+    {
+      "relPath": "scripts/framer-animator.js",
+      "sizeBytes": 36456,
+      "lines": 61
+    },
+    {
+      "relPath": "scripts/framer-engine.html",
+      "sizeBytes": 37112,
+      "lines": 35
+    },
+    {
+      "relPath": "scripts/framer.CmgPE89d.mjs",
+      "sizeBytes": 406024,
+      "lines": 944
+    },
+    {
+      "relPath": "scripts/group-manager.js",
+      "sizeBytes": 27717,
+      "lines": 587
+    },
+    {
+      "relPath": "scripts/gsap@3.12.DQhLipkJ.mjs",
+      "sizeBytes": 173,
+      "lines": 9
+    },
+    {
+      "relPath": "scripts/live-sync.js",
+      "sizeBytes": 4621,
+      "lines": 106
+    },
+    {
+      "relPath": "scripts/modular-loader.js",
+      "sizeBytes": 1567,
+      "lines": 44
+    },
+    {
+      "relPath": "scripts/motion.CSEoZ5UY.mjs",
+      "sizeBytes": 148973,
+      "lines": 10
+    },
+    {
+      "relPath": "scripts/PX9hIOIVM.rPDUa3ZV.mjs",
+      "sizeBytes": 81,
+      "lines": 5
+    },
+    {
+      "relPath": "scripts/react.iNMCLRE-.mjs",
+      "sizeBytes": 144710,
+      "lines": 9
+    },
+    {
+      "relPath": "scripts/rolldown-runtime.Dh6celcD.mjs",
+      "sizeBytes": 629,
+      "lines": 1
+    },
+    {
+      "relPath": "scripts/script_main.BNALTGIK.mjs",
+      "sizeBytes": 6464,
+      "lines": 4
+    },
+    {
+      "relPath": "scripts/ScrollTrigger.oiqn99lx.mjs",
+      "sizeBytes": 141,
+      "lines": 6
+    },
+    {
+      "relPath": "scripts/section4-flow.js",
+      "sizeBytes": 9397,
+      "lines": 228
+    },
+    {
+      "relPath": "scripts/shared-lib.DDe1d4ZQ.mjs",
+      "sizeBytes": 630244,
+      "lines": 3113
+    },
+    {
+      "relPath": "scripts/sky-parallax.js",
+      "sizeBytes": 4607,
+      "lines": 117
+    },
+    {
+      "relPath": "scripts/tree-parallax.js",
+      "sizeBytes": 5794,
+      "lines": 157
+    },
+    {
+      "relPath": "scripts/VR998DU3WSRaZIpYrcWhMoQxMWGXSrJFDK6jx2eUMjE.DKHZzuKc.mjs",
+      "sizeBytes": 592268,
+      "lines": 11
+    },
+    {
+      "relPath": "scripts/watermark-cleaner.js",
+      "sizeBytes": 1993,
+      "lines": 59
+    },
+    {
+      "relPath": "sections/01-hero.html",
+      "sizeBytes": 9881,
+      "lines": 184
+    },
+    {
+      "relPath": "sections/02-timeline.html",
+      "sizeBytes": 109522,
+      "lines": 979
+    },
+    {
+      "relPath": "sections/03-meet-couple.html",
+      "sizeBytes": 60892,
+      "lines": 422
+    },
+    {
+      "relPath": "sections/04-location-countdown.html",
+      "sizeBytes": 220043,
+      "lines": 1873
+    },
+    {
+      "relPath": "sections/desktop/01-hero.html",
+      "sizeBytes": 36687,
+      "lines": 349
+    },
+    {
+      "relPath": "sections/desktop/02-timeline.html",
+      "sizeBytes": 195910,
+      "lines": 1548
+    },
+    {
+      "relPath": "sections/desktop/03-meet-couple.html",
+      "sizeBytes": 42723,
+      "lines": 309
+    },
+    {
+      "relPath": "sections/desktop/04-location-countdown.html",
+      "sizeBytes": 282879,
+      "lines": 2354
+    },
+    {
+      "relPath": "sections/mobile/01-hero.html",
+      "sizeBytes": 63497,
+      "lines": 578
+    },
+    {
+      "relPath": "sections/mobile/02-timeline.html",
+      "sizeBytes": 109805,
+      "lines": 983
+    },
+    {
+      "relPath": "sections/mobile/03-meet-couple.html",
+      "sizeBytes": 61176,
+      "lines": 426
+    },
+    {
+      "relPath": "sections/mobile/04-location-countdown.html",
+      "sizeBytes": 220027,
+      "lines": 1873
+    },
+    {
+      "relPath": "sections/tablet/01-hero.html",
+      "sizeBytes": 43193,
+      "lines": 377
+    },
+    {
+      "relPath": "sections/tablet/02-timeline.html",
+      "sizeBytes": 145051,
+      "lines": 1146
+    },
+    {
+      "relPath": "sections/tablet/03-meet-couple.html",
+      "sizeBytes": 54176,
+      "lines": 354
+    },
+    {
+      "relPath": "sections/tablet/04-location-countdown.html",
+      "sizeBytes": 100565,
+      "lines": 847
+    },
+    {
+      "relPath": "sections/widget-audio.html",
+      "sizeBytes": 1026,
+      "lines": 21
+    },
+    {
+      "relPath": "sections/widget-switcher.html",
+      "sizeBytes": 1676,
+      "lines": 21
+    },
+    {
+      "relPath": "test_clean_render.html",
+      "sizeBytes": 1399091,
+      "lines": 11251
+    },
+    {
+      "relPath": "test_unified_hero.html",
+      "sizeBytes": 11465,
+      "lines": 228
+    },
+    {
+      "relPath": "TODO_MODULAR_REACT_MIGRATION.md",
+      "sizeBytes": 10479,
+      "lines": 117
+    },
+    {
+      "relPath": "videos/blank.mp4",
+      "sizeBytes": 1777,
+      "lines": null
+    },
+    {
+      "relPath": "_archive/index_original_backup.html",
+      "sizeBytes": 982307,
+      "lines": 492
+    },
+    {
+      "relPath": "_archive/index_pre_consolidation_backup.html",
+      "sizeBytes": 1404401,
+      "lines": 11363
+    },
+    {
+      "relPath": "_archive/index_remote.html",
+      "sizeBytes": 1147427,
+      "lines": 775
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/02-countdown.html",
+      "sizeBytes": 3770,
+      "lines": 71
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/03-story.html",
+      "sizeBytes": 2402,
+      "lines": 42
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/04-gallery.html",
+      "sizeBytes": 2597,
+      "lines": 46
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/05-timeline.html",
+      "sizeBytes": 5331,
+      "lines": 98
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/06-location.html",
+      "sizeBytes": 4548,
+      "lines": 72
+    },
+    {
+      "relPath": "_archive/legacy_custom_sections/07-footer.html",
+      "sizeBytes": 3256,
+      "lines": 62
+    }
+  ],
+  "headOrder": {
+    "stylesheets": [
+      {
+        "href": "./css/main.css",
+        "media": null,
+        "disabled": false,
+        "loc": 2463
+      }
+    ],
+    "scripts": [
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1344947,
+        "endOffset": 1346222,
+        "startLine": 11159
+      },
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1346227,
+        "endOffset": 1347184,
+        "startLine": 11160
+      },
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1347191,
+        "endOffset": 1360453,
+        "startLine": 11165
+      },
+      {
+        "src": null,
+        "type": "framer/appear",
+        "async": false,
+        "defer": false,
+        "id": "__framer__appearAnimationsContent",
+        "startOffset": 1360458,
+        "endOffset": 1378595,
+        "startLine": 11166
+      },
+      {
+        "src": null,
+        "type": "framer/appear",
+        "async": false,
+        "defer": false,
+        "id": "__framer__breakpoints",
+        "startOffset": 1378600,
+        "endOffset": 1379812,
+        "startLine": 11168
+      },
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1379817,
+        "endOffset": 1380740,
+        "startLine": 11170
+      },
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1380745,
+        "endOffset": 1380881,
+        "startLine": 11172
+      },
+      {
+        "src": "./scripts/script_main.BNALTGIK.mjs",
+        "type": "module",
+        "async": true,
+        "defer": false,
+        "id": null,
+        "startOffset": 1381472,
+        "endOffset": 1381604,
+        "startLine": 11180
+      },
+      {
+        "src": "./scripts/audio-player.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1383307,
+        "endOffset": 1383356,
+        "startLine": 11215
+      },
+      {
+        "src": null,
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": "unified-template-switcher-script",
+        "startOffset": 1383409,
+        "endOffset": 1383901,
+        "startLine": 11218
+      },
+      {
+        "src": "./scripts/tree-parallax.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1385265,
+        "endOffset": 1385315,
+        "startLine": 11249
+      },
+      {
+        "src": "./scripts/sky-parallax.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1385320,
+        "endOffset": 1385369,
+        "startLine": 11250
+      },
+      {
+        "src": "./scripts/group-manager.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1385374,
+        "endOffset": 1385424,
+        "startLine": 11251
+      },
+      {
+        "src": "./content/wedding-content.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1386007,
+        "endOffset": 1386059,
+        "startLine": 11273
+      },
+      {
+        "src": "./scripts/content-manager.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1386064,
+        "endOffset": 1386116,
+        "startLine": 11274
+      },
+      {
+        "src": "./scripts/section4-flow.js",
+        "type": "classic",
+        "async": false,
+        "defer": false,
+        "id": null,
+        "startOffset": 1386121,
+        "endOffset": 1386171,
+        "startLine": 11275
+      }
+    ]
+  },
+  "breakpointBoundaries": [
+    360,
+    375,
+    390,
+    393,
+    412,
+    430,
+    768,
+    834,
+    960,
+    1280,
+    1349,
+    1559,
+    1728,
+    1920
+  ],
+  "interactiveSelectors": [
+    "#buddhist-audio-controller",
+    "#template-select-dropdown",
+    "[data-framer-name=\"Photo Gallery\"]",
+    "#buddhist-audio-element",
+    "#audio-eq-bars",
+    "#p.framer-text, p",
+    "#a",
+    "#div",
+    "#button",
+    "#p.framer-text",
+    "#p",
+    "#:scope > div > div",
+    "#span",
+    "#img",
+    "#group-wedding-timeline",
+    "#group-hero-invitation",
+    "#group-meet-the-couple",
+    "#group-rotating-collage",
+    ".framer-SNM3S",
+    "#*"
+  ],
+  "targetDirectories": [
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/01_unforgettable_temple_grace",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/02_unforgettable_radha_krishna",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/03_unforgettable_pastel_elegance",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/04_unforgettable_ayodhya_heritage",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/05_unforgettable_meenakshi_royal",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/06_unforgettable_udaipur_palace",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/07_unforgettable_ram_mandir",
+      "hasIndexHtml": true,
+      "hasContentJson": false
+    },
+    {
+      "path": "E:/Unforgettable_Invites/Web_Templates/templates/08_unforgettable_buddhist_wedding",
+      "hasIndexHtml": true,
+      "hasContentJson": true
+    }
+  ],
+  "deviations": [
+    {
+      "file": "css/framer-core.css",
+      "issue": "postcss parse error",
+      "details": "<css input>:1:150984: Unknown word bing"
+    }
+  ]
+}
