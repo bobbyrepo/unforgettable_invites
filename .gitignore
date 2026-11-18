@@ -51,6 +51,7 @@ assets/music/*.wav
 *.ai
 **/Adobe After Effects Auto-Save/
 **/*_backup*
+*.checkpoint*
 **/*.tmp
 
 .agents/

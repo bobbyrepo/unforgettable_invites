@@ -8,12 +8,12 @@ function startNext() {
   if (shuttingDown) return;
 
   const nextBin = path.join(__dirname, 'node_modules', 'next', 'dist', 'bin', 'next');
-  console.log(`[Supervisor] Starting Next.js production server via ${nextBin}...`);
+  console.log(`[Supervisor] Starting Next.js server via ${nextBin}...`);
 
-  child = spawn(process.execPath, [nextBin, 'start', '-H', '0.0.0.0', '-p', '3000'], {
+  child = spawn(process.execPath, [nextBin, 'dev', '-H', '0.0.0.0', '-p', '3000'], {
     cwd: __dirname,
     stdio: ['ignore', 'inherit', 'inherit'],
-    env: { ...process.env, NODE_ENV: 'production' }
+    env: { ...process.env, NODE_ENV: 'development' }
   });
 
   child.on('exit', (code, signal) => {
