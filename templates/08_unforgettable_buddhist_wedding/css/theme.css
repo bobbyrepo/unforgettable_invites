@@ -1806,3 +1806,646 @@ img[src*="Timeline_Canvas"] {
 .bg-img.contain {
   object-fit: contain;
 }
+
+/* === Center Transforms (Extracted from inline styles) === */
+.center-x {
+  transform: translateX(-50%);
+}
+.center-xy {
+  transform: translate(-50%, -50%);
+}
+
+/* === Extracted Typography Presets === */
+.tp-gotham-8-1 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:8px;
+  --framer-font-weight:300;
+  --framer-line-height:14px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-12-2 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:12px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164394px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-12-3 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:12px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164366px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-12-4 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:12px;
+  --framer-font-weight:300;
+  --framer-line-height:13.61643835616438px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-23-5 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:23px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-gotham-10-6 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:10px;
+  --framer-font-weight:300;
+  --framer-line-height:14px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-13-7 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164394px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-13-8 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164366px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-13-9 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:300;
+  --framer-line-height:13.61643835616438px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-9-10 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:9px;
+  --framer-font-weight:300;
+  --framer-line-height:14px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-11-11 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:11px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164394px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-11-12 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:11px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164366px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-11-13 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:11px;
+  --framer-font-weight:300;
+  --framer-line-height:13.61643835616438px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-13-14 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:300;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-12-15 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:12px;
+  --framer-font-weight:300;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-bold-28-16 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgQm9sZA==;
+  --framer-font-family:"IvyOra Display Bold", "IvyOra Display Bold Placeholder", sans-serif;
+  --framer-font-size:28px;
+  --framer-font-weight:700;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-bold-26-17 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgQm9sZA==;
+  --framer-font-family:"IvyOra Display Bold", "IvyOra Display Bold Placeholder", sans-serif;
+  --framer-font-size:26px;
+  --framer-font-weight:700;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-miofarin-86-18 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:86px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-miofarin-65-19 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:65px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-71-20 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:71px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-54-21 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:54px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-custom-13-22 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIE1lZGl1bQ==;
+  --framer-font-family:"Gotham Medium", "Gotham Medium Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-custom-11-23 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIE1lZGl1bQ==;
+  --framer-font-family:"Gotham Medium", "Gotham Medium Placeholder", sans-serif;
+  --framer-font-size:11px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-custom-10-24 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIE1lZGl1bQ==;
+  --framer-font-family:"Gotham Medium", "Gotham Medium Placeholder", sans-serif;
+  --framer-font-size:10px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-ivyora-med-13-25 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-10-26 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:10px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-20-27 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:20px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-17-28 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:17px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-14-29 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:14px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-13-30 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:13px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-miofarin-75-31 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:75px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-miofarin-67-32 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:67px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-73-33 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:73px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-54-34 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:54px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-ivyora-med-34-35 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:34px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-30-36 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:30px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-28-37 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:28px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-20-38 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:20px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-17-39 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:17px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-24-40 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:24px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-11-41 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:11px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-10-42 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:10px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-21-43 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:21px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-21-44 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:21px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-custom-10-45 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIEJvb2s=;
+  --framer-font-family:"Gotham Book", "Gotham Book Placeholder", sans-serif;
+  --framer-font-open-type-features:'blwf' on, 'cv03' on, 'cv04' on, 'cv09' on, 'cv11' on;
+  --framer-font-size:10px;
+  --framer-letter-spacing:-0.02em;
+  --framer-line-height:1.6em;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-31-46 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:31px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-26-47 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:26px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-30-48 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:30px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-93-49 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:93px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-custom-28-50 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIEJvb2s=;
+  --framer-font-family:"Gotham Book", "Gotham Book Placeholder", sans-serif;
+  --framer-font-open-type-features:'blwf' on, 'cv03' on, 'cv04' on, 'cv09' on, 'cv11' on;
+  --framer-font-size:28px;
+  --framer-letter-spacing:-0.02em;
+  --framer-line-height:1.6em;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-60-51 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:60px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-60-52 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:60px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-89-53 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:89px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-28-54 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:28px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-81-55 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:81px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-70-56 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:70px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-52-57 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:52px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-110-58 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:110px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-23-59 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:23px;
+  --framer-font-weight:300;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-80-60 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:80px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-miofarin-140-61 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:140px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-miofarin-171-62 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:171px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-117-63 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:117px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-143-64 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:143px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-ivyora-reg-39-65 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:39px;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-custom-36-66 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIE1lZGl1bQ==;
+  --framer-font-family:"Gotham Medium", "Gotham Medium Placeholder", sans-serif;
+  --framer-font-size:36px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-ivyora-reg-24-67 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:24px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-miofarin-129-68 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:129px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-brother-128-69 {
+  --font-selector:Q1VTVE9NVjI7QnJvdGhlciBTaWduYXR1cmUgUmVndWxhcg==;
+  --framer-font-family:"Brother Signature Regular", "Brother Signature Regular Placeholder", sans-serif;
+  --framer-font-size:128px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-miofarin-151-70 {
+  --font-selector:Q1VTVE9NVjI7TWlvZmFyaW4gUmVndWxhcg==;
+  --framer-font-family:"Miofarin Regular", "Miofarin Regular Placeholder", sans-serif;
+  --framer-font-size:151px;
+  --framer-text-color:rgba(171, 86, 38, 0.72);
+}
+.tp-ivyora-reg-27-71 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:27px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-15-72 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:15px;
+  --framer-font-weight:300;
+  --framer-line-height:14px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-23-73 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:23px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164394px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-23-74 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:23px;
+  --framer-font-weight:300;
+  --framer-line-height:13.616438356164366px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-23-75 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:23px;
+  --framer-font-weight:300;
+  --framer-line-height:13.61643835616438px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-gotham-25-76 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:25px;
+  --framer-font-weight:300;
+  --framer-line-height:13.61643835616438px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-45-77 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:45px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(171, 86, 38);
+}
+.tp-gotham-22-78 {
+  --font-selector:Q1VTVE9NVjI7R290aGFtIExpZ2h0;
+  --framer-font-family:"Gotham Light", "Gotham Light Placeholder", sans-serif;
+  --framer-font-size:22px;
+  --framer-font-weight:300;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-bold-47-79 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgQm9sZA==;
+  --framer-font-family:"IvyOra Display Bold", "IvyOra Display Bold Placeholder", sans-serif;
+  --framer-font-size:47px;
+  --framer-font-weight:700;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-78-80 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:78px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-54-81 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:54px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-39-82 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:39px;
+  --framer-font-weight:500;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-reg-17-83 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgUmVndWxhcg==;
+  --framer-font-family:"IvyOra Display Regular", "IvyOra Display Regular Placeholder", sans-serif;
+  --framer-font-size:17px;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
+.tp-ivyora-med-35-84 {
+  --font-selector:Q1VTVE9NVjI7SXZ5T3JhIERpc3BsYXkgTWVkaXVt;
+  --framer-font-family:"IvyOra Display Medium", "IvyOra Display Medium Placeholder", sans-serif;
+  --framer-font-size:35px;
+  --framer-font-weight:500;
+  --framer-text-alignment:center;
+  --framer-text-color:rgb(95, 37, 15);
+}
