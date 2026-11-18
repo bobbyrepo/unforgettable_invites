@@ -6,9 +6,7 @@ const SRC_DIR = 'E:/Unforgettable_Invites/Web_Templates/templates/08_unforgettab
 // The verified target sync paths from D5 / sync script
 const TARGET_DIRS = [
     'E:/Unforgettable_Invites/Web_Templates/public/templates/08_unforgettable_buddhist_wedding',
-    'E:/Unforgettable_Invites/Template Backup/08_unforgettable_buddhist_wedding',
-    'E:/Unforgettable_Invites/09_unforgettable_buddha_react/public/templates/08_unforgettable_buddhist_wedding',
-    'E:/Unforgettable_Invites/09_unforgettable_buddha_react/public'
+    'E:/Unforgettable_Invites/Template Backup/08_unforgettable_buddhist_wedding'
 ];
 
 // Files modified/created in Track 1 to Track 5 to sync
