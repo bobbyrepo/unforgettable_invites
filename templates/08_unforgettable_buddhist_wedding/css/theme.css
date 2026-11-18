@@ -2470,3 +2470,229 @@ img[src*="Timeline_Canvas"] {
     -moz-osx-font-smoothing: grayscale !important;
     letter-spacing: normal !important;
 }
+
+
+/* ==========================================================================
+   EXTRACTED UTILITY & COMPONENT STYLES (CLEANUP FROM INLINE ATTRIBUTES)
+   ========================================================================== */
+
+/* Word-by-word reveal */
+.word-reveal {
+  display: inline-block;
+  color: rgb(95, 37, 15);
+  text-transform: none;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  will-change: color;
+  margin-right: 0.25em;
+}
+
+/* Common animation initial states */
+.anim-fade-up-24 {
+  will-change: transform;
+  opacity: 0;
+  transform: translateX(-50%) translateY(24px);
+}
+
+.anim-fade-up-56-center {
+  will-change: transform;
+  opacity: 0;
+  transform: translateX(-50%) translateY(56px) scale(0.94);
+}
+
+.anim-fade-up-56 {
+  will-change: transform;
+  opacity: 0;
+  transform: translateY(56px) scale(0.94);
+}
+
+.anim-center-scale {
+  will-change: transform;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.9);
+}
+
+.anim-slide-left-48 {
+  will-change: transform;
+  opacity: 0;
+  transform: translateX(-48px);
+}
+
+/* Countdown components */
+.countdown-digit-box {
+  position: relative;
+  height: 45.1px;
+  width: 26.65px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.countdown-digit-num {
+  font-size: 41px;
+  line-height: 1;
+  color: rgb(221, 164, 93);
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  font-weight: inherit;
+  opacity: 1;
+  filter: blur(0px);
+  transform: none;
+}
+
+.countdown-unit-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 6px;
+  text-align: center;
+  color: rgb(136, 136, 136);
+  font-family: "Inter", sans-serif;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ==========================================================================
+   PHASE 2 COMPONENT CLASSES (FORM & COLLAGE GALLERY)
+   ========================================================================== */
+
+select, option {
+  color: rgb(95, 37, 15);
+}
+
+/* Collage Gallery */
+.collage-box {
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collage-label {
+  margin-top: 8px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+/* RSVP Form Elements */
+.rsvp-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgb(224, 224, 224);
+  background: rgb(255, 255, 255);
+  color: rgb(95, 37, 15);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.rsvp-select-trigger {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgb(224, 224, 224);
+  background: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.rsvp-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgb(37, 211, 102);
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.rsvp-row {
+  display: flex;
+  gap: 10px;
+}
+
+.rsvp-col {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.rsvp-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: rgb(95, 37, 15);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-clip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.caret-icon {
+  flex-shrink: 0;
+  margin-left: 6px;
+  transform: none;
+  transition: transform 0.15s ease;
+}
+
+/* Generic Layout / Transform utilities */
+.center-y {
+  transform: translateY(-50%);
+}
+
+.center-x-rot180 {
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.anim-hidden-none {
+  will-change: transform;
+  opacity: 0;
+  transform: none;
+}
