@@ -2696,3 +2696,187 @@ select, option {
   opacity: 0;
   transform: none;
 }
+
+
+/* ==========================================================================
+   CLEAN TYPOGRAPHY STYLES (ELIMINATES OVERLAP / MOBILE FIRST)
+   ========================================================================== */
+
+/* Container reset so white-space: pre doesn't clip or overlap */
+[data-framer-name*="Meet the Couple Heading"],
+.framer-139zzg8,
+.framer-1y4ffrc,
+.framer-329jyl,
+[data-framer-name*="dont check my spelling"],
+.framer-15y7noc,
+.framer-15nvll9,
+[data-framer-name*="Countdown Intro Text"],
+.framer-1lmlpg0,
+.framer-bj8698,
+.framer-16wl77i {
+    white-space: normal !important;
+    height: auto !important;
+}
+
+/* Reset any rigid width/height constraints on these containers */
+[data-framer-name*="Meet the Couple Heading"],
+.framer-139zzg8,
+.framer-1y4ffrc,
+.framer-329jyl,
+[data-framer-name*="dont check my spelling"],
+.framer-15y7noc,
+.framer-15nvll9,
+[data-framer-name*="Countdown Intro Text"],
+.framer-1lmlpg0,
+.framer-bj8698,
+.framer-16wl77i {
+    white-space: normal !important;
+    height: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 1. Meet the Bride & Groom Header */
+.meet-couple-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    white-space: normal !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.meet-couple-header h2,
+.meet-couple-header .meet-couple-sub,
+.meet-couple-sub {
+    font-family: "IvyOra Display Medium", "IvyOra Display Regular", Georgia, serif !important;
+    font-size: 26px !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    color: rgb(95, 37, 15) !important;
+    margin: 0 0 6px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    letter-spacing: 0.02em !important;
+}
+
+.meet-couple-header h1,
+.meet-couple-header .meet-couple-title,
+.meet-couple-title {
+    font-family: "IvyOra Display Medium", "IvyOra Display Regular", Georgia, serif !important;
+    font-size: 38px !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    color: rgb(95, 37, 15) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+}
+
+/* 2. Almost time to celebrate Header */
+.almost-time-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    white-space: normal !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.almost-time-header h2,
+.almost-time-header .almost-time-sub,
+.almost-time-sub {
+    font-family: "IvyOra Display Medium", "IvyOra Display Regular", Georgia, serif !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    color: rgb(95, 37, 15) !important;
+    margin: 0 0 2px 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+.almost-time-header h1,
+.almost-time-header .almost-time-title,
+.almost-time-title {
+    font-family: "IvyOra Display Medium", "IvyOra Display Regular", Georgia, serif !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    line-height: 1.1 !important;
+    color: rgb(95, 37, 15) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+/* 3. Countdown Intro Story Text */
+.countdown-family-text {
+    font-family: "IvyOra Display Regular", Georgia, serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    color: rgb(95, 37, 15) !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 16px !important;
+    max-width: 380px !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Mobile-specific position adjustments to guarantee clear spacing */
+@media (max-width: 809px) {
+    .framer-139zzg8 {
+        top: 240px !important;
+    }
+    .framer-15y7noc {
+        top: 1140px !important;
+    }
+}
+
+/* Desktop screen enhancements */
+@media (min-width: 810px) {
+    .meet-couple-header h2,
+    .meet-couple-header .meet-couple-sub,
+    .meet-couple-sub {
+        font-size: 38px !important;
+        margin-bottom: 8px !important;
+    }
+    .meet-couple-header h1,
+    .meet-couple-header .meet-couple-title,
+    .meet-couple-title {
+        font-size: 64px !important;
+    }
+    .almost-time-header h2,
+    .almost-time-header .almost-time-sub,
+    .almost-time-sub {
+        font-size: 30px !important;
+        margin-bottom: 6px !important;
+    }
+    .almost-time-header h1,
+    .almost-time-header .almost-time-title,
+    .almost-time-title {
+        font-size: 50px !important;
+    }
+    .countdown-family-text {
+        font-size: 20px !important;
+        max-width: 580px !important;
+        line-height: 1.6 !important;
+    }
+}
