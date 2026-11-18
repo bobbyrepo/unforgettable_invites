@@ -14,18 +14,6 @@
   aspect-ratio: 0.20064724919093851;
 }
 
-/* <p> data-framer-name=none */
-.framer-text {
-  --font-selector: Q1VTVE9NVjI7R290aGFtIExpZ2h0;
-  --framer-font-family: "Gotham Light", "Gotham Light Placeholder", sans-serif;
-  --framer-font-size: 8px;
-  --framer-font-weight: 300;
-  --framer-line-height: 14px;
-  --framer-text-alignment: center;
-  --framer-text-color: rgb(95, 37, 15);
-  --framer-font-open-type-features: 'blwf' on, 'cv03' on, 'cv04' on, 'cv09' on, 'cv11' on;
-  --framer-letter-spacing: -0.02em;
-}
 
 /* <div> data-framer-name=Pillar Backdrop */
 .framer-ooy18g[data-framer-name="Pillar Backdrop"] {
