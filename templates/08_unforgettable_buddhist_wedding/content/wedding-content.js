@@ -19,7 +19,7 @@ window.WEDDING_CONTENT = {
             parents: "Mrs. Asmita Wanjari & Mr. Balakrishna Wanjari"
         },
         connector: "weds",
-        greetingNote: "Cordially invite you and your family to grace the auspicious occasion of wedding celebration of our beloved son",
+        greetingNote: "Cordially invites you and your family to grace the auspicious occasion of\nwedding celebration of our beloved son",
         hashtag: "#SarveshWedsNikita"
     },
     shloka: {

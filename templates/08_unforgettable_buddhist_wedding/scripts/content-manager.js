@@ -32,12 +32,31 @@
         containers.forEach(container => {
             const ps = container.querySelectorAll('p.framer-text, p');
             if (ps.length > 0) {
-                if (ps[0].textContent !== newText) {
-                    ps[0].textContent = newText;
-                }
-                // Hide any stale sibling paragraphs when updating unified text (prevents duplicate overlapping text)
-                for (let i = 1; i < ps.length; i++) {
-                    ps[i].style.setProperty('display', 'none', 'important');
+                const isMultiLine = typeof newText === 'string' && (newText.includes('\n') || newText.includes('<br'));
+                if (isMultiLine) {
+                    const lines = newText.includes('<br')
+                        ? newText.split(/<br\s*\/?>/i)
+                        : newText.split('\n');
+
+                    lines.forEach((lineText, idx) => {
+                        if (ps[idx]) {
+                            if (ps[idx].textContent !== lineText.trim()) {
+                                ps[idx].textContent = lineText.trim();
+                            }
+                            ps[idx].style.removeProperty('display');
+                        }
+                    });
+                    for (let i = lines.length; i < ps.length; i++) {
+                        ps[i].style.setProperty('display', 'none', 'important');
+                    }
+                } else {
+                    if (ps[0].textContent !== newText) {
+                        ps[0].textContent = newText;
+                    }
+                    // Hide any stale sibling paragraphs when updating unified text (prevents duplicate overlapping text)
+                    for (let i = 1; i < ps.length; i++) {
+                        ps[i].style.setProperty('display', 'none', 'important');
+                    }
                 }
             } else if (container.textContent !== newText) {
                 container.textContent = newText;
